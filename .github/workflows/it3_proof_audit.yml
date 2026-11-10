@@ -1,0 +1,32 @@
+name: IT3 Proof-Ledger Audit
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  epistemic-proof-verification:
+    name: "Verify 8 Guard Tests & Proof Ledger (p=0)"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Scientific Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy matplotlib plotly tqdm
+
+      - name: Run Mandatory Epistemic Guard Unit Tests (8/8)
+        run: python3 it3_master_v22.0.py --run-tests
+
+      - name: Run Exact Algebraic & Proof-Ledger Verification
+        run: python3 it3_master_v22.0.py --proof-only
