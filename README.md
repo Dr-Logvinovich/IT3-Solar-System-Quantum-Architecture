@@ -1,77 +1,144 @@
 # IT³ Macroscopic Vacuum Architecture & K-PHAM v2.2 Scientific Proof-Ledger Suite
 
-[![Zenodo Record](https://img.shields.io/badge/Zenodo_Flagship_DOI-10.5281%2Fzenodo.21792530-0066cc?style=for-the-badge&logo=zenodo)](https://doi.org/10.5281/zenodo.21792530)
+[![Zenodo Record](https://img.shields.io/badge/Zenodo_Flagship_DOI-10.5281%2Fzenodo.21792530-0066cc?style=for-the-badge&logo=zenodo)](https://zenodo.org/records/21792530)
 [![Foundational DOI](https://img.shields.io/badge/Foundational_IT3_DOI-10.5281%2Fzenodo.20450282-008080?style=for-the-badge)](https://doi.org/10.5281/zenodo.20450282)
 [![Preprint v16 DOI](https://img.shields.io/badge/Preprint_v16_DOI-10.5281%2Fzenodo.21630717-4b0082?style=for-the-badge)](https://doi.org/10.5281/zenodo.21630717)
 [![MPCORB Objects](https://img.shields.io/badge/MPCORB_Catalog-1%2C579%2C912_Orbits-00aa44?style=for-the-badge)](https://www.minorplanetcenter.net/iau/MPCORB.html)
-[![Free Parameters](https://img.shields.io/badge/Free_Fitting_Parameters-0_(Frozen_Blind)-ff6600?style=for-the-badge)](#2-frozen-blind-predictions--epistemic-proof-ledger)
+[![Free Parameters](https://img.shields.io/badge/Free_Fitting_Parameters-0_(Frozen_Blind)-ff6600?style=for-the-badge)](#4-frozen-blind-predictions--7-tier-epistemic-proof-ledger)
 [![Release](https://img.shields.io/badge/Release-IT3--v22.6--strict-brightgreen?style=for-the-badge)](./it3_master_v22.0.py)
 
 > **Official Verification Engine, 11-Front Empirical Audit & Epistemic Proof-Ledger (`IT3-v22.6-strict`)**  
-> **Authors:** **Victor Logvinovich** (Master of Physical and Mathematical Sciences, Researcher in Pedagogical Sciences, Belarus; ORCID: [`0009-0007-2040-6955`](https://orcid.org/0009-0007-2040-6955)) & **Jean-Claude Perez** (IBM European Artificial Intelligence Research Centre, retired; Luc Montagnier Foundation, France)  
-> **Primary Zenodo Publication:** [*The Macroscopic Vacuum Architecture: Perez Hourglass Topology, Counter-Rotating Bowls, and m = 6 ⊕ 12 Fractal Superposition in the Solar System (IT3 Framework v6.0)*](https://zenodo.org/records/21792530) (**DOI:** [`10.5281/zenodo.21792530`](https://doi.org/10.5281/zenodo.21792530))  
-> **Foundational Theoretical Monograph:** [*Galactic Resonance Architecture*](https://doi.org/10.5281/zenodo.20450282) (**DOI:** [`10.5281/zenodo.20450282`](https://doi.org/10.5281/zenodo.20450282)) | **Manuscript PDF in Repo:** [`Solar_v16.pdf`](./Solar_v16.pdf)
+> **Authors:** **Victor Logvinovich** (Master of Physical and Mathematical Sciences, Researcher in Pedagogical Sciences, Belarus; ORCID: `0009-0007-2040-6955`) & **Jean-Claude Perez** (PhD in Mathematics and Computer Science; IBM European Artificial Intelligence Research Centre, retired; Luc Montagnier Foundation, France; ORCID: `0000-0001-6446-2042`)  
+> **Flagship Zenodo Publication:** [*The Macroscopic Vacuum Architecture: Perez Hourglass Topology, Counter-Rotating Bowls, and m = 6 ⊕ 12 Fractal Superposition in the Solar System (IT3 Framework v6.0)*](https://zenodo.org/records/21792530) (**DOI:** `10.5281/zenodo.21792530`)  
+> **Foundational Theoretical Monograph:** [*Galactic Resonance Architecture*](https://doi.org/10.5281/zenodo.20450282) (**DOI:** `10.5281/zenodo.20450282`) | **Full Manuscript PDF in Repo:** [`Solar_v16.pdf`](./Solar_v16.pdf)
 
 ---
 
 ## 🧭 Table of Contents
 1. [Executive Summary & Core Paradigm Shift](#1-executive-summary--core-paradigm-shift)
-2. [Frozen Blind Predictions & 7-Tier Epistemic Proof Ledger](#2-frozen-blind-predictions--7-tier-epistemic-proof-ledger)
-3. [Interactive 3D & 2D WebGL Visualizations (Live Browser Links)](#3-interactive-3d--2d-webgl-visualizations-live-browser-links)
-4. [11-Front Empirical Audit Across 1,579,912 Real MPCORB Orbits](#4-11-front-empirical-audit-across-1579912-real-mpcorb-orbits)
-5. [Complete Catalog of 47 Extreme Deep Objects ($S_n \ge 6$) & Live Blind Confirmations](#5-complete-catalog-of-47-extreme-deep-objects-s_n-ge-6--live-blind-confirmations)
-6. [Repository Architecture & File Inventory](#6-repository-architecture--file-inventory)
-7. [Autonomous Execution & Reproducibility Guide](#7-autonomous-execution--reproducibility-guide)
-8. [Citation & Academic Provenance](#8-citation--academic-provenance)
+2. [Closing the "Planet Nine" Hypothesis: Exact Quadrupole Collapse, Stella Octangula & Macroscopic Zeeman Effect](#2-closing-the-planet-nine-hypothesis-exact-quadrupole-collapse-stella-octangula--macroscopic-zeeman-effect)
+3. [Mathematical Framework: Perez Hourglass Manifold & K-PHAM v2.2 Cascade](#3-mathematical-framework-perez-hourglass-manifold--k-pham-v22-cascade)
+4. [Frozen Blind Predictions & 7-Tier Epistemic Proof Ledger](#4-frozen-blind-predictions--7-tier-epistemic-proof-ledger)
+5. [Interactive 3D & 2D WebGL Visualizations (Live Browser Links)](#5-interactive-3d--2d-webgl-visualizations-live-browser-links)
+6. [11-Front Empirical Audit Across 1,579,912 Real MPCORB Orbits](#6-11-front-empirical-audit-across-1579912-real-mpcorb-orbits)
+7. [Complete Catalog of All 47 Extreme Deep Objects (Sn >= 6) & Live Blind Confirmations](#7-complete-catalog-of-all-47-extreme-deep-objects-sn--6--live-blind-confirmations)
+8. [Blind Predictions for Vera C. Rubin Observatory (LSST) & Falsification Criteria](#8-blind-predictions-for-vera-c-rubin-observatory-lsst--falsification-criteria)
+9. [The Macroscopic Atom, Quantum Chemistry Dictionary & Stark Visual-Rhyme Audit](#9-the-macroscopic-atom-quantum-chemistry-dictionary--stark-visual-rhyme-audit)
+10. [Repository Architecture, Autonomous Execution & Citation](#10-repository-architecture-autonomous-execution--citation)
 
 ---
 
 ## 1. Executive Summary & Core Paradigm Shift
 
-For over a century, theoretical physics and celestial mechanics have operated under a strict dichotomy: the microscopic quantum realm is discrete and governed by algebraic invariants, whereas the macroscopic Solar System is treated as a continuous Euclidean fluid governed exclusively by continuous Newton–Kepler differential equations. While locally accurate for short-term ephemerides, continuous Euclidean metrics cannot explain why the global phase space of the Solar System exhibits **sharp quantization cliffs, discrete population shells, and exact algebraic symmetries**.
+For over a century, theoretical physics and celestial mechanics have operated under an artificial dichotomy: the microscopic quantum world is strictly discrete and governed by algebraic invariants, whereas the macroscopic Solar System is modeled as a continuous Euclidean fluid governed solely by continuous Newton–Kepler differential equations. While locally accurate for short-term orbital integration, continuous Euclidean metrics cannot explain why the global phase space of the Solar System exhibits **sharp quantization cliffs (the ~48 AU Kuiper Cliff), discrete population shells, detached Sednoid perihelia, and azimuthal ETNO clustering**.
 
 The **IT³ (Invariant Topological Torus / Flat Irrational Torus)** framework resolves this dichotomy on the compact spectral manifold $M_{\text{tot}} = S^4 \times T^3$ defined over the constructible biquadratic number field:
 
-$$K = \mathbb{Q}(\sqrt{2}, \sqrt{3}, \sqrt{5}), \qquad [K:\mathbb{Q}] = 8, \qquad \text{Gal}(K/\mathbb{Q}) \cong (\mathbb{Z}/2\mathbb{Z})^3$$
+$$K = \mathbb{Q}(\sqrt{2}, \sqrt{3}, \sqrt{5}), \qquad [K:\mathbb{Q}] = 8, \qquad \mathrm{Gal}(K/\mathbb{Q}) \cong (\mathbb{Z}/2\mathbb{Z})^3$$
 
-$$\Delta_K = \prod_{i=1}^{7} f_i = 8 \cdot 12 \cdot 5 \cdot 24 \cdot 40 \cdot 60 \cdot 120 = 2^{16} \cdot 3^4 \cdot 5^4 = 3,317,760,000, \qquad \sqrt{|\Delta_K|} = 57,600 = 240^2$$
+$$\Delta_K = \prod_{i=1}^{7} f_i = 8 \cdot 12 \cdot 5 \cdot 24 \cdot 40 \cdot 60 \cdot 120 = 2^{16} \cdot 3^4 \cdot 5^4 = 3,317,760,000, \qquad \sqrt{\lvert\Delta_K\rvert} = 57,600 = 240^2$$
 
-Using the **frozen K-PHAM v2.2 (Kepler–Perez–Logvinovich Harmonic Atomic Metric)** iterative floor-cascade operator ($\mathcal{D}: \mathbb{R}_{\ge 0} \to \mathbb{Z}_{\ge 0}$, $x_{k+1} = \lfloor x_k / \sqrt{3} \rfloor$) with **zero empirical curve-fitting parameters ($p = 0$)**, this repository audits **1,579,912 real orbits** from the Harvard–Smithsonian Minor Planet Center (`MPCORB.DAT`), **852 comets** (`CometEls.txt`), and **43,037 Near-Earth Asteroids** (`NEA.txt` / `PHA.txt`).
+Using the **frozen K-PHAM v2.2 (Kepler–Perez–Logvinovich Harmonic Atomic Metric)** iterative floor-cascade operator ($\mathcal{D}: \mathbb{R}_{\ge 0} \to \mathbb{Z}_{\ge 0}$, $x_{k+1} = \lfloor x_k / \sqrt{3} \rfloor$) with **zero empirical curve-fitting parameters ($p = 0$)**, this repository audits **1,579,912 real orbits** from the Harvard–Smithsonian Minor Planet Center (`MPCORB.DAT`), **852 bound and hyperbolic comets** (`CometEls.txt`), and **43,037 Near-Earth Asteroids** (`NEA.txt` / `PHA.txt`).
 
 ![IT³ 6-Panel Proof-Ledger Dashboard](./figures/physically_grounded_model_v20.png)
 
-### Key Structural Pillars of the IT³ Solar System Architecture
-* **The $O_h$ Cuboctahedral Sphere Ladder $(\sqrt{3})^m$:** A cube of side $a$ has inscribed sphere radius $r_{\text{in}} = a/2$, edge-midpoint (cuboctahedral) radius $R_{\text{mid}} = a/\sqrt{2}$, and circumscribed sphere radius $R_{\text{out}} = a\sqrt{3}/2$, yielding the exact geometric step $\Lambda_Y = R_{\text{out}}/r_{\text{in}} = \sqrt{3}$ and surface area ratio $S_{\text{out}}/S_{\text{in}} = 3$.
-* **Zero-Parameter Radial Shells ($R_1 = 27\text{ AU}$, $R_2 = 27\sqrt{3}\text{ AU}$, $r_{\text{in}} = 243\text{ AU}$):**Evaluated at the internal valence tensor dimension $m_1 = \dim(\mathcal{E}_l \otimes \mathcal{E}_q) = v_l v_q = 2 \times 3 = 6$ and the Dirichlet unit rank $m_2 = \text{rk}(\mathcal{O}_K^\times) = 8 - 1 = 7$ under unit astronomical scale $r_0 = 1.0\text{ AU}$ (`Postulate P2_UNIT_AU`), the dimensionless ladder $R(m)/r_0 = (\sqrt{3})^m$ yields:
-  * **Core Neck Boundary ($m=6$):** $R_1 = (\sqrt{3})^6\text{ AU} = 3^3\text{ AU} = \mathbf{27.0\text{ AU}}$
-  * **Macroscopic Valence Shell ($m=7$):** $R_2 = (\sqrt{3})^7\text{ AU} = \mathbf{27\sqrt{3}\text{ AU} \approx 46.7654\text{ AU}}$ (matching the observed Kuiper Belt kernel density peak at $47.38\text{ AU}$ within $\delta = 1.29\%$, 1D Monte Carlo $p = 0.0255$).
-  * **Outer Phase-Transition & Cuboctahedral E-Node Shells ($m=10, 11$):** $r_{\text{in}} = (\sqrt{3})^{10} = \mathbf{243.0\text{ AU}}$, circumscribed vertex shell $R_{\text{out}} = (\sqrt{3})^{11} = \mathbf{243\sqrt{3} \approx 420.89\text{ AU}}$, and 12 cuboctahedral edge midpoints at $R_{\text{mid}} = R_{\text{out}}\sqrt{2/3} = \mathbf{243\sqrt{2} \approx 343.65\text{ AU}} \in \mathbb{Z}[\sqrt{2}]$.
-* **Exact Multipole Cancellation ($l=1,2,3 \equiv 0$):** By Kepler's Stella Octangula parity partition of the cube vertices $\{\pm 1, \pm 1, \pm 1\} = T_1 \sqcup T_2$ ($xyz = \pm 1$) and $O_h$ symmetry of the 12 cuboctahedral E-nodes, the dipole ($l=1$), quadrupole ($l=2$), and octupole ($l=3$) gravitational/topological moments vanish identically, leaving the **hexadecapole ($l=4$)** as the first non-zero anisotropic invariant. Furthermore, at the cube diagonal magic angle $\alpha_{\text{magic}} = \arccos(1/\sqrt{3}) \approx 54.7356^\circ$, the second Legendre polynomial vanishes identically ($P_2(\cos\alpha_{\text{magic}}) = 0$) and complements the torsion angle $\gamma = \arccos(\sqrt{2/3}) \approx 35.2644^\circ$ ($\alpha_{\text{magic}} + \gamma = 90^\circ$).
+---
+
+## 2. Closing the "Planet Nine" Hypothesis: Exact Quadrupole Collapse, Stella Octangula & Macroscopic Zeeman Effect
+
+A central puzzle of modern planetary astronomy is the apparent azimuthal clustering of Extreme Trans-Neptunian Objects (ETNOs) and detached Sednoids ($a > 150\text{ AU}$, $q > 30\text{ AU}$). The conventional **Planet Nine hypothesis** (Batygin & Brown 2016) postulates a single localized $5\text{–}10\,M_\oplus$ baryonic planet at $400\text{–}800\text{ AU}$. However, a single localized point-mass encounters three severe observational and dynamical contradictions:
+1. **Uncompensated Dipole & Quadrupole Tidal Torque ($l=1, 2$):** A single massive body breaks spherical symmetry at multipole orders $l=1$ and $l=2$, generating a long-range tidal quadrupole field $\Phi_2 \propto r^{-3}$ that induces directional residuals in Cassini Saturn range telemetry unless restricted to narrow sky zones.
+2. **Infrared & Optical Survey Nulls:** Wide-field infrared surveys (**CatWISE2020**, WISE/NEOWISE) and deep optical searches have detected **zero luminous brown dwarfs or super-Earth point sources** along the predicted orbits (confirmed in our ledger by `catwise2020_e5_brown_dwarf_scan = 0 sources`).
+3. **Secular Instability:** A single point-mass perturber struggles to simultaneously maintain the detached perihelion of Sedna ($q = 76\text{ AU}$), the high inclination of 2015 BP519 ($i = 54^\circ$), and the sharp Kuiper Cliff at $48\text{ AU}$.
+
+### 2.1. The IT³ Resolution: Exact $O_h$ Quadrupole Collapse ($l=1, 2, 3 \equiv 0$)
+
+In the IT³ framework, the outer Solar System is not shepherded by a single asymmetric planet, but by the **octahedral $O_h$ vacuum crystal** formed by the **Stella Octangula** (Kepler's dual interpenetrating regular tetrahedra $T_1 \sqcup T_2$) and the **12 primary cuboctahedral E-nodes** ($m = 6 \oplus 12$ fractal superposition):
+
+* **Unique Parity Partition of the Cube (Stella Octangula $T_1 \sqcup T_2$):** The 8 vertices of the fundamental cube $\{\pm 1, \pm 1, \pm 1\}$ partition uniquely by coordinate-product parity $xyz = \pm 1$ into two dual regular tetrahedra of squared edge length $d^2 = 8$:
+  $$T_1 = \{(+1,+1,+1), (+1,-1,-1), (-1,+1,-1), (-1,-1,+1)\} \quad (xyz = +1)$$
+  $$T_2 = \{(-1,-1,-1), (-1,+1,+1), (+1,-1,+1), (+1,+1,-1)\} \quad (xyz = -1)$$
+* **The 12 Primary Cuboctahedral E-Nodes ($m=6$):** The midpoints of the 12 edges of the cube form the vertices of a semi-regular cuboctahedron:
+  $$\mathcal{V}_{12} = \{(\pm 1, \pm 1, 0), \; (\pm 1, 0, \pm 1), \; (0, \pm 1, \pm 1)\} \quad \text{at radius } R_{\text{mid}} = R_{\text{out}}\sqrt{\frac{2}{3}} = 243\sqrt{2} \approx 343.6539\text{ AU}$$
+  nested between the $m=10$ inscribed sphere $r_{\text{in}} = (\sqrt{3})^{10} = 243.0\text{ AU}$ and the $m=11$ circumscribed sphere $R_{\text{out}} = (\sqrt{3})^{11} = 243\sqrt{3} \approx 420.8883\text{ AU}$ ($S_{\text{out}} / S_{\text{in}} = 3$).
+
+**Theorem (`T_STELLA_MULTIPOLE` — Identical Collapse of Dipole, Quadrupole & Octupole Moments):**  
+For any symmetric distribution over the 12 cuboctahedral E-nodes $\mathbf{x}_n \in \mathcal{V}_{12}$ (and across $T_1 \sqcup T_2$), all multipole moments of order $l = 1$, $l = 2$, and $l = 3$ collapse identically to zero:
+
+$$D_i = \sum_{n=1}^{12} x_{n,i} \equiv 0 \quad (l=1 \text{ Dipole})$$
+
+$$Q_{ij} = \sum_{n=1}^{12} \left(3 x_{n,i} x_{n,j} - \lVert\mathbf{x}_n\rVert^2 \delta_{ij}\right) = 24\,\delta_{ij} - 12(2)\,\delta_{ij} \equiv 0 \quad (l=2 \text{ Quadrupole})$$
+
+$$O_{ijk} = \sum_{n=1}^{12} x_{n,i} x_{n,j} x_{n,k} \equiv 0 \quad (l=3 \text{ Octupole})$$
+
+Simultaneously, along the 8 cube vertices (inclined at the $O_h$ magic angle $\alpha_{\text{magic}} = \arccos(1/\sqrt{3}) \approx 54.7356^\circ$, complementary to the torsion angle $\gamma = \arccos(\sqrt{2/3}) \approx 35.2644^\circ$, $\alpha_{\text{magic}} + \gamma = 90^\circ$), the second Legendre polynomial vanishes identically:
+
+$$P_2(\cos\alpha_{\text{magic}}) = \frac{1}{2}\left(3\cos^2\alpha_{\text{magic}} - 1\right) = \frac{1}{2}\left(3 \cdot \frac{1}{3} - 1\right) \equiv 0$$
+
+The first non-vanishing anisotropic multipole of the $O_h$ vacuum crystal is the **hexadecapole ($l = 4$)**:
+
+$$\mathcal{I}_4 = \sum_{n=1}^{12} \left(x_{n,x}^4 + x_{n,y}^4 + x_{n,z}^4 - \frac{3}{5}\lVert\mathbf{x}_n\rVert^4\right) = -4.8 \ne 0$$
+
+### 2.2. Physical Comparison: Why Planet Nine is Replaced by Topological Shepherding
+
+| Physical Observable / Constraint | Single Baryonic Planet Nine Hypothesis | IT³ $O_h$ Vacuum Lattice & Cartan Torsion ($p=0$) |
+| :--- | :--- | :--- |
+| **Dipole & Quadrupole Moments ($l=1, 2$)** | **Non-zero ($Q_{ij} \ne 0$):** Produces long-range $\propto r^{-3}$ tidal anomalies in planetary ephemerides. | **Identically Zero ($l=1,2,3 \equiv 0$):** Quadrupoles collapse completely via $O_h$ symmetry (`T_STELLA_MULTIPOLE`). |
+| **First Non-Zero Multipole Order** | $l = 1, 2$ (scales as $\Phi_2 \propto r^{-3}$, force $\propto r^{-4}$) | **$l = 4$ Hexadecapole** (scales as $\Phi_4 \propto r^{-5}$, force $\propto r^{-6}$): invisible to Saturn/Cassini, strong at $243\text{–}421\text{ AU}$. |
+| **Mechanism of ETNO Azimuthal Clustering** | Gravitational shepherding by an unseen $5\text{–}10\,M_\oplus$ body. | **Macroscopic Zeeman Effect:** Cartan torsion ($\tau_{\text{vac}} = (\Lambda_1+\Lambda_3)^{-1} \approx 0.06835$) splits azimuthal degeneracy into 12 E-node traps. |
+| **Wide-Field Infrared Surveys (CatWISE2020)** | Requires ad-hoc albedo/temperature bounds to explain non-detection. | **Naturally predicts 0 point-mass brown dwarfs** (`catwise2020_e5_brown_dwarf_scan = 0`). |
+| **Kuiper Cliff (~48 AU) & Detached Sednoids** | Requires separate mechanisms. | Unified via $R_2 = (\sqrt{3})^7 = 46.77\text{ AU}$ Valence Shell ($E_{\text{ion}}=0$) and $R_6 = (\sqrt{3})^{11} = 420.89\text{ AU}$ Sednoid shell. |
 
 ---
 
-## 2. Frozen Blind Predictions & 7-Tier Epistemic Proof Ledger
+## 3. Mathematical Framework: Perez Hourglass Manifold & K-PHAM v2.2 Cascade
 
-To guarantee total scientific transparency and eliminate any possibility of post-hoc numerology, `it3_master_v22.0.py` implements a strict **7-Tier Epistemic Proof Ledger** (`Release: IT3-v22.6-strict`):
+### 3.1. The Perez Hourglass Metric with Cartan Torsion
+The macroscopic vacuum manifold is modeled as a one-sheeted hyperboloid of revolution connecting the Northern baryonic bowl ($\lVert\mathrm{Wr}\rVert_{\text{dyn}} = +1.0904$, counter-clockwise) and the Southern vacuum bowl ($\lVert\mathrm{Wr}\rVert_{\text{dyn}} = -1.0904$, clockwise) across the central Solar neck ($r = r_{\text{neck}}$):
 
-1. **`EXACT_MATH` (8/45 claims, 17.78%):** Pure algebraic and geometric theorems of $K = \mathbb{Q}(\sqrt{2},\sqrt{3},\sqrt{5})$, $E_8$, and $O_h$, verified by exact assertions in `PHASE 0A`.
-2. **`DERIVED_FROM_POSTULATES` (4/45 claims, 8.89%):** Blind physical predictions derived strictly from `EXACT_MATH` theorems and three explicit postulates (`P1_INRADIUS`, `P2_UNIT_AU`, `P3_SURFACE_TENSION`) with `external_reference = None`.
-3. **`EMPIRICAL_TEST` & `NULL_RESULT` (14/45 claims, 31.11%):** Objective statistical tests on the MPC catalogs, including sliding equal-log-width window controls ($\Delta\ln R = \ln 2$), bootstrap confidence intervals, and honest negative/null outcomes.
-4. **`ANSATZ_DIAGNOSTIC`, `VISUAL_RHYME` & `OPEN_CONJECTURE` (19/45 claims, 42.22%):** Exploratory constant matching (e.g., $N_{\text{twist}} = 103$ vs unfiltered minimum $102$, $\alpha^{-1}$ divisor grid sensitivity, Uranus obliquity ablation) and micro–macro visual analogies (Laguerre $L_2^{(0)}$ Stark profile). **All 19 exploratory items are locked with `is_predictive = False` and cannot be used as proofs.**
+$$ds^2 = -c^2 dt^2 + dr^2 + r^2 d\theta^2 + r^2 \sin^2\theta\, d\phi^2 + 2\,\epsilon_{\text{topo}}\, r\, dr\, d\phi, \qquad \epsilon_{\text{topo}} = \frac{\lVert\mathrm{Wr}\rVert_{\text{dyn}}}{N_{\text{twist}}} \approx 0.010586$$
 
-### Epistemic Ledger Audit Metrics (Verified by `--run-tests`)
-* **Total Registered Claims:** `45` (`8` Exact Math + `4` Derived Predictive + `14` Empirical/Null + `19` Exploratory Diagnostics)
-* **Unproven Predictive Flag Share (Flag Hygiene):** **`0.000000`** (100% of `is_predictive=True` claims are strictly proven or derived from explicit postulates without external catalog references).
-* **Exploratory Diagnostic Claim Share:** **`0.422222`** (`19/45` claims honestly isolated in the diagnostic tier).
+$$r^2 - z^2 = r_{\text{neck}}^2 \implies K(r,z) = -\frac{r_{\text{neck}}^2}{(r_{\text{neck}}^2 + 2z^2)^2} < 0$$
+
+By **Lemma 2.2** (`Solar_v16.pdf`), the Gaussian curvature $K(r,z)$ is strictly negative everywhere and reaches its deepest saddle-point minimum $K(0) = -1/r_{\text{neck}}^2$ at the Solar neck ($z=0$), trapping **99.44% of all known Solar System bodies ($1,571,075 / 1,579,912$)** inside the $S_n = 0$ topological isthmus.
+
+### 3.2. The Frozen K-PHAM v2.2 Iterative Floor-Cascade Operator
+For every object with heliocentric osculating orbital elements $(a, e, i, \omega, \Omega)$, the topological aphelion radius $R_{\text{eff}}$ is:
+
+$$Q = a(1 + e), \qquad \Phi_{\text{topo}}(e) = 1 + \frac{1}{2}e^2, \qquad R_{\text{eff}} = Q \cdot \Phi_{\text{topo}}(e)$$
+
+The normalized radial coordinate $n_{\text{raw}}$ uses the two-branch piecewise metric around the $m=10$ inscribed sphere $R_{\text{phase}} = (\sqrt{3})^{10}\text{ AU} = 243.0\text{ AU}$, where $\Lambda_1 = \sqrt{3}(3+2\sqrt{2}) \approx 10.095$ and $\lambda_{\text{vac}} = 243/\Lambda_1 \approx 24.07\text{ AU}$:
+
+$$n_{\text{raw}} = \begin{cases} R_{\text{eff}} / 10.095 & \text{if } R_{\text{eff}} < 243.0\text{ AU} \\ (R_{\text{eff}} - 243.0) / 24.07 & \text{if } R_{\text{eff}} \ge 243.0\text{ AU} \end{cases}$$
+
+The principal floor $S_n$, transverse phase $S_k$, and vertical phase $S_h$ are extracted via the homogeneous iterative floor cascade ($x_0 = n_{\text{raw}}$):
+
+$$x_{k+1} = \left\lfloor \frac{x_k}{\sqrt{3}} \right\rfloor, \qquad S_n = \min\{k \ge 0 : x_{k+1} = 0\}$$
+
+$$k_{\text{raw}} = \frac{\omega \bmod 360^\circ}{30^\circ} + 1 + \frac{i}{90^\circ}\cdot 0.5\sin\Omega, \qquad h_{\text{raw}} = 1 + 5\left(\frac{i}{90^\circ}\right)$$
+
+* **Analytic Valence Band ($S_n = 2$):** Solving $x_3 = 0, x_2 = 1 \iff x_1 \in \{2, 3\} \iff n_{\text{raw}} \in [2\sqrt{3}, 4\sqrt{3})$ yields the exact analytic band $R_{\text{eff}} \in [34.97, 69.94)\text{ AU}$ in the inner branch and the outer recurrence $R_{\text{eff}} \in [326.38, 409.77)\text{ AU}$ above $243\text{ AU}$.
+* **Macroscopic Ionization Energy ($E_{\text{ion}}$):** Measured relative to the derived $m=7$ Valence Shell $R_2 = 27\sqrt{3}\text{ AU} \approx 46.77\text{ AU}$:
+  $$E_{\text{ion}}^{\text{bound}} = \frac{\ln(R_{\text{eff}} / R_2)}{\ln\sqrt{3}} \quad (e < 1), \qquad E_{\text{ion}}^{\text{free}} = \frac{\ln((e - 1)R_2 / q)}{\ln\sqrt{3}} \quad (e > 1)$$
+
+---
+
+## 4. Frozen Blind Predictions & 7-Tier Epistemic Proof Ledger
+
+To guarantee complete scientific integrity and eliminate post-hoc numerology, `it3_master_v22.0.py` enforces a machine-verified **7-Tier Epistemic Proof Ledger** (`Release: IT3-v22.6-strict`):
+
+* **Total Registered Claims in Ledger:** `45` (`8` Exact Math + `4` Derived Predictive + `14` Empirical/Null + `19` Exploratory Diagnostics)
+* **Unproven Predictive Flag Share (Flag Hygiene):** **`0.000000`** (100% of `is_predictive=True` claims are strictly proven or derived from explicit postulates with `external_reference = None`).
+* **Exploratory Diagnostic Claim Share:** **`0.422222`** (`19/45` exploratory ansätze, visual rhymes, and open conjectures are strictly isolated with `is_predictive = False`).
 
 | Claim / Theorem ID | Category | Value & Unit | Proof / Postulate Dependency | Epistemic Role |
 | :--- | :--- | :--- | :--- | :--- |
 | `Delta_K_field_discriminant` | `EXACT_MATH` | $3,317,760,000$ | `T2.1_DISC` ($\prod f_i = 2^{16}3^45^4$) | Exact Algebraic Identity |
-| `E8_Cartan_determinant_and_roots` | `EXACT_MATH` | $\det(G_{E_8}) = 1$, $\tau_8 = 240$ | `T_E8_CARTAN` ($\sqrt{\|\Delta_K\|} = 240^2$) | Exact Lattice Identity |
+| `E8_Cartan_determinant_and_roots` | `EXACT_MATH` | $\mathrm{det}(G_{E_8}) = 1$, $\tau_8 = 240$ | `T_E8_CARTAN` ($\sqrt{\lvert\Delta_K\rvert} = 240^2$) | Exact Lattice Identity |
 | `Kummer_wall_sqrt13_exclusion` | `EXACT_MATH` | $13 \nmid 30 \implies \sqrt{13} \notin K$ | `T2.9_KUMMER` (Square-free sieve) | Exact Field Exclusion |
-| `oh_sphere_ladder_27_and_27sqrt3` | `EXACT_MATH` | $(\sqrt{3})^6=27$, $(\sqrt{3})^7=46.7654$ | `T_OH_SPHERE_LADDER` ($v_l v_q=6$, $\text{rk}=7$) | Exact Geometric Ratio |
+| `oh_sphere_ladder_27_and_27sqrt3` | `EXACT_MATH` | $(\sqrt{3})^6=27$, $(\sqrt{3})^7=46.7654$ | `T_OH_SPHERE_LADDER` ($v_l v_q=6$, $\mathrm{rk}=7$) | Exact Geometric Ratio |
 | `FCC_kepler_packing_and_bicone_sum` | `EXACT_MATH` | $\Sigma C(n)=86$, $172=4\cdot 43$, $\pi/\sqrt{18}$ | `T_OH_FCC` ($\{2,8,8,18,18,32\}$) | Exact Packing Identity |
-| `stella_octangula_and_oh_multipole` | `EXACT_MATH` | $l=1,2,3 \equiv 0$, $\alpha+\gamma=90^\circ$ | `T_STELLA_MULTIPOLE` ($P_2(\cos\alpha)=0$) | Exact Multipole Theorem |
+| `stella_octangula_and_oh_multipole` | `EXACT_MATH` | $l=1,2,3 \equiv 0$, $\alpha+\gamma=90^\circ$ | `T_STELLA_MULTIPOLE` ($P_2(\cos\alpha)=0$) | Exact Multipole Collapse |
 | `galois_18deg_sin_in_K_cos_not_in_K` | `EXACT_MATH` | $\sin 18^\circ \in K$, $\cos 18^\circ \notin K$ | `T_GALOIS_18DEG` ($\mathbb{Z}/4\mathbb{Z} \not\subset (\mathbb{Z}/2\mathbb{Z})^3$) | Galois Obstruction Proof |
 | `kpham_prograde_domain_and_sk2_prior`| `EXACT_MATH` | $P_0(S_k=2) = (5-\sqrt{2})/6 \approx 0.597631$ | `T_KPHAM_MEASURE` (Prograde $2\times 3$) | Exact Analytical Prior |
 | **`pinned_inradius_metric_scale_2r`** | **`DERIVED`** | **$0.91019639$ (dimensionless)** | `T2.5_PYTH` + `P1_INRADIUS` | **Blind Prediction** |
@@ -81,7 +148,7 @@ To guarantee total scientific transparency and eliminate any possibility of post
 
 ---
 
-## 3. Interactive 3D & 2D WebGL Visualizations (Live Browser Links)
+## 5. Interactive 3D & 2D WebGL Visualizations (Live Browser Links)
 
 All 11 interactive Plotly models in [`./plots_html/`](./plots_html/) can be rotated, zoomed, and inspected directly in your web browser without downloading anything via the live links below:
 
@@ -101,9 +168,9 @@ All 11 interactive Plotly models in [`./plots_html/`](./plots_html/) can be rota
 
 ---
 
-## 4. 11-Front Empirical Audit Across 1,579,912 Real MPCORB Orbits
+## 6. 11-Front Empirical Audit Across 1,579,912 Real MPCORB Orbits
 
-### 4.1. K-PHAM v2.2 $S_n$ Floor Population Distribution (`MPCORB.DAT`, $N = 1,579,912$)
+### 6.1. K-PHAM v2.2 $S_n$ Floor Population Distribution (`MPCORB.DAT`, $N = 1,579,912$)
 *(Full machine-readable summary: [`./reports/it3_floor_distribution_summary.csv`](./reports/it3_floor_distribution_summary.csv))*
 
 | Floor $S_n$ | Object Count | Catalog Share | Bowl Radius $R_{\text{bowl}}$ | Physical & Dynamical Regime |
@@ -120,34 +187,32 @@ All 11 interactive Plotly models in [`./plots_html/`](./plots_html/) can be rota
 | **$S_n = 9$** | **3** | **0.0002%** | $2187.00\text{ AU}$ | **Hyper-Deep Oort Boundary** (`K15Fo4F`, `K14F72E`, `K26ED0B`) |
 | **$S_n = 10$** | **1** | **0.0001%** | $3788.00\text{ AU}$ | **Observed MPCORB Outer Limit** (`K15Fr9W` at $Q = 9352.98\text{ AU}$, $R_{\text{eff}} = 13982.22\text{ AU}$) |
 
-### 4.2. Summary of the 11 Validation Fronts & Rigorous Null Controls
+### 6.2. Summary of the 11 Validation Fronts & Rigorous Null Controls
 
 | Front | Audit Target | Sample Size | Key Quantitative Result | Rigorous Control / Epistemic Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| **`[1]+[A]`** | **Cometary Bound/Free Dichotomy** | $852$ bound, $68$ free (`CometEls.txt`) | Shared 11-bin radial $\Delta H_{\text{shared}} = -0.4669\text{ bits}$ ($H_{\text{free}}=1.5569\text{b}$, $H_{\text{bound}}=2.0238\text{b}$); discrete $H(S_n) = 1.5414\text{b}$ | Eliminates bin-count bias via identical $\log_{10}(R_{\text{eff}})$ edges (`EMPIRICAL_TEST`) |
+| **`[1]+[A]`** | **Cometary Bound/Free Dichotomy** | $852$ bound, $68$ free (`CometEls.txt`) | Shared 11-bin radial $\Delta H_{\text{shared}} = -0.4669\text{ bits}$ ($H_{\text{free}}=1.5569\text{b}$, $H_{\text{bound}}=2.0238\text{b}$); discrete $H(S_n) = 1.5414\text{b}$; 25-bin $\Delta H = +2.175\text{b}$ | Eliminates bin-count bias via identical $\log_{10}(R_{\text{eff}})$ edges (`EMPIRICAL_TEST`) |
 | **`[B]`** | **Macro-Compton Periodogram** | $852$ bound ($155$ deep $S_n \ge 3$) | `B1` $\log(\Lambda_1^2)=4.624$: $\text{SNR} = -0.07\sigma$; `B3` $\log(\sqrt{3})=0.549$: $\text{SNR} = -0.19\sigma$ | **Honest `NULL_RESULT`**: JFC dominance ($S_n=0$) compresses range into $<1$ period |
 | **`[T1]`** | **Table 1 Benchmark Objects** | $7$ key TNOs/ETNOs | **Pluto ($2$), Makemake ($2$), Haumea ($2$), Eris ($3$), 2012 VP113 ($4$), Sedna ($6$), 2015 TG387 ($8$)** | **$7/7$ ($100\%$) exact match** with frozen K-PHAM v2.2 cascade (`EMPIRICAL_TEST`) |
 | **`[2]`** | **$2\times 3$ Lattice Confinement** | $1,579,912$ orbits | **$100.0000\%$** of prograde orbits ($i \le 90^\circ$) in $\{1,2\}\times\{1,2,3\}$; **115** retrograde orbits ($i > 126^\circ$) in $S_h=4$ | Prograde confinement proven as exact domain theorem `T_KPHAM_MEASURE` (`EXACT_MATH` / `EMPIRICAL_TEST`) |
 | **`[3]`** | **NEA / PHA Micro-Shells** | $43,037$ NEAs (`NEA.txt`+`PHA.txt`) | Dominant cell $(S_k=2, S_h=1)$ contains **$47.75\%$** of all $S_n=0$ NEAs | Benchmarked against exact uniform-$\omega$ prior $P_0(S_k=2) = 59.76\%$ (`EMPIRICAL_TEST`) |
-| **`[C]`** | **Centaur $d$-Shell ($S_k=2$)** | $17,572$ Centaurs ($5 < a < 30\text{ AU}$) | Observed $S_k=2$ share is **$60.03\%$** vs analytical uniform prior $(5-\sqrt{2})/6 = \mathbf{59.76\%}$ ($\Delta = +0.26\%$, $p = 0.4792$) | **Closed Loophole (`NULL_RESULT`)**: $60\%$ share is the exact algebraic measure of the $S_k=2$ interval under uniform $\omega$ |
-| **`[D]`** | **Asteroid Family Variance** | $344$ Main-Belt cells ($N \ge 5$) | $\operatorname{Var}(S_n) = \mathbf{0.0000}$ (all $S_n=0$), $\operatorname{Var}(R_{\text{eff}}) = 0.3282\text{ AU}^2$ ($\sigma = 0.573\text{ AU}$) | High $R_{\text{eff}}$ spread confirms dynamical/collisional debris origin (`EMPIRICAL_TEST`) |
-| **`[E]`** | **Pure $\Delta\lambda$ Jovian Trojans** | $16,112$ epoch-valid Trojans | $L_4 = 10,183$, $L_5 = 5,929 \implies L_4/L_5 = \mathbf{1.7175}$ ($\|\Delta\varphi\| = 0.0995$) | Evaluated via pure mean-longitude resonant argument $\Delta\lambda = \lambda_{\text{ast}} - \lambda_{J,\text{mean}}(\text{JD})$ (`EMPIRICAL_TEST`) |
+| **`[C]`** | **Centaur $d$-Shell ($S_k=2$)** | $17,572$ Centaurs ($5 < a < 30\text{ AU}$) | Observed $S_k=2$ share is **$60.03\%$** vs analytical uniform prior $(5-\sqrt{2})/6 = \mathbf{59.76\%}$ ($\Delta = +0.26\%$, $p = 0.4792$) | **Closed Loophole (`NULL_RESULT`)**: $60\%$ share equals the exact algebraic measure of $S_k=2$ under uniform $\omega$ |
+| **`[D]`** | **Asteroid Family Variance** | $344$ Main-Belt cells ($N \ge 5$) | $\mathrm{Var}(S_n) = \mathbf{0.0000}$ (all $S_n=0$), $\mathrm{Var}(R_{\text{eff}}) = 0.3282\text{ AU}^2$ ($\sigma = 0.573\text{ AU}$) | High $R_{\text{eff}}$ spread confirms dynamical/collisional debris origin (`EMPIRICAL_TEST`) |
+| **`[E]`** | **Pure $\Delta\lambda$ Jovian Trojans** | $16,112$ epoch-valid Trojans | $L_4 = 10,183$, $L_5 = 5,929 \implies L_4/L_5 = \mathbf{1.7175}$ ($\lvert\Delta\varphi\rvert = 0.0995$) | Evaluated via pure mean-longitude resonant argument $\Delta\lambda = \lambda_{\text{ast}} - \lambda_{J,\text{mean}}(\text{JD})$ (`EMPIRICAL_TEST`) |
 | **`[4]&[5F]`**| **Live MPC Daily Streams** | `newnumids.dat` & `neocp.txt` | $21$ new identifications ($3$ matched in `MPCORB`, $100\%$ in $S_n=0$, $2\times 3$ lattice) | Automated prospective protocol for newly numbered bodies (`EMPIRICAL_TEST`) |
 | **`[P7]`** | **Sliding $\Delta\ln R = \ln 2$ Control** | Outer belt $[15, 135]\text{ AU}$ | Theoretical $S_n=2$ band $[34.97, 69.94)\text{ AU}$ captures **$6,289$** objects ($6.94\times$ adjacent bands) | Empirical argmax $[40.0, 80.0)\text{ AU}$ captures $6,441$ objects (**$97.64\%$ efficiency**; $\Delta R_0 = -5.03\text{ AU}$) |
 | **`[P7.5]`** | **1D vs 2D Monte Carlo & $i$-Scan** | $20,000$ MC trials & $200$ bootstraps | 1D Kuiper peak $p = \mathbf{0.0255}$; 2D Joint Neptune+MMR $p = \mathbf{0.0519}$ (`NULL`); $i$-drop argmax $= \mathbf{29.75^\circ}$ | Reports both the 1D valence match ($46.77$ vs $47.38\text{ AU}$) and the 2D joint negative result ($27$ vs $30.07\text{ AU}$) |
 
 ---
 
-## 5. Complete Catalog of 47 Extreme Deep Objects ($S_n \ge 6$) & Live Blind Confirmations
+## 7. Complete Catalog of All 47 Extreme Deep Objects (Sn >= 6) & Live Blind Confirmations
 
-When the frozen K-PHAM v2.2 operator was run on the latest Harvard MPC catalog (`1,579,912` objects, +4,133 new objects compared to the previous release), **3 newly added deep-space objects (`K25Me3C` at $S_n=7$, `K26EE7W` at $S_n=6$, and `K26H21Z` at $S_n=6$)** automatically quantized into the exact outer shells without a single parameter adjustment.
+When the frozen K-PHAM v2.2 operator was executed on the latest Harvard MPC catalog (`1,579,912` objects, +4,133 new objects compared to the previous snapshot), **3 newly added deep-space objects (`K25Me3C` at $S_n=7$, `K26EE7W` at $S_n=6$, and `K26H21Z` at $S_n=6$)** automatically quantized into the exact outer shells without a single parameter adjustment. Below is the complete, un-truncated table of all **47 extreme deep objects ($S_n \ge 6$)** ([`./reports/it3_extreme_deep_objects_sn_ge_6.csv`](./reports/it3_extreme_deep_objects_sn_ge_6.csv)):
 
-*(Full CSV table in repository: [`./reports/it3_extreme_deep_objects_sn_ge_6.csv`](./reports/it3_extreme_deep_objects_sn_ge_6.csv))*
-
-| Rank | MPC Code | Designation / Name | Floor $S_n$ | $S_k$ | $S_h$ | Aphelion $Q$ (AU) | $R_{\text{eff}}$ (AU) | Ionization $E_{\text{ion}}$ | Classification |
+| Rank | MPC Code | Designation / Name | Floor $S_n$ | $S_k$ | $S_h$ | Aphelion $Q$ (AU) | $R_{\text{eff}}$ (AU) | Ionization $E_{\text{ion}}$ | Classification / Note |
 | :-: | :--- | :--- | :-: | :-: | :-: | --: | --: | --: | :--- |
-| 1 | `K15Fr9W` | 2015 FW419 | **10** | 2 | 1 | 9,352.98 | 13,982.22 | $+10.38$ | Extreme Oort Object |
-| 2 | `K15Fo4F` | 2015 FF415 | **9** | 2 | 1 | 5,708.89 | 8,521.88 | $+9.48$ | Hyper-Deep ETNO |
+| 1 | `K15Fr9W` | 2015 FW419 | **10** | 2 | 1 | 9,352.98 | 13,982.22 | $+10.38$ | Absolute Outer Limit ($S_n=10$) |
+| 2 | `K15Fo4F` | 2015 FF415 | **9** | 2 | 1 | 5,708.89 | 8,521.88 | $+9.48$ | Hyper-Deep Oort Object |
 | 3 | `K14F72E` | 2014 FE72 | **9** | 1 | 2 | 5,282.93 | 7,853.26 | $+9.33$ | Hyper-Deep ETNO |
 | 4 | `K26ED0B` | 2026 EB130 | **9** | 2 | 1 | 4,680.93 | 6,970.09 | $+9.11$ | Hyper-Deep ETNO |
 | 5 | `K17M07B` | 2017 MB7 | **8** | 1 | 3 | 3,455.06 | 5,173.75 | $+8.57$ | Ultra-Deep Damocloid/ETNO |
@@ -158,7 +223,7 @@ When the frozen K-PHAM v2.2 operator was run on the latest Harvard MPC catalog (
 | 10 | `K25Mc7P` | 2025 MP387 | **7** | 2 | 1 | 1,959.95 | 2,888.06 | $+7.51$ | Extreme ETNO ($S_n=7$) |
 | 11 | `~0CeZ` | ~0CeZ | **7** | 2 | 3 | 1,945.30 | 2,889.34 | $+7.51$ | Extreme ETNO ($S_n=7$) |
 | 12 | `K21RK5R` | 2021 RR205 | **7** | 2 | 1 | 1,843.34 | 2,660.23 | $+7.36$ | Extreme ETNO ($S_n=7$) |
-| 13 | `K25Me3C` | **2025 MC403 (New Live Hit)** | **7** | 2 | 1 | 1,686.83 | 2,453.20 | $+7.21$ | **New MPCORB Addition** |
+| 13 | `K25Me3C` | **2025 MC403 (New Live Hit)** | **7** | 2 | 1 | 1,686.83 | 2,453.20 | $+7.21$ | **Blind Confirmation in New MPCORB** |
 | 14 | `K21D18K` | 2021 DK18 | **7** | 2 | 1 | 1,677.33 | 2,431.40 | $+7.19$ | Extreme ETNO ($S_n=7$) |
 | 15 | `K17OK1F` | 2017 OF201 | **7** | 2 | 1 | 1,604.88 | 2,321.91 | $+7.11$ | Extreme ETNO ($S_n=7$) |
 | 16 | `K25Nn7K` | 2025 NK497 | **7** | 1 | 1 | 1,590.69 | 2,344.99 | $+7.13$ | Extreme ETNO ($S_n=7$) |
@@ -170,18 +235,84 @@ When the frozen K-PHAM v2.2 operator was run on the latest Harvard MPC catalog (
 | 22 | `K15Fn3C` | 2015 FC393 | **7** | 2 | 1 | 1,345.47 | 2,004.49 | $+6.84$ | Extreme ETNO ($S_n=7$) |
 | 23 | `K20K11X` | 2020 KX11 | **7** | 1 | 2 | 1,318.61 | 1,968.46 | $+6.81$ | Extreme ETNO ($S_n=7$) |
 | 24 | `K25Md6U` | 2025 MU396 | **7** | 1 | 1 | 1,318.34 | 1,936.75 | $+6.78$ | Extreme ETNO ($S_n=7$) |
-| 25–47 | ★ `90377` / `~0caL` | **Sedna ($S_n=6$), 2015 BP519 ($S_n=6$)** & 21 others | **6** | 1..2 | 1..4 | $809.45\text{–}1,237.08$ | $1,204.62\text{–}1,779.70$ | $+5.91\text{..}+6.62$ | See [`it3_extreme_deep_objects_sn_ge_6.csv`](./reports/it3_extreme_deep_objects_sn_ge_6.csv) |
+| 25 | `K15KG3G` | 2015 KG163 | **6** | 1 | 1 | 1,237.08 | 1,779.70 | $+6.62$ | Deep ETNO ($S_n=6$) |
+| 26 | `K26EC7G` | 2026 EG127 | **6** | 2 | 2 | 1,216.89 | 1,769.54 | $+6.61$ | Deep ETNO ($S_n=6$) |
+| 27 | `87269` | (87269) 2000 OO67 | **6** | 2 | 2 | 1,173.24 | 1,719.61 | $+6.56$ | Deep ETNO ($S_n=6$) |
+| 28 | `K13GE1W` | 2013 GW141 | **6** | 2 | 2 | 1,109.03 | 1,618.42 | $+6.45$ | Deep ETNO ($S_n=6$) |
+| 29 | `K15S57A` | 2015 SA57 | **6** | 2 | 2 | 1,103.19 | 1,624.39 | $+6.46$ | Deep ETNO ($S_n=6$) |
+| 30 | `q3622` | (523622) 2007 TG422 | **6** | 2 | 2 | 1,075.43 | 1,546.39 | $+6.37$ | Deep ETNO ($S_n=6$) |
+| 31 | `K25L02S` | 2025 LS2 | **6** | 2 | 1 | 1,017.51 | 1,446.85 | $+6.25$ | Deep ETNO ($S_n=6$) |
+| 32 | `K15Fu1Q` | 2015 FQ411 | **6** | 2 | 1 | 1,011.42 | 1,450.86 | $+6.25$ | Deep ETNO ($S_n=6$) |
+| 33 | ★ `90377` | **Sedna (90377)** | **6** | 2 | 1 | 1,011.24 | 1,385.09 | $+6.17$ | **Benchmark Detached Sednoid** |
+| 34 | `K25D51B` | 2025 DB51 | **6** | 1 | 3 | 967.57 | 1,424.78 | $+6.22$ | Deep ETNO ($S_n=6$) |
+| 35 | ★ `~0caL` | **2015 BP519 ("Caju")** | **6** | 2 | 3 | 937.13 | 1,340.14 | $+6.11$ | **Benchmark High-$i$ ETNO ($54^\circ$)** |
+| 36 | `~0bjT` | ~0bjT | **6** | 2 | 1 | 914.16 | 1,287.74 | $+6.04$ | Deep ETNO ($S_n=6$) |
+| 37 | `K26EE7W` | **2026 EW147 (New Live Hit)** | **6** | 1 | 1 | 911.18 | 1,289.65 | $+6.04$ | **Blind Confirmation in New MPCORB** |
+| 38 | `K26H21Z` | **2026 HZ21 (New Live Hit)** | **6** | 1 | 2 | 901.03 | 1,266.92 | $+6.01$ | **Blind Confirmation in New MPCORB** |
+| 39 | `K15AT8D` | 2015 AD298 | **6** | 2 | 2 | 892.96 | 1,303.45 | $+6.06$ | Deep ETNO ($S_n=6$) |
+| 40 | `K10BB8K` | 2010 BK118 | **6** | 2 | 4 | 892.84 | 1,327.17 | $+6.09$ | Retrograde Damocloid ($i > 126^\circ$) |
+| 41 | `~0dzN` | ~0dzN | **6** | 1 | 4 | 882.15 | 1,291.46 | $+6.04$ | Retrograde Damocloid ($i > 126^\circ$) |
+| 42 | `K19GJ8W` | 2019 GW198 | **6** | 2 | 1 | 861.96 | 1,254.42 | $+5.99$ | Deep ETNO ($S_n=6$) |
+| 43 | `~0c1e` | ~0c1e | **6** | 2 | 4 | 859.74 | 1,260.36 | $+6.00$ | Retrograde Damocloid ($i > 126^\circ$) |
+| 44 | `K13A60Z` | 2013 AZ60 | **6** | 2 | 1 | 848.29 | 1,256.96 | $+5.99$ | Deep ETNO ($S_n=6$) |
+| 45 | `K07D61A` | 2007 DA61 | **6** | 2 | 3 | 843.38 | 1,259.82 | $+6.00$ | Deep ETNO ($S_n=6$) |
+| 46 | `K21C05P` | 2021 CP5 | **6** | 2 | 1 | 818.99 | 1,207.90 | $+5.92$ | Deep ETNO ($S_n=6$) |
+| 47 | `K20Q06N` | 2020 QN6 | **6** | 1 | 3 | 809.45 | 1,204.62 | $+5.91$ | Deep ETNO ($S_n=6$) |
 
 ---
 
-## 6. Repository Architecture & File Inventory
+## 8. Blind Predictions for Vera C. Rubin Observatory (LSST) & Falsification Criteria
 
-```text
+Based on the vacant topological orbitals of the $11 \times 6$ K-PHAM periodic matrix (`Appendix B` & `Section 6` of [`Solar_v16.pdf`](./Solar_v16.pdf)), we pre-register **50 blind ETNO target zones** for the **Vera C. Rubin Observatory Legacy Survey of Space and Time (LSST DR1–DR3)**. The first 10 primary E-node target coordinates are frozen below:
+
+| Target ID | Right Ascension $\text{RA}\,(^\circ)$ | Declination $\text{Dec}\,(^\circ)$ | Semi-Major Axis $a$ (AU) | Eccentricity $e$ | Predicted Floor $S_n$ | Cuboctahedral E-Node |
+| :-: | --: | --: | --: | --: | :-: | :-: |
+| **ETNO-P1** | $60.5^\circ$ | $+43.2^\circ$ | $520\text{ AU}$ | $0.85$ | $S_n = 6$ | Node **E-5** |
+| **ETNO-P2** | $180.3^\circ$ | $-47.9^\circ$ | $1,150\text{ AU}$ | $0.92$ | $S_n = 7$ | Node **E-9** |
+| **ETNO-P3** | $270.8^\circ$ | $+11.4^\circ$ | $340\text{ AU}$ | $0.78$ | $S_n = 5$ | Node **E-11** |
+| **ETNO-P4** | $116.8^\circ$ | $+43.3^\circ$ | $2,450\text{ AU}$ | $0.95$ | $S_n = 8$ | Node **E-2** |
+| **ETNO-P5** | $300.2^\circ$ | $-23.1^\circ$ | $680\text{ AU}$ | $0.88$ | $S_n = 6$ | Node **E-8** |
+| **ETNO-P6** | $45.7^\circ$ | $+67.8^\circ$ | $420\text{ AU}$ | $0.82$ | $S_n = 5$ | Node **E-1** |
+| **ETNO-P7** | $225.4^\circ$ | $+12.6^\circ$ | $1,890\text{ AU}$ | $0.94$ | $S_n = 7$ | Node **E-6** |
+| **ETNO-P8** | $135.9^\circ$ | $-31.5^\circ$ | $560\text{ AU}$ | $0.86$ | $S_n = 6$ | Node **E-3** |
+| **ETNO-P9** | $315.1^\circ$ | $+55.2^\circ$ | $780\text{ AU}$ | $0.89$ | $S_n = 6$ | Node **E-10** |
+| **ETNO-P10**| $90.6^\circ$ | $-12.8^\circ$ | $310\text{ AU}$ | $0.76$ | $S_n = 5$ | Node **E-4** |
+
+### Strict Falsification Criteria (Pre-Registered Protocol)
+The IT³ macroscopic vacuum architecture is **falsified** if:
+1. **Azimuthal Node Capture:** LSST DR1–DR3 discovers $< 20$ new ETNOs ($S_n \ge 5$) within $\pm 10^\circ$ of the predicted $m = 6 \oplus 12$ cuboctahedral E-nodes.
+2. **Spatial Isotropy:** The angular distribution of newly discovered extreme objects ($S_n \ge 6$) is statistically isotropic ($p > 0.05$ under Rayleigh/multipole tests) with no hexadecapolar $l=4$ E-node correlation.
+3. **Radial Shell Peaks:** The aphelion distances $Q$ and effective topological radii $R_{\text{eff}}$ of newly discovered detached objects fail to cluster along the $\sqrt{3}$-ladder $R_n = 27\text{ AU} \times (\sqrt{3})^{n-1}$.
+4. **Kinematic Bound/Free Cutoff ($e = 1.0$):** Future cometary catalogs fail to show a sharp entropy dichotomy between quantized elliptical orbits ($e < 1$) and continuous hyperbolic trajectories ($e \ge 1$). *(Currently confirmed on 852 bound / 68 free comets).*
+5. **Deep-Comet Macro-Compton Periodogram:** Once $\ge 500$ deep comets ($S_n \ge 3$) are cataloged by LSST, the Rayleigh periodogram at $\log(\Lambda_1^2) = 4.624$ fails to reach $\text{SNR} > 3.0\sigma$. *(Currently recorded as an honest `NULL_RESULT` at $N=155$, $\text{SNR} = -0.07\sigma$ due to JFC dominance).*
+
+---
+
+## 9. The Macroscopic Atom, Quantum Chemistry Dictionary & Stark Visual-Rhyme Audit
+
+Appendices A–D and H of [`Solar_v16.pdf`](./Solar_v16.pdf) establish the formal homology between quantum atomic physics and the K-PHAM Solar System architecture, while strictly auditing the boundaries of the visual rhyme (`VISUAL_RHYME`, `is_predictive = False`):
+
+| Quantum Atomic Physics / Chemistry | IT³ Macroscopic Solar System Counterpart | Epistemic Classification |
+| :--- | :--- | :--- |
+| **Atomic Nucleus ($>99.9\%$ mass)** | **The Sun & $S_n=0$ Topological Isthmus** ($99.44\%$ of catalog objects confined inside $r_{\text{neck}}$) | `EMPIRICAL_TEST` ($1,571,075$ objects) |
+| **Principal Quantum Shells ($n$)** | **Logarithmic $\sqrt{3}$ Floors ($S_n = 0..10$)** ($R_n = 27\text{ AU} \times (\sqrt{3})^{n-1}$) | `DERIVED_FROM_POSTULATES` (`P2_UNIT_AU`) |
+| **Angular / Magnetic Subshells ($l, m$)** | **$2\times 3$ Transverse-Vertical Lattice** ($S_k \in \{1,2\}, S_h \in \{1,2,3\}$) | `EXACT_MATH` (`T_KPHAM_MEASURE`) |
+| **Valence Shell & Ionization Threshold** | **Kuiper Belt Peak ($R_2 = 27\sqrt{3} \approx 46.77\text{ AU}$)** & Kuiper Cliff (~48 AU, $E_{\text{ion}} = 0$) | `DERIVED` / `EMPIRICAL_TEST` ($p=0.0255$) |
+| **Zeeman Magnetic Splitting** | **Cartan Torsion ($\tau_{\text{vac}}$) Azimuthal Splitting** into 12 cuboctahedral E-nodes | `OPEN_CONJECTURE` / `EMPIRICAL_TEST` |
+| **Unbound Free Electrons ($E > 0$)** | **Hyperbolic Interstellar Objects ($e > 1$):** `1I/'Oumuamua` ($E_{\text{ion}}=+6.55$), `2I/Borisov` ($+7.29$), `3I/ATLAS` ($+9.43$) | `EMPIRICAL_TEST` |
+| **Hydrogen $(2,27,0)$ Stark Nodal Rings** (Stodolna et al., *PRL* 110, 213001, 2013) | **Bound = Discrete Floors vs. Free = Continuum** ($L_2^{(0)}(\rho) = 1 - 2\rho + \frac{1}{2}\rho^2$ roots $\rho = 2 \pm \sqrt{2} \in K$) | **`VISUAL_RHYME` (Non-Predictive Analogy Only)** |
+
+---
+
+## 10. Repository Architecture, Autonomous Execution & Citation
+
+### 10.1. Directory Structure
+~~~text
 IT3-Solar-System-Quantum-Architecture/
 ├── it3_master_v22.0.py                        # Portable Master Proof-Ledger & 11-Front Audit Engine (IT3-v22.6-strict)
-├── Solar_v16.pdf                              # Full Preprint Manuscript (PDF)
+├── Solar_v16.pdf                              # Full 53-Page Preprint Manuscript (PDF)
 ├── README.md                                  # Complete Project Documentation & Live Visualization Portal
-├── CITATION.cff                               # GitHub Official Citation Metadata ( Zenodo DOI: 10.5281/zenodo.21792530 )
+├── CITATION.cff                               # GitHub Official Citation Metadata (Zenodo DOI: 10.5281/zenodo.21792530)
 ├── LICENSE                                    # MIT Open-Source License
 ├── data/                                      # Localized & Auto-Synced Harvard-Smithsonian MPC Catalogs
 │   ├── CometEls.txt                           # MPC Cometary Orbital Elements (Bound & Hyperbolic)
@@ -200,51 +331,31 @@ IT3-Solar-System-Quantum-Architecture/
 │   └── it3_floor_distribution_summary.csv     # Population Summary Across Topological Floors S_n = 0..10
 └── logs/                                      # Verbatim Execution Logs
     └── it3_terminal_run_log.txt               # Complete ANSI-clean terminal trace of all phases & 11 fronts
-```
+~~~
 
----
-
-## 7. Autonomous Execution & Reproducibility Guide
-
-The script [`it3_master_v22.0.py`](./it3_master_v22.0.py) is **100% OS-agnostic (macOS, Linux, Windows)** and uses only relative paths anchored to its own directory (`SCRIPT_DIR = Path(__file__).resolve().parent`).
-
-### 7.1. Install Python Dependencies
-```bash
+### 10.2. Autonomous Execution Commands (macOS / Linux / Windows)
+~~~bash
+# 1. Install dependencies
 pip install numpy scipy matplotlib plotly tqdm
-```
 
-### 7.2. Run Mandatory Anti-Numerology Unit Tests (`0.2s`)
-Executes all 8 runtime epistemic guard tests (verifying `unproven_predictive_flag_share == 0.0`, `external_reference is None` on all derived predictions, exact $O_h$ multipole cancellation, Galois $18^\circ$ obstruction, and synthetic 11-front execution):
-```bash
+# 2. Run mandatory anti-numerology unit tests (8 guard tests, 0.2s)
 python3 it3_master_v22.0.py --run-tests
-```
 
-### 7.3. Run Fast Algebraic & Epistemic Proof-Ledger Audit (`0.3s`, no catalog load)
-```bash
+# 3. Run fast algebraic & epistemic ledger audit without loading MPCORB (0.3s)
 python3 it3_master_v22.0.py --proof-only
-```
 
-### 7.4. Run Full 1.58M-Object Harvard MPC Pipeline
-On first run, if `./data/MPCORB.DAT` is not present locally, `DataDownloader` automatically fetches `MPCORB.DAT.gz` from `https://www.minorplanetcenter.net/iau/MPCORB/MPCORB.DAT.gz`, extracts it into `./data/`, runs all 8 phases and 11 validation fronts, generates all 11 HTML plots in `./plots_html/`, dashboards in `./figures/`, CSV/JSON reports in `./reports/`, and writes the verbatim terminal log to `./logs/it3_terminal_run_log.txt`:
-```bash
+# 4. Run full 1.58M-object Harvard MPC pipeline (auto-downloads ./data/MPCORB.DAT if absent)
 python3 it3_master_v22.0.py
-```
-* **Print all 45 claims (including exploratory ansätze, visual rhymes, and null results) in console:**
-  ```bash
-  python3 it3_master_v22.0.py --epistemic-mode full-diagnostic
-  ```
-* **Force a fresh live download of all 6 catalogs from the Harvard–Smithsonian CfA:**
-  ```bash
-  python3 it3_master_v22.0.py --fresh-download
-  ```
 
----
+# 5. Print all 45 claims (including exploratory ansatze & null results) in console
+python3 it3_master_v22.0.py --epistemic-mode full-diagnostic
 
-## 8. Citation & Academic Provenance
+# 6. Force fresh download of all 6 MPC catalogs from Harvard-Smithsonian CfA
+python3 it3_master_v22.0.py --fresh-download
+~~~
 
-If you use this software suite, the K-PHAM v2.2 operator, or the epistemic proof-ledger architecture in your research, please cite our flagship Zenodo records:
-
-```bibtex
+### 10.3. BibTeX Citation
+~~~bibtex
 @misc{logvinovich_perez_2026_it3_v19,
   author       = {Logvinovich, Victor and Perez, Jean-Claude},
   title        = {{The Macroscopic Vacuum Architecture: Perez Hourglass Topology, Counter-Rotating Bowls, and m = 6 + 12 Fractal Superposition in the Solar System (IT3 Framework v6.0)}},
@@ -253,7 +364,7 @@ If you use this software suite, the K-PHAM v2.2 operator, or the epistemic proof
   publisher    = {Zenodo},
   version      = {v19},
   doi          = {10.5281/zenodo.21792530},
-  url          = {[https://zenodo.org/records/21792530](https://zenodo.org/records/21792530)}
+  note         = { Zenodo Record 21792530 }
 }
 
 @misc{logvinovich_2026_galactic_resonance,
@@ -262,9 +373,9 @@ If you use this software suite, the K-PHAM v2.2 operator, or the epistemic proof
   year         = 2026,
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.20450282},
-  url          = {[https://doi.org/10.5281/zenodo.20450282](https://doi.org/10.5281/zenodo.20450282)}
+  note         = { Zenodo Record 20450282 }
 }
-```
+~~~
 
 ---
 *© 2026 Victor Logvinovich & Jean-Claude Perez. Released under the MIT Open-Source License.*
