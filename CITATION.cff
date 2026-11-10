@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it using the metadata below."
+title: "IT³ Macroscopic Vacuum Architecture & K-PHAM v2.2 Scientific Proof-Ledger Suite"
+version: "IT3-v22.6-strict"
+doi: 10.5281/zenodo.21792530
+date-released: 2026-08-04
+url: "https://github.com/Dr-Logvinovich/IT3-Solar-System-Quantum-Architecture"
+repository-code: "https://github.com/Dr-Logvinovich/IT3-Solar-System-Quantum-Architecture"
+license: MIT
+authors:
+  - family-names: "Logvinovich"
+    given-names: "Victor"
+    orcid: "https://orcid.org/0009-0007-2040-6955"
+  - family-names: "Perez"
+    given-names: "Jean-Claude"
+keywords:
+  - astrophysics
+  - solar-system
+  - kuiper-belt
+  - trans-neptunian-objects
+  - spectral-geometry
+  - algebraic-number-theory
+  - minor-planet-center
+  - reproducible-research
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Logvinovich"
+      given-names: "Victor"
+      orcid: "https://orcid.org/0009-0007-2040-6955"
+    - family-names: "Perez"
+      given-names: "Jean-Claude"
+  doi: "10.5281/zenodo.21792530"
+  title: "The Macroscopic Vacuum Architecture: Perez Hourglass Topology, Counter-Rotating Bowls, and m = 6 + 12 Fractal Superposition in the Solar System (IT3 Framework v6.0)"
+  year: 2026
+  url: "https://zenodo.org/records/21792530"
