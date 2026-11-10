@@ -1,0 +1,12 @@
+S_n_Floor,Object_Count,Share_Pct,R_bowl_AU,Physical_Regime
+0,1571075,99.4407%,27.0,Topological Isthmus / Inner Core (<27 AU)
+1,477,0.0302%,27.0,Ice Giant Neck Transition (27 AU)
+2,6335,0.4010%,46.7654,Macroscopic Valence Shell (27*sqrt(3) = 46.77 AU) & Evaporative Tail
+3,1264,0.0800%,81.0,Scattered Disk Ionized Floor
+4,629,0.0398%,140.2961,Inner Oort / Detached ETNO Floor (2012 VP113)
+5,85,0.0054%,243.0,Deep ETNO Floor
+6,23,0.0015%,420.8883,"Sednoid Shell (Sedna, 2015 BP519)"
+7,16,0.0010%,729.0,Extreme ETNO Shell
+8,4,0.0003%,1262.665,Ultra-Deep Shell (2015 TG387)
+9,3,0.0002%,2187.0,Hyper-Deep Oort Boundary
+10,1,0.0001%,3787.9951,Observed MPCORB Outer Limit

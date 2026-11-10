@@ -1,0 +1,1676 @@
+{
+  "framework": "IT3-v22.6-strict",
+  "zenodo_doi": "10.5281/zenodo.21792530",
+  "zenodo_url": "https://zenodo.org/records/21792530",
+  "authors": [
+    "Victor Logvinovich",
+    "Jean-Claude Perez"
+  ],
+  "provenance": {
+    "script_sha256": "04207433633711b5",
+    "mpcorb_sha256": "079680033fc14a91",
+    "cometels_sha256": "e2de02b72856e2e1",
+    "total_objects_analyzed": 1579912
+  },
+  "explicit_postulates_and_anchors": {
+    "dimensional_anchor_R_base_AU": 27.0,
+    "neptune_semimajor_axis_AU": 30.0689,
+    "neptune_1_2_mmr_AU": 47.731,
+    "operational_ionization_cutoff_AU": 48.0,
+    "stark_display_mapping_params": {
+      "scale_x": 1.45,
+      "power_gamma": 1.35,
+      "envelope_alpha": 0.85,
+      "envelope_decay": 0.58,
+      "sigma_psf": 0.65,
+      "mapped_nodes_x": [
+        0.98,
+        3.6
+      ]
+    }
+  },
+  "layer_1_and_3_audit": {
+    "layer_1_exact_mathematics": {
+      "pythagorean_and_laguerre_roots": {
+        "status": "EXACT_MATH",
+        "inradius_2r": 0.9101963924,
+        "laguerre_L2_roots_in_K": [
+          0.58578644,
+          3.41421356
+        ]
+      },
+      "field_discriminant_and_e8": {
+        "status": "EXACT_MATH",
+        "Delta_K": 3317760000,
+        "sqrt_Delta_K": 57600,
+        "E8_det_Cartan": 1.0,
+        "E8_kissing_tau8": 240
+      },
+      "kummer_and_oh_sphere_ladder": {
+        "status": "EXACT_MATH",
+        "sqrt13_in_K": false,
+        "gcd_102_3": 3,
+        "gcd_103_3": 1,
+        "bicone_sum_half": 86,
+        "bicone_sum_full": 172,
+        "kepler_k": 0.74048049,
+        "cube_R_out_over_r_in": 1.7320508076,
+        "valency_tensor_dim_vl_vq": 6,
+        "dirichlet_unit_rank_O_K": 7,
+        "sqrt3_power_6_exact": 27.0,
+        "sqrt3_power_7_exact_27sqrt3": 46.7653718044,
+        "sqrt3_power_10_rin_exact": 243.0,
+        "sqrt3_power_11_Rout_exact": 420.8883462392,
+        "edge_midpoint_Rmid_243sqrt2": 343.6538956567,
+        "magic_plus_torsion_angle_deg": 90.0,
+        "oh_multipoles_l1_l2_l3_vanish": true,
+        "oh_hexadecapole_l4_invariant": -4.8
+      },
+      "kpham_analytical_domain_and_measure": {
+        "status": "EXACT_MATH",
+        "prograde_2x3_domain_exact": true,
+        "sk2_uniform_omega_prior_formula": "(5 - sqrt(2)) / 6",
+        "sk2_uniform_omega_prior_value": 0.5976310729,
+        "sk1_to_sk2_boundary_omega_deg": 144.852814
+      }
+    },
+    "layer_3_ansatze_and_resonances": {
+      "epistemic_status": "ANSATZ_DIAGNOSTIC (Exploratory only; not used as predictions)",
+      "variational_E_N": {
+        "unfiltered_min_N": 102,
+        "gcd_N_5_min_N": 102,
+        "gcd_N_3_min_N": 103,
+        "mu_crit": 0.09402
+      },
+      "alpha_inv": {
+        "published_divisors_3_6_30": {
+          "pred": 137.03706,
+          "diff_ppm": 7.74,
+          "rank_in_grid": 2
+        },
+        "grid_argmin_divisors": {
+          "divisors": [
+            3,
+            6,
+            31
+          ],
+          "pred": 137.03589,
+          "diff_ppm": 0.8
+        }
+      },
+      "muon_electron_ratio": {
+        "pred": 206.766841,
+        "codata": 206.768283,
+        "diff_ppm": 6.97
+      },
+      "sun_jupiter_constant_menu": {
+        "sqrt(10)": {
+          "value": 3.16228,
+          "pred": 1047.4954,
+          "err_pct": 0.0067
+        },
+        "sqrt(2)+sqrt(3) [in K]": {
+          "value": 3.14626,
+          "pred": 1047.4794,
+          "err_pct": 0.0082
+        },
+        "pi": {
+          "value": 3.14159,
+          "pred": 1047.4747,
+          "err_pct": 0.0087
+        },
+        "e": {
+          "value": 2.71828,
+          "pred": 1047.0514,
+          "err_pct": 0.0491
+        },
+        "phi^2 [in K]": {
+          "value": 2.61803,
+          "pred": 1046.9512,
+          "err_pct": 0.0586
+        }
+      },
+      "uranus_obliquity_ablation": {
+        "without_1_over_2N_deg": 98.052,
+        "residual_without_1_over_2N_deg": 0.282,
+        "with_1_over_2N_deg": 97.774,
+        "residual_with_1_over_2N_deg": 0.004
+      },
+      "cabibbo_sin_theta_c": {
+        "pred": 0.22459,
+        "pdg": 0.225,
+        "sigma_dev": 0.61
+      },
+      "dark_energy_omega_lambda": {
+        "pred": 0.69,
+        "planck": 0.6847,
+        "sigma_dev": 0.73
+      }
+    }
+  },
+  "layer_2_catalog_validation": {
+    "isthmus_confinement_sn0_pct": 99.4407,
+    "kuiper_peak_sn2_count": 6335,
+    "kuiper_peak_observed_AU": 47.38,
+    "kuiper_peak_theoretical_AU": 46.77,
+    "kuiper_quantization_error_pct": 1.291,
+    "monte_carlo_peak_only_p": 0.02555,
+    "joint_2d_monte_carlo_R0_Lambda_p": 0.05185,
+    "joint_loss_vs_neptune_and_1_2_mmr_pct": 12.23,
+    "joint_2d_verdict": "NEGATIVE_RESULT (R_1=27 AU deviates from a_Neptune=30.07 AU by 10.2%; p_joint > 0.05)",
+    "multi_angle_inclination_scan": {
+      "10deg": {
+        "drop_ratio": 0.996,
+        "log_slope_kink": 0.1151
+      },
+      "12deg": {
+        "drop_ratio": 1.196,
+        "log_slope_kink": 0.0015
+      },
+      "15deg": {
+        "drop_ratio": 1.503,
+        "log_slope_kink": 0.109
+      },
+      "18deg": {
+        "drop_ratio": 1.793,
+        "log_slope_kink": 0.0612
+      },
+      "20deg": {
+        "drop_ratio": 1.442,
+        "log_slope_kink": 0.4084
+      },
+      "25deg": {
+        "drop_ratio": 1.425,
+        "log_slope_kink": 0.0786
+      },
+      "30deg": {
+        "drop_ratio": 2.091,
+        "log_slope_kink": 0.1535
+      },
+      "empirical_argmax_drop_deg": 29.75,
+      "empirical_argmax_drop_ratio": 2.091,
+      "bootstrap_200_95ci_deg": [
+        28.75,
+        29.75
+      ],
+      "is_18deg_inside_bootstrap_ci": false
+    },
+    "true_trojan_L4_L5_audit": {
+      "total_trojan_candidates": 16138,
+      "excluded_fallback_epochs": 0,
+      "valid_epoch_trojans": 16138,
+      "ephemeris_method": "Pure mean-longitude resonant argument Δλ = λ_ast - λ_J,mean(JD) at object epoch",
+      "true_L4_camp_count": 10183,
+      "true_L5_camp_count": 5929,
+      "true_L4_L5_ratio": 1.7175,
+      "legacy_pomega_cut_ratio": 1.7009,
+      "delta_from_phi_true_L4_L5": 0.0995,
+      "epistemic_note": "L4/L5 ratio is an empirical capture asymmetry, not derived from K."
+    },
+    "cometary_dichotomy": {
+      "evaluation_mode": "LIVE_SHARED_11BINS (SHA:e2de02b72856e2e1, identical log10(R_eff) edges + normalized efficiency)",
+      "n_bound": 852,
+      "n_free": 120,
+      "H_bound_shared_radial_bits": 2.0238,
+      "H_free_shared_radial_bits": 1.5569,
+      "delta_H_shared_radial_bits": -0.4669,
+      "H_bound_discrete_Sn_bits": 1.5414,
+      "normalized_efficiency_bound_Sn": 0.4456,
+      "normalized_efficiency_free_radial": 0.4501,
+      "interstellar_objects": [
+        {
+          "name": "1I/'Oumuamua",
+          "e": 1.1993,
+          "q": 0.255,
+          "E_ion": 6.55,
+          "source": "MPC Empirical Elements"
+        },
+        {
+          "name": "2I/Borisov",
+          "e": 3.346,
+          "q": 1.998,
+          "E_ion": 7.29,
+          "source": "MPC Empirical Elements"
+        },
+        {
+          "name": "3I/ATLAS",
+          "e": 6.1399,
+          "q": 1.357,
+          "E_ion": 9.42,
+          "source": "MPC Empirical Elements"
+        }
+      ]
+    },
+    "mp_11_fronts_suite": {
+      "front_1A_top_hyperbolic_comets": [
+        {
+          "name": "3I/ATLAS                                                 MPEC 2026-G41",
+          "e": 6.1399,
+          "q_AU": 1.357,
+          "E_ion": 9.43
+        },
+        {
+          "name": "2I/Borisov                                               MPEC 2025-R69",
+          "e": 3.346,
+          "q_AU": 1.998,
+          "E_ion": 7.29
+        },
+        {
+          "name": "1I/`Oumuamua                                             MPC107687",
+          "e": 1.1993,
+          "q_AU": 0.255,
+          "E_ion": 6.55
+        },
+        {
+          "name": "C/2024 L5 (ATLAS)                                        MPEC 2026-P55",
+          "e": 1.034,
+          "q_AU": 3.457,
+          "E_ion": -1.42
+        },
+        {
+          "name": "C/2020 P4-C (SOHO)                                       MPEC 2020-QN1",
+          "e": 1.0131,
+          "q_AU": 0.089,
+          "E_ion": 3.52
+        }
+      ],
+      "front_B_macro_compton_periodogram": {
+        "B1_Macro_Compton": {
+          "period": 4.6241,
+          "z": 356.728,
+          "bg_mean": 356.781,
+          "snr_sigma": -0.07,
+          "verdict": "ARTIFACT_NULL (JFC volume echo)"
+        },
+        "B2_Half_Period": {
+          "period": 2.3121,
+          "z": 178.961,
+          "bg_mean": 175.964,
+          "snr_sigma": 0.34,
+          "verdict": "ARTIFACT_NULL (JFC volume echo)"
+        },
+        "B3_Spiral_Step": {
+          "period": 0.5493,
+          "z": 23.546,
+          "bg_mean": 27.137,
+          "snr_sigma": -0.19,
+          "verdict": "ARTIFACT_NULL (JFC volume echo)"
+        },
+        "deep_comets_sn_ge_3_count": 155,
+        "deep_B1_snr_sigma": 0.17
+      },
+      "front_T1_table1_benchmarks": {
+        "matched_count": 7,
+        "total_targets": 7,
+        "objects": {
+          "Pluto": {
+            "code": "D4340",
+            "Q_AU": 49.08,
+            "R_eff_AU": 50.59,
+            "S_n": 2,
+            "expected_S_n": 2,
+            "match": true
+          },
+          "Makemake": {
+            "code": "D6472",
+            "Q_AU": 52.81,
+            "R_eff_AU": 53.48,
+            "S_n": 2,
+            "expected_S_n": 2,
+            "match": true
+          },
+          "Haumea": {
+            "code": "D6108",
+            "Q_AU": 51.43,
+            "R_eff_AU": 52.41,
+            "S_n": 2,
+            "expected_S_n": 2,
+            "match": true
+          },
+          "Eris": {
+            "code": "D6199",
+            "Q_AU": 97.71,
+            "R_eff_AU": 107.09,
+            "S_n": 3,
+            "expected_S_n": 3,
+            "match": true
+          },
+          "2012VP113": {
+            "code": "K12VB3P",
+            "Q_AU": 454.3,
+            "R_eff_AU": 565.12,
+            "S_n": 4,
+            "expected_S_n": 4,
+            "match": true
+          },
+          "Sedna": {
+            "code": "90377",
+            "Q_AU": 1011.24,
+            "R_eff_AU": 1385.09,
+            "S_n": 6,
+            "expected_S_n": 6,
+            "match": true
+          },
+          "2015TG387": {
+            "code": "s1132",
+            "Q_AU": 2632.87,
+            "R_eff_AU": 3826.07,
+            "S_n": 8,
+            "expected_S_n": 8,
+            "match": true
+          }
+        }
+      },
+      "front_2_lattice_confinement": {
+        "prograde_count": 1579730,
+        "prograde_in_2x3_pct": 100.0,
+        "all_objects_in_2x3_pct": 99.9927,
+        "retrograde_sh4_leakage_count": 115,
+        "six_cell_shannon_entropy_bits": 1.42
+      },
+      "front_3_nea_pha_micro_shell": {
+        "evaluation_mode": "MPC_NEA_PHA_FILES",
+        "total_nea_sn0": 43037,
+        "dominant_cell": [
+          2,
+          1
+        ],
+        "dominant_cell_pct": 47.75,
+        "analytical_uniform_sk2_prior_pct": 59.76
+      },
+      "front_C_centaur_d_shell": {
+        "total_centaurs": 17572,
+        "sk2_count": 10548,
+        "sk2_observed_pct": 60.027,
+        "sk2_analytical_uniform_prior_pct": 59.763,
+        "excess_over_uniform_prior_pct": 0.264,
+        "binomial_p_vs_uniform_prior": 0.47916
+      },
+      "front_D_asteroid_family_variance": {
+        "family_cells_n_ge_5": 344,
+        "mean_var_Sn": 0.0,
+        "mean_var_Reff_AU2": 0.32817,
+        "sigma_Reff_AU": 0.5729,
+        "verdict": "Collisional baryonic debris within S_n=0 isthmus (not discrete topological isotopes)"
+      },
+      "front_4_live_delta_newnumids": {
+        "total_ids": 21,
+        "matched_in_mpcorb": 3,
+        "sn0_count": 2
+      },
+      "front_5F_neocp_prospective": {
+        "candidates_awaiting_confirmation": 0
+      }
+    }
+  },
+  "diophantine_audit": {
+    "saturated_count": 3074,
+    "ionized_count": 5632,
+    "partition_pct_sn_ge_3": 35.96,
+    "partition_pct_sn_eq_2_tail": 61.88,
+    "partition_pct_sn_le_1_reset": 2.17,
+    "lower_adjacent_band_count": 426,
+    "target_sn2_band_count": 6289,
+    "upper_adjacent_band_count": 1387,
+    "adjacent_band_ratio": 6.938,
+    "sliding_window_argmax_R0_AU": 40.0,
+    "sliding_window_argmax_interval_AU": [
+      40.0,
+      80.0
+    ],
+    "sliding_window_argmax_count": 6441,
+    "sn2_vs_sliding_max_efficiency_pct": 97.64,
+    "sliding_windows_beaten_pct": 84.08
+  },
+  "version": "IT3-v22.6-strict",
+  "epistemic_mode": "proven-only",
+  "external_benchmarks_are_not_predictions": true,
+  "numerology_exposure": 0.0,
+  "postulates": {
+    "P1_INRADIUS": "Metric pinning by the constructible right triangle (sqrt(2), sqrt(3), sqrt(5)) incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) (Math_Topology_v17 Postulate 2.7).",
+    "P2_UNIT_AU": "Astronomical unit normalization r_0 = 1.0 AU as the m=0 unit length scale for the dimensionless O_h sphere ladder R(m)/r_0 = (sqrt(3))^m (Planet_9_v44 Sec. 4.1.1).",
+    "P3_SURFACE_TENSION": "Topological defect boundary area scales as A(N) proportional to N^(2/3) (Math_Topology_v17 Prop. 6.2 & Postulate 6.3)."
+  },
+  "theorems": {
+    "T2.1_DISC": "Field discriminant of K=Q(sqrt2,sqrt3,sqrt5) is Delta_K = 2^16 * 3^4 * 5^4 = 3,317,760,000; sqrt(|Delta_K|) = 57,600 = 240^2.",
+    "T2.5_PYTH": "Coupled Pythagorean closure 1^2+(sqrt2)^2=(sqrt3)^2, (sqrt2)^2+(sqrt3)^2=(sqrt5)^2 and inradius 2r = sqrt2+sqrt3-sqrt5.",
+    "T2.9_KUMMER": "Square-free Kummer sieve over {2,3,5} proves sqrt(13) not in K (13 does not divide 30).",
+    "T_E8_CARTAN": "E_8 root system has 240 minimal vectors and Cartan determinant det(G_E8) = 1.",
+    "T_OH_SPHERE_LADDER": "For a cube of side a, circumscribed-to-inscribed sphere ratio is R_out/r_in = sqrt(3) (area ratio 3); with A_F valency tensor dimension m_1 = v_l*v_q = 2*3 = 6 and Dirichlet unit rank rk(O_K^x) = 7, the dimensionless ladder (sqrt(3))^m gives (sqrt(3))^6 = 3^3 = 27 and (sqrt(3))^7 = 27*sqrt(3).",
+    "T_OH_FCC": "O_h branching {2,6,10,14} yields bicone capacities {2,8,8,18,18,32}, hemisphere sum 86, full sum 172 = 4*43, and FCC Kepler packing ratio pi/sqrt(18).",
+    "T_SUBADDITIVE": "Strict concavity of f(N)=N^(2/3) implies (N1+N2)^(2/3) < N1^(2/3) + N2^(2/3).",
+    "T_GALOIS_18DEG": "sin(18 deg) = (sqrt(5)-1)/4 lies in Q(sqrt5) subset K, whereas Q(cos 18 deg) = Q(zeta_20)^+ has cyclic Galois group Z/4Z of exponent 4 and cannot embed into Gal(K/Q) = (Z/2Z)^3 of exponent 2; hence cos(18 deg) is not in K and 18 deg is not an SO(3,K) rotation.",
+    "T_KPHAM_MEASURE": "For prograde orbits i in [0,90 deg], K-PHAM maps (S_k,S_h) strictly into {1,2}x{1,2,3}; under uniform omega in [0,360 deg) at delta_k=0, the exact measure of S_k=2 is (5 - sqrt(2))/6 ≈ 0.597631 in K.",
+    "T_STELLA_MULTIPOLE": "Cube vertices {+-1,+-1,+-1} partition uniquely by parity xyz=+-1 into two regular tetrahedra T1, T2 (edge^2=8); for the 12 cuboctahedral E-nodes, multipole moments l=1, l=2, l=3 vanish identically while l=4 is non-zero; P_2(cos arccos(1/sqrt3)) = 0 and arccos(1/sqrt3)+arccos(sqrt(2/3)) = 90 deg."
+  },
+  "claims": {
+    "Delta_K_field_discriminant": {
+      "name": "Delta_K_field_discriminant",
+      "status": "EXACT_MATH",
+      "value": 3317760000,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": "T2.1_DISC",
+      "dependencies": [],
+      "statement": "Field discriminant of K = Q(sqrt2, sqrt3, sqrt5) from product of 7 quadratic subfield conductors; sqrt(|Delta_K|) = 57,600 = 240^2.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "E8_Cartan_determinant_and_roots": {
+      "name": "E8_Cartan_determinant_and_roots",
+      "status": "EXACT_MATH",
+      "value": 1.0,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": "T_E8_CARTAN",
+      "dependencies": [],
+      "statement": "det(Cartan E_8) = 1 and kissing number tau_8 = 240 minimal vectors (volume ratio only, not an embedding of O_K into E_8).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "Kummer_wall_sqrt13_exclusion": {
+      "name": "Kummer_wall_sqrt13_exclusion",
+      "status": "EXACT_MATH",
+      "value": 13,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": "T2.9_KUMMER",
+      "dependencies": [],
+      "statement": "13 does not divide 30 = 2*3*5, hence sqrt(13) is not in K = Q(sqrt2, sqrt3, sqrt5).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "oh_sphere_ladder_27_and_27sqrt3_identities": {
+      "name": "oh_sphere_ladder_27_and_27sqrt3_identities",
+      "status": "EXACT_MATH",
+      "value": 46.76537180435968,
+      "unit": "dimensionless ratio R_2 / r_0",
+      "uncertainty": null,
+      "proof_id": "T_OH_SPHERE_LADDER",
+      "dependencies": [],
+      "statement": "Cube sphere ratio Lambda_Y = R_out/r_in = sqrt(3) raised to valency tensor dimension m_1 = v_l*v_q = 6 gives (sqrt(3))^6 = 3^3 = 27, and at m_2 = rk(O_K^x) = 7 gives (sqrt(3))^7 = 27*sqrt(3).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "FCC_kepler_packing_and_bicone_sum": {
+      "name": "FCC_kepler_packing_and_bicone_sum",
+      "status": "EXACT_MATH",
+      "value": 0.7404804896930611,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": "T_OH_FCC",
+      "dependencies": [],
+      "statement": "O_h capacities {2,8,8,18,18,32} sum to 86 (172 = 4*43 over both bowls), and 172 spheres of radius a*sqrt(2)/4 in 43 FCC cells fill pi/sqrt(18).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "stella_octangula_and_oh_multipole_vanishing": {
+      "name": "stella_octangula_and_oh_multipole_vanishing",
+      "status": "EXACT_MATH",
+      "value": 90.0,
+      "unit": "deg (alpha_magic + gamma)",
+      "uncertainty": null,
+      "proof_id": "T_STELLA_MULTIPOLE",
+      "dependencies": [],
+      "statement": "Cube vertices partition into T1 and T2 regular tetrahedra; cuboctahedral E-nodes have l=1,2,3 moments identically zero (first non-zero is hexadecapole l=4); P_2(cos 54.7356 deg) = 0 and alpha_magic + gamma = 90 deg.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "galois_18deg_sin_in_K_cos_not_in_K": {
+      "name": "galois_18deg_sin_in_K_cos_not_in_K",
+      "status": "EXACT_MATH",
+      "value": 0.3090169944,
+      "unit": "sin(18 deg)",
+      "uncertainty": null,
+      "proof_id": "T_GALOIS_18DEG",
+      "dependencies": [],
+      "statement": "sin(18 deg) = (sqrt5-1)/4 is in Q(sqrt5) subset K, but cos(18 deg) is not in K because Gal(Q(cos 18 deg)/Q) = Z/4Z has exponent 4 != 2; proves 18 deg is an algebraic echo, not a geometric forcing.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "kpham_prograde_domain_and_sk2_uniform_prior": {
+      "name": "kpham_prograde_domain_and_sk2_uniform_prior",
+      "status": "EXACT_MATH",
+      "value": 0.5976310729,
+      "unit": "P_null(S_k=2)",
+      "uncertainty": null,
+      "proof_id": "T_KPHAM_MEASURE",
+      "dependencies": [],
+      "statement": "Prograde orbits (i<=90 deg) satisfy (S_k,S_h) in {1,2}x{1,2,3} identically; under uniform omega in [0,360 deg), the exact geometric prior for S_k=2 is (5-sqrt2)/6 ≈ 59.763%.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "pinned_inradius_metric_scale_2r": {
+      "name": "pinned_inradius_metric_scale_2r",
+      "status": "DERIVED_FROM_POSTULATES",
+      "value": 0.9101963924421828,
+      "unit": "dimensionless",
+      "uncertainty": null,
+      "proof_id": "T2.5_PYTH+P1_INRADIUS",
+      "dependencies": [
+        "P1_INRADIUS",
+        "T2.5_PYTH"
+      ],
+      "statement": "Incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) derived from metric pinning postulate P1_INRADIUS.",
+      "external_reference": null,
+      "is_predictive": true
+    },
+    "kpham_valence_shell_radius_R2": {
+      "name": "kpham_valence_shell_radius_R2",
+      "status": "DERIVED_FROM_POSTULATES",
+      "value": 46.76537180435968,
+      "unit": "AU",
+      "uncertainty": null,
+      "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+      "dependencies": [
+        "P2_UNIT_AU",
+        "T_OH_SPHERE_LADDER"
+      ],
+      "statement": "From R(m) = r_0 * (sqrt(3))^m with unit scale P2_UNIT_AU (r_0 = 1 AU), the m=6 neck shell is R_1 = (sqrt(3))^6 AU = 27.0 AU and the m=7 shell is R_2 = (sqrt(3))^7 AU = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to any catalog comparison).",
+      "external_reference": null,
+      "is_predictive": true
+    },
+    "subadditive_defect_coalescence_ratio_equal_mass": {
+      "name": "subadditive_defect_coalescence_ratio_equal_mass",
+      "status": "DERIVED_FROM_POSTULATES",
+      "value": 0.7937005259840997,
+      "unit": "E_merge / E_sep",
+      "uncertainty": null,
+      "proof_id": "P3_SURFACE_TENSION+T_SUBADDITIVE",
+      "dependencies": [
+        "P3_SURFACE_TENSION",
+        "T_SUBADDITIVE"
+      ],
+      "statement": "For two equal defects N1=N2, E_merge/E_sep = 2^(2/3)/2 = 2^(-1/3) ≈ 0.7937 < 1 under P3_SURFACE_TENSION.",
+      "external_reference": null,
+      "is_predictive": true
+    },
+    "oh_outer_egg_shells_rin_Rmid_Rout": {
+      "name": "oh_outer_egg_shells_rin_Rmid_Rout",
+      "status": "DERIVED_FROM_POSTULATES",
+      "value": 420.888346,
+      "unit": "AU (R_out)",
+      "uncertainty": null,
+      "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+      "dependencies": [
+        "P2_UNIT_AU",
+        "T_OH_SPHERE_LADDER"
+      ],
+      "statement": "Under unit scale P2_UNIT_AU (r_0=1 AU), the m=10 inscribed sphere is r_in=(sqrt3)^10=243.0 AU, the m=11 circumscribed sphere is R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and the 12 edge midpoints lie at R_mid=R_out*sqrt(2/3)=243*sqrt2≈343.65 AU.",
+      "external_reference": null,
+      "is_predictive": true
+    },
+    "sn2_band_Z_sqrt2_definitional_expansion": {
+      "name": "sn2_band_Z_sqrt2_definitional_expansion",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 34.97056274847714,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Definitional algebraic expansion: since Lambda_1 = sqrt(3)*(3+2*sqrt(2)) already contains sqrt(3), multiplying by 2*sqrt(3) gives 18+12*sqrt(2) by definition, not a new physical law.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "anisotropic_dual_sum_11_over_6_diagnostic": {
+      "name": "anisotropic_dual_sum_11_over_6_diagnostic",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 1.8333333333333333,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Arithmetic sum 1 + 1/2 + 1/3 = 11/6 (and 4*11/6 = 22/3); the standard isotropic 3D cubic lattice Laplacian maximum is 12.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "cuboctahedral_q2_shell_43_coincidence": {
+      "name": "cuboctahedral_q2_shell_43_coincidence",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 43,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Selecting the second FCC coordination shell q=2 in 10q^2+2+1 = 43 is a post-hoc shell choice matching the bicone sum 43.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "moonshine_integer_factorizations_diagnostic": {
+      "name": "moonshine_integer_factorizations_diagnostic",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 960,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Integer identities 960=4*240, 744=3*248, 1728=12^3 are unused in the pipeline; 744 and 1728 are not derived from K.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "variational_E_N_102_vs_103_diagnostic": {
+      "name": "variational_E_N_102_vs_103_diagnostic",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 103,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [
+        "LAMBDA_1"
+      ],
+      "statement": "DIAGNOSTIC ONLY. Unfiltered E_geom(N) minimum is N=102 (E=101.831); N=103 (E=102.019) requires the gcd(N,3)=1 ansatz or Omega-penalty weight mu > 0.09402.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "alpha_inv_prediction": {
+      "name": "alpha_inv_prediction",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 137.03705995132654,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [
+        "LAMBDA_1",
+        "N_TWIST",
+        "LAMBDA_3",
+        "WRITHE"
+      ],
+      "statement": "DIAGNOSTIC ONLY. NOT A PROVEN PREDICTION. Uses unproven N_twist=103 and discrete divisor selection (3,6,30) (7.74 ppm from CODATA 2022).",
+      "external_reference": "CODATA 2022 (137.035999084)",
+      "is_predictive": false
+    },
+    "alpha_inv_divisor_grid_argmin": {
+      "name": "alpha_inv_divisor_grid_argmin",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 137.03589,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Grid-search sensitivity analysis over 12x24x60 divisor triples; argmin is (3,6,31) at 0.80 ppm (no group justification).",
+      "external_reference": "CODATA 2022 (137.035999084)",
+      "is_predictive": false
+    },
+    "muon_electron_mass_ratio_ansatz": {
+      "name": "muon_electron_mass_ratio_ansatz",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 206.766841,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Evaluates 2*sqrt(N_twist^2 + D_k)*(1 + A_geom + delta_interf); depends on N_twist=103 ansatz (6.97 ppm from CODATA).",
+      "external_reference": "CODATA 2022 (206.7682830)",
+      "is_predictive": false
+    },
+    "proton_electron_mass_ratio_ansatz": {
+      "name": "proton_electron_mass_ratio_ansatz",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 1836.148506648882,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Braid combinatorics ansatz 18*Lambda_1^2*(1+alpha/2pi)/Phi_braid = 1836.1485 vs CODATA 1836.1527.",
+      "external_reference": "CODATA 2022 (1836.15267343)",
+      "is_predictive": false
+    },
+    "dark_matter_to_baryon_ratio_ansatz": {
+      "name": "dark_matter_to_baryon_ratio_ansatz",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 5.355475671634783,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Ratio Lambda_1/(sqrt(3)*|Wr|) = 5.3555; comparison with Planck (~5.4) is a consistency check, not proof.",
+      "external_reference": "Planck 2018 (~5.36)",
+      "is_predictive": false
+    },
+    "baryon_asymmetry_eta_ansatz": {
+      "name": "baryon_asymmetry_eta_ansatz",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 1.056613353950077e-09,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Phenomenological ansatz |Wr|/(N_twist * 10^7) pending first-principles derivation (DNK_Final_v7 Sec. 13.3/14.2).",
+      "external_reference": "Planck CMB (~6e-10)",
+      "is_predictive": false
+    },
+    "GM_sun_over_GM_Jup_constant_menu": {
+      "name": "GM_sun_over_GM_Jup_constant_menu",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 1044.3331544365747,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Exploratory comparison of additive constants (+sqrt(10): 0.0067%, +(sqrt2+sqrt3): 0.0082%, +pi: 0.0087%) to match IAU GM_sun/GM_Jup.",
+      "external_reference": "IAU / JPL DE440 (1047.5655)",
+      "is_predictive": false
+    },
+    "uranus_obliquity_ablation": {
+      "name": "uranus_obliquity_ablation",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 98.052,
+      "unit": "deg",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Ablation test showing 98.052 deg without 1/(2*103) (Delta=0.282 deg) vs 97.774 deg with post-hoc 1/(2*103) term.",
+      "external_reference": "IAU Uranus obliquity (97.77 deg)",
+      "is_predictive": false
+    },
+    "cabibbo_and_omega_lambda_ansatz": {
+      "name": "cabibbo_and_omega_lambda_ansatz",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 0.69,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. sin(theta_C)=0.2246 (0.61 sigma) and Omega_Lambda=0.6900 (0.73 sigma): compatibility checks, not proofs.",
+      "external_reference": "PDG 2024 / Planck 2018",
+      "is_predictive": false
+    },
+    "laguerre_solar_rhyme": {
+      "name": "laguerre_solar_rhyme",
+      "status": "VISUAL_RHYME",
+      "value": null,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "VISUAL RHYME ONLY. Structural analogy between Laguerre L_2^(0) nodal profile (mapped with 5 display knobs to x1=0.98, x2=3.60) and IT3 floor density. Not evidence, not a scaling law.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "micro_macro_descent_rhyme": {
+      "name": "micro_macro_descent_rhyme",
+      "status": "VISUAL_RHYME",
+      "value": null,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "VISUAL RHYME ONLY. Nuclear alpha-decay shift (Delta Z = -2) and celestial K-PHAM cascade (floor(x/sqrt3)) are non-isomorphic structural rhymes (Guard F.2).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "solar_atomic_shell_interpretation": {
+      "name": "solar_atomic_shell_interpretation",
+      "status": "OPEN_CONJECTURE",
+      "value": null,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "OPEN CONJECTURE. Interpretation of K-PHAM S_n floors as macroscopic atomic shells.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "z172_periodic_table_termination_conjecture": {
+      "name": "z172_periodic_table_termination_conjecture",
+      "status": "OPEN_CONJECTURE",
+      "value": 172,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "OPEN CONJECTURE. While 172 = 4*43 is exact arithmetic, identifying Z_max=172 as the physical end of the periodic system via FCC vacuum closure is a theoretical conjecture.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "stone_shield_astrometric_localization": {
+      "name": "stone_shield_astrometric_localization",
+      "status": "EMPIRICAL_TEST",
+      "value": null,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Empirical candidate anomaly localization near O_h E-nodes in NOIRLab/Gaia/AllWISE archives; not a confirmed solid topological body. Falsifiable by LSST DR1/DR2.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "macro_compton_periodicity": {
+      "name": "macro_compton_periodicity",
+      "status": "NULL_RESULT",
+      "value": -0.07,
+      "unit": "sigma",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "NULL RESULT. Macro-Compton periodicity at log(Lambda_1^2)=4.624 is not confirmed on current JFC-dominated cometary data (SNR < 0.1 sigma).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "solar_core_and_gaia_vT_lambda1_ansatz": {
+      "name": "solar_core_and_gaia_vT_lambda1_ansatz",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 24.545,
+      "unit": "days",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "DIAGNOSTIC ONLY. Kinematic ratios T_J/(Lambda_1^2*sqrt3) ≈ 24.545 d and v_T = v_0*Lambda_1^2/2 ≈ 50.956 km/s (Planet_9_v44 Sec. 2.6 & Sec. 9).",
+      "external_reference": "Helioseismic core (~24.5 d) / Gaia DR3 (<500 pc)",
+      "is_predictive": false
+    },
+    "catwise2020_e5_brown_dwarf_scan": {
+      "name": "catwise2020_e5_brown_dwarf_scan",
+      "status": "NULL_RESULT",
+      "value": 0,
+      "unit": "sources",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "NULL RESULT. CatWISE2020 thermal scan at E-5 (RA 61.24 deg, Dec -30.45 deg) detected 0 luminous Y/T brown dwarfs (W1-W2>=0.8, mu>=100 mas/yr, SNR>5), constraining baryonic point-mass models (Planet_9_v44 Sec. 10.2).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "solar_system_sn_observed_distribution": {
+      "name": "solar_system_sn_observed_distribution",
+      "status": "EMPIRICAL_TEST",
+      "value": 6335,
+      "unit": "objects in S_n=2",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "MPCORB objects populate S_n floors with 99.44% in S_n=0 and 6,335 in S_n=2.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "sliding_log_window_control": {
+      "name": "sliding_log_window_control",
+      "status": "EMPIRICAL_TEST",
+      "value": 97.64,
+      "unit": "% of sliding max",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Sliding Delta ln R = ln 2 control: empirical argmax window is [40.0, 80.0] AU (6,441 obj) vs S_n=2 window [34.97, 69.94) AU (6,289 obj).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "monte_carlo_1d_kuiper_peak_test": {
+      "name": "monte_carlo_1d_kuiper_peak_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 0.02555,
+      "unit": "p-value",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "1D Monte Carlo test of R_2=46.77 AU against observed Kuiper peak 47.38 AU (error 1.291%).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "joint_neptune_mmr_test": {
+      "name": "joint_neptune_mmr_test",
+      "status": "NULL_RESULT",
+      "value": 0.05185,
+      "unit": "p-value",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "NULL / NEGATIVE RESULT: 2D joint test against Neptune (30.07 AU) and 1:2 MMR (47.73 AU) yields 12.23% combined loss (p=0.05185).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "inclination_argmax_bootstrap_test": {
+      "name": "inclination_argmax_bootstrap_test",
+      "status": "NULL_RESULT",
+      "value": 29.75,
+      "unit": "deg",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Empirical inclination steepest-drop argmax is 29.75 deg (200-bootstrap 95% CI [28.75, 29.75] deg; 18 deg inside CI = False).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "trojan_L4_L5_epoch_matched_ratio": {
+      "name": "trojan_L4_L5_epoch_matched_ratio",
+      "status": "EMPIRICAL_TEST",
+      "value": 1.7175,
+      "unit": "",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Epoch-matched L4/L5 Trojan ratio using pure mean-longitude difference Delta lambda = lambda - lambda_J,mean(JD) (excluded 0 fallback epochs).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "cometary_shared_edge_entropy_dichotomy": {
+      "name": "cometary_shared_edge_entropy_dichotomy",
+      "status": "EMPIRICAL_TEST",
+      "value": -0.4669,
+      "unit": "bits",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:e2de02b72856e2e1, identical log10(R_eff) edges + normalized efficiency)).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "table1_key_outer_objects_verification": {
+      "name": "table1_key_outer_objects_verification",
+      "status": "EMPIRICAL_TEST",
+      "value": 7,
+      "unit": "of 7 objects",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Front [T1]: Empirical verification of S_n floors for Pluto(2), Makemake(2), Haumea(2), Eris(3), 2012VP113(4), Sedna(6), 2015TG387(8).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "centaur_sk2_vs_analytical_prior_test": {
+      "name": "centaur_sk2_vs_analytical_prior_test",
+      "status": "NULL_RESULT",
+      "value": 60.027,
+      "unit": "% S_k=2",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Front [C]: Observed Centaur S_k=2 share is 60.027% vs exact analytical uniform-omega prior (5-sqrt2)/6 = 59.763% (excess +0.26%, p=0.47916).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "asteroid_family_collisional_variance_test": {
+      "name": "asteroid_family_collisional_variance_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 0.5729,
+      "unit": "AU (sigma_Reff)",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Front [D]: Main-belt cells (N>=5) have Var(S_n)=0.0 (all in S_n=0) and sigma(R_eff)=0.5729 AU, confirming collisional debris dispersion.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "nea_pha_micro_shell_occupancy_test": {
+      "name": "nea_pha_micro_shell_occupancy_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 47.75,
+      "unit": "% in dominant cell",
+      "uncertainty": null,
+      "proof_id": null,
+      "dependencies": [],
+      "statement": "Front [3]: NEA/PHA S_n=0 population (N=43,037) dominant cell [2, 1] has 47.75% vs uniform S_k=2 prior 59.76%.",
+      "external_reference": null,
+      "is_predictive": false
+    }
+  },
+  "predictive_claims": [
+    "pinned_inradius_metric_scale_2r",
+    "kpham_valence_shell_radius_R2",
+    "subadditive_defect_coalescence_ratio_equal_mass",
+    "oh_outer_egg_shells_rin_Rmid_Rout"
+  ],
+  "diagnostic_claims": [
+    "sn2_band_Z_sqrt2_definitional_expansion",
+    "anisotropic_dual_sum_11_over_6_diagnostic",
+    "cuboctahedral_q2_shell_43_coincidence",
+    "moonshine_integer_factorizations_diagnostic",
+    "variational_E_N_102_vs_103_diagnostic",
+    "alpha_inv_prediction",
+    "alpha_inv_divisor_grid_argmin",
+    "muon_electron_mass_ratio_ansatz",
+    "proton_electron_mass_ratio_ansatz",
+    "dark_matter_to_baryon_ratio_ansatz",
+    "baryon_asymmetry_eta_ansatz",
+    "GM_sun_over_GM_Jup_constant_menu",
+    "uranus_obliquity_ablation",
+    "cabibbo_and_omega_lambda_ansatz",
+    "laguerre_solar_rhyme",
+    "micro_macro_descent_rhyme",
+    "solar_atomic_shell_interpretation",
+    "z172_periodic_table_termination_conjecture",
+    "stone_shield_astrometric_localization",
+    "macro_compton_periodicity",
+    "solar_core_and_gaia_vT_lambda1_ansatz",
+    "catwise2020_e5_brown_dwarf_scan",
+    "solar_system_sn_observed_distribution",
+    "sliding_log_window_control",
+    "monte_carlo_1d_kuiper_peak_test",
+    "joint_neptune_mmr_test",
+    "inclination_argmax_bootstrap_test",
+    "trojan_L4_L5_epoch_matched_ratio",
+    "cometary_shared_edge_entropy_dichotomy",
+    "table1_key_outer_objects_verification",
+    "centaur_sk2_vs_analytical_prior_test",
+    "asteroid_family_collisional_variance_test",
+    "nea_pha_micro_shell_occupancy_test"
+  ],
+  "epistemic_ledger": {
+    "version": "IT3-v22.6-strict",
+    "epistemic_mode": "proven-only",
+    "external_benchmarks_are_not_predictions": true,
+    "unproven_predictive_flag_share": 0.0,
+    "exploratory_diagnostic_share": 0.422222,
+    "numerology_exposure": 0.0,
+    "postulates": {
+      "P1_INRADIUS": "Metric pinning by the constructible right triangle (sqrt(2), sqrt(3), sqrt(5)) incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) (Math_Topology_v17 Postulate 2.7).",
+      "P2_UNIT_AU": "Astronomical unit normalization r_0 = 1.0 AU as the m=0 unit length scale for the dimensionless O_h sphere ladder R(m)/r_0 = (sqrt(3))^m (Planet_9_v44 Sec. 4.1.1).",
+      "P3_SURFACE_TENSION": "Topological defect boundary area scales as A(N) proportional to N^(2/3) (Math_Topology_v17 Prop. 6.2 & Postulate 6.3)."
+    },
+    "theorems": {
+      "T2.1_DISC": "Field discriminant of K=Q(sqrt2,sqrt3,sqrt5) is Delta_K = 2^16 * 3^4 * 5^4 = 3,317,760,000; sqrt(|Delta_K|) = 57,600 = 240^2.",
+      "T2.5_PYTH": "Coupled Pythagorean closure 1^2+(sqrt2)^2=(sqrt3)^2, (sqrt2)^2+(sqrt3)^2=(sqrt5)^2 and inradius 2r = sqrt2+sqrt3-sqrt5.",
+      "T2.9_KUMMER": "Square-free Kummer sieve over {2,3,5} proves sqrt(13) not in K (13 does not divide 30).",
+      "T_E8_CARTAN": "E_8 root system has 240 minimal vectors and Cartan determinant det(G_E8) = 1.",
+      "T_OH_SPHERE_LADDER": "For a cube of side a, circumscribed-to-inscribed sphere ratio is R_out/r_in = sqrt(3) (area ratio 3); with A_F valency tensor dimension m_1 = v_l*v_q = 2*3 = 6 and Dirichlet unit rank rk(O_K^x) = 7, the dimensionless ladder (sqrt(3))^m gives (sqrt(3))^6 = 3^3 = 27 and (sqrt(3))^7 = 27*sqrt(3).",
+      "T_OH_FCC": "O_h branching {2,6,10,14} yields bicone capacities {2,8,8,18,18,32}, hemisphere sum 86, full sum 172 = 4*43, and FCC Kepler packing ratio pi/sqrt(18).",
+      "T_SUBADDITIVE": "Strict concavity of f(N)=N^(2/3) implies (N1+N2)^(2/3) < N1^(2/3) + N2^(2/3).",
+      "T_GALOIS_18DEG": "sin(18 deg) = (sqrt(5)-1)/4 lies in Q(sqrt5) subset K, whereas Q(cos 18 deg) = Q(zeta_20)^+ has cyclic Galois group Z/4Z of exponent 4 and cannot embed into Gal(K/Q) = (Z/2Z)^3 of exponent 2; hence cos(18 deg) is not in K and 18 deg is not an SO(3,K) rotation.",
+      "T_KPHAM_MEASURE": "For prograde orbits i in [0,90 deg], K-PHAM maps (S_k,S_h) strictly into {1,2}x{1,2,3}; under uniform omega in [0,360 deg) at delta_k=0, the exact measure of S_k=2 is (5 - sqrt(2))/6 ≈ 0.597631 in K.",
+      "T_STELLA_MULTIPOLE": "Cube vertices {+-1,+-1,+-1} partition uniquely by parity xyz=+-1 into two regular tetrahedra T1, T2 (edge^2=8); for the 12 cuboctahedral E-nodes, multipole moments l=1, l=2, l=3 vanish identically while l=4 is non-zero; P_2(cos arccos(1/sqrt3)) = 0 and arccos(1/sqrt3)+arccos(sqrt(2/3)) = 90 deg."
+    },
+    "predictive_claims": [
+      "pinned_inradius_metric_scale_2r",
+      "kpham_valence_shell_radius_R2",
+      "subadditive_defect_coalescence_ratio_equal_mass",
+      "oh_outer_egg_shells_rin_Rmid_Rout"
+    ],
+    "diagnostic_claims": [
+      "sn2_band_Z_sqrt2_definitional_expansion",
+      "anisotropic_dual_sum_11_over_6_diagnostic",
+      "cuboctahedral_q2_shell_43_coincidence",
+      "moonshine_integer_factorizations_diagnostic",
+      "variational_E_N_102_vs_103_diagnostic",
+      "alpha_inv_prediction",
+      "alpha_inv_divisor_grid_argmin",
+      "muon_electron_mass_ratio_ansatz",
+      "proton_electron_mass_ratio_ansatz",
+      "dark_matter_to_baryon_ratio_ansatz",
+      "baryon_asymmetry_eta_ansatz",
+      "GM_sun_over_GM_Jup_constant_menu",
+      "uranus_obliquity_ablation",
+      "cabibbo_and_omega_lambda_ansatz",
+      "laguerre_solar_rhyme",
+      "micro_macro_descent_rhyme",
+      "solar_atomic_shell_interpretation",
+      "z172_periodic_table_termination_conjecture",
+      "stone_shield_astrometric_localization",
+      "macro_compton_periodicity",
+      "solar_core_and_gaia_vT_lambda1_ansatz",
+      "catwise2020_e5_brown_dwarf_scan",
+      "solar_system_sn_observed_distribution",
+      "sliding_log_window_control",
+      "monte_carlo_1d_kuiper_peak_test",
+      "joint_neptune_mmr_test",
+      "inclination_argmax_bootstrap_test",
+      "trojan_L4_L5_epoch_matched_ratio",
+      "cometary_shared_edge_entropy_dichotomy",
+      "table1_key_outer_objects_verification",
+      "centaur_sk2_vs_analytical_prior_test",
+      "asteroid_family_collisional_variance_test",
+      "nea_pha_micro_shell_occupancy_test"
+    ],
+    "claims": {
+      "Delta_K_field_discriminant": {
+        "name": "Delta_K_field_discriminant",
+        "status": "EXACT_MATH",
+        "value": 3317760000,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": "T2.1_DISC",
+        "dependencies": [],
+        "statement": "Field discriminant of K = Q(sqrt2, sqrt3, sqrt5) from product of 7 quadratic subfield conductors; sqrt(|Delta_K|) = 57,600 = 240^2.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "E8_Cartan_determinant_and_roots": {
+        "name": "E8_Cartan_determinant_and_roots",
+        "status": "EXACT_MATH",
+        "value": 1.0,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": "T_E8_CARTAN",
+        "dependencies": [],
+        "statement": "det(Cartan E_8) = 1 and kissing number tau_8 = 240 minimal vectors (volume ratio only, not an embedding of O_K into E_8).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "Kummer_wall_sqrt13_exclusion": {
+        "name": "Kummer_wall_sqrt13_exclusion",
+        "status": "EXACT_MATH",
+        "value": 13,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": "T2.9_KUMMER",
+        "dependencies": [],
+        "statement": "13 does not divide 30 = 2*3*5, hence sqrt(13) is not in K = Q(sqrt2, sqrt3, sqrt5).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "oh_sphere_ladder_27_and_27sqrt3_identities": {
+        "name": "oh_sphere_ladder_27_and_27sqrt3_identities",
+        "status": "EXACT_MATH",
+        "value": 46.76537180435968,
+        "unit": "dimensionless ratio R_2 / r_0",
+        "uncertainty": null,
+        "proof_id": "T_OH_SPHERE_LADDER",
+        "dependencies": [],
+        "statement": "Cube sphere ratio Lambda_Y = R_out/r_in = sqrt(3) raised to valency tensor dimension m_1 = v_l*v_q = 6 gives (sqrt(3))^6 = 3^3 = 27, and at m_2 = rk(O_K^x) = 7 gives (sqrt(3))^7 = 27*sqrt(3).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "FCC_kepler_packing_and_bicone_sum": {
+        "name": "FCC_kepler_packing_and_bicone_sum",
+        "status": "EXACT_MATH",
+        "value": 0.7404804896930611,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": "T_OH_FCC",
+        "dependencies": [],
+        "statement": "O_h capacities {2,8,8,18,18,32} sum to 86 (172 = 4*43 over both bowls), and 172 spheres of radius a*sqrt(2)/4 in 43 FCC cells fill pi/sqrt(18).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "stella_octangula_and_oh_multipole_vanishing": {
+        "name": "stella_octangula_and_oh_multipole_vanishing",
+        "status": "EXACT_MATH",
+        "value": 90.0,
+        "unit": "deg (alpha_magic + gamma)",
+        "uncertainty": null,
+        "proof_id": "T_STELLA_MULTIPOLE",
+        "dependencies": [],
+        "statement": "Cube vertices partition into T1 and T2 regular tetrahedra; cuboctahedral E-nodes have l=1,2,3 moments identically zero (first non-zero is hexadecapole l=4); P_2(cos 54.7356 deg) = 0 and alpha_magic + gamma = 90 deg.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "galois_18deg_sin_in_K_cos_not_in_K": {
+        "name": "galois_18deg_sin_in_K_cos_not_in_K",
+        "status": "EXACT_MATH",
+        "value": 0.3090169944,
+        "unit": "sin(18 deg)",
+        "uncertainty": null,
+        "proof_id": "T_GALOIS_18DEG",
+        "dependencies": [],
+        "statement": "sin(18 deg) = (sqrt5-1)/4 is in Q(sqrt5) subset K, but cos(18 deg) is not in K because Gal(Q(cos 18 deg)/Q) = Z/4Z has exponent 4 != 2; proves 18 deg is an algebraic echo, not a geometric forcing.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "kpham_prograde_domain_and_sk2_uniform_prior": {
+        "name": "kpham_prograde_domain_and_sk2_uniform_prior",
+        "status": "EXACT_MATH",
+        "value": 0.5976310729,
+        "unit": "P_null(S_k=2)",
+        "uncertainty": null,
+        "proof_id": "T_KPHAM_MEASURE",
+        "dependencies": [],
+        "statement": "Prograde orbits (i<=90 deg) satisfy (S_k,S_h) in {1,2}x{1,2,3} identically; under uniform omega in [0,360 deg), the exact geometric prior for S_k=2 is (5-sqrt2)/6 ≈ 59.763%.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "pinned_inradius_metric_scale_2r": {
+        "name": "pinned_inradius_metric_scale_2r",
+        "status": "DERIVED_FROM_POSTULATES",
+        "value": 0.9101963924421828,
+        "unit": "dimensionless",
+        "uncertainty": null,
+        "proof_id": "T2.5_PYTH+P1_INRADIUS",
+        "dependencies": [
+          "P1_INRADIUS",
+          "T2.5_PYTH"
+        ],
+        "statement": "Incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) derived from metric pinning postulate P1_INRADIUS.",
+        "external_reference": null,
+        "is_predictive": true
+      },
+      "kpham_valence_shell_radius_R2": {
+        "name": "kpham_valence_shell_radius_R2",
+        "status": "DERIVED_FROM_POSTULATES",
+        "value": 46.76537180435968,
+        "unit": "AU",
+        "uncertainty": null,
+        "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+        "dependencies": [
+          "P2_UNIT_AU",
+          "T_OH_SPHERE_LADDER"
+        ],
+        "statement": "From R(m) = r_0 * (sqrt(3))^m with unit scale P2_UNIT_AU (r_0 = 1 AU), the m=6 neck shell is R_1 = (sqrt(3))^6 AU = 27.0 AU and the m=7 shell is R_2 = (sqrt(3))^7 AU = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to any catalog comparison).",
+        "external_reference": null,
+        "is_predictive": true
+      },
+      "subadditive_defect_coalescence_ratio_equal_mass": {
+        "name": "subadditive_defect_coalescence_ratio_equal_mass",
+        "status": "DERIVED_FROM_POSTULATES",
+        "value": 0.7937005259840997,
+        "unit": "E_merge / E_sep",
+        "uncertainty": null,
+        "proof_id": "P3_SURFACE_TENSION+T_SUBADDITIVE",
+        "dependencies": [
+          "P3_SURFACE_TENSION",
+          "T_SUBADDITIVE"
+        ],
+        "statement": "For two equal defects N1=N2, E_merge/E_sep = 2^(2/3)/2 = 2^(-1/3) ≈ 0.7937 < 1 under P3_SURFACE_TENSION.",
+        "external_reference": null,
+        "is_predictive": true
+      },
+      "oh_outer_egg_shells_rin_Rmid_Rout": {
+        "name": "oh_outer_egg_shells_rin_Rmid_Rout",
+        "status": "DERIVED_FROM_POSTULATES",
+        "value": 420.888346,
+        "unit": "AU (R_out)",
+        "uncertainty": null,
+        "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+        "dependencies": [
+          "P2_UNIT_AU",
+          "T_OH_SPHERE_LADDER"
+        ],
+        "statement": "Under unit scale P2_UNIT_AU (r_0=1 AU), the m=10 inscribed sphere is r_in=(sqrt3)^10=243.0 AU, the m=11 circumscribed sphere is R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and the 12 edge midpoints lie at R_mid=R_out*sqrt(2/3)=243*sqrt2≈343.65 AU.",
+        "external_reference": null,
+        "is_predictive": true
+      },
+      "sn2_band_Z_sqrt2_definitional_expansion": {
+        "name": "sn2_band_Z_sqrt2_definitional_expansion",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 34.97056274847714,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Definitional algebraic expansion: since Lambda_1 = sqrt(3)*(3+2*sqrt(2)) already contains sqrt(3), multiplying by 2*sqrt(3) gives 18+12*sqrt(2) by definition, not a new physical law.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "anisotropic_dual_sum_11_over_6_diagnostic": {
+        "name": "anisotropic_dual_sum_11_over_6_diagnostic",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 1.8333333333333333,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Arithmetic sum 1 + 1/2 + 1/3 = 11/6 (and 4*11/6 = 22/3); the standard isotropic 3D cubic lattice Laplacian maximum is 12.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "cuboctahedral_q2_shell_43_coincidence": {
+        "name": "cuboctahedral_q2_shell_43_coincidence",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 43,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Selecting the second FCC coordination shell q=2 in 10q^2+2+1 = 43 is a post-hoc shell choice matching the bicone sum 43.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "moonshine_integer_factorizations_diagnostic": {
+        "name": "moonshine_integer_factorizations_diagnostic",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 960,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Integer identities 960=4*240, 744=3*248, 1728=12^3 are unused in the pipeline; 744 and 1728 are not derived from K.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "variational_E_N_102_vs_103_diagnostic": {
+        "name": "variational_E_N_102_vs_103_diagnostic",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 103,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [
+          "LAMBDA_1"
+        ],
+        "statement": "DIAGNOSTIC ONLY. Unfiltered E_geom(N) minimum is N=102 (E=101.831); N=103 (E=102.019) requires the gcd(N,3)=1 ansatz or Omega-penalty weight mu > 0.09402.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "alpha_inv_prediction": {
+        "name": "alpha_inv_prediction",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 137.03705995132654,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [
+          "LAMBDA_1",
+          "N_TWIST",
+          "LAMBDA_3",
+          "WRITHE"
+        ],
+        "statement": "DIAGNOSTIC ONLY. NOT A PROVEN PREDICTION. Uses unproven N_twist=103 and discrete divisor selection (3,6,30) (7.74 ppm from CODATA 2022).",
+        "external_reference": "CODATA 2022 (137.035999084)",
+        "is_predictive": false
+      },
+      "alpha_inv_divisor_grid_argmin": {
+        "name": "alpha_inv_divisor_grid_argmin",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 137.03589,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Grid-search sensitivity analysis over 12x24x60 divisor triples; argmin is (3,6,31) at 0.80 ppm (no group justification).",
+        "external_reference": "CODATA 2022 (137.035999084)",
+        "is_predictive": false
+      },
+      "muon_electron_mass_ratio_ansatz": {
+        "name": "muon_electron_mass_ratio_ansatz",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 206.766841,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Evaluates 2*sqrt(N_twist^2 + D_k)*(1 + A_geom + delta_interf); depends on N_twist=103 ansatz (6.97 ppm from CODATA).",
+        "external_reference": "CODATA 2022 (206.7682830)",
+        "is_predictive": false
+      },
+      "proton_electron_mass_ratio_ansatz": {
+        "name": "proton_electron_mass_ratio_ansatz",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 1836.148506648882,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Braid combinatorics ansatz 18*Lambda_1^2*(1+alpha/2pi)/Phi_braid = 1836.1485 vs CODATA 1836.1527.",
+        "external_reference": "CODATA 2022 (1836.15267343)",
+        "is_predictive": false
+      },
+      "dark_matter_to_baryon_ratio_ansatz": {
+        "name": "dark_matter_to_baryon_ratio_ansatz",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 5.355475671634783,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Ratio Lambda_1/(sqrt(3)*|Wr|) = 5.3555; comparison with Planck (~5.4) is a consistency check, not proof.",
+        "external_reference": "Planck 2018 (~5.36)",
+        "is_predictive": false
+      },
+      "baryon_asymmetry_eta_ansatz": {
+        "name": "baryon_asymmetry_eta_ansatz",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 1.056613353950077e-09,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Phenomenological ansatz |Wr|/(N_twist * 10^7) pending first-principles derivation (DNK_Final_v7 Sec. 13.3/14.2).",
+        "external_reference": "Planck CMB (~6e-10)",
+        "is_predictive": false
+      },
+      "GM_sun_over_GM_Jup_constant_menu": {
+        "name": "GM_sun_over_GM_Jup_constant_menu",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 1044.3331544365747,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Exploratory comparison of additive constants (+sqrt(10): 0.0067%, +(sqrt2+sqrt3): 0.0082%, +pi: 0.0087%) to match IAU GM_sun/GM_Jup.",
+        "external_reference": "IAU / JPL DE440 (1047.5655)",
+        "is_predictive": false
+      },
+      "uranus_obliquity_ablation": {
+        "name": "uranus_obliquity_ablation",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 98.052,
+        "unit": "deg",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Ablation test showing 98.052 deg without 1/(2*103) (Delta=0.282 deg) vs 97.774 deg with post-hoc 1/(2*103) term.",
+        "external_reference": "IAU Uranus obliquity (97.77 deg)",
+        "is_predictive": false
+      },
+      "cabibbo_and_omega_lambda_ansatz": {
+        "name": "cabibbo_and_omega_lambda_ansatz",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 0.69,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. sin(theta_C)=0.2246 (0.61 sigma) and Omega_Lambda=0.6900 (0.73 sigma): compatibility checks, not proofs.",
+        "external_reference": "PDG 2024 / Planck 2018",
+        "is_predictive": false
+      },
+      "laguerre_solar_rhyme": {
+        "name": "laguerre_solar_rhyme",
+        "status": "VISUAL_RHYME",
+        "value": null,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "VISUAL RHYME ONLY. Structural analogy between Laguerre L_2^(0) nodal profile (mapped with 5 display knobs to x1=0.98, x2=3.60) and IT3 floor density. Not evidence, not a scaling law.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "micro_macro_descent_rhyme": {
+        "name": "micro_macro_descent_rhyme",
+        "status": "VISUAL_RHYME",
+        "value": null,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "VISUAL RHYME ONLY. Nuclear alpha-decay shift (Delta Z = -2) and celestial K-PHAM cascade (floor(x/sqrt3)) are non-isomorphic structural rhymes (Guard F.2).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "solar_atomic_shell_interpretation": {
+        "name": "solar_atomic_shell_interpretation",
+        "status": "OPEN_CONJECTURE",
+        "value": null,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "OPEN CONJECTURE. Interpretation of K-PHAM S_n floors as macroscopic atomic shells.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "z172_periodic_table_termination_conjecture": {
+        "name": "z172_periodic_table_termination_conjecture",
+        "status": "OPEN_CONJECTURE",
+        "value": 172,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "OPEN CONJECTURE. While 172 = 4*43 is exact arithmetic, identifying Z_max=172 as the physical end of the periodic system via FCC vacuum closure is a theoretical conjecture.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "stone_shield_astrometric_localization": {
+        "name": "stone_shield_astrometric_localization",
+        "status": "EMPIRICAL_TEST",
+        "value": null,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Empirical candidate anomaly localization near O_h E-nodes in NOIRLab/Gaia/AllWISE archives; not a confirmed solid topological body. Falsifiable by LSST DR1/DR2.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "macro_compton_periodicity": {
+        "name": "macro_compton_periodicity",
+        "status": "NULL_RESULT",
+        "value": -0.07,
+        "unit": "sigma",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "NULL RESULT. Macro-Compton periodicity at log(Lambda_1^2)=4.624 is not confirmed on current JFC-dominated cometary data (SNR < 0.1 sigma).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "solar_core_and_gaia_vT_lambda1_ansatz": {
+        "name": "solar_core_and_gaia_vT_lambda1_ansatz",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 24.545,
+        "unit": "days",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "DIAGNOSTIC ONLY. Kinematic ratios T_J/(Lambda_1^2*sqrt3) ≈ 24.545 d and v_T = v_0*Lambda_1^2/2 ≈ 50.956 km/s (Planet_9_v44 Sec. 2.6 & Sec. 9).",
+        "external_reference": "Helioseismic core (~24.5 d) / Gaia DR3 (<500 pc)",
+        "is_predictive": false
+      },
+      "catwise2020_e5_brown_dwarf_scan": {
+        "name": "catwise2020_e5_brown_dwarf_scan",
+        "status": "NULL_RESULT",
+        "value": 0,
+        "unit": "sources",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "NULL RESULT. CatWISE2020 thermal scan at E-5 (RA 61.24 deg, Dec -30.45 deg) detected 0 luminous Y/T brown dwarfs (W1-W2>=0.8, mu>=100 mas/yr, SNR>5), constraining baryonic point-mass models (Planet_9_v44 Sec. 10.2).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "solar_system_sn_observed_distribution": {
+        "name": "solar_system_sn_observed_distribution",
+        "status": "EMPIRICAL_TEST",
+        "value": 6335,
+        "unit": "objects in S_n=2",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "MPCORB objects populate S_n floors with 99.44% in S_n=0 and 6,335 in S_n=2.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "sliding_log_window_control": {
+        "name": "sliding_log_window_control",
+        "status": "EMPIRICAL_TEST",
+        "value": 97.64,
+        "unit": "% of sliding max",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Sliding Delta ln R = ln 2 control: empirical argmax window is [40.0, 80.0] AU (6,441 obj) vs S_n=2 window [34.97, 69.94) AU (6,289 obj).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "monte_carlo_1d_kuiper_peak_test": {
+        "name": "monte_carlo_1d_kuiper_peak_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 0.02555,
+        "unit": "p-value",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "1D Monte Carlo test of R_2=46.77 AU against observed Kuiper peak 47.38 AU (error 1.291%).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "joint_neptune_mmr_test": {
+        "name": "joint_neptune_mmr_test",
+        "status": "NULL_RESULT",
+        "value": 0.05185,
+        "unit": "p-value",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "NULL / NEGATIVE RESULT: 2D joint test against Neptune (30.07 AU) and 1:2 MMR (47.73 AU) yields 12.23% combined loss (p=0.05185).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "inclination_argmax_bootstrap_test": {
+        "name": "inclination_argmax_bootstrap_test",
+        "status": "NULL_RESULT",
+        "value": 29.75,
+        "unit": "deg",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Empirical inclination steepest-drop argmax is 29.75 deg (200-bootstrap 95% CI [28.75, 29.75] deg; 18 deg inside CI = False).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "trojan_L4_L5_epoch_matched_ratio": {
+        "name": "trojan_L4_L5_epoch_matched_ratio",
+        "status": "EMPIRICAL_TEST",
+        "value": 1.7175,
+        "unit": "",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Epoch-matched L4/L5 Trojan ratio using pure mean-longitude difference Delta lambda = lambda - lambda_J,mean(JD) (excluded 0 fallback epochs).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "cometary_shared_edge_entropy_dichotomy": {
+        "name": "cometary_shared_edge_entropy_dichotomy",
+        "status": "EMPIRICAL_TEST",
+        "value": -0.4669,
+        "unit": "bits",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:e2de02b72856e2e1, identical log10(R_eff) edges + normalized efficiency)).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "table1_key_outer_objects_verification": {
+        "name": "table1_key_outer_objects_verification",
+        "status": "EMPIRICAL_TEST",
+        "value": 7,
+        "unit": "of 7 objects",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Front [T1]: Empirical verification of S_n floors for Pluto(2), Makemake(2), Haumea(2), Eris(3), 2012VP113(4), Sedna(6), 2015TG387(8).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "centaur_sk2_vs_analytical_prior_test": {
+        "name": "centaur_sk2_vs_analytical_prior_test",
+        "status": "NULL_RESULT",
+        "value": 60.027,
+        "unit": "% S_k=2",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Front [C]: Observed Centaur S_k=2 share is 60.027% vs exact analytical uniform-omega prior (5-sqrt2)/6 = 59.763% (excess +0.26%, p=0.47916).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "asteroid_family_collisional_variance_test": {
+        "name": "asteroid_family_collisional_variance_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 0.5729,
+        "unit": "AU (sigma_Reff)",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Front [D]: Main-belt cells (N>=5) have Var(S_n)=0.0 (all in S_n=0) and sigma(R_eff)=0.5729 AU, confirming collisional debris dispersion.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "nea_pha_micro_shell_occupancy_test": {
+        "name": "nea_pha_micro_shell_occupancy_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 47.75,
+        "unit": "% in dominant cell",
+        "uncertainty": null,
+        "proof_id": null,
+        "dependencies": [],
+        "statement": "Front [3]: NEA/PHA S_n=0 population (N=43,037) dominant cell [2, 1] has 47.75% vs uniform S_k=2 prior 59.76%.",
+        "external_reference": null,
+        "is_predictive": false
+      }
+    },
+    "epistemic_policy": "Only EXACT_MATH and DERIVED_FROM_POSTULATES may be used as predictions. Empirical tests, ansätze, visual rhymes and null results are retained as diagnostics but are not physical proofs."
+  }
+}

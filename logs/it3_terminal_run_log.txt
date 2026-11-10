@@ -1,0 +1,347 @@
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 1: AUTONOMOUS REPOSITORY DATA ACQUISITION (HARVARD-SMITHSONIAN CfA)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  ⬇ Downloading ./data/CometEls.txt from Harvard MPC...
+  ✓ Downloaded from Harvard MPC: [./data/CometEls.txt]
+  ⬇ Downloading ./data/NEA.txt from Harvard MPC...
+  ✓ Downloaded from Harvard MPC: [./data/NEA.txt]
+  ⬇ Downloading ./data/PHA.txt from Harvard MPC...
+  ✓ Downloaded from Harvard MPC: [./data/PHA.txt]
+  ⬇ Downloading ./data/newnumids.dat from Harvard MPC...
+  ✓ Downloaded from Harvard MPC: [./data/newnumids.dat]
+  ⬇ Downloading ./data/neocp.txt from Harvard MPC...
+  ✓ Downloaded from Harvard MPC: [./data/neocp.txt]
+  ⚠ ./data/MPCORB.DAT not found (or --fresh-download requested). Downloading from Harvard-Smithsonian CfA...
+  ✓ Extracted ./data/MPCORB.DAT into ./data/ directory.
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║   IT³ K-PHAM (Release: IT3-v22.6-strict) — PROOF LEDGER & DIAGNOSTIC SUITE          ║
+║   Epistemic Mode: proven-only        | Numerology Exposure: Computed Dynamically     ║
+║   Authors: Victor Logvinovich & Jean-Claude Perez | DOI: 10.5281/zenodo.21792530     ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
+IT3 strict epistemic policy (Release IT3-v22.6-strict):
+1. Exact mathematical identities are marked EXACT_MATH.
+2. Physical predictions are allowed only if marked EXACT_MATH or
+   DERIVED_FROM_POSTULATES.
+3. Catalog statistics are marked EMPIRICAL_TEST or NULL_RESULT.
+4. Exploratory constant matching is marked ANSATZ_DIAGNOSTIC.
+5. Micro-macro analogies are marked VISUAL_RHYME.
+6. No diagnostic, rhyme, or ansatz may be used as proof.
+7. Numerology exposure is computed, not asserted.
+
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 0A: LAYER I — STRICT ALGEBRAIC & GEOMETRIC THEOREMS (EXACT_MATH)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  [EXACT] 1²+(√2)²=(√3)², (√2)²+(√3)²=(√5)² | 2r = √2+√3-√5 = 0.910196 | L₂⁽⁰⁾ roots 2±√2 ∈ K
+  [EXACT] Δ_K = 3,317,760,000 = 2¹⁶3⁴5⁴ | √|Δ_K| = 57,600 = 240² | det(Cartan E₈) = 1 (τ₈ = 240)
+  [EXACT] √13 ∉ K (13∤30) | gcd(102,3)=3 vs gcd(103,3)=1 | ΣC(n)=86, 172=4·43, k=π/√18=0.740480
+  [EXACT] O_h Ladder (√3)^m: m=6→27, m=7→27√3=46.7654, m=10→243, m=11→243√3=420.89, R_mid=243√2=343.65
+  [EXACT] Stella Octangula T₁⊔T₂ (d²=8) | O_h Multipoles l=1,2,3 ≡ 0 (l=4 ≠ 0) | α_magic+γ = 54.74°+35.26° = 90° | P₂(cos α_magic)=0
+  [EXACT] Galois 18° Theorem: sin18°=(√5-1)/4 ∈ Q(√5)⊂K, but Gal(Q(cos18°)/Q)≅Z/4Z ⊄ (Z/2Z)³ ⇒ cos18°∉K
+  [EXACT] K-PHAM Domain & Prior Theorem: Prograde i≤90° ⇒ (S_k,S_h)∈{1,2}×{1,2,3} | Uniform P₀(S_k=2) = (5−√2)/6 = 0.597631
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 0B: LAYER III — ANSATZ DIAGNOSTICS (EXPLORATORY ONLY, NON-PREDICTIVE)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  [ANSATZ DIAGNOSTIC] E_geom(N) min: unfiltered = 102 (E=101.831) | gcd(N,5)=1 min = 102 | gcd(N,3)=1 min = 103 (μ_crit=0.09402)
+  [ANSATZ DIAGNOSTIC] α⁻¹ divisor grid: (3,6,30) gives 137.037060 (7.74 ppm, rank #2/17280) vs grid argmin (3, 6, 31) (0.80 ppm)
+  [ANSATZ DIAGNOSTIC] GM_☉/GM_J constant menu: +√10 (0.0067%) | +(√2+√3) (0.0082%) | +π (0.0087%)
+  [ANSATZ DIAGNOSTIC] Uranus ablation: 98.052° without 1/(2·103) (Δ=0.282°) vs 97.774° with 1/(2·103) (Δ=0.004°)
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 2: ORBITAL PARSING & CLASSIFICATION (INCLUDING MEAN ANOMALY M)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+
+  ✓ Loaded 1,579,912 celestial objects in 37.30s (42,355 obj/s).
+
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 3: IT³ K-PHAM v2.2 DESCENT QUANTIZATION
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  Applying Perez-Logvinovich topological operator to 1,579,912 objects...
+
+    → Checkpoint: 500,000/1,579,912 phase states calculated...
+    → Checkpoint: 1,000,000/1,579,912 phase states calculated...
+    → Checkpoint: 1,500,000/1,579,912 phase states calculated...
+
+  ✓ Quantization complete in 28.53s (55,381 ops/sec)
+
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 7: SLIDING EQUAL-LOG-WIDTH WINDOW CONTROL (Δln R = ln 2) & PARTITION
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  🧬 DIOPHANTINE CASCADE AUDIT over Q(√2,√3,√5):
+  Operator: iterative floor cascade S_n = min{k≥0 : x_(k+1)=0}, x_(k+1)=⌊x_k/√3⌋
+
+  0. Saturated Layer (27–48 AU):   3,074 objects
+     • Integer cascade projection:      100.00% (exact by floor-cascade definition)
+
+  1. Descriptive 3-Way Partition of Ionized Sector (R_eff > 48 AU, N=5,632):
+     • Floors S_n ≥ 3:                     2,025 (35.96%)
+     • S_n=2 Evaporative Tail:             3,485 (61.88%) [Inner 48–69.94 AU: 3,439 | Outer 326–410 AU: 46]
+     • S_n ∈ {0,1} (>243 AU reset):          122 ( 2.17%)
+     • Parity check:                    35.96% + 61.88% + 2.17% = 100.00% (exact partition; continuum lives in E_ion)
+
+  2. Sliding Equal-Log-Width Window Control [R₀, 2R₀) across R₀ ∈ [15, 65] AU:
+     • Theoretical S_n=2 Window [34.97, 69.94) AU:    6,289 objects (Adjacent: 426 lower, 1,387 upper; ratio=6.94×)
+     • Empirical Argmax Window  [40.00, 80.00) AU:    6,441 objects (Any ×2 window covering 40–50 AU captures the Kuiper belt)
+     • S_n=2 Capture vs Best ×2 Window: 97.64% of max | Edge offset ΔR₀ = -5.03 AU
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 7.5: LAYER II — MONTE CARLO (WITH NEGATIVE JOINT RESULT), i-ARGMAX & TROJANS
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  [EMPIRICAL: Monte Carlo]    1. Peak-Only (R₀Λ vs 47.38 AU, δ=1.29%): p_peak = 0.0255
+                              2. Joint vs Obs (a_N=30.07 AU & 1:2 MMR=47.73 AU): loss=12.23%, p_joint = 0.0519 (NEGATIVE RESULT: R₁=27 AU misses a_N by 10.2%)
+  [EMPIRICAL: i-Scan Argmax]  Empirical steepest drop = 29.75° (200-boot 95% CI [28.75, 29.75]°, ratio=2.091×; 18° in CI = False)
+                              Grid drop ratios: 12°(1.196×) | 15°(1.503×) | 18°(1.793×) | 20°(1.442×)
+  [EMPIRICAL: Pure Δλ Trojans]   Trojans (excluded bad epochs=0): L4=10,183, L5=5,929 → Ratio = 1.718
+  [EMPIRICAL: Shared-Edge ΔH] Radial ΔH_shared = -0.4669 bits (H_free=1.5569b - H_bound=2.0238b) | Discrete H(S_n)=1.5414b
+  [VISUAL RHYME]              5 display params (scale=1.45, pow=1.35, α=0.85, β=0.58, σ=0.65) map L₂⁽⁰⁾ nodes to x₁=0.98, x₂=3.6
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 7.6: 11-FRONT K-PHAM VALIDATION SUITE (INTEGRATED FROM mp.py WITH NULL CONTROLS)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  [FRONT B: Macro-Compton]    N_bound=852 (deep S_n≥3: 155) | B1 log(Λ₁²) SNR=-0.07σ | B3 log(√3) SNR=-0.19σ → ARTIFACT_NULL (JFC volume echo)
+  [FRONT T1: Table 1 Benchmarks] Verified 7/7 key outer-system objects (Pluto=2, Eris=3, 2012VP113=4, Sedna=6, 2015TG387=8)
+  [FRONT 2: 2×3 Lattice Audit]  Prograde i≤90° in 2×3: 100.0000% (Exact Domain Theorem) | Retrograde S_h=4 leakage: 115 obj | 6-Cell H=1.4200 bits
+  [FRONT 3: NEA/PHA Micro-Shell] N_NEA(S_n=0)=43,037 [MPC_NEA_PHA_FILES] | Dominant cell (2, 1): 47.75% (Uniform ω prior P₀(S_k=2)=59.76%)
+  [FRONT C: Centaur d-Shell]    N_Centaurs=17,572 | Observed S_k=2: 60.03% vs Analytical Uniform Prior (5−√2)/6 = 59.76% (Δ=+0.26%, p_binom=0.4792)
+  [FRONT D: Family Variance]    Cells(N≥5)=344 | Mean Var(S_n)=0.0000 (all S_n=0) | Mean Var(R_eff)=0.3282 AU² (σ=0.573 AU → collisional debris)
+  [FRONT 4 & 5F: Live Streams]  newnumids.dat: 21 ids (3 matched in MPCORB) | neocp.txt: 0 candidates awaiting confirmation
+
+  ✓ Saved certificate: ./reports/it3_fwhp_audit_certificate.json
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 4: HIGH-FIDELITY RENDERING (./plots_html/ & ./figures/)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  🎨 Generating: Radial Phase Space Interactive Model (plot_07)...
+  🎨 Generating: 3D Topo-Structure Interactive Model (plot_01)...
+  🎨 Generating: Top View Projection (plot_02)...
+  🎨 Generating: Side View Projection (plot_03)...
+  🎨 Generating: 2x3 Lattice Structure (plot_04)...
+  🎨 Generating: Sₙ Log-Scale Histogram & Wavefunction (plot_05)...
+  🎨 Generating: Periodic Table Heatmap (plot_06)...
+  🎨 Generating: Polar Nodal Resonance Map (plot_08)...
+  🎨 Generating: Evaporative Tail 3D Funnel (plot_09)...
+  🎨 Generating: 3D Perez Hourglass Hyperboloid & m=6⊕12 Crystal (plot_10)...
+  🎨 Generating: Proof-Ledger & Diagnostic Interactive Suite (plot_11)...
+  🎨 Generating: 6-Panel Proof-Ledger Dashboard (Matplotlib 300 DPI)...
+  ✓ Saved: ./figures/physically_grounded_model_v20.png
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 5: DATA EXPORT
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  💾 EXPORTING TO CSV DATABASE
+  ✓ Saved: ./reports/it3_cpham_results_quantized.csv
+  ✓ Saved: ./reports/it3_extreme_deep_objects_sn_ge_6.csv
+  ✓ Saved: ./reports/it3_floor_distribution_summary.csv
+
+─────────────────────────────────────────────────────────────────────────────────────────
+  PHASE 8: DUAL-LAYER TELEMETRY & EPISTEMIC LEDGER REPORT (IT3-v22.6-strict | Mode: proven-only)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+  📊 HIDDEN TOPOLOGY: K-PHAM v2.2 Sₙ FLOORS (POTENTIAL WELLS)
+  ─────────────────────────────────────────────────────────────────────
+    Sₙ= 0           │ █████████████████████████████████████████████████░ │  1,571,075 ( 99.44%)
+    Sₙ= 1           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │        477 (  0.03%)
+    Sₙ= 2 (VALENCE) │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │      6,335 (  0.40%)
+    Sₙ= 3           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │      1,264 (  0.08%)
+    Sₙ= 4           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │        629 (  0.04%)
+    Sₙ= 5           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │         85 (  0.01%)
+    Sₙ= 6           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │         23 (  0.00%)
+    Sₙ= 7           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │         16 (  0.00%)
+    Sₙ= 8           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │          4 (  0.00%)
+    Sₙ= 9           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │          3 (  0.00%)
+    Sₙ=10           │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │          1 (  0.00%)
+
+  📊 PHYSICAL REALITY: DUAL-LAYER MACROSCOPIC CATALOG TELEMETRY
+  ─────────────────────────────────────────────────────────────────────
+    RADIAL DISTRIBUTION (N = 1,579,912):
+      Core (<27 AU, R₁=(√3)⁶):   1,571,206 (99.45%)
+      Valence (27–48 AU):            3,074 (0.19%)
+      Ionized (Free >48 AU):         5,632 (0.36%)
+    INCLINATION DISTRIBUTION:
+      Low-i (<18°):              1,431,045 (90.58%)
+      Transitional (18–54°):       148,322 (9.39%)
+      High-i (>54°):                   545 (0.03%)
+
+  💨 EVAPORATIVE TAIL TELEMETRY (Sₙ=2, geometrically bound / energetically free)
+  ─────────────────────────────────────────────────────────────────────
+      Inner tail (48–69.94 AU):           3,439  (Sₙ=2 cascade, E_ion>0)
+      Outer recurrence (326–410 AU):         46  (piecewise reset above r_in=243 AU)
+      Sₙ∈{0,1} reset (>243 AU):            122  (R_eff∈[243, 326.38) AU)
+      Derived R₂=(√3)⁷ shell:        46.77 AU  (E_ion=0 reference, not Sₙ=2/Sₙ=3 edge)
+      Sₙ=2 analytic cascade upper:   69.94 AU  (4√3·Λ₁ = 36+24√2 AU)
+
+  🔔 GOLDEN-PHASE ALGEBRAIC ECHO & GALOIS OBSTRUCTION (NOT A DERIVATION)
+  ─────────────────────────────────────────────────────────────────────
+      18° reference: dynamical mechanism = secular resonance ν₁₈ (Neptune nodal sync).
+                     Empirical steepest drop = 29.75° (200-boot 95% CI [28.75, 29.75]°).
+                     sin18°=(√5−1)/4 ∈ Q(√5)⊂K,  cos18°=√(10+2√5)/4 ∉ K
+                     (Galois proof: Gal(Q(cos18°)/Q) ≅ ℤ/4ℤ has exponent 4 ≠ 2 of (ℤ/2ℤ)³).
+      54.74° angle:  O_h cube diagonal angle arccos(1/√3) = 54.7356° (P₂(cos α)=0, α+γ=90°).
+      Status:        Algebraic echoes of K and O_h, NOT geometric forcings of orbital inclination.
+
+  🌌 EXTREME DEEP OBJECTS (Sₙ ≥ 6) — FULL CATALOG TABLE (Count = 47)
+  ──────────────────────────────────────────────────────────────────────────────────────────────
+    MPC Code   │ Name            │ Sₙ  │ Sₖ  │ Sₕ  │ Q (AU)    │ R_eff     │ E_ion  │ Type
+    ──────────────────────────────────────────────────────────────────────────────────────────────
+      K15Fr9W  │ K15Fr9W         │ 10  │ 2   │ 1   │ 9352.98   │ 13982.22  │ +10.38 │ asteroid
+      K15Fo4F  │ K15Fo4F         │ 9   │ 2   │ 1   │ 5708.89   │ 8521.88   │ +9.48  │ asteroid
+      K14F72E  │ K14F72E         │ 9   │ 1   │ 2   │ 5282.93   │ 7853.26   │ +9.33  │ asteroid
+      K26ED0B  │ K26ED0B         │ 9   │ 2   │ 1   │ 4680.93   │ 6970.09   │ +9.11  │ asteroid
+      K17M07B  │ K17M07B         │ 8   │ 1   │ 3   │ 3455.06   │ 5173.75   │ +8.57  │ asteroid
+      K19E05U  │ K19E05U         │ 8   │ 1   │ 2   │ 2678.79   │ 3927.45   │ +8.07  │ asteroid
+    ★ s1132    │ 2015TG387       │ 8   │ 1   │ 1   │ 2632.87   │ 3826.07   │ +8.02  │ etno
+      ~0NHL    │ ~0NHL           │ 8   │ 2   │ 3   │ 2486.12   │ 3712.46   │ +7.96  │ asteroid
+      K05V03X  │ K05V03X         │ 7   │ 2   │ 3   │ 2035.89   │ 3045.58   │ +7.60  │ asteroid
+      K25Mc7P  │ K25Mc7P         │ 7   │ 2   │ 1   │ 1959.95   │ 2888.06   │ +7.51  │ asteroid
+      ~0CeZ    │ ~0CeZ           │ 7   │ 2   │ 3   │ 1945.30   │ 2889.34   │ +7.51  │ asteroid
+      K21RK5R  │ K21RK5R         │ 7   │ 2   │ 1   │ 1843.34   │ 2660.23   │ +7.36  │ asteroid
+      K25Me3C  │ K25Me3C         │ 7   │ 2   │ 1   │ 1686.83   │ 2453.20   │ +7.21  │ asteroid
+      K21D18K  │ K21D18K         │ 7   │ 2   │ 1   │ 1677.33   │ 2431.40   │ +7.19  │ asteroid
+      K17OK1F  │ K17OK1F         │ 7   │ 2   │ 1   │ 1604.88   │ 2321.91   │ +7.11  │ asteroid
+      K25Nn7K  │ K25Nn7K         │ 7   │ 1   │ 1   │ 1590.69   │ 2344.99   │ +7.13  │ asteroid
+      U8933    │ U8933           │ 7   │ 1   │ 2   │ 1586.63   │ 2332.96   │ +7.12  │ asteroid
+      K13S99Y  │ K13S99Y         │ 7   │ 1   │ 1   │ 1572.22   │ 2264.57   │ +7.06  │ asteroid
+      _PO00VN  │ _PO00VN         │ 7   │ 1   │ 1   │ 1413.12   │ 2077.18   │ +6.91  │ asteroid
+      K20M53Q  │ K20M53Q         │ 7   │ 1   │ 3   │ 1391.07   │ 1983.78   │ +6.82  │ asteroid
+      K02RA9N  │ K02RA9N         │ 7   │ 2   │ 3   │ 1388.71   │ 2077.69   │ +6.91  │ asteroid
+      K15Fn3C  │ K15Fn3C         │ 7   │ 2   │ 1   │ 1345.47   │ 2004.49   │ +6.84  │ asteroid
+      K20K11X  │ K20K11X         │ 7   │ 1   │ 2   │ 1318.61   │ 1968.46   │ +6.81  │ asteroid
+      K25Md6U  │ K25Md6U         │ 7   │ 1   │ 1   │ 1318.34   │ 1936.75   │ +6.78  │ asteroid
+      K15KG3G  │ K15KG3G         │ 6   │ 1   │ 1   │ 1237.08   │ 1779.70   │ +6.62  │ asteroid
+      K26EC7G  │ K26EC7G         │ 6   │ 2   │ 2   │ 1216.89   │ 1769.54   │ +6.61  │ asteroid
+      87269    │ 87269           │ 6   │ 2   │ 2   │ 1173.24   │ 1719.61   │ +6.56  │ asteroid
+      K13GE1W  │ K13GE1W         │ 6   │ 2   │ 2   │ 1109.03   │ 1618.42   │ +6.45  │ asteroid
+      K15S57A  │ K15S57A         │ 6   │ 2   │ 2   │ 1103.19   │ 1624.39   │ +6.46  │ asteroid
+      q3622    │ q3622           │ 6   │ 2   │ 2   │ 1075.43   │ 1546.39   │ +6.37  │ asteroid
+      K25L02S  │ K25L02S         │ 6   │ 2   │ 1   │ 1017.51   │ 1446.85   │ +6.25  │ asteroid
+      K15Fu1Q  │ K15Fu1Q         │ 6   │ 2   │ 1   │ 1011.42   │ 1450.86   │ +6.25  │ asteroid
+    ★ 90377    │ Sedna           │ 6   │ 2   │ 1   │ 1011.24   │ 1385.09   │ +6.17  │ etno
+      K25D51B  │ K25D51B         │ 6   │ 1   │ 3   │ 967.57    │ 1424.78   │ +6.22  │ asteroid
+    ★ ~0caL    │ 2015BP519       │ 6   │ 2   │ 3   │ 937.13    │ 1340.14   │ +6.11  │ etno
+      ~0bjT    │ ~0bjT           │ 6   │ 2   │ 1   │ 914.16    │ 1287.74   │ +6.04  │ asteroid
+      K26EE7W  │ K26EE7W         │ 6   │ 1   │ 1   │ 911.18    │ 1289.65   │ +6.04  │ asteroid
+      K26H21Z  │ K26H21Z         │ 6   │ 1   │ 2   │ 901.03    │ 1266.92   │ +6.01  │ asteroid
+      K15AT8D  │ K15AT8D         │ 6   │ 2   │ 2   │ 892.96    │ 1303.45   │ +6.06  │ asteroid
+      K10BB8K  │ K10BB8K         │ 6   │ 2   │ 4   │ 892.84    │ 1327.17   │ +6.09  │ asteroid
+      ~0dzN    │ ~0dzN           │ 6   │ 1   │ 4   │ 882.15    │ 1291.46   │ +6.04  │ asteroid
+      K19GJ8W  │ K19GJ8W         │ 6   │ 2   │ 1   │ 861.96    │ 1254.42   │ +5.99  │ asteroid
+      ~0c1e    │ ~0c1e           │ 6   │ 2   │ 4   │ 859.74    │ 1260.36   │ +6.00  │ asteroid
+      K13A60Z  │ K13A60Z         │ 6   │ 2   │ 1   │ 848.29    │ 1256.96   │ +5.99  │ asteroid
+      K07D61A  │ K07D61A         │ 6   │ 2   │ 3   │ 843.38    │ 1259.82   │ +6.00  │ asteroid
+      K21C05P  │ K21C05P         │ 6   │ 2   │ 1   │ 818.99    │ 1207.90   │ +5.92  │ asteroid
+      K20Q06N  │ K20Q06N         │ 6   │ 1   │ 3   │ 809.45    │ 1204.62   │ +5.91  │ asteroid
+    ↳ Note: Objects with Sₕ=4 (e.g. K10BB8K, ~0dzN, ~0c1e) are retrograde damocloids (i > 126° ⇒ h_raw ≥ 2³).
+
+  🎯 FRONT [T1]: TABLE 1 BENCHMARK OBJECTS VERIFICATION (mp.py Parity)
+  ─────────────────────────────────────────────────────────────────────
+    Object         │ MPC Code  │    Q (AU) │ R_eff (AU) │  Sₙ │ Exp │ Status
+    ─────────────────────────────────────────────────────────────────────
+    Pluto          │ D4340     │     49.08 │      50.59 │   2 │   2 │ ✓ MATCH
+    Makemake       │ D6472     │     52.81 │      53.48 │   2 │   2 │ ✓ MATCH
+    Haumea         │ D6108     │     51.43 │      52.41 │   2 │   2 │ ✓ MATCH
+    Eris           │ D6199     │     97.71 │     107.09 │   3 │   3 │ ✓ MATCH
+    2012VP113      │ K12VB3P   │    454.30 │     565.12 │   4 │   4 │ ✓ MATCH
+    Sedna          │ 90377     │   1011.24 │    1385.09 │   6 │   6 │ ✓ MATCH
+    2015TG387      │ s1132     │   2632.87 │    3826.07 │   8 │   8 │ ✓ MATCH
+
+  🧭 11-FRONT K-PHAM SUITE SUMMARY (mp.py + Anti-Numerology Controls)
+  ─────────────────────────────────────────────────────────────────────
+    • Front [1]+[A] (Comet Entropy):     ΔH_shared(11-bin) = -0.4669 bits | H_disc(Sₙ) = 1.5414 bits
+    • Front [B] (Macro-Compton):         B1 log(Λ₁²) SNR = -0.07σ | B3 log(√3) SNR = -0.19σ [NULL: JFC volume artifact]
+    • Front [2] (2×3 Lattice Domain):    Prograde i≤90° = 100.0% (Exact Theorem) | Retrograde S_h=4 leakage = 115 obj
+    • Front [3] (NEA/PHA Micro-Shell):   N=43,037 | Dominant (2, 1) = 47.75% (vs Uniform Prior 59.76%)
+    • Front [C] (Centaur d-Shell S_k=2): Obs = 60.027% vs Exact Prior (5−√2)/6 = 59.763% (Δ=+0.26%, p=0.47916)
+    • Front [D] (Asteroid Families):     Cells(N≥5)=344 | Var(Sₙ)=0.0000, σ(R_eff)=0.573 AU (collisional debris)
+
+  🧪 KEY DEEP-SPACE OBJECT TELEMETRY (FAMOUS ETNO TARGETS):
+    ★ 2015TG387     → Floor Sₙ=8  (Sₖ=1, Sₕ=1) │ Aphelion Q=2632.87 AU │ R_eff=3826.07 AU │ E_ion=+8.02
+    ★ Sedna         → Floor Sₙ=6  (Sₖ=2, Sₕ=1) │ Aphelion Q=1011.24 AU │ R_eff=1385.09 AU │ E_ion=+6.17
+    ★ 2015BP519     → Floor Sₙ=6  (Sₖ=2, Sₕ=3) │ Aphelion Q= 937.13 AU │ R_eff=1340.14 AU │ E_ion=+6.11
+
+  📜 REGISTERED CLAIMS (PROVEN-ONLY VIEW):
+  ─────────────────────────────────────────────────────────────────────
+  [EXACT] Delta_K_field_discriminant = 3317760000 (NON-PREDICTIVE)
+      ↳ Field discriminant of K = Q(sqrt2, sqrt3, sqrt5) from product of 7 quadratic subfield conductors; sqrt(|Delta_K|) = 57,600 = 240^2.
+  [EXACT] E8_Cartan_determinant_and_roots = 1 (NON-PREDICTIVE)
+      ↳ det(Cartan E_8) = 1 and kissing number tau_8 = 240 minimal vectors (volume ratio only, not an embedding of O_K into E_8).
+  [EXACT] Kummer_wall_sqrt13_exclusion = 13 (NON-PREDICTIVE)
+      ↳ 13 does not divide 30 = 2*3*5, hence sqrt(13) is not in K = Q(sqrt2, sqrt3, sqrt5).
+  [EXACT] oh_sphere_ladder_27_and_27sqrt3_identities = 46.7653718044 dimensionless ratio R_2 / r_0 (NON-PREDICTIVE)
+      ↳ Cube sphere ratio Lambda_Y = R_out/r_in = sqrt(3) raised to valency tensor dimension m_1 = v_l*v_q = 6 gives (sqrt(3))^6 = 3^3 = 27, and at m_2 = rk(O_K^x) = 7 gives (sqrt(3))^7 = 27*sqrt(3).
+  [EXACT] FCC_kepler_packing_and_bicone_sum = 0.740480489693 (NON-PREDICTIVE)
+      ↳ O_h capacities {2,8,8,18,18,32} sum to 86 (172 = 4*43 over both bowls), and 172 spheres of radius a*sqrt(2)/4 in 43 FCC cells fill pi/sqrt(18).
+  [EXACT] stella_octangula_and_oh_multipole_vanishing = 90 deg (alpha_magic + gamma) (NON-PREDICTIVE)
+      ↳ Cube vertices partition into T1 and T2 regular tetrahedra; cuboctahedral E-nodes have l=1,2,3 moments identically zero (first non-zero is hexadecapole l=4); P_2(cos 54.7356 deg) = 0 and alpha_magic + gamma = 90 deg.
+  [EXACT] galois_18deg_sin_in_K_cos_not_in_K = 0.3090169944 sin(18 deg) (NON-PREDICTIVE)
+      ↳ sin(18 deg) = (sqrt5-1)/4 is in Q(sqrt5) subset K, but cos(18 deg) is not in K because Gal(Q(cos 18 deg)/Q) = Z/4Z has exponent 4 != 2; proves 18 deg is an algebraic echo, not a geometric forcing.
+  [EXACT] kpham_prograde_domain_and_sk2_uniform_prior = 0.5976310729 P_null(S_k=2) (NON-PREDICTIVE)
+      ↳ Prograde orbits (i<=90 deg) satisfy (S_k,S_h) in {1,2}x{1,2,3} identically; under uniform omega in [0,360 deg), the exact geometric prior for S_k=2 is (5-sqrt2)/6 ≈ 59.763%.
+  [DERIVED] pinned_inradius_metric_scale_2r = 0.910196392442 dimensionless (PREDICTIVE)
+      ↳ Incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) derived from metric pinning postulate P1_INRADIUS.
+  [DERIVED] kpham_valence_shell_radius_R2 = 46.7653718044 AU (PREDICTIVE)
+      ↳ From R(m) = r_0 * (sqrt(3))^m with unit scale P2_UNIT_AU (r_0 = 1 AU), the m=6 neck shell is R_1 = (sqrt(3))^6 AU = 27.0 AU and the m=7 shell is R_2 = (sqrt(3))^7 AU = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to any catalog comparison).
+  [DERIVED] subadditive_defect_coalescence_ratio_equal_mass = 0.793700525984 E_merge / E_sep (PREDICTIVE)
+      ↳ For two equal defects N1=N2, E_merge/E_sep = 2^(2/3)/2 = 2^(-1/3) ≈ 0.7937 < 1 under P3_SURFACE_TENSION.
+  [DERIVED] oh_outer_egg_shells_rin_Rmid_Rout = 420.888346 AU (R_out) (PREDICTIVE)
+      ↳ Under unit scale P2_UNIT_AU (r_0=1 AU), the m=10 inscribed sphere is r_in=(sqrt3)^10=243.0 AU, the m=11 circumscribed sphere is R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and the 12 edge midpoints lie at R_mid=R_out*sqrt(2/3)=243*sqrt2≈343.65 AU.
+
+  ℹ Note: 33 diagnostic/empirical/ansatz/rhyme/null claims are hidden in 'proven-only' mode.
+    Run with '--epistemic-mode full-diagnostic' to print all diagnostic claims in console.
+
+  ── EPISTEMIC AUDIT METRICS ──────────────────────────────────────────
+  • Release Version:                       IT3-v22.6-strict
+  • Active Epistemic Mode:                 proven-only
+  • External Benchmarks Are Predictions:   False
+  • Total Registered Claims in Ledger:     45 (8 Exact + 4 Derived + 14 Empirical/Null + 19 Exploratory)
+  • Exact Mathematical Theorems (Layer I): 8/45 (17.78%)
+  • Derived Predictive Claims:             4/45 (8.89%)
+  • Empirical & Null Catalog Tests:        14/45 (31.11%)
+  • Exploratory Diagnostic Claim Share:    0.422222 (19/45 claims are Ansatz/Rhyme/Conjecture)
+  • Unproven Predictive Flag Share:        0.000000 (Flag hygiene)
+  OK: all predictive claims are proven or derived from explicit postulates.
+
+  🛡️  SYNCHRONIZED SCIENTIFIC SUMMARY (Release: IT3-v22.6-strict):
+  
+  [1] EXACT ALGEBRA & O_h SPHERE LADDER (EXACT_MATH):
+      • Δ_K = 2¹⁶3⁴5⁴ = 3,317,760,000; √|Δ_K| = 57,600 = 240²; det(E₈)=1; √13 ∉ K.
+      • Galois 18° theorem: sin18°=(√5−1)/4 ∈ Q(√5)⊂K, cos18° ∉ K (Gal ≅ ℤ/4ℤ ⊄ (ℤ/2ℤ)³).
+      • O_h Cube R_out/r_in = √3, S_out/S_in = 3, Stella Octangula T₁⊔T₂, multipoles l=1,2,3 ≡ 0.
+      • Dimensionless ladder (√3)^m from v_l·v_q=6 and rk(O_K^×)=7:
+        (√3)⁶ = 27, (√3)⁷ = 27√3 ≈ 46.77, (√3)¹⁰ = 243, (√3)¹¹ = 243√3 ≈ 420.89, R_mid = 243√2 ≈ 343.65.
+  [2] DERIVED PREDICTIONS (DERIVED_FROM_POSTULATES, external_reference = None):
+      • Pinned inradius 2r = √2+√3−√5 ≈ 0.910196 (from P1_INRADIUS).
+      • Valence shell R₂ = (√3)⁷ r₀ = 27√3 AU ≈ 46.7654 AU & outer shells r_in=243, R_mid=343.65, R_out=420.89 AU (from P2_UNIT_AU).
+      • Subadditive defect coalescence ratio E_merge/E_sep = 2^(−1/3) ≈ 0.7937 < 1 (from P3_SURFACE_TENSION).
+  [3] EMPIRICAL CATALOG TELEMETRY & HONEST NULLS (EMPIRICAL_TEST / NULL_RESULT):
+      • 1D Kuiper peak MC: obs=47.38 AU vs 46.77 AU (δ=1.291%, p=0.0255).
+      • 2D Joint Neptune (30.07 AU) & 1:2 MMR (47.73 AU) test: loss=12.23%, p=0.0519 [NEGATIVE/NULL RESULT].
+      • Sliding Δln R = ln 2 control: argmax [40.0, 80.0] AU (6,441 obj) vs S_n=2 (6,289 obj, 97.6% eff).
+      • Ionized (>48 AU) 3-way partition: 35.96% (S_n≥3) + 61.88% (S_n=2 tail) + 2.17% (reset) = 100.00%.
+      • Shared-edge radial comet ΔH = -0.4669 bits | Pure Δλ Trojans L4/L5 = 1.7175 | Deep S_n≥6 objects = 47.
+
+
+  📁 REPOSITORY DIRECTORY STRUCTURE (./):
+    • ./data/        → MPCORB.DAT, CometEls.txt, NEA.txt, PHA.txt, newnumids.dat, neocp.txt
+    • ./plots_html/  → 11 Interactive Plotly 3D/2D HTML models (plot_01 .. plot_11)
+    • ./figures/     → High-resolution 300 DPI dashboards (physically_grounded_model_v20.png)
+    • ./reports/     → it3_fwhp_audit_certificate.json & it3_cpham_results_quantized.csv
+    • ./logs/        → ./logs/it3_terminal_run_log.txt
+
+Pipeline completed. See ./reports/it3_fwhp_audit_certificate.json for claim status.
+
