@@ -1,6 +1,7 @@
 # IT³ Spectral Geometry of the Macroscopic Vacuum & K-PHAM v2.2 Proof-Ledger Suite
 
 [![IT3 Proof-Ledger Audit](https://github.com/Dr-Logvinovich/IT3-Solar-System-Quantum-Architecture/actions/workflows/it3_proof_audit.yml/badge.svg)](https://github.com/Dr-Logvinovich/IT3-Solar-System-Quantum-Architecture/actions)
+[![Lean 4 Formal Proof](https://img.shields.io/badge/Lean_4_Formal_Proof-round--square_(S4xT3_Gap)-800080?style=for-the-badge)](https://github.com/Dr-Logvinovich/round-square)
 [![Zenodo Record](https://img.shields.io/badge/Zenodo_Flagship_DOI-10.5281%2Fzenodo.21792530-0066cc?style=for-the-badge&logo=zenodo)](https://zenodo.org/records/21792530)
 [![Foundational DOI](https://img.shields.io/badge/Foundational_IT3_DOI-10.5281%2Fzenodo.20450282-008080?style=for-the-badge)](https://doi.org/10.5281/zenodo.20450282)
 [![Preprint v16 DOI](https://img.shields.io/badge/Preprint_v16_DOI-10.5281%2Fzenodo.21630717-4b0082?style=for-the-badge)](https://doi.org/10.5281/zenodo.21630717)
@@ -11,12 +12,13 @@
 > **Noncommutative Spectral Geometry, Discrete Diophantine Vacuum Lattice & 11-Front Celestial Mechanics Audit (`IT3-v22.6-strict`)**  
 > **Authors:** **Victor Logvinovich** (Master of Physical and Mathematical Sciences, Researcher in Pedagogical Sciences, Belarus; ORCID: [`0009-0007-2040-6955`](https://orcid.org/0009-0007-2040-6955)) & **Jean-Claude Perez** (PhD in Mathematics and Computer Science; IBM European Artificial Intelligence Research Centre, retired; Luc Montagnier Foundation, France; ORCID: [`0000-0001-6446-2042`](https://orcid.org/0000-0001-6446-2042))  
 > **Flagship Zenodo Publication:** [*The Macroscopic Vacuum Architecture: Perez Hourglass Topology, Counter-Rotating Bowls, and m = 6 ⊕ 12 Fractal Superposition in the Solar System (IT3 Framework v6.0)*](https://zenodo.org/records/21792530) (**DOI:** [`10.5281/zenodo.21792530`](https://doi.org/10.5281/zenodo.21792530))  
-> **Foundational Theoretical Monograph:** [*Galactic Resonance Architecture*](https://doi.org/10.5281/zenodo.20450282) (**DOI:** [`10.5281/zenodo.20450282`](https://doi.org/10.5281/zenodo.20450282)) | **Full Manuscript PDF in Repo:** [`Solar_v16.pdf`](./Solar_v16.pdf)
+> **Foundational Theoretical Monograph:** [*Galactic Resonance Architecture*](https://doi.org/10.5281/zenodo.20450282) (**DOI:** [`10.5281/zenodo.20450282`](https://doi.org/10.5281/zenodo.20450282)) | **Full Manuscript PDF in Repo:** [`Solar_v16.pdf`](./Solar_v16.pdf)  
+> **Companion Lean 4 Formalization (`round-square`):** [`https://github.com/Dr-Logvinovich/round-square`](https://github.com/Dr-Logvinovich/round-square) *(Machine-verified formal proof of the $\mathbb{R}^4$ Yang–Mills Mass Gap incompatibility theorem and automatic spectral gap generation on compact $M_{\mathrm{tot}} = S^4 \times T^3$)*
 
 ---
 
 ## 🧭 Table of Contents
-1. [The Paradigm Shift: Spectral Geometry & Measuring the Cosmos with a Different Ruler](#1-the-paradigm-shift-spectral-geometry--measuring-the-cosmos-with-a-different-ruler)
+1. [The Paradigm Shift: Spectral Geometry, Lean 4 Formalization & Measuring the Cosmos with a Different Ruler](#1-the-paradigm-shift-spectral-geometry-lean-4-formalization--measuring-the-cosmos-with-a-different-ruler)
 2. [Resolving the 10.2% 1D-Sphere Offset: Neptune on the Bicone Vertex, the 1:2:3 Giant Ladder & the 32.4 ppm Blind Hit](#2-resolving-the-102-1d-sphere-offset-neptune-on-the-bicone-vertex-the-123-giant-ladder--the-324-ppm-blind-hit)
 3. [Closing the "Planet Nine" Hypothesis: Reynolds Projection, Exact Quadrupole Collapse & Macroscopic Zeeman Splitting](#3-closing-the-planet-nine-hypothesis-reynolds-projection-exact-quadrupole-collapse--macroscopic-zeeman-splitting)
 4. [Metric-Affine Perez Hourglass Manifold & K-PHAM v2.2 Diophantine Projector](#4-metric-affine-perez-hourglass-manifold--k-pham-v22-diophantine-projector)
@@ -30,7 +32,7 @@
 
 ---
 
-## 1. The Paradigm Shift: Spectral Geometry & Measuring the Cosmos with a Different Ruler
+## 1. The Paradigm Shift: Spectral Geometry, Lean 4 Formalization & Measuring the Cosmos with a Different Ruler
 
 ### 1.1. Why Classical Astrophysics Missed the Quantum Architecture of the Solar System: The Wrong Ruler
 For over a century, physics has operated under an artificial schism: the microscopic quantum realm is strictly discrete and governed by algebraic eigenvalues, whereas the macroscopic Solar System is treated as a smooth, infinitely divisible continuum ($\mathbb{R}^3$) governed solely by continuous Newton–Kepler differential equations.
@@ -86,6 +88,25 @@ For a fundamental cubic cell of side $a$, the inscribed sphere has radius $r_{\m
 
 $$
 \frac{R(m)}{r_0} = (\sqrt{3})^m \implies \begin{cases} m = 6: & (\sqrt{3})^6 = 3^3 = 27.0\text{ AU} & (\text{Core Neck Inscribed Sphere } R_1) \\ m = 7: & (\sqrt{3})^7 = 27\sqrt{3} \approx 46.7654\text{ AU} & (\text{Kuiper Belt Valence Shell } R_2) \\ m = 10: & (\sqrt{3})^{10} = 3^5 = 243.0\text{ AU} & (\text{Outer Inscribed Sphere } r_{\mathrm{in}}) \\ m = 11: & (\sqrt{3})^{11} = 243\sqrt{3} \approx 420.8883\text{ AU} & (\text{Outer Circumscribed Sphere } R_{\mathrm{out}}) \end{cases}
+$$
+
+### 1.5. Formal Machine Verification in Lean 4 (`round-square`): The $\mathbb{R}^4$ Incompatibility Theorem & Unified Dirac Operator Apparatus
+A critical question for any discrete physical framework is: **why is the vacuum manifold necessarily the compact space $M_{\mathrm{tot}} = S^4 \times T^3$ rather than non-compact flat space $\mathbb{R}^4$?**
+
+1. **Direct Logical Link (`round-square` Incompatibility Theorem on $\mathbb{R}^4$):**  
+   In our companion **Lean 4** formal verification repository ([`Dr-Logvinovich/round-square`](https://github.com/Dr-Logvinovich/round-square)), we machine-verify that demanding a strictly positive spectral/mass gap ($\Delta > 0$) on non-compact, scale-invariant Euclidean space $\mathbb{R}^4$ is a formal mathematical contradiction (a *"round square"*): the continuous dilation group of $\mathbb{R}^4$ forces the essential spectrum of the uncompactified gauge Laplacian to fill $[0, \infty)$ down to zero. Consequently, the compactness of $M_{\mathrm{tot}} = S^4 \times T^3$ is **not an ad-hoc modeling choice**, but the **mandatory mathematical consequence** of the $\mathbb{R}^4$ incompatibility theorem, algebraically enforced in $K = \mathbb{Q}(\sqrt{2},\sqrt{3},\sqrt{5})$ by the Kummer cascade wall $\sqrt{13} \notin K$ ($13 \nmid 30$, `Theorem T2.9_KUMMER`).
+2. **Unified Operator Apparatus Across Micro and Macro Scales:**  
+   On the compact 7-manifold $M_{\mathrm{tot}} = S^4 \times T^3$, the **exact same gauged Dirac operator $D_A$** simultaneously governs both the microscopic gauge/nuclear spectral gap and the macroscopic shell quantization:
+   * **Automatic Spectral Gap (Lichnerowicz–Weitzenböck & Friedrich Inequality):** With a flat Wilson-line holonomy on $T^3$ ($F_{\mu\nu} = 0$) and positive scalar curvature $R = 12 / R_{S^4}^2 > 0$ on $S^4$, the squared Dirac operator has a strictly positive, purely discrete spectrum:
+
+$$
+D_A^2 = \nabla_A^* \nabla_A + \frac{1}{4}R, \qquad \lambda_1(D_A^2) \ge \frac{n}{4(n-1)}\min R = \frac{7}{24}R > 0 \quad (n = \dim M_{\mathrm{tot}} = 7)
+$$
+
+   * **Atiyah–Patodi–Singer (APS) Odd Toeplitz Index ($\mathrm{Ind}(PuP) = 86$):** Because $S^4$ is stably parallelizable and $T^3$ is flat, $\hat{A}(M_{\mathrm{tot}}) = 1$ identically as a differential form. Pairing the odd $K$-homology class $[D] \in K_1(M_{\mathrm{tot}})$ with the knotted gauge holonomy $u \in K^1(M_{\mathrm{tot}})$ via the Toeplitz projection operator $PuP$ ($P = \chi_{(0,\infty)}(D)$) yields the exact capacity of the classical hemisphere:
+
+$$
+\mathrm{Ind}(PuP) = \left\langle \hat{A}(TM_{\mathrm{tot}})\,\mathrm{ch}_{\mathrm{odd}}(u), \; [M_{\mathrm{tot}}] \right\rangle = \sum_{n=0}^{5} C(n) = 2 + 8 + 8 + 18 + 18 + 32 = 86, \qquad Z_{\max} = 2\,\mathrm{Ind}(PuP) = 172 = 4 \times 43
 $$
 
 ![IT³ 6-Panel Proof-Ledger Dashboard](./figures/physically_grounded_model_v20.png)
@@ -508,7 +529,7 @@ python3 it3_master_v22.0.py --epistemic-mode full-diagnostic
 python3 it3_master_v22.0.py --fresh-download
 ~~~
 
-### 11.3. BibTeX Citation
+### 11.3. BibTeX Citation & Companion Lean 4 Formalization
 ~~~bibtex
 @misc{logvinovich_perez_2026_it3_v19,
   author       = {Logvinovich, Victor and Perez, Jean-Claude},
@@ -526,6 +547,14 @@ python3 it3_master_v22.0.py --fresh-download
   year         = 2026,
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.20450282}
+}
+
+@software{logvinovich_2026_round_square_lean4,
+  author       = {Logvinovich, Victor},
+  title        = {{round-square: Lean 4 Formal Verification of the R^4 Yang-Mills Mass Gap Incompatibility Theorem and Automatic Spectral Gap on Compact S^4 x T^3}},
+  year         = 2026,
+  publisher    = {GitHub},
+  note         = {Repository: https://github.com/Dr-Logvinovich/round-square}
 }
 ~~~
 
