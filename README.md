@@ -13,7 +13,7 @@
 > **Authors:** **Victor Logvinovich** (Master of Physical and Mathematical Sciences, Researcher in Pedagogical Sciences, Belarus; ORCID: [`0009-0007-2040-6955`](https://orcid.org/0009-0007-2040-6955)) & **Jean-Claude Perez** (PhD in Mathematics and Computer Science; IBM European Artificial Intelligence Research Centre, retired; Luc Montagnier Foundation, France; ORCID: [`0000-0001-6446-2042`](https://orcid.org/0000-0001-6446-2042))  
 > **Flagship Zenodo Publication:** [*The Macroscopic Vacuum Architecture: Perez Hourglass Topology, Counter-Rotating Bowls, and m = 6 ⊕ 12 Fractal Superposition in the Solar System (IT3 Framework v6.0)*](https://zenodo.org/records/21792530) (**DOI:** [`10.5281/zenodo.21792530`](https://doi.org/10.5281/zenodo.21792530))  
 > **Foundational Theoretical Monograph:** [*Galactic Resonance Architecture*](https://doi.org/10.5281/zenodo.20450282) (**DOI:** [`10.5281/zenodo.20450282`](https://doi.org/10.5281/zenodo.20450282)) | **Full Manuscript PDF in Repo:** [`Solar_v16.pdf`](./Solar_v16.pdf)  
-> **Companion Lean 4 Formalization (`round-square`):** [`https://github.com/Dr-Logvinovich/round-square`](https://github.com/Dr-Logvinovich/round-square) *(Machine-verified formal proof of the $\mathbb{R}^4$ Yang–Mills Mass Gap incompatibility theorem and automatic spectral gap generation on compact $M_{\mathrm{tot}} = S^4 \times T^3$)*
+> **Companion Lean 4 Formalization (`round-square`):** [`https://github.com/Dr-Logvinovich/round-square`](https://github.com/Dr-Logvinovich/round-square) - Machine-verified formal proof of the $\mathbb{R}^4$ Yang–Mills Mass Gap incompatibility theorem and automatic spectral gap generation on compact $S^4 \times T^3$.
 
 ---
 
@@ -78,16 +78,20 @@ A foundational epistemological rule of this repository is **Ruler Commensurabili
 | **Interstitial Space** | Smooth potential gradient everywhere. | **Forbidden Shear Zones:** regions between floors carry uncompensated Cartan torsion; only ionized ($E_{\mathrm{ion}} > 0$) bodies transit continuously. | Expecting bound stationary orbits to populate interstitial radii ignores the spectral gap of the Dirac operator. |
 
 ### 1.4. Group-Theoretical & Spectral Derivation of the $\Lambda_Y = \sqrt{3}$ Ruler Step
-When the continuous rotational group $\mathrm{SO}(3)$ is restricted to the octahedral point group $O_h$ of the cubic vacuum cell ($\lvert O_h\rvert = 48$), the 7-dimensional $l=3$ ($f$-wave) eigenspace of the Laplace–Dirac operator—whose dimension $2l+1 = 7$ equals the Dirichlet unit rank $\mathrm{rk}(\mathcal{O}_K^\times) = r_1 + r_2 - 1 = 8 - 1 = 7$—splits into discrete irreducible representations of $O_h$:
+When the continuous rotational group $\mathrm{SO}(3)$ is restricted to the octahedral point group $O_h$ of the cubic vacuum cell ($\lvert O_h\rvert = 48$), the 7-dimensional $l=3$ ($f$-wave) eigenspace of the Laplace–Dirac operator-whose dimension $2l+1 = 7$ equals the Dirichlet unit rank $\mathrm{rk}(\mathcal{O}_K^\times) = r_1 + r_2 - 1 = 8 - 1 = 7$-splits into discrete irreducible representations of $O_h$:
 
 $$
 \mathbf{7}\big|_{\mathrm{SO}(3) \downarrow O_h} = A_{2u}\,(\dim 1) \;\oplus\; T_{1u}\,(\dim 3) \;\oplus\; T_{2u}\,(\dim 3), \qquad \frac{g_{\mathrm{triplet}}}{g_{\mathrm{singlet}}} = \frac{\dim(T_{1u})}{\dim(A_{2u})} = \frac{3}{1} = 3
 $$
 
-For a fundamental cubic cell of side $a$, the inscribed sphere has radius $r_{\mathrm{in}} = a/2$ and the circumscribed sphere has radius $R_{\mathrm{out}} = a\sqrt{3}/2$. Their surface-area ratio is $S_{\mathrm{out}} / S_{\mathrm{in}} = 3 = g_{\mathrm{triplet}} / g_{\mathrm{singlet}}$, locking the radial eigenvalue step of our spectral ruler to $\Lambda_Y = R_{\mathrm{out}} / r_{\mathrm{in}} = \sqrt{3}$. Evaluated at the internal lepton–quark valence tensor dimension $m_1 = v_l v_q = 2 \times 3 = 6$ and the Dirichlet unit rank $m_2 = \mathrm{rk}(\mathcal{O}_K^\times) = 7$ under the unit scale $r_0 = 1.0\text{ AU}$ (`Postulate P2_UNIT_AU`), the spectral ruler $(\sqrt{3})^m$ yields all primary boundaries with **zero free parameters**:
+For a fundamental cubic cell of side $a$, the inscribed sphere has radius $r_{\mathrm{in}} = a/2$ and the circumscribed sphere has radius $R_{\mathrm{out}} = a\sqrt{3}/2$. Their surface-area ratio is $S_{\mathrm{out}} / S_{\mathrm{in}} = 3 = g_{\mathrm{triplet}} / g_{\mathrm{singlet}}$, locking the radial eigenvalue step of our spectral ruler to $\Lambda_Y = R_{\mathrm{out}} / r_{\mathrm{in}} = \sqrt{3}$. Evaluated at the internal lepton–quark valence tensor dimension $m_1 = v_l v_q = 2 \times 3 = 6$ and the Dirichlet unit rank $m_2 = \mathrm{rk}(\mathcal{O}_K^\times) = 7$ under the unit scale $r_0 = 1.0\text{ AU}$ (`Postulate P2_UNIT_AU`), the spectral ruler $R(m) = r_0 (\sqrt{3})^m$ yields all primary boundaries with **zero free parameters**:
 
 $$
-\frac{R(m)}{r_0} = (\sqrt{3})^m \implies \begin{cases} m = 6: & (\sqrt{3})^6 = 3^3 = 27.0\text{ AU} & (\text{Core Neck Inscribed Sphere } R_1) \\ m = 7: & (\sqrt{3})^7 = 27\sqrt{3} \approx 46.7654\text{ AU} & (\text{Kuiper Belt Valence Shell } R_2) \\ m = 10: & (\sqrt{3})^{10} = 3^5 = 243.0\text{ AU} & (\text{Outer Inscribed Sphere } r_{\mathrm{in}}) \\ m = 11: & (\sqrt{3})^{11} = 243\sqrt{3} \approx 420.8883\text{ AU} & (\text{Outer Circumscribed Sphere } R_{\mathrm{out}}) \end{cases}
+R_1 = R(6) = (\sqrt{3})^6\text{ AU} = 3^3\text{ AU} = \mathbf{27.0\text{ AU}} \quad (\text{Core Neck Inscribed Sphere}), \qquad R_2 = R(7) = (\sqrt{3})^7\text{ AU} = \mathbf{27\sqrt{3}\text{ AU} \approx 46.7654\text{ AU}} \quad (\text{Kuiper Belt Valence Shell})
+$$
+
+$$
+r_{\mathrm{in}} = R(10) = (\sqrt{3})^{10}\text{ AU} = \mathbf{243.0\text{ AU}} \quad (\text{Outer Inscribed Sphere}), \qquad R_{\mathrm{mid}} = \mathbf{243\sqrt{2} \approx 343.6539\text{ AU}}, \qquad R_{\mathrm{out}} = R(11) = (\sqrt{3})^{11}\text{ AU} = \mathbf{243\sqrt{3} \approx 420.8883\text{ AU}}
 $$
 
 ### 1.5. Formal Machine Verification in Lean 4 (`round-square`): The $\mathbb{R}^4$ Incompatibility Theorem & Unified Dirac Operator Apparatus
@@ -116,7 +120,7 @@ $$
 ## 2. Resolving the 10.2% 1D-Sphere Offset: Neptune on the Bicone Vertex, the 1:2:3 Giant Ladder & the 32.4 ppm Blind Hit
 
 ### 2.1. Why the Naive 1D Inscribed Sphere ($R_1 = 27\text{ AU}$) Misses Neptune ($30.07\text{ AU}$) by 10.2%: Face Center vs. Bicone Vertex
-In our epistemic ledger, the naive 1D spherical comparison between the inscribed face-center radius $R_1 = (\sqrt{3})^6 = 27.0\text{ AU}$ and Neptune's semi-major axis $a_N = 30.0689\text{ AU}$ is transparently retained as a negative control (`10.2%` offset, $p = 0.0519$). **Why does that 10.2% offset occur? Because planets do not condense on 1D face centers of a sphere—they condense on the 3D vertices of the $(\sqrt{2}, \sqrt{3}, \sqrt{5})$ Bicone and Stella Octangula crystal (`Theorem T_BICONE_VERTEX`).**
+In our epistemic ledger, the naive 1D spherical comparison between the inscribed face-center radius $R_1 = (\sqrt{3})^6 = 27.0\text{ AU}$ and Neptune's semi-major axis $a_N = 30.0689\text{ AU}$ is transparently retained as a negative control (`10.2%` offset, $p = 0.0519$). **Why does that 10.2% offset occur? Because planets do not condense on 1D face centers of a sphere-they condense on the 3D vertices of the $(\sqrt{2}, \sqrt{3}, \sqrt{5})$ Bicone and Stella Octangula crystal (`Theorem T_BICONE_VERTEX`).**
 
 In the coupled Pythagorean cascade generating $K = \mathbb{Q}(\sqrt{2},\sqrt{3},\sqrt{5})$:
 
@@ -132,13 +136,13 @@ $$
 
 In a cube of inscribed face-center radius $R_1 = 27.0\text{ AU}$, the factor $R_{\mathrm{circ}} = \sqrt{5}/2$ is simultaneously the circumsphere vertex of the $(\sqrt{2},\sqrt{3},\sqrt{5})$ bicone and the Euclidean distance from the Sun to the cube's semi-edge vertex $\mathbf{v} = (R_1, \frac{1}{2}R_1, 0)$. Projecting the $S_n = 1$ floor ($R_1 = 27.0\text{ AU}$) onto the two-phase $(S_k \in \lbrace 1, 2\rbrace)$ crystal geometry resolves the Ice Giant doublet (`Table 1` & `Table 8` of [`Solar_v16.pdf`](./Solar_v16.pdf)) with sub-percent precision:
 
-* **Inner Phase $(S_n = 1, S_k = 1, S_h = 1)$ — Uranus (Inscribed Cuboctahedral Partner):**
+* **Inner Phase $(S_n = 1, S_k = 1, S_h = 1)$ - Uranus (Inscribed Cuboctahedral Partner):**
 
 $$
 R_{\mathrm{Uranus}}^{\mathrm{in}} = \frac{R_1}{\sqrt{2}} = \frac{27}{\sqrt{2}} = \mathbf{19.0919\text{ AU}} \qquad (\text{Observed } a_U = \mathbf{19.1913\text{ AU}}, \;\delta = \mathbf{0.518\%})
 $$
 
-* **Outer Phase $(S_n = 1, S_k = 2, S_h = 1)$ — Neptune (Bicone Equatorial & Circumvertex Corridor):**
+* **Outer Phase $(S_n = 1, S_k = 2, S_h = 1)$ - Neptune (Bicone Equatorial & Circumvertex Corridor):**
 
 $$
 R_{\mathrm{Neptune}}^{\mathrm{eq}} = R_1 \cdot \frac{\sqrt{30}}{5} = \mathbf{29.5770\text{ AU}} \quad (\text{vs } q_N = 29.81\text{ AU}, \;\delta = 0.78\%), \qquad R_{\mathrm{Neptune}}^{\mathrm{vertex}} = R_1 \cdot \frac{\sqrt{5}}{2} = \frac{27\sqrt{5}}{2} = \mathbf{30.1869\text{ AU}}
@@ -210,7 +214,7 @@ $$
 \mathcal{V}_{12} = \lbrace (\pm 1, \pm 1, 0), \; (\pm 1, 0, \pm 1), \; (0, \pm 1, \pm 1) \rbrace, \qquad R_{\mathrm{mid}} = R_{\mathrm{out}}\sqrt{\frac{2}{3}} = 243\sqrt{2} \approx 343.6539\text{ AU}
 $$
 
-**Theorem (`T_STELLA_MULTIPOLE` — Reynolds Operator Projection & Collapse of $l=1, 2, 3$ Multipoles):**  
+**Theorem (`T_STELLA_MULTIPOLE` - Reynolds Operator Projection & Collapse of $l=1, 2, 3$ Multipoles):**  
 Applying the Reynolds group-averaging projection operator $\mathcal{P}_{O_h} = \frac{1}{48}\sum_{g \in O_h} \rho(g)$ of the octahedral group $O_h$ to the spherical-harmonic expansion of the effective spectral potential over the 12 cuboctahedral E-nodes $\mathcal{V}_{12}$ (and across $T_1$ and $T_2$) annihilates all irreducible representations of order $l = 1$, $l = 2$, and $l = 3$ identically:
 
 $$
@@ -274,7 +278,7 @@ $$
 The normalized radial coordinate $n_{\mathrm{raw}}$ uses the two-branch piecewise metric around the $m=10$ inscribed sphere ($243.0\text{ AU}$), where $\Lambda_1 = \sqrt{3}(3+2\sqrt{2}) \approx 10.095$ and $\lambda_{\mathrm{vac}} = 243/\Lambda_1 \approx 24.07\text{ AU}$:
 
 $$
-n_{\mathrm{raw}} = \begin{cases} R_{\mathrm{eff}} / 10.095 & \text{if } R_{\mathrm{eff}} < 243.0\text{ AU} \\ (R_{\mathrm{eff}} - 243.0) / 24.07 & \text{if } R_{\mathrm{eff}} \ge 243.0\text{ AU} \end{cases}
+n_{\mathrm{raw}}^{\mathrm{inner}} = \frac{R_{\mathrm{eff}}}{10.095} \quad (R_{\mathrm{eff}} < 243.0\text{ AU}), \qquad n_{\mathrm{raw}}^{\mathrm{outer}} = \frac{R_{\mathrm{eff}} - 243.0}{24.07} \quad (R_{\mathrm{eff}} \ge 243.0\text{ AU})
 $$
 
 Rather than measuring with a continuous ruler, the principal floor $S_n$, transverse phase $S_k$, and vertical phase $S_h$ are extracted via the **Diophantine Spectral Projection Operator** $\mathcal{D}$ ($x_0 = n_{\mathrm{raw}}$):
@@ -346,7 +350,7 @@ All 11 interactive Plotly models in [`./plots_html/`](./plots_html/) can be rota
 ## 7. 11-Front Empirical Audit Across 1,579,912 Real MPCORB Orbits
 
 ### 7.1. K-PHAM v2.2 $S_n$ Floor Population Distribution (`MPCORB.DAT`, $N = 1,579,912$)
-*(Full machine-readable summary: [`./reports/it3_floor_distribution_summary.csv`](./reports/it3_floor_distribution_summary.csv))*
+(Full machine-readable summary: [`./reports/it3_floor_distribution_summary.csv`](./reports/it3_floor_distribution_summary.csv))
 
 | Floor $S_n$ | Object Count | Catalog Share | Bowl Radius $R_{\mathrm{bowl}}$ | Physical & Dynamical Regime |
 | :-: | --: | --: | --: | :--- |
@@ -382,7 +386,7 @@ All 11 interactive Plotly models in [`./plots_html/`](./plots_html/) can be rota
 
 ## 8. Complete Catalog of All 47 Extreme Deep Objects (Sn >= 6) & Live Blind Confirmations
 
-When the frozen K-PHAM v2.2 operator was executed on the latest Harvard MPC catalog (`1,579,912` objects, +4,133 new objects compared to the previous snapshot), **3 newly added deep-space objects (`K25Me3C` at $S_n=7$, `K26EE7W` at $S_n=6$, and `K26H21Z` at $S_n=6$)** automatically quantized into the exact outer shells without a single parameter adjustment—with `K25Me3C` (`2025 MC403`, $R_{\mathrm{eff}} = 2453.20\text{ AU}$) hitting the pre-registered terminal spiral $R_{\mathrm{deep}} = 243\Lambda_1 = 2453.12\text{ AU}$ within **$32.4\text{ ppm}$ ($0.00324\%$)**! Below is the complete table of all **47 extreme deep objects ($S_n \ge 6$)** ([`./reports/it3_extreme_deep_objects_sn_ge_6.csv`](./reports/it3_extreme_deep_objects_sn_ge_6.csv)):
+When the frozen K-PHAM v2.2 operator was executed on the latest Harvard MPC catalog (`1,579,912` objects, +4,133 new objects compared to the previous snapshot), **3 newly added deep-space objects (`K25Me3C` at $S_n=7$, `K26EE7W` at $S_n=6$, and `K26H21Z` at $S_n=6$)** automatically quantized into the exact outer shells without a single parameter adjustment-with `K25Me3C` (`2025 MC403`, $R_{\mathrm{eff}} = 2453.20\text{ AU}$) hitting the pre-registered terminal spiral $R_{\mathrm{deep}} = 243\Lambda_1 = 2453.12\text{ AU}$ within **$32.4\text{ ppm}$ ($0.00324\%$)**! Below is the complete table of all **47 extreme deep objects ($S_n \ge 6$)** ([`./reports/it3_extreme_deep_objects_sn_ge_6.csv`](./reports/it3_extreme_deep_objects_sn_ge_6.csv)):
 
 | Rank | MPC Code | Designation / Name | Floor $S_n$ | $S_k$ | $S_h$ | Aphelion $Q$ (AU) | $R_{\mathrm{eff}}$ (AU) | Ionization $E_{\mathrm{ion}}$ | Classification / Note |
 | :-: | :--- | :--- | :-: | :-: | :-: | --: | --: | --: | :--- |
@@ -458,8 +462,8 @@ The IT³ macroscopic vacuum architecture is **falsified** if:
 1. **Azimuthal Node Capture:** LSST DR1–DR3 discovers $< 20$ new ETNOs ($S_n \ge 5$) within $\pm 10^\circ$ of the predicted $m = 6 \oplus 12$ cuboctahedral E-nodes.
 2. **Spatial Isotropy:** The angular distribution of newly discovered extreme objects ($S_n \ge 6$) is statistically isotropic ($p > 0.05$ under Rayleigh/multipole tests) with no hexadecapolar $l=4$ E-node correlation.
 3. **Radial Shell Peaks:** The aphelion distances $Q$ and effective topological radii $R_{\mathrm{eff}}$ of newly discovered detached objects fail to cluster along the $\sqrt{3}$-ladder $R_n = 27\text{ AU} \times (\sqrt{3})^{n-1}$.
-4. **Kinematic Bound/Free Cutoff ($e = 1.0$):** Future cometary catalogs fail to show a sharp entropy dichotomy between quantized elliptical orbits ($e < 1$) and continuous hyperbolic trajectories ($e \ge 1$). *(Currently confirmed on 852 bound / 68 free comets).*
-5. **Deep-Comet Macro-Compton Periodogram:** Once $\ge 500$ deep comets ($S_n \ge 3$) are cataloged by LSST, the Rayleigh periodogram at $\log(\Lambda_1^2) = 4.624$ fails to reach $\text{SNR} > 3.0\sigma$. *(Currently recorded as an honest `NULL_RESULT` at $N=155$, $\text{SNR} = -0.07\sigma$ due to JFC dominance).*
+4. **Kinematic Bound/Free Cutoff ($e = 1.0$):** Future cometary catalogs fail to show a sharp entropy dichotomy between quantized elliptical orbits ($e < 1$) and continuous hyperbolic trajectories ($e \ge 1$). (Currently confirmed on 852 bound / 68 free comets).
+5. **Deep-Comet Macro-Compton Periodogram:** Once $\ge 500$ deep comets ($S_n \ge 3$) are cataloged by LSST, the Rayleigh periodogram at $\log(\Lambda_1^2) = 4.624$ fails to reach $\text{SNR} > 3.0\sigma$. (Currently recorded as an honest `NULL_RESULT` at $N=155$, $\mathrm{SNR} = -0.07\sigma$ due to JFC dominance).
 
 ---
 
@@ -559,4 +563,4 @@ python3 it3_master_v22.0.py --fresh-download
 ~~~
 
 ---
-*© 2026 Victor Logvinovich & Jean-Claude Perez. Released under the MIT Open-Source License.*
+© 2026 Victor Logvinovich & Jean-Claude Perez. Released under the MIT Open-Source License.
