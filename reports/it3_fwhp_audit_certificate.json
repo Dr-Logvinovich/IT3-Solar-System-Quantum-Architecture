@@ -1,5 +1,5 @@
 {
-  "framework": "IT3-v22.6-strict",
+  "framework": "IT3-v23.4-strict",
   "zenodo_doi": "10.5281/zenodo.21792530",
   "zenodo_url": "https://zenodo.org/records/21792530",
   "authors": [
@@ -7,9 +7,9 @@
     "Jean-Claude Perez"
   ],
   "provenance": {
-    "script_sha256": "1457f599fbb06da4",
+    "script_sha256": "529a2727c0ce441e",
     "mpcorb_sha256": "079680033fc14a91",
-    "cometels_sha256": "e2de02b72856e2e1",
+    "cometels_sha256": "91a371eed7095a0b",
     "total_objects_analyzed": 1579912
   },
   "explicit_postulates_and_anchors": {
@@ -166,6 +166,25 @@
     "kuiper_peak_theoretical_AU": 46.77,
     "kuiper_quantization_error_pct": 1.291,
     "monte_carlo_peak_only_p": 0.02555,
+    "exact_peak_only_p_zero_rng": 0.024919,
+    "exact_joint_2d_p_zero_rng": 0.051124,
+    "neptune_bicone_vertex_error_pct": 0.3925,
+    "kuiper_cliff_1_2_error_pct": 0.3925,
+    "kuiper_cliff_is_tautological_duplicate": true,
+    "joint_3d_bicone_vertex_loss_pct": 1.6831,
+    "joint_3d_bicone_vertex_monte_carlo_p": 0.001,
+    "exact_joint_3d_p_zero_rng": 0.000959,
+    "exact_joint_3d_bonf6_p_zero_rng": 0.005752,
+    "exact_joint_3d_mmr_p_zero_rng": 0.001991,
+    "exact_joint_3d_mmr_bonf6_p_zero_rng": 0.011945,
+    "k25me3c_in_catalog": true,
+    "terminal_spiral_K25Me3C_r_eff_AU": 2453.1966,
+    "terminal_spiral_K25Me3C_error_ppm": 32.44,
+    "terminal_spiral_K25Me3C_p_look_elsewhere": 0.002034,
+    "sedna_in_catalog": true,
+    "sedna_r_eff_AU": 1385.0907,
+    "sedna_bicone_eq_error_pct": 0.1379,
+    "sedna_bicone_eq_p_look_elsewhere": 0.11691,
     "joint_2d_monte_carlo_R0_Lambda_p": 0.05185,
     "joint_loss_vs_neptune_and_1_2_mmr_pct": 12.23,
     "joint_2d_verdict": "NEGATIVE_RESULT (R_1=27 AU deviates from a_Neptune=30.07 AU by 10.2%; p_joint > 0.05)",
@@ -219,15 +238,15 @@
       "epistemic_note": "L4/L5 ratio is an empirical capture asymmetry, not derived from K."
     },
     "cometary_dichotomy": {
-      "evaluation_mode": "LIVE_SHARED_11BINS (SHA:e2de02b72856e2e1, identical log10(R_eff) edges + normalized efficiency)",
-      "n_bound": 852,
-      "n_free": 120,
-      "H_bound_shared_radial_bits": 2.0238,
-      "H_free_shared_radial_bits": 1.5569,
-      "delta_H_shared_radial_bits": -0.4669,
-      "H_bound_discrete_Sn_bits": 1.5414,
-      "normalized_efficiency_bound_Sn": 0.4456,
-      "normalized_efficiency_free_radial": 0.4501,
+      "evaluation_mode": "LIVE_SHARED_11BINS (SHA:91a371eed7095a0b, identical log10(R_eff) edges + normalized efficiency)",
+      "n_bound": 855,
+      "n_free": 119,
+      "H_bound_shared_radial_bits": 2.0347,
+      "H_free_shared_radial_bits": 1.5649,
+      "delta_H_shared_radial_bits": -0.4697,
+      "H_bound_discrete_Sn_bits": 1.5512,
+      "normalized_efficiency_bound_Sn": 0.4484,
+      "normalized_efficiency_free_radial": 0.4524,
       "interstellar_objects": [
         {
           "name": "1I/'Oumuamua",
@@ -274,9 +293,9 @@
         },
         {
           "name": "C/2024 L5 (ATLAS)                                        MPEC 2026-P55",
-          "e": 1.034,
+          "e": 1.0337,
           "q_AU": 3.457,
-          "E_ion": -1.42
+          "E_ion": -1.43
         },
         {
           "name": "C/2020 P4-C (SOHO)                                       MPEC 2020-QN1",
@@ -288,27 +307,27 @@
       "front_B_macro_compton_periodogram": {
         "B1_Macro_Compton": {
           "period": 4.6241,
-          "z": 356.728,
-          "bg_mean": 356.781,
-          "snr_sigma": -0.07,
+          "z": 355.103,
+          "bg_mean": 355.27,
+          "snr_sigma": -0.83,
           "verdict": "ARTIFACT_NULL (JFC volume echo)"
         },
         "B2_Half_Period": {
           "period": 2.3121,
-          "z": 178.961,
-          "bg_mean": 175.964,
-          "snr_sigma": 0.34,
+          "z": 179.129,
+          "bg_mean": 175.578,
+          "snr_sigma": 0.45,
           "verdict": "ARTIFACT_NULL (JFC volume echo)"
         },
         "B3_Spiral_Step": {
           "period": 0.5493,
-          "z": 23.546,
-          "bg_mean": 27.137,
-          "snr_sigma": -0.19,
+          "z": 24.013,
+          "bg_mean": 27.048,
+          "snr_sigma": -0.16,
           "verdict": "ARTIFACT_NULL (JFC volume echo)"
         },
-        "deep_comets_sn_ge_3_count": 155,
-        "deep_B1_snr_sigma": 0.17
+        "deep_comets_sn_ge_3_count": 158,
+        "deep_B1_snr_sigma": 0.25
       },
       "front_T1_table1_benchmarks": {
         "matched_count": 7,
@@ -381,12 +400,12 @@
       },
       "front_3_nea_pha_micro_shell": {
         "evaluation_mode": "MPC_NEA_PHA_FILES",
-        "total_nea_sn0": 43037,
+        "total_nea_sn0": 43038,
         "dominant_cell": [
           2,
           1
         ],
-        "dominant_cell_pct": 47.75,
+        "dominant_cell_pct": 47.76,
         "analytical_uniform_sk2_prior_pct": 59.76
       },
       "front_C_centaur_d_shell": {
@@ -412,6 +431,490 @@
       "front_5F_neocp_prospective": {
         "candidates_awaiting_confirmation": 0
       }
+    },
+    "v23_3_discovery_probes": {
+      "oh_multipole_s2": {
+        "detached_etno_count": 216,
+        "outer_sn3_count": 2025,
+        "detached_e_hat_spectrum": {
+          "1": {
+            "S_l": 5.809071,
+            "chi2_stat": 17.4272,
+            "df": 3,
+            "z_score": 5.904,
+            "p_chi2": 0.0005772242029127194,
+            "S_l_az": 5.117681,
+            "df_eff_az": 2.01,
+            "z_az": 4.127,
+            "p_az": 0.0059135496251180595
+          },
+          "2": {
+            "S_l": 44.289055,
+            "chi2_stat": 221.4453,
+            "df": 5,
+            "z_score": 68.605,
+            "p_chi2": 7.283800572851453e-46,
+            "S_l_az": 10.20179,
+            "df_eff_az": 2.91,
+            "z_az": 11.093,
+            "p_az": 1.4351959545073217e-06
+          },
+          "3": {
+            "S_l": 4.828519,
+            "chi2_stat": 33.7996,
+            "df": 7,
+            "z_score": 7.179,
+            "p_chi2": 1.8777063291921945e-05,
+            "S_l_az": 3.945418,
+            "df_eff_az": 4.78,
+            "z_az": 4.554,
+            "p_az": 0.0016969419007929433
+          },
+          "4": {
+            "S_l": 12.681125,
+            "chi2_stat": 114.1301,
+            "df": 9,
+            "z_score": 24.837,
+            "p_chi2": 2.1163572493253235e-20,
+            "S_l_az": 5.709978,
+            "df_eff_az": 6.31,
+            "z_az": 8.367,
+            "p_az": 3.6986350187843608e-06
+          },
+          "5": {
+            "S_l": 2.436275,
+            "chi2_stat": 26.799,
+            "df": 11,
+            "z_score": 3.376,
+            "p_chi2": 0.004927421019038805,
+            "S_l_az": 2.052063,
+            "df_eff_az": 8.0,
+            "z_az": 2.104,
+            "p_az": 0.03682139915641496
+          },
+          "6": {
+            "S_l": 3.755462,
+            "chi2_stat": 48.821,
+            "df": 13,
+            "z_score": 7.041,
+            "p_chi2": 4.743384797569312e-06,
+            "S_l_az": 2.985571,
+            "df_eff_az": 9.48,
+            "z_az": 4.323,
+            "p_az": 0.0011625821490035136
+          },
+          "7": {
+            "S_l": 2.519519,
+            "chi2_stat": 37.7928,
+            "df": 15,
+            "z_score": 4.171,
+            "p_chi2": 0.0009681246187097406,
+            "S_l_az": 2.586246,
+            "df_eff_az": 11.2,
+            "z_az": 3.753,
+            "p_az": 0.002577769447156606
+          },
+          "8": {
+            "S_l": 2.066515,
+            "chi2_stat": 35.1308,
+            "df": 17,
+            "z_score": 3.117,
+            "p_chi2": 0.005979767464174523,
+            "S_l_az": 2.05701,
+            "df_eff_az": 12.69,
+            "z_az": 2.663,
+            "p_az": 0.014322601845570448
+          },
+          "9": {
+            "S_l": 3.026043,
+            "chi2_stat": 57.4948,
+            "df": 19,
+            "z_score": 6.259,
+            "p_chi2": 9.571000621508516e-06,
+            "S_l_az": 3.093998,
+            "df_eff_az": 14.36,
+            "z_az": 5.611,
+            "p_az": 6.348015558570206e-05
+          },
+          "10": {
+            "S_l": 1.956261,
+            "chi2_stat": 41.0815,
+            "df": 21,
+            "z_score": 3.106,
+            "p_chi2": 0.00547838583656778,
+            "S_l_az": 1.940017,
+            "df_eff_az": 15.94,
+            "z_az": 2.654,
+            "p_az": 0.013427301877695945
+          },
+          "11": {
+            "S_l": 2.936103,
+            "chi2_stat": 67.5304,
+            "df": 23,
+            "z_score": 6.581,
+            "p_chi2": 2.9082934785281577e-06,
+            "S_l_az": 2.921968,
+            "df_eff_az": 17.57,
+            "z_az": 5.697,
+            "p_az": 3.6703423940854173e-05
+          },
+          "12": {
+            "S_l": 2.558082,
+            "chi2_stat": 63.9521,
+            "df": 25,
+            "z_score": 5.521,
+            "p_chi2": 2.9206564304056982e-05,
+            "S_l_az": 2.464853,
+            "df_eff_az": 19.1,
+            "z_az": 4.527,
+            "p_az": 0.0003659519054386044
+          }
+        },
+        "detached_h_hat_spectrum": {
+          "1": {
+            "S_l": 172.597729,
+            "chi2_stat": 517.7932,
+            "df": 3,
+            "z_score": 210.652,
+            "p_chi2": 6.644962926357559e-112,
+            "S_l_az": 5.309505,
+            "df_eff_az": 2.02,
+            "z_az": 4.329,
+            "p_az": 0.004815468894865835
+          },
+          "2": {
+            "S_l": 133.169188,
+            "chi2_stat": 665.8459,
+            "df": 5,
+            "z_score": 209.463,
+            "p_chi2": 1.1891210915109219e-141,
+            "S_l_az": 5.744803,
+            "df_eff_az": 2.42,
+            "z_az": 5.215,
+            "p_az": 0.0016252302614184978
+          },
+          "3": {
+            "S_l": 77.514103,
+            "chi2_stat": 542.5987,
+            "df": 7,
+            "z_score": 143.477,
+            "p_chi2": 5.523776798936876e-113,
+            "S_l_az": 5.833797,
+            "df_eff_az": 3.01,
+            "z_az": 5.929,
+            "p_az": 0.0005490350714028017
+          },
+          "4": {
+            "S_l": 46.861447,
+            "chi2_stat": 421.753,
+            "df": 9,
+            "z_score": 97.513,
+            "p_chi2": 3.1130227823727605e-85,
+            "S_l_az": 5.338015,
+            "df_eff_az": 3.85,
+            "z_az": 6.015,
+            "p_az": 0.0003358090447404358
+          },
+          "5": {
+            "S_l": 20.768752,
+            "chi2_stat": 228.4563,
+            "df": 11,
+            "z_score": 46.47,
+            "p_chi2": 8.907760330266126e-43,
+            "S_l_az": 4.409947,
+            "df_eff_az": 4.88,
+            "z_az": 5.328,
+            "p_az": 0.0005785138441563518
+          },
+          "6": {
+            "S_l": 11.525267,
+            "chi2_stat": 149.8285,
+            "df": 13,
+            "z_score": 26.897,
+            "p_chi2": 2.231926750554848e-25,
+            "S_l_az": 3.614178,
+            "df_eff_az": 5.98,
+            "z_az": 4.521,
+            "p_az": 0.0014002656794774226
+          },
+          "7": {
+            "S_l": 5.107577,
+            "chi2_stat": 76.6137,
+            "df": 15,
+            "z_score": 11.275,
+            "p_chi2": 2.8898865665210236e-10,
+            "S_l_az": 2.820497,
+            "df_eff_az": 7.06,
+            "z_az": 3.422,
+            "p_az": 0.005979028086627092
+          },
+          "8": {
+            "S_l": 4.249461,
+            "chi2_stat": 72.2408,
+            "df": 17,
+            "z_score": 9.496,
+            "p_chi2": 8.840491247698928e-09,
+            "S_l_az": 2.447599,
+            "df_eff_az": 8.11,
+            "z_az": 2.914,
+            "p_az": 0.011643590121567201
+          },
+          "9": {
+            "S_l": 3.021783,
+            "chi2_stat": 57.4139,
+            "df": 19,
+            "z_score": 6.246,
+            "p_chi2": 9.852823256627886e-06,
+            "S_l_az": 1.903147,
+            "df_eff_az": 9.13,
+            "z_az": 1.929,
+            "p_az": 0.045808470814121455
+          },
+          "10": {
+            "S_l": 3.738325,
+            "chi2_stat": 78.5048,
+            "df": 21,
+            "z_score": 8.894,
+            "p_chi2": 1.4333475968520091e-08,
+            "S_l_az": 1.614889,
+            "df_eff_az": 10.14,
+            "z_az": 1.385,
+            "p_az": 0.09424436776701561
+          },
+          "11": {
+            "S_l": 3.487604,
+            "chi2_stat": 80.2149,
+            "df": 23,
+            "z_score": 8.455,
+            "p_chi2": 2.93058603646773e-08,
+            "S_l_az": 1.394378,
+            "df_eff_az": 11.15,
+            "z_az": 0.931,
+            "p_az": 0.166373172871683
+          },
+          "12": {
+            "S_l": 4.40549,
+            "chi2_stat": 110.1373,
+            "df": 25,
+            "z_score": 12.068,
+            "p_chi2": 1.1679356359947287e-12,
+            "S_l_az": 1.31012,
+            "df_eff_az": 12.18,
+            "z_az": 0.765,
+            "p_az": 0.20312316958156562
+          }
+        },
+        "outer_sn3_e_hat_spectrum": {
+          "1": {
+            "S_l": 16.63022,
+            "chi2_stat": 49.8907,
+            "df": 3,
+            "z_score": 19.148,
+            "p_chi2": 8.429230614091192e-11,
+            "S_l_az": 16.673441,
+            "df_eff_az": 2.0,
+            "z_az": 15.677,
+            "p_az": 5.700792476785432e-08
+          },
+          "2": {
+            "S_l": 330.331156,
+            "chi2_stat": 1651.6558,
+            "df": 5,
+            "z_score": 520.847,
+            "p_chi2": 0.0,
+            "S_l_az": 7.453686,
+            "df_eff_az": 2.84,
+            "z_az": 7.694,
+            "p_az": 7.940347833956155e-05
+          },
+          "3": {
+            "S_l": 8.115619,
+            "chi2_stat": 56.8093,
+            "df": 7,
+            "z_score": 13.315,
+            "p_chi2": 6.522670140571336e-10,
+            "S_l_az": 6.816852,
+            "df_eff_az": 4.73,
+            "z_az": 8.95,
+            "p_az": 3.9271328932068775e-06
+          },
+          "4": {
+            "S_l": 87.759628,
+            "chi2_stat": 789.8367,
+            "df": 9,
+            "z_score": 184.09,
+            "p_chi2": 3.2744396152736707e-164,
+            "S_l_az": 4.417139,
+            "df_eff_az": 6.15,
+            "z_az": 5.992,
+            "p_az": 0.0001539097011165766
+          },
+          "5": {
+            "S_l": 4.493985,
+            "chi2_stat": 49.4338,
+            "df": 11,
+            "z_score": 8.196,
+            "p_chi2": 7.910461595135051e-07,
+            "S_l_az": 3.621793,
+            "df_eff_az": 7.86,
+            "z_az": 5.197,
+            "p_az": 0.0003542149882133554
+          },
+          "6": {
+            "S_l": 21.974049,
+            "chi2_stat": 285.6626,
+            "df": 13,
+            "z_score": 53.487,
+            "p_chi2": 2.389928791311049e-53,
+            "S_l_az": 3.792795,
+            "df_eff_az": 9.35,
+            "z_az": 6.038,
+            "p_az": 6.463858911107065e-05
+          },
+          "7": {
+            "S_l": 2.854561,
+            "chi2_stat": 42.8184,
+            "df": 15,
+            "z_score": 5.08,
+            "p_chi2": 0.00016800095248444997,
+            "S_l_az": 2.836499,
+            "df_eff_az": 11.02,
+            "z_az": 4.311,
+            "p_az": 0.001014514437180765
+          },
+          "8": {
+            "S_l": 7.27444,
+            "chi2_stat": 123.6655,
+            "df": 17,
+            "z_score": 18.297,
+            "p_chi2": 3.0791080615564477e-18,
+            "S_l_az": 3.181498,
+            "df_eff_az": 12.51,
+            "z_az": 5.455,
+            "p_az": 0.0001089248265201204
+          },
+          "9": {
+            "S_l": 2.285217,
+            "chi2_stat": 43.4191,
+            "df": 19,
+            "z_score": 3.962,
+            "p_chi2": 0.0011356754710589749,
+            "S_l_az": 2.363764,
+            "df_eff_az": 14.16,
+            "z_az": 3.629,
+            "p_az": 0.002669518891627326
+          },
+          "10": {
+            "S_l": 2.986235,
+            "chi2_stat": 62.7109,
+            "df": 21,
+            "z_score": 6.438,
+            "p_chi2": 4.9231969393155525e-06,
+            "S_l_az": 1.49475,
+            "df_eff_az": 15.68,
+            "z_az": 1.385,
+            "p_az": 0.09318973380038759
+          },
+          "11": {
+            "S_l": 1.482381,
+            "chi2_stat": 34.0948,
+            "df": 23,
+            "z_score": 1.636,
+            "p_chi2": 0.06380040291043255,
+            "S_l_az": 1.441751,
+            "df_eff_az": 17.31,
+            "z_az": 1.3,
+            "p_az": 0.10454615665604247
+          },
+          "12": {
+            "S_l": 3.579821,
+            "chi2_stat": 89.4955,
+            "df": 25,
+            "z_score": 9.123,
+            "p_chi2": 3.4575900256289334e-09,
+            "S_l_az": 2.58603,
+            "df_eff_az": 18.85,
+            "z_az": 4.869,
+            "p_az": 0.00018469816335162258
+          }
+        },
+        "detached_e_hat_K4": {
+          "N": 216,
+          "mean_K4": 0.082656,
+          "isotropic_se": 0.011878,
+          "z_score": 6.959,
+          "p_two_sided": 3.437227132692625e-12,
+          "ecliptic_expected_K4": 0.074089,
+          "delta_K4_azimuthal": 0.008567,
+          "z_az": 0.795,
+          "p_az_two_sided": 0.42672224951274407
+        },
+        "outer_sn3_e_hat_K4": {
+          "N": 2025,
+          "mean_K4": 0.078659,
+          "isotropic_se": 0.003879,
+          "z_score": 20.276,
+          "p_two_sided": 2.102300491826279e-91,
+          "ecliptic_expected_K4": 0.08133,
+          "delta_K4_azimuthal": -0.002671,
+          "z_az": -0.755,
+          "p_az_two_sided": 0.45009324857981103
+        }
+      },
+      "cometary_unified_energy": {
+        "available": true,
+        "eps0_au_inv": 0.01,
+        "n_bound": 855,
+        "n_free": 119,
+        "median_eps_bound_au_inv": -0.105617,
+        "median_eps_free_au_inv": 0.000178,
+        "iqr_asinh_bound": 0.9606,
+        "iqr_asinh_free": 0.0233,
+        "H_bound_unified_eps_bits": 2.3944,
+        "H_free_unified_eps_bits": 0.5591,
+        "delta_H_unified_eps_bits": -1.8353
+      },
+      "stratified_4layer_inclination": {
+        "main_belt_a_lt_5": {
+          "n": 1554022,
+          "median_i_deg": 7.81,
+          "share_below_18deg_pct": 90.96,
+          "argmax_deg": 29.75,
+          "drop_ratio": 2.215
+        },
+        "centaurs_5_to_30": {
+          "n": 17572,
+          "median_i_deg": 12.19,
+          "share_below_18deg_pct": 68.34,
+          "argmax_deg": 31.75,
+          "drop_ratio": 1.849
+        },
+        "kuiper_30_to_60": {
+          "n": 6938,
+          "median_i_deg": 10.2,
+          "share_below_18deg_pct": 70.47,
+          "argmax_deg": 29.75,
+          "drop_ratio": 1.557
+        },
+        "scattered_etno_a_gt_60": {
+          "n": 1380,
+          "median_i_deg": 18.07,
+          "share_below_18deg_pct": 49.78,
+          "argmax_deg": 29.25,
+          "drop_ratio": 1.591
+        }
+      },
+      "retrograde_sh4_enrichment": {
+        "total_catalog": 1579912,
+        "deep_sn_ge_6_count": 47,
+        "sh4_total_count": 115,
+        "sh4_deep_count": 3,
+        "retrograde_i_gt_90_total": 182,
+        "retrograde_i_gt_90_deep": 6,
+        "sh4_deep_enrichment_factor": 876.92,
+        "sh4_hypergeom_p_zero_rng": 6.0769306648156524e-09,
+        "retrograde_damocloid_TJ_lt_2_pct": 100.0
+      }
     }
   },
   "diophantine_audit": {
@@ -433,21 +936,22 @@
     "sn2_vs_sliding_max_efficiency_pct": 97.64,
     "sliding_windows_beaten_pct": 84.08
   },
-  "version": "IT3-v22.6-strict",
-  "epistemic_mode": "proven-only",
+  "version": "IT3-v23.4-strict",
+  "epistemic_mode": "full-diagnostic",
   "external_benchmarks_are_not_predictions": true,
   "numerology_exposure": 0.0,
   "postulates": {
     "P1_INRADIUS": "Metric pinning by the constructible right triangle (sqrt(2), sqrt(3), sqrt(5)) incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) (Math_Topology_v17 Postulate 2.7).",
     "P2_UNIT_AU": "Astronomical unit normalization r_0 = 1.0 AU as the m=0 unit length scale for the dimensionless O_h sphere ladder R(m)/r_0 = (sqrt(3))^m (Planet_9_v44 Sec. 4.1.1).",
-    "P3_SURFACE_TENSION": "Topological defect boundary area scales as A(N) proportional to N^(2/3) (Math_Topology_v17 Prop. 6.2 & Postulate 6.3)."
+    "P3_SURFACE_TENSION": "Topological defect boundary area scales as A(N) proportional to N^(2/3) (Math_Topology_v17 Prop. 6.2 & Postulate 6.3).",
+    "P4_EXPONENT_ASSIGNMENT": "Model assignment postulate: mapping ladder exponents m in {6,7,10,11} (e.g., v_l*v_q=6, rk(O_K^x)=7) and bicone circumvertex factor sqrt(5)/2 to outer Solar System shells is an explicit physical postulate, not a theorem of O_h group theory."
   },
   "theorems": {
     "T2.1_DISC": "Field discriminant of K=Q(sqrt2,sqrt3,sqrt5) is Delta_K = 2^16 * 3^4 * 5^4 = 3,317,760,000; sqrt(|Delta_K|) = 57,600 = 240^2.",
     "T2.5_PYTH": "Coupled Pythagorean closure 1^2+(sqrt2)^2=(sqrt3)^2, (sqrt2)^2+(sqrt3)^2=(sqrt5)^2 and inradius 2r = sqrt2+sqrt3-sqrt5.",
     "T2.9_KUMMER": "Square-free Kummer sieve over {2,3,5} proves sqrt(13) not in K (13 does not divide 30).",
     "T_E8_CARTAN": "E_8 root system has 240 minimal vectors and Cartan determinant det(G_E8) = 1.",
-    "T_OH_SPHERE_LADDER": "For a cube of side a, circumscribed-to-inscribed sphere ratio is R_out/r_in = sqrt(3) (area ratio 3); with A_F valency tensor dimension m_1 = v_l*v_q = 2*3 = 6 and Dirichlet unit rank rk(O_K^x) = 7, the dimensionless ladder (sqrt(3))^m gives (sqrt(3))^6 = 3^3 = 27 and (sqrt(3))^7 = 27*sqrt(3).",
+    "T_OH_SPHERE_LADDER": "For a cube of side a, circumscribed-to-inscribed sphere ratio is R_out/r_in = sqrt(3) (area ratio 3) and Dirichlet unit rank of totally real degree-8 field K is rk(O_K^x) = 7; algebraically (sqrt(3))^6 = 27, (sqrt(3))^7 = 27*sqrt(3), (sqrt(3))^10 = 243, (sqrt(3))^11 = 243*sqrt(3). Physical shell assignment is postulate P4_EXPONENT_ASSIGNMENT.",
     "T_OH_FCC": "O_h branching {2,6,10,14} yields bicone capacities {2,8,8,18,18,32}, hemisphere sum 86, full sum 172 = 4*43, and FCC Kepler packing ratio pi/sqrt(18).",
     "T_SUBADDITIVE": "Strict concavity of f(N)=N^(2/3) implies (N1+N2)^(2/3) < N1^(2/3) + N2^(2/3).",
     "T_GALOIS_18DEG": "sin(18 deg) = (sqrt(5)-1)/4 lies in Q(sqrt5) subset K, whereas Q(cos 18 deg) = Q(zeta_20)^+ has cyclic Galois group Z/4Z of exponent 4 and cannot embed into Gal(K/Q) = (Z/2Z)^3 of exponent 2; hence cos(18 deg) is not in K and 18 deg is not an SO(3,K) rotation.",
@@ -500,7 +1004,7 @@
       "uncertainty": null,
       "proof_id": "T_OH_SPHERE_LADDER",
       "dependencies": [],
-      "statement": "Cube sphere ratio Lambda_Y = R_out/r_in = sqrt(3) raised to valency tensor dimension m_1 = v_l*v_q = 6 gives (sqrt(3))^6 = 3^3 = 27, and at m_2 = rk(O_K^x) = 7 gives (sqrt(3))^7 = 27*sqrt(3).",
+      "statement": "Pure algebraic ladder identities: cube sphere ratio R_out/r_in = sqrt(3) satisfies (sqrt(3))^6 = 27 and (sqrt(3))^7 = 27*sqrt(3) with rk(O_K^x) = 7 (physical assignment to shells requires P4_EXPONENT_ASSIGNMENT).",
       "external_reference": null,
       "is_predictive": false
     },
@@ -585,12 +1089,13 @@
       "value": 46.76537180435968,
       "unit": "AU",
       "uncertainty": null,
-      "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+      "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU+P4_EXPONENT_ASSIGNMENT",
       "dependencies": [
         "P2_UNIT_AU",
+        "P4_EXPONENT_ASSIGNMENT",
         "T_OH_SPHERE_LADDER"
       ],
-      "statement": "From R(m) = r_0 * (sqrt(3))^m with unit scale P2_UNIT_AU (r_0 = 1 AU), the m=6 neck shell is R_1 = (sqrt(3))^6 AU = 27.0 AU and the m=7 shell is R_2 = (sqrt(3))^7 AU = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to any catalog comparison).",
+      "statement": "From R(m) = r_0 * (sqrt(3))^m under P2_UNIT_AU (r_0 = 1 AU) and P4_EXPONENT_ASSIGNMENT (m=6,7), R_1 = 27.0 AU and R_2 = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to catalog comparison).",
       "external_reference": null,
       "is_predictive": true
     },
@@ -615,12 +1120,13 @@
       "value": 420.888346,
       "unit": "AU (R_out)",
       "uncertainty": null,
-      "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+      "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU+P4_EXPONENT_ASSIGNMENT",
       "dependencies": [
         "P2_UNIT_AU",
+        "P4_EXPONENT_ASSIGNMENT",
         "T_OH_SPHERE_LADDER"
       ],
-      "statement": "Under unit scale P2_UNIT_AU (r_0=1 AU), the m=10 inscribed sphere is r_in=(sqrt3)^10=243.0 AU, the m=11 circumscribed sphere is R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and the 12 edge midpoints lie at R_mid=R_out*sqrt(2/3)=243*sqrt2≈343.65 AU.",
+      "statement": "Under P2_UNIT_AU (r_0=1 AU) and P4_EXPONENT_ASSIGNMENT (m=10,11), r_in=(sqrt3)^10=243.0 AU, R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and R_mid=243*sqrt2≈343.65 AU.",
       "external_reference": null,
       "is_predictive": true
     },
@@ -630,13 +1136,14 @@
       "value": 30.186918,
       "unit": "AU (27*sqrt(5)/2)",
       "uncertainty": null,
-      "proof_id": "T_BICONE_VERTEX+P2_UNIT_AU",
+      "proof_id": "T_BICONE_VERTEX+P2_UNIT_AU+P4_EXPONENT_ASSIGNMENT",
       "dependencies": [
         "P2_UNIT_AU",
+        "P4_EXPONENT_ASSIGNMENT",
         "T_BICONE_VERTEX",
         "T_OH_SPHERE_LADDER"
       ],
-      "statement": "Under P2_UNIT_AU (r_0=1 AU), the S_n=1 bicone circumvertex is R_1*sqrt(5)/2 = 27*sqrt(5)/2 ≈ 30.1869 AU (inscribed partner 27/sqrt(2) ≈ 19.0919 AU), its 1:2 resonance edge is (27*sqrt5/2)*2^(2/3) ≈ 47.9187 AU, the inner Z[sqrt2] harmonics are R_belt=2.3844 AU & R_cubewano=41.69 AU, and the terminal spiral is R_deep=243*Lambda_1≈2453.12 AU.",
+      "statement": "Under P2_UNIT_AU (r_0=1 AU) and P4_EXPONENT_ASSIGNMENT, geometric bicone radii on R_1=27 AU are R_circ=27*sqrt(5)/2≈30.1869 AU and R_in=27/sqrt(2)≈19.0919 AU, Z[sqrt2] harmonics are 2.3844 & 41.69 AU, and R_deep=243*Lambda_1≈2453.12 AU (empirical comparison isolated in Layer II).",
       "external_reference": null,
       "is_predictive": true
     },
@@ -878,7 +1385,7 @@
     "macro_compton_periodicity": {
       "name": "macro_compton_periodicity",
       "status": "NULL_RESULT",
-      "value": -0.07,
+      "value": -0.83,
       "unit": "sigma",
       "uncertainty": null,
       "proof_id": null,
@@ -962,24 +1469,24 @@
     "joint_3d_bicone_vertex_neptune_kuiper_test": {
       "name": "joint_3d_bicone_vertex_neptune_kuiper_test",
       "status": "EMPIRICAL_TEST",
-      "value": 0.00085,
-      "unit": "p-value",
+      "value": 0.005752,
+      "unit": "p_Bonf(M=6) zero-RNG",
       "uncertainty": null,
       "proof_id": null,
       "dependencies": [],
-      "statement": "3D BICONE-CUBE VERTEX TEST: Neptune on bicone circumvertex 27*sqrt(5)/2=30.19 AU vs a_N=30.07 AU (err 0.393%) + Kuiper peak 27*sqrt(3)=46.77 AU vs 47.38 AU (combined loss 1.684%, p=0.00085, >3.3 sigma); 1:2 MMR cliff at 47.92 AU (err 0.39%).",
+      "statement": "3D BICONE-CUBE VERTEX TEST (live, zero-RNG): 27*sqrt(5)/2=30.19 AU vs a_N=30.07 AU (err 0.3925%) + 27*sqrt(3)=46.77 AU vs 47.38 AU (loss 1.6831%, p_cond=0.000959, p_Bonf6=0.005752, p_MMR_Bonf6=0.011945; note 1:2 MMR cliff error is algebraically identical via 2^(2/3) cancellation).",
       "external_reference": null,
       "is_predictive": false
     },
     "terminal_spiral_2453AU_blind_hit_K25Me3C": {
       "name": "terminal_spiral_2453AU_blind_hit_K25Me3C",
-      "status": "EMPIRICAL_TEST",
-      "value": 33.8,
-      "unit": "ppm error",
+      "status": "ANSATZ_DIAGNOSTIC",
+      "value": 32.44,
+      "unit": "ppm error (singleton diagnostic)",
       "uncertainty": null,
       "proof_id": null,
       "dependencies": [],
-      "statement": "Out-of-sample live MPCORB addition K25Me3C (2025 MC403, S_n=7, R_eff=2453.20 AU) hits the pre-registered terminal spiral R_deep = 243*Lambda_1 = 2453.12 AU (Planet_9_v44 Eq. 49) within 0.083 AU (33.8 ppm), while Sedna R_eff=1385.09 AU matches the m=13 bicone equator 729*sqrt3*(sqrt30/5)=1383.18 AU (0.14%).",
+      "statement": "SINGLETON DIAGNOSTIC (not independent proof): K25Me3C R_eff=2453.1966 AU vs 243*Lambda_1=2453.12 AU (err=32.44 ppm, p_LE=0.002034); Sedna present=True (m=13 bicone eq err=0.1379%, p_LE=0.11691 -> non-significant).",
       "external_reference": null,
       "is_predictive": false
     },
@@ -1010,12 +1517,12 @@
     "cometary_shared_edge_entropy_dichotomy": {
       "name": "cometary_shared_edge_entropy_dichotomy",
       "status": "EMPIRICAL_TEST",
-      "value": -0.4669,
+      "value": -0.4697,
       "unit": "bits",
       "uncertainty": null,
       "proof_id": null,
       "dependencies": [],
-      "statement": "Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:e2de02b72856e2e1, identical log10(R_eff) edges + normalized efficiency)).",
+      "statement": "Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:91a371eed7095a0b, identical log10(R_eff) edges + normalized efficiency)).",
       "external_reference": null,
       "is_predictive": false
     },
@@ -1058,12 +1565,132 @@
     "nea_pha_micro_shell_occupancy_test": {
       "name": "nea_pha_micro_shell_occupancy_test",
       "status": "EMPIRICAL_TEST",
-      "value": 47.75,
+      "value": 47.76,
       "unit": "% in dominant cell",
       "uncertainty": null,
       "proof_id": null,
       "dependencies": [],
-      "statement": "Front [3]: NEA/PHA S_n=0 population (N=43,037) dominant cell [2, 1] has 47.75% vs uniform S_k=2 prior 59.76%.",
+      "statement": "Front [3]: NEA/PHA S_n=0 population (N=43,038) dominant cell [2, 1] has 47.76% vs uniform S_k=2 prior 59.76%.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "it3_v23_algebraic_self_test": {
+      "name": "it3_v23_algebraic_self_test",
+      "status": "EXACT_MATH",
+      "value": 1.0,
+      "unit": "boolean",
+      "uncertainty": null,
+      "proof_id": "SELF_TEST_V23_4",
+      "dependencies": [],
+      "statement": "23 algebraic/analytic invariants verified (incl. exact-CDF, Diophantine, 11x6 df=50/65, 2^(2/3) cliff tautology, S_n=7 inversion, S^2 O_h multipole Addition Theorem, ecliptic-free azimuthal m>=1 guard, and unified energy/T_J).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "kpham_exact_degrees_of_freedom": {
+      "name": "kpham_exact_degrees_of_freedom",
+      "status": "EXACT_MATH",
+      "value": 6,
+      "unit": "lattice nodes",
+      "uncertainty": null,
+      "proof_id": "T_KPHAM_MEASURE",
+      "dependencies": [],
+      "statement": "2x3 domain (proven); df: 1+2+2=5.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "kpham_diophantine_projection_operator": {
+      "name": "kpham_diophantine_projection_operator",
+      "status": "EXACT_MATH",
+      "value": 3,
+      "unit": "scale sqrt(3), image Z",
+      "uncertainty": null,
+      "proof_id": "DPO_CORRECTED",
+      "dependencies": [],
+      "statement": "D is the order-preserving retraction onto Z composed with scaling by 1/sqrt(3). Steps satisfy S <= floor(log_sqrt3 x)+1, with STRICT inequality possible (x=27: 6<7) due to floor losses. Z[sqrt(3)] is DENSE in R (|265-153*sqrt3|~0.0038), hence NOT a lattice in R; it is the ring of integers of Q(sqrt(3)) only, NOT of K (deg K = 8). Discreteness holds for Z, or for Z[sqrt(3)] under Minkowski embedding in R^2.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "exact_kuiper_peak_zero_rng_test": {
+      "name": "exact_kuiper_peak_zero_rng_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 0.025048068349414976,
+      "unit": "p (exact closed form, zero RNG)",
+      "uncertainty": null,
+      "proof_id": "PRODUCT_UNIFORM_CDF",
+      "dependencies": [],
+      "statement": "Exact null p=0.02505 (1.959sigma), delta=1.2972%. Replaces MC seed=103.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "exact_bicone_vertex_zero_rng_test": {
+      "name": "exact_bicone_vertex_zero_rng_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 0.005797884579956127,
+      "unit": "p_Bonf(M=6) (deterministic QUADPACK, zero RNG)",
+      "uncertainty": null,
+      "proof_id": "QUADPACK_JOINT_3D_BONF",
+      "dependencies": [],
+      "statement": "3D bicone-vertex joint null (zero RNG): conditional p_obs=0.000966 (3.10sigma), Bonferroni(M=6 ratios) p_obs=0.005798 (2.52sigma); apples-to-apples vs (a_N, MMR1:2): p_mmr=0.001991, Bonf(M=6) p_mmr=0.011945; 2D sphere control p=0.05112.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "oh_multipole_sphere_spectrum_test": {
+      "name": "oh_multipole_sphere_spectrum_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 2.985571,
+      "unit": "S_6^(m>0) (ecliptic-free azimuthal S^2 power)",
+      "uncertainty": null,
+      "proof_id": "S2_AZIMUTHAL_NONZONAL_ZERO_RNG",
+      "dependencies": [],
+      "statement": "Ecliptic-free azimuthal (m>=1) S^2 multipoles on detached ETNO e_hat (N=216): S1_az=5.12(p=0.00591), S2_az=10.20(p=1.44e-06), S4_az=5.71(p=3.7e-06), S6_az=2.99(p=0.00116), S12_az=2.46(p=0.000366); delta_K4_az=0.008567 (z_az=0.795, vs raw K4=0.082656 inflated by ecliptic disk).",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "cometary_unified_specific_energy_audit": {
+      "name": "cometary_unified_specific_energy_audit",
+      "status": "EMPIRICAL_TEST",
+      "value": -1.8353,
+      "unit": "bits (unified asinh(eps/0.01) coordinate)",
+      "uncertainty": null,
+      "proof_id": "UNIFIED_EPS_ENERGY",
+      "dependencies": [],
+      "statement": "Unified specific energy eps=(e-1)/(2q) (fixes aphelion-vs-perihelion mismatch): H_bound=2.3944b (N=855), H_free=0.5591b (N=119), Delta_H=-1.8353b; IQR_asinh bound=0.9606 vs free=0.0233.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "stratified_kuiper_inclination_argmax_test": {
+      "name": "stratified_kuiper_inclination_argmax_test",
+      "status": "NULL_RESULT",
+      "value": 29.75,
+      "unit": "deg (Kuiper 30-60 AU only)",
+      "uncertainty": null,
+      "proof_id": "STRATIFIED_INCLINATION_TOMOGRAPHY",
+      "dependencies": [],
+      "statement": "Decoupled from Main Belt (argmax=29.75 deg): Kuiper Belt (30-60 AU, N=6938) steepest drop = 29.75 deg (ratio=1.557x); Scattered/ETNO (a>60 AU) = 29.25 deg.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "retrograde_sh4_deep_enrichment_test": {
+      "name": "retrograde_sh4_deep_enrichment_test",
+      "status": "EMPIRICAL_TEST",
+      "value": 876.92,
+      "unit": "x enrichment (S_n>=6 vs catalog)",
+      "uncertainty": null,
+      "proof_id": "HYPERGEOM_SH4_ZERO_RNG",
+      "dependencies": [],
+      "statement": "S_h=4 retrogrades (i>126 deg): 3/47 at S_n>=6 vs 115/1579912 catalog-wide (876.92x, exact hypergeometric p=6.077e-09); Damocloid (T_J<2) share among i>90 deg = 100.0%.",
+      "external_reference": null,
+      "is_predictive": false
+    },
+    "micro_macro_structural_homology": {
+      "name": "micro_macro_structural_homology",
+      "status": "OPEN_CONJECTURE",
+      "value": null,
+      "unit": "analogy",
+      "uncertainty": null,
+      "proof_id": "HOMOLOGY_CONJECTURE",
+      "dependencies": [],
+      "statement": "No isomorphism, no shared '3600=(61-1)^2' df (macro 11x6 table has df_total=65, df_indep=(11-1)*(6-1)=50, df_main=15; 2x3 lattice has df=5), no derivation of one system from the other. Per EPISTEMIC_POLICY rule 5 this is an analogy, not evidence.",
       "external_reference": null,
       "is_predictive": false
     }
@@ -1110,26 +1737,34 @@
     "table1_key_outer_objects_verification",
     "centaur_sk2_vs_analytical_prior_test",
     "asteroid_family_collisional_variance_test",
-    "nea_pha_micro_shell_occupancy_test"
+    "nea_pha_micro_shell_occupancy_test",
+    "exact_kuiper_peak_zero_rng_test",
+    "exact_bicone_vertex_zero_rng_test",
+    "oh_multipole_sphere_spectrum_test",
+    "cometary_unified_specific_energy_audit",
+    "stratified_kuiper_inclination_argmax_test",
+    "retrograde_sh4_deep_enrichment_test",
+    "micro_macro_structural_homology"
   ],
   "epistemic_ledger": {
-    "version": "IT3-v22.6-strict",
-    "epistemic_mode": "proven-only",
+    "version": "IT3-v23.4-strict",
+    "epistemic_mode": "full-diagnostic",
     "external_benchmarks_are_not_predictions": true,
     "unproven_predictive_flag_share": 0.0,
-    "exploratory_diagnostic_share": 0.387755,
+    "exploratory_diagnostic_share": 0.355932,
     "numerology_exposure": 0.0,
     "postulates": {
       "P1_INRADIUS": "Metric pinning by the constructible right triangle (sqrt(2), sqrt(3), sqrt(5)) incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) (Math_Topology_v17 Postulate 2.7).",
       "P2_UNIT_AU": "Astronomical unit normalization r_0 = 1.0 AU as the m=0 unit length scale for the dimensionless O_h sphere ladder R(m)/r_0 = (sqrt(3))^m (Planet_9_v44 Sec. 4.1.1).",
-      "P3_SURFACE_TENSION": "Topological defect boundary area scales as A(N) proportional to N^(2/3) (Math_Topology_v17 Prop. 6.2 & Postulate 6.3)."
+      "P3_SURFACE_TENSION": "Topological defect boundary area scales as A(N) proportional to N^(2/3) (Math_Topology_v17 Prop. 6.2 & Postulate 6.3).",
+      "P4_EXPONENT_ASSIGNMENT": "Model assignment postulate: mapping ladder exponents m in {6,7,10,11} (e.g., v_l*v_q=6, rk(O_K^x)=7) and bicone circumvertex factor sqrt(5)/2 to outer Solar System shells is an explicit physical postulate, not a theorem of O_h group theory."
     },
     "theorems": {
       "T2.1_DISC": "Field discriminant of K=Q(sqrt2,sqrt3,sqrt5) is Delta_K = 2^16 * 3^4 * 5^4 = 3,317,760,000; sqrt(|Delta_K|) = 57,600 = 240^2.",
       "T2.5_PYTH": "Coupled Pythagorean closure 1^2+(sqrt2)^2=(sqrt3)^2, (sqrt2)^2+(sqrt3)^2=(sqrt5)^2 and inradius 2r = sqrt2+sqrt3-sqrt5.",
       "T2.9_KUMMER": "Square-free Kummer sieve over {2,3,5} proves sqrt(13) not in K (13 does not divide 30).",
       "T_E8_CARTAN": "E_8 root system has 240 minimal vectors and Cartan determinant det(G_E8) = 1.",
-      "T_OH_SPHERE_LADDER": "For a cube of side a, circumscribed-to-inscribed sphere ratio is R_out/r_in = sqrt(3) (area ratio 3); with A_F valency tensor dimension m_1 = v_l*v_q = 2*3 = 6 and Dirichlet unit rank rk(O_K^x) = 7, the dimensionless ladder (sqrt(3))^m gives (sqrt(3))^6 = 3^3 = 27 and (sqrt(3))^7 = 27*sqrt(3).",
+      "T_OH_SPHERE_LADDER": "For a cube of side a, circumscribed-to-inscribed sphere ratio is R_out/r_in = sqrt(3) (area ratio 3) and Dirichlet unit rank of totally real degree-8 field K is rk(O_K^x) = 7; algebraically (sqrt(3))^6 = 27, (sqrt(3))^7 = 27*sqrt(3), (sqrt(3))^10 = 243, (sqrt(3))^11 = 243*sqrt(3). Physical shell assignment is postulate P4_EXPONENT_ASSIGNMENT.",
       "T_OH_FCC": "O_h branching {2,6,10,14} yields bicone capacities {2,8,8,18,18,32}, hemisphere sum 86, full sum 172 = 4*43, and FCC Kepler packing ratio pi/sqrt(18).",
       "T_SUBADDITIVE": "Strict concavity of f(N)=N^(2/3) implies (N1+N2)^(2/3) < N1^(2/3) + N2^(2/3).",
       "T_GALOIS_18DEG": "sin(18 deg) = (sqrt(5)-1)/4 lies in Q(sqrt5) subset K, whereas Q(cos 18 deg) = Q(zeta_20)^+ has cyclic Galois group Z/4Z of exponent 4 and cannot embed into Gal(K/Q) = (Z/2Z)^3 of exponent 2; hence cos(18 deg) is not in K and 18 deg is not an SO(3,K) rotation.",
@@ -1179,7 +1814,14 @@
       "table1_key_outer_objects_verification",
       "centaur_sk2_vs_analytical_prior_test",
       "asteroid_family_collisional_variance_test",
-      "nea_pha_micro_shell_occupancy_test"
+      "nea_pha_micro_shell_occupancy_test",
+      "exact_kuiper_peak_zero_rng_test",
+      "exact_bicone_vertex_zero_rng_test",
+      "oh_multipole_sphere_spectrum_test",
+      "cometary_unified_specific_energy_audit",
+      "stratified_kuiper_inclination_argmax_test",
+      "retrograde_sh4_deep_enrichment_test",
+      "micro_macro_structural_homology"
     ],
     "claims": {
       "Delta_K_field_discriminant": {
@@ -1226,7 +1868,7 @@
         "uncertainty": null,
         "proof_id": "T_OH_SPHERE_LADDER",
         "dependencies": [],
-        "statement": "Cube sphere ratio Lambda_Y = R_out/r_in = sqrt(3) raised to valency tensor dimension m_1 = v_l*v_q = 6 gives (sqrt(3))^6 = 3^3 = 27, and at m_2 = rk(O_K^x) = 7 gives (sqrt(3))^7 = 27*sqrt(3).",
+        "statement": "Pure algebraic ladder identities: cube sphere ratio R_out/r_in = sqrt(3) satisfies (sqrt(3))^6 = 27 and (sqrt(3))^7 = 27*sqrt(3) with rk(O_K^x) = 7 (physical assignment to shells requires P4_EXPONENT_ASSIGNMENT).",
         "external_reference": null,
         "is_predictive": false
       },
@@ -1311,12 +1953,13 @@
         "value": 46.76537180435968,
         "unit": "AU",
         "uncertainty": null,
-        "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+        "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU+P4_EXPONENT_ASSIGNMENT",
         "dependencies": [
           "P2_UNIT_AU",
+          "P4_EXPONENT_ASSIGNMENT",
           "T_OH_SPHERE_LADDER"
         ],
-        "statement": "From R(m) = r_0 * (sqrt(3))^m with unit scale P2_UNIT_AU (r_0 = 1 AU), the m=6 neck shell is R_1 = (sqrt(3))^6 AU = 27.0 AU and the m=7 shell is R_2 = (sqrt(3))^7 AU = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to any catalog comparison).",
+        "statement": "From R(m) = r_0 * (sqrt(3))^m under P2_UNIT_AU (r_0 = 1 AU) and P4_EXPONENT_ASSIGNMENT (m=6,7), R_1 = 27.0 AU and R_2 = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to catalog comparison).",
         "external_reference": null,
         "is_predictive": true
       },
@@ -1341,12 +1984,13 @@
         "value": 420.888346,
         "unit": "AU (R_out)",
         "uncertainty": null,
-        "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU",
+        "proof_id": "T_OH_SPHERE_LADDER+P2_UNIT_AU+P4_EXPONENT_ASSIGNMENT",
         "dependencies": [
           "P2_UNIT_AU",
+          "P4_EXPONENT_ASSIGNMENT",
           "T_OH_SPHERE_LADDER"
         ],
-        "statement": "Under unit scale P2_UNIT_AU (r_0=1 AU), the m=10 inscribed sphere is r_in=(sqrt3)^10=243.0 AU, the m=11 circumscribed sphere is R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and the 12 edge midpoints lie at R_mid=R_out*sqrt(2/3)=243*sqrt2≈343.65 AU.",
+        "statement": "Under P2_UNIT_AU (r_0=1 AU) and P4_EXPONENT_ASSIGNMENT (m=10,11), r_in=(sqrt3)^10=243.0 AU, R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and R_mid=243*sqrt2≈343.65 AU.",
         "external_reference": null,
         "is_predictive": true
       },
@@ -1356,13 +2000,14 @@
         "value": 30.186918,
         "unit": "AU (27*sqrt(5)/2)",
         "uncertainty": null,
-        "proof_id": "T_BICONE_VERTEX+P2_UNIT_AU",
+        "proof_id": "T_BICONE_VERTEX+P2_UNIT_AU+P4_EXPONENT_ASSIGNMENT",
         "dependencies": [
           "P2_UNIT_AU",
+          "P4_EXPONENT_ASSIGNMENT",
           "T_BICONE_VERTEX",
           "T_OH_SPHERE_LADDER"
         ],
-        "statement": "Under P2_UNIT_AU (r_0=1 AU), the S_n=1 bicone circumvertex is R_1*sqrt(5)/2 = 27*sqrt(5)/2 ≈ 30.1869 AU (inscribed partner 27/sqrt(2) ≈ 19.0919 AU), its 1:2 resonance edge is (27*sqrt5/2)*2^(2/3) ≈ 47.9187 AU, the inner Z[sqrt2] harmonics are R_belt=2.3844 AU & R_cubewano=41.69 AU, and the terminal spiral is R_deep=243*Lambda_1≈2453.12 AU.",
+        "statement": "Under P2_UNIT_AU (r_0=1 AU) and P4_EXPONENT_ASSIGNMENT, geometric bicone radii on R_1=27 AU are R_circ=27*sqrt(5)/2≈30.1869 AU and R_in=27/sqrt(2)≈19.0919 AU, Z[sqrt2] harmonics are 2.3844 & 41.69 AU, and R_deep=243*Lambda_1≈2453.12 AU (empirical comparison isolated in Layer II).",
         "external_reference": null,
         "is_predictive": true
       },
@@ -1604,7 +2249,7 @@
       "macro_compton_periodicity": {
         "name": "macro_compton_periodicity",
         "status": "NULL_RESULT",
-        "value": -0.07,
+        "value": -0.83,
         "unit": "sigma",
         "uncertainty": null,
         "proof_id": null,
@@ -1688,24 +2333,24 @@
       "joint_3d_bicone_vertex_neptune_kuiper_test": {
         "name": "joint_3d_bicone_vertex_neptune_kuiper_test",
         "status": "EMPIRICAL_TEST",
-        "value": 0.00085,
-        "unit": "p-value",
+        "value": 0.005752,
+        "unit": "p_Bonf(M=6) zero-RNG",
         "uncertainty": null,
         "proof_id": null,
         "dependencies": [],
-        "statement": "3D BICONE-CUBE VERTEX TEST: Neptune on bicone circumvertex 27*sqrt(5)/2=30.19 AU vs a_N=30.07 AU (err 0.393%) + Kuiper peak 27*sqrt(3)=46.77 AU vs 47.38 AU (combined loss 1.684%, p=0.00085, >3.3 sigma); 1:2 MMR cliff at 47.92 AU (err 0.39%).",
+        "statement": "3D BICONE-CUBE VERTEX TEST (live, zero-RNG): 27*sqrt(5)/2=30.19 AU vs a_N=30.07 AU (err 0.3925%) + 27*sqrt(3)=46.77 AU vs 47.38 AU (loss 1.6831%, p_cond=0.000959, p_Bonf6=0.005752, p_MMR_Bonf6=0.011945; note 1:2 MMR cliff error is algebraically identical via 2^(2/3) cancellation).",
         "external_reference": null,
         "is_predictive": false
       },
       "terminal_spiral_2453AU_blind_hit_K25Me3C": {
         "name": "terminal_spiral_2453AU_blind_hit_K25Me3C",
-        "status": "EMPIRICAL_TEST",
-        "value": 33.8,
-        "unit": "ppm error",
+        "status": "ANSATZ_DIAGNOSTIC",
+        "value": 32.44,
+        "unit": "ppm error (singleton diagnostic)",
         "uncertainty": null,
         "proof_id": null,
         "dependencies": [],
-        "statement": "Out-of-sample live MPCORB addition K25Me3C (2025 MC403, S_n=7, R_eff=2453.20 AU) hits the pre-registered terminal spiral R_deep = 243*Lambda_1 = 2453.12 AU (Planet_9_v44 Eq. 49) within 0.083 AU (33.8 ppm), while Sedna R_eff=1385.09 AU matches the m=13 bicone equator 729*sqrt3*(sqrt30/5)=1383.18 AU (0.14%).",
+        "statement": "SINGLETON DIAGNOSTIC (not independent proof): K25Me3C R_eff=2453.1966 AU vs 243*Lambda_1=2453.12 AU (err=32.44 ppm, p_LE=0.002034); Sedna present=True (m=13 bicone eq err=0.1379%, p_LE=0.11691 -> non-significant).",
         "external_reference": null,
         "is_predictive": false
       },
@@ -1736,12 +2381,12 @@
       "cometary_shared_edge_entropy_dichotomy": {
         "name": "cometary_shared_edge_entropy_dichotomy",
         "status": "EMPIRICAL_TEST",
-        "value": -0.4669,
+        "value": -0.4697,
         "unit": "bits",
         "uncertainty": null,
         "proof_id": null,
         "dependencies": [],
-        "statement": "Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:e2de02b72856e2e1, identical log10(R_eff) edges + normalized efficiency)).",
+        "statement": "Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:91a371eed7095a0b, identical log10(R_eff) edges + normalized efficiency)).",
         "external_reference": null,
         "is_predictive": false
       },
@@ -1784,12 +2429,132 @@
       "nea_pha_micro_shell_occupancy_test": {
         "name": "nea_pha_micro_shell_occupancy_test",
         "status": "EMPIRICAL_TEST",
-        "value": 47.75,
+        "value": 47.76,
         "unit": "% in dominant cell",
         "uncertainty": null,
         "proof_id": null,
         "dependencies": [],
-        "statement": "Front [3]: NEA/PHA S_n=0 population (N=43,037) dominant cell [2, 1] has 47.75% vs uniform S_k=2 prior 59.76%.",
+        "statement": "Front [3]: NEA/PHA S_n=0 population (N=43,038) dominant cell [2, 1] has 47.76% vs uniform S_k=2 prior 59.76%.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "it3_v23_algebraic_self_test": {
+        "name": "it3_v23_algebraic_self_test",
+        "status": "EXACT_MATH",
+        "value": 1.0,
+        "unit": "boolean",
+        "uncertainty": null,
+        "proof_id": "SELF_TEST_V23_4",
+        "dependencies": [],
+        "statement": "23 algebraic/analytic invariants verified (incl. exact-CDF, Diophantine, 11x6 df=50/65, 2^(2/3) cliff tautology, S_n=7 inversion, S^2 O_h multipole Addition Theorem, ecliptic-free azimuthal m>=1 guard, and unified energy/T_J).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "kpham_exact_degrees_of_freedom": {
+        "name": "kpham_exact_degrees_of_freedom",
+        "status": "EXACT_MATH",
+        "value": 6,
+        "unit": "lattice nodes",
+        "uncertainty": null,
+        "proof_id": "T_KPHAM_MEASURE",
+        "dependencies": [],
+        "statement": "2x3 domain (proven); df: 1+2+2=5.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "kpham_diophantine_projection_operator": {
+        "name": "kpham_diophantine_projection_operator",
+        "status": "EXACT_MATH",
+        "value": 3,
+        "unit": "scale sqrt(3), image Z",
+        "uncertainty": null,
+        "proof_id": "DPO_CORRECTED",
+        "dependencies": [],
+        "statement": "D is the order-preserving retraction onto Z composed with scaling by 1/sqrt(3). Steps satisfy S <= floor(log_sqrt3 x)+1, with STRICT inequality possible (x=27: 6<7) due to floor losses. Z[sqrt(3)] is DENSE in R (|265-153*sqrt3|~0.0038), hence NOT a lattice in R; it is the ring of integers of Q(sqrt(3)) only, NOT of K (deg K = 8). Discreteness holds for Z, or for Z[sqrt(3)] under Minkowski embedding in R^2.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "exact_kuiper_peak_zero_rng_test": {
+        "name": "exact_kuiper_peak_zero_rng_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 0.025048068349414976,
+        "unit": "p (exact closed form, zero RNG)",
+        "uncertainty": null,
+        "proof_id": "PRODUCT_UNIFORM_CDF",
+        "dependencies": [],
+        "statement": "Exact null p=0.02505 (1.959sigma), delta=1.2972%. Replaces MC seed=103.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "exact_bicone_vertex_zero_rng_test": {
+        "name": "exact_bicone_vertex_zero_rng_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 0.005797884579956127,
+        "unit": "p_Bonf(M=6) (deterministic QUADPACK, zero RNG)",
+        "uncertainty": null,
+        "proof_id": "QUADPACK_JOINT_3D_BONF",
+        "dependencies": [],
+        "statement": "3D bicone-vertex joint null (zero RNG): conditional p_obs=0.000966 (3.10sigma), Bonferroni(M=6 ratios) p_obs=0.005798 (2.52sigma); apples-to-apples vs (a_N, MMR1:2): p_mmr=0.001991, Bonf(M=6) p_mmr=0.011945; 2D sphere control p=0.05112.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "oh_multipole_sphere_spectrum_test": {
+        "name": "oh_multipole_sphere_spectrum_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 2.985571,
+        "unit": "S_6^(m>0) (ecliptic-free azimuthal S^2 power)",
+        "uncertainty": null,
+        "proof_id": "S2_AZIMUTHAL_NONZONAL_ZERO_RNG",
+        "dependencies": [],
+        "statement": "Ecliptic-free azimuthal (m>=1) S^2 multipoles on detached ETNO e_hat (N=216): S1_az=5.12(p=0.00591), S2_az=10.20(p=1.44e-06), S4_az=5.71(p=3.7e-06), S6_az=2.99(p=0.00116), S12_az=2.46(p=0.000366); delta_K4_az=0.008567 (z_az=0.795, vs raw K4=0.082656 inflated by ecliptic disk).",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "cometary_unified_specific_energy_audit": {
+        "name": "cometary_unified_specific_energy_audit",
+        "status": "EMPIRICAL_TEST",
+        "value": -1.8353,
+        "unit": "bits (unified asinh(eps/0.01) coordinate)",
+        "uncertainty": null,
+        "proof_id": "UNIFIED_EPS_ENERGY",
+        "dependencies": [],
+        "statement": "Unified specific energy eps=(e-1)/(2q) (fixes aphelion-vs-perihelion mismatch): H_bound=2.3944b (N=855), H_free=0.5591b (N=119), Delta_H=-1.8353b; IQR_asinh bound=0.9606 vs free=0.0233.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "stratified_kuiper_inclination_argmax_test": {
+        "name": "stratified_kuiper_inclination_argmax_test",
+        "status": "NULL_RESULT",
+        "value": 29.75,
+        "unit": "deg (Kuiper 30-60 AU only)",
+        "uncertainty": null,
+        "proof_id": "STRATIFIED_INCLINATION_TOMOGRAPHY",
+        "dependencies": [],
+        "statement": "Decoupled from Main Belt (argmax=29.75 deg): Kuiper Belt (30-60 AU, N=6938) steepest drop = 29.75 deg (ratio=1.557x); Scattered/ETNO (a>60 AU) = 29.25 deg.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "retrograde_sh4_deep_enrichment_test": {
+        "name": "retrograde_sh4_deep_enrichment_test",
+        "status": "EMPIRICAL_TEST",
+        "value": 876.92,
+        "unit": "x enrichment (S_n>=6 vs catalog)",
+        "uncertainty": null,
+        "proof_id": "HYPERGEOM_SH4_ZERO_RNG",
+        "dependencies": [],
+        "statement": "S_h=4 retrogrades (i>126 deg): 3/47 at S_n>=6 vs 115/1579912 catalog-wide (876.92x, exact hypergeometric p=6.077e-09); Damocloid (T_J<2) share among i>90 deg = 100.0%.",
+        "external_reference": null,
+        "is_predictive": false
+      },
+      "micro_macro_structural_homology": {
+        "name": "micro_macro_structural_homology",
+        "status": "OPEN_CONJECTURE",
+        "value": null,
+        "unit": "analogy",
+        "uncertainty": null,
+        "proof_id": "HOMOLOGY_CONJECTURE",
+        "dependencies": [],
+        "statement": "No isomorphism, no shared '3600=(61-1)^2' df (macro 11x6 table has df_total=65, df_indep=(11-1)*(6-1)=50, df_main=15; 2x3 lattice has df=5), no derivation of one system from the other. Per EPISTEMIC_POLICY rule 5 this is an analogy, not evidence.",
         "external_reference": null,
         "is_predictive": false
       }
