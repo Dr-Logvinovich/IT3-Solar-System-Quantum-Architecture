@@ -1,3 +1,4 @@
+  [PASS] v23.4-strict (single-file): 23 invariants, ecliptic-free S² O_h & anti-numerology verified
 
 ─────────────────────────────────────────────────────────────────────────────────────────
   PHASE 1: AUTONOMOUS REPOSITORY DATA ACQUISITION (HARVARD-SMITHSONIAN CfA)
@@ -8,16 +9,15 @@
   ✓ Repository file verified: [./data/PHA.txt]
   ✓ Repository file verified: [./data/newnumids.dat]
   ✓ Repository file verified: [./data/neocp.txt]
-  ⚠ ./data/MPCORB.DAT not found (or --fresh-download requested). Downloading from Harvard-Smithsonian CfA...
-  ✓ Extracted ./data/MPCORB.DAT into ./data/ directory.
+  ✓ SYSTEM CHECK: Found localized Harvard MPC database [./data/MPCORB.DAT]
 
 
 ╔═══════════════════════════════════════════════════════════════════════════════════════╗
-║   IT³ K-PHAM (Release: IT3-v22.6-strict) — PROOF LEDGER & DIAGNOSTIC SUITE          ║
-║   Epistemic Mode: proven-only        | Numerology Exposure: Computed Dynamically     ║
+║   IT³ K-PHAM (Release: IT3-v23.4-strict) — PROOF LEDGER & DIAGNOSTIC SUITE          ║
+║   Epistemic Mode: full-diagnostic    | Numerology Exposure: Computed Dynamically     ║
 ║   Authors: Victor Logvinovich & Jean-Claude Perez | DOI: 10.5281/zenodo.21792530     ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════╝
-IT3 strict epistemic policy (Release IT3-v22.6-strict):
+IT3 strict epistemic policy (Release IT3-v23.4-strict):
 1. Exact mathematical identities are marked EXACT_MATH.
 2. Physical predictions are allowed only if marked EXACT_MATH or
    DERIVED_FROM_POSTULATES.
@@ -55,7 +55,7 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
 ─────────────────────────────────────────────────────────────────────────────────────────
 
 
-  ✓ Loaded 1,579,912 celestial objects in 41.68s (37,907 obj/s).
+  ✓ Loaded 1,579,912 celestial objects in 35.89s (44,025 obj/s).
 
 
 ─────────────────────────────────────────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
     → Checkpoint: 1,000,000/1,579,912 phase states calculated...
     → Checkpoint: 1,500,000/1,579,912 phase states calculated...
 
-  ✓ Quantization complete in 29.33s (53,861 ops/sec)
+  ✓ Quantization complete in 27.27s (57,927 ops/sec)
 
 
 ─────────────────────────────────────────────────────────────────────────────────────────
@@ -98,27 +98,29 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
 
   [EMPIRICAL: Monte Carlo]    1. Peak-Only (R₀Λ vs 47.38 AU, δ=1.29%): p_peak = 0.0255
                               2a. 1D Naive Sphere Control (R₁=27 vs a_N=30.07 AU): loss=12.23%, p_1D_sphere = 0.0519 [1D NULL CONTROL]
-                              2b. 3D Bicone Vertex (27√5/2=30.19 vs a_N=30.07 AU, δ=0.39% + Kuiper Peak): loss=1.68%, p_3D_vertex = 0.00100 (CONFIRMED >3.3σ!)
-                              2c. Kuiper Cliff 1:2 MMR from Bicone Vertex: (27√5/2)·2^(2/3) = 47.92 AU vs 47.73 AU (δ=0.39%)
-  [EMPIRICAL: Deep Anchors]   • New Object K25Me3C (R_eff=2453.20 AU) vs R_deep=243Λ₁=2453.12 AU: δ = 32.4 ppm (0.0034%!)
-                              • Sedna (R_eff=1385.09 AU) vs m=13 Bicone Equator 2187√10/5=1383.18 AU: δ = 0.14%
+                              2b. 3D Bicone Vertex (27√5/2=30.19 vs a_N=30.07 AU, δ=0.39% + Kuiper Peak): loss=1.68%, p_exact=0.000959 (3.10σ) | Bonf(M=6)=0.005752 (2.53σ) | MMR-apples=0.01195
+                              2c. Kuiper Cliff (27√5/2)·2^(2/3)=47.92 vs 47.73 AU (δ=0.39% — algebraically identical to 2b, 2^(2/3) cancels)
+  [DIAGNOSTIC: Deep Singletons] • K25Me3C (R_eff=2453.20 AU) vs 243Λ₁=2453.12 AU: δ=32.4 ppm | p_LE(N_sn7=16)=0.00203
+                              • Sedna (R_eff=1385.09 AU) vs m=13 Bicone Eq=1383.18 AU: δ=0.14% | p_LE(N_sn6=23)=0.1169 [look-elsewhere diagnostic]
   [EMPIRICAL: i-Scan Argmax]  Empirical steepest drop = 29.75° (200-boot 95% CI [28.75, 29.75]°, ratio=2.091×; 18° in CI = False)
                               Grid drop ratios: 12°(1.196×) | 15°(1.503×) | 18°(1.793×) | 20°(1.442×)
   [EMPIRICAL: Pure Δλ Trojans]   Trojans (excluded bad epochs=0): L4=10,183, L5=5,929 → Ratio = 1.718
-  [EMPIRICAL: Shared-Edge ΔH] Radial ΔH_shared = -0.4669 bits (H_free=1.5569b - H_bound=2.0238b) | Discrete H(S_n)=1.5414b
+  [EMPIRICAL: Shared-Edge ΔH] Radial ΔH_shared = -0.4697 bits (H_free=1.5649b - H_bound=2.0347b) | Discrete H(S_n)=1.5512b
   [VISUAL RHYME]              5 display params (scale=1.45, pow=1.35, α=0.85, β=0.58, σ=0.65) map L₂⁽⁰⁾ nodes to x₁=0.98, x₂=3.6
 
 ─────────────────────────────────────────────────────────────────────────────────────────
   PHASE 7.6: 11-FRONT K-PHAM VALIDATION SUITE (INTEGRATED FROM mp.py WITH NULL CONTROLS)
 ─────────────────────────────────────────────────────────────────────────────────────────
 
-  [FRONT B: Macro-Compton]    N_bound=852 (deep S_n≥3: 155) | B1 log(Λ₁²) SNR=-0.07σ | B3 log(√3) SNR=-0.19σ → ARTIFACT_NULL (JFC volume echo)
+  [FRONT B: Macro-Compton]    N_bound=855 (deep S_n≥3: 158) | B1 log(Λ₁²) SNR=-0.83σ | B3 log(√3) SNR=-0.16σ → ARTIFACT_NULL (JFC volume echo)
   [FRONT T1: Table 1 Benchmarks] Verified 7/7 key outer-system objects (Pluto=2, Eris=3, 2012VP113=4, Sedna=6, 2015TG387=8)
   [FRONT 2: 2×3 Lattice Audit]  Prograde i≤90° in 2×3: 100.0000% (Exact Domain Theorem) | Retrograde S_h=4 leakage: 115 obj | 6-Cell H=1.4200 bits
-  [FRONT 3: NEA/PHA Micro-Shell] N_NEA(S_n=0)=43,037 [MPC_NEA_PHA_FILES] | Dominant cell (2, 1): 47.75% (Uniform ω prior P₀(S_k=2)=59.76%)
+  [FRONT 3: NEA/PHA Micro-Shell] N_NEA(S_n=0)=43,038 [MPC_NEA_PHA_FILES] | Dominant cell (2, 1): 47.76% (Uniform ω prior P₀(S_k=2)=59.76%)
   [FRONT C: Centaur d-Shell]    N_Centaurs=17,572 | Observed S_k=2: 60.03% vs Analytical Uniform Prior (5−√2)/6 = 59.76% (Δ=+0.26%, p_binom=0.4792)
   [FRONT D: Family Variance]    Cells(N≥5)=344 | Mean Var(S_n)=0.0000 (all S_n=0) | Mean Var(R_eff)=0.3282 AU² (σ=0.573 AU → collisional debris)
   [FRONT 4 & 5F: Live Streams]  newnumids.dat: 21 ids (3 matched in MPCORB) | neocp.txt: 0 candidates awaiting confirmation
+  [DISCOVERY: S² Azimuthal O_h] Detached e_hat (N=216, ecliptic-free m≥1): S₁_az=5.12(p=0.0059), S₂_az=10.20(p=1.4e-06), S₄_az=5.71(p=3.7e-06), S₆_az=2.99(p=0.0012), S₁₂_az=2.46(p=0.00037)
+  [DISCOVERY: Retrograde S_h=4]  Deep S_n≥6: 3/47 vs total 115/1579912 (876.92×, p_hypergeom=6.08e-09)
 
   ✓ Saved certificate: ./reports/it3_fwhp_audit_certificate.json
 
@@ -137,6 +139,11 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
   🎨 Generating: Evaporative Tail 3D Funnel (plot_09)...
   🎨 Generating: 3D Perez Hourglass Hyperboloid & m=6⊕12 Crystal (plot_10)...
   🎨 Generating: Proof-Ledger & Diagnostic Interactive Suite (plot_11)...
+  🎨 Generating: Discovery Model (plot_12_oh_multipole_sphere_interactive.html)...
+  🎨 Generating: Discovery Model (plot_13_unified_energy_phase_plane_interactive.html)...
+  🎨 Generating: Discovery Model (plot_14_stratified_phase_tomography_interactive.html)...
+  🎨 Generating: Discovery Model (plot_15_zero_rng_loss_landscape_interactive.html)...
+  🎨 Generating: Discovery Model (plot_16_retrograde_kozai_tunnel_interactive.html)...
   🎨 Generating: 6-Panel Proof-Ledger Dashboard (Matplotlib 300 DPI)...
   ✓ Saved: ./figures/physically_grounded_model_v20.png
 
@@ -150,7 +157,7 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
   ✓ Saved: ./reports/it3_floor_distribution_summary.csv
 
 ─────────────────────────────────────────────────────────────────────────────────────────
-  PHASE 8: DUAL-LAYER TELEMETRY & EPISTEMIC LEDGER REPORT (IT3-v22.6-strict | Mode: proven-only)
+  PHASE 8: DUAL-LAYER TELEMETRY & EPISTEMIC LEDGER REPORT (IT3-v23.4-strict | Mode: full-diagnostic)
 ─────────────────────────────────────────────────────────────────────────────────────────
 
   📊 HIDDEN TOPOLOGY: K-PHAM v2.2 Sₙ FLOORS (POTENTIAL WELLS)
@@ -262,10 +269,10 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
 
   🧭 11-FRONT K-PHAM SUITE SUMMARY (mp.py + Anti-Numerology Controls)
   ─────────────────────────────────────────────────────────────────────
-    • Front [1]+[A] (Comet Entropy):     ΔH_shared(11-bin) = -0.4669 bits | H_disc(Sₙ) = 1.5414 bits
-    • Front [B] (Macro-Compton):         B1 log(Λ₁²) SNR = -0.07σ | B3 log(√3) SNR = -0.19σ [NULL: JFC volume artifact]
+    • Front [1]+[A] (Comet Entropy):     ΔH_shared(11-bin) = -0.4697 bits | H_disc(Sₙ) = 1.5512 bits
+    • Front [B] (Macro-Compton):         B1 log(Λ₁²) SNR = -0.83σ | B3 log(√3) SNR = -0.16σ [NULL: JFC volume artifact]
     • Front [2] (2×3 Lattice Domain):    Prograde i≤90° = 100.0% (Exact Theorem) | Retrograde S_h=4 leakage = 115 obj
-    • Front [3] (NEA/PHA Micro-Shell):   N=43,037 | Dominant (2, 1) = 47.75% (vs Uniform Prior 59.76%)
+    • Front [3] (NEA/PHA Micro-Shell):   N=43,038 | Dominant (2, 1) = 47.76% (vs Uniform Prior 59.76%)
     • Front [C] (Centaur d-Shell S_k=2): Obs = 60.027% vs Exact Prior (5−√2)/6 = 59.763% (Δ=+0.26%, p=0.47916)
     • Front [D] (Asteroid Families):     Cells(N≥5)=344 | Var(Sₙ)=0.0000, σ(R_eff)=0.573 AU (collisional debris)
 
@@ -274,7 +281,7 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
     ★ Sedna         → Floor Sₙ=6  (Sₖ=2, Sₕ=1) │ Aphelion Q=1011.24 AU │ R_eff=1385.09 AU │ E_ion=+6.17
     ★ 2015BP519     → Floor Sₙ=6  (Sₖ=2, Sₕ=3) │ Aphelion Q= 937.13 AU │ R_eff=1340.14 AU │ E_ion=+6.11
 
-  📜 REGISTERED CLAIMS (PROVEN-ONLY VIEW):
+  📜 REGISTERED CLAIMS (FULL-DIAGNOSTIC VIEW):
   ─────────────────────────────────────────────────────────────────────
   [EXACT] Delta_K_field_discriminant = 3317760000 (NON-PREDICTIVE)
       ↳ Field discriminant of K = Q(sqrt2, sqrt3, sqrt5) from product of 7 quadratic subfield conductors; sqrt(|Delta_K|) = 57,600 = 240^2.
@@ -283,7 +290,7 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
   [EXACT] Kummer_wall_sqrt13_exclusion = 13 (NON-PREDICTIVE)
       ↳ 13 does not divide 30 = 2*3*5, hence sqrt(13) is not in K = Q(sqrt2, sqrt3, sqrt5).
   [EXACT] oh_sphere_ladder_27_and_27sqrt3_identities = 46.7653718044 dimensionless ratio R_2 / r_0 (NON-PREDICTIVE)
-      ↳ Cube sphere ratio Lambda_Y = R_out/r_in = sqrt(3) raised to valency tensor dimension m_1 = v_l*v_q = 6 gives (sqrt(3))^6 = 3^3 = 27, and at m_2 = rk(O_K^x) = 7 gives (sqrt(3))^7 = 27*sqrt(3).
+      ↳ Pure algebraic ladder identities: cube sphere ratio R_out/r_in = sqrt(3) satisfies (sqrt(3))^6 = 27 and (sqrt(3))^7 = 27*sqrt(3) with rk(O_K^x) = 7 (physical assignment to shells requires P4_EXPONENT_ASSIGNMENT).
   [EXACT] FCC_kepler_packing_and_bicone_sum = 0.740480489693 (NON-PREDICTIVE)
       ↳ O_h capacities {2,8,8,18,18,32} sum to 86 (172 = 4*43 over both bowls), and 172 spheres of radius a*sqrt(2)/4 in 43 FCC cells fill pi/sqrt(18).
   [EXACT] stella_octangula_and_oh_multipole_vanishing = 90 deg (alpha_magic + gamma) (NON-PREDICTIVE)
@@ -297,30 +304,117 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
   [DERIVED] pinned_inradius_metric_scale_2r = 0.910196392442 dimensionless (PREDICTIVE)
       ↳ Incircle diameter 2r = sqrt(2)+sqrt(3)-sqrt(5) derived from metric pinning postulate P1_INRADIUS.
   [DERIVED] kpham_valence_shell_radius_R2 = 46.7653718044 AU (PREDICTIVE)
-      ↳ From R(m) = r_0 * (sqrt(3))^m with unit scale P2_UNIT_AU (r_0 = 1 AU), the m=6 neck shell is R_1 = (sqrt(3))^6 AU = 27.0 AU and the m=7 shell is R_2 = (sqrt(3))^7 AU = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to any catalog comparison).
+      ↳ From R(m) = r_0 * (sqrt(3))^m under P2_UNIT_AU (r_0 = 1 AU) and P4_EXPONENT_ASSIGNMENT (m=6,7), R_1 = 27.0 AU and R_2 = 27*sqrt(3) AU ≈ 46.7654 AU (evaluated prior to catalog comparison).
   [DERIVED] subadditive_defect_coalescence_ratio_equal_mass = 0.793700525984 E_merge / E_sep (PREDICTIVE)
       ↳ For two equal defects N1=N2, E_merge/E_sep = 2^(2/3)/2 = 2^(-1/3) ≈ 0.7937 < 1 under P3_SURFACE_TENSION.
   [DERIVED] oh_outer_egg_shells_rin_Rmid_Rout = 420.888346 AU (R_out) (PREDICTIVE)
-      ↳ Under unit scale P2_UNIT_AU (r_0=1 AU), the m=10 inscribed sphere is r_in=(sqrt3)^10=243.0 AU, the m=11 circumscribed sphere is R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and the 12 edge midpoints lie at R_mid=R_out*sqrt(2/3)=243*sqrt2≈343.65 AU.
+      ↳ Under P2_UNIT_AU (r_0=1 AU) and P4_EXPONENT_ASSIGNMENT (m=10,11), r_in=(sqrt3)^10=243.0 AU, R_out=(sqrt3)^11=243*sqrt3≈420.89 AU (S_out=3*S_in), and R_mid=243*sqrt2≈343.65 AU.
   [DERIVED] bicone_vertex_neptune_kuiper_and_deep_spiral = 30.186918 AU (27*sqrt(5)/2) (PREDICTIVE)
-      ↳ Under P2_UNIT_AU (r_0=1 AU), the S_n=1 bicone circumvertex is R_1*sqrt(5)/2 = 27*sqrt(5)/2 ≈ 30.1869 AU (inscribed partner 27/sqrt(2) ≈ 19.0919 AU), its 1:2 resonance edge is (27*sqrt5/2)*2^(2/3) ≈ 47.9187 AU, the inner Z[sqrt2] harmonics are R_belt=2.3844 AU & R_cubewano=41.69 AU, and the terminal spiral is R_deep=243*Lambda_1≈2453.12 AU.
-
-  ℹ Note: 35 diagnostic/empirical/ansatz/rhyme/null claims are hidden in 'proven-only' mode.
-    Run with '--epistemic-mode full-diagnostic' to print all diagnostic claims in console.
+      ↳ Under P2_UNIT_AU (r_0=1 AU) and P4_EXPONENT_ASSIGNMENT, geometric bicone radii on R_1=27 AU are R_circ=27*sqrt(5)/2≈30.1869 AU and R_in=27/sqrt(2)≈19.0919 AU, Z[sqrt2] harmonics are 2.3844 & 41.69 AU, and R_deep=243*Lambda_1≈2453.12 AU (empirical comparison isolated in Layer II).
+  [ANSATZ DIAGNOSTIC] sn2_band_Z_sqrt2_definitional_expansion = 34.9705627485 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Definitional algebraic expansion: since Lambda_1 = sqrt(3)*(3+2*sqrt(2)) already contains sqrt(3), multiplying by 2*sqrt(3) gives 18+12*sqrt(2) by definition, not a new physical law.
+  [ANSATZ DIAGNOSTIC] anisotropic_dual_sum_11_over_6_diagnostic = 1.83333333333 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Arithmetic sum 1 + 1/2 + 1/3 = 11/6 (and 4*11/6 = 22/3); the standard isotropic 3D cubic lattice Laplacian maximum is 12.
+  [ANSATZ DIAGNOSTIC] cuboctahedral_q2_shell_43_coincidence = 43 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Selecting the second FCC coordination shell q=2 in 10q^2+2+1 = 43 is a post-hoc shell choice matching the bicone sum 43.
+  [ANSATZ DIAGNOSTIC] moonshine_integer_factorizations_diagnostic = 960 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Integer identities 960=4*240, 744=3*248, 1728=12^3 are unused in the pipeline; 744 and 1728 are not derived from K.
+  [ANSATZ DIAGNOSTIC] variational_E_N_102_vs_103_diagnostic = 103 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Unfiltered E_geom(N) minimum is N=102 (E=101.831); N=103 (E=102.019) requires the gcd(N,3)=1 ansatz or Omega-penalty weight mu > 0.09402.
+  [ANSATZ DIAGNOSTIC] alpha_inv_prediction = 137.037059951 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. NOT A PROVEN PREDICTION. Uses unproven N_twist=103 and discrete divisor selection (3,6,30) (7.74 ppm from CODATA 2022).
+  [ANSATZ DIAGNOSTIC] alpha_inv_divisor_grid_argmin = 137.03589 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Grid-search sensitivity analysis over 12x24x60 divisor triples; argmin is (3,6,31) at 0.80 ppm (no group justification).
+  [ANSATZ DIAGNOSTIC] muon_electron_mass_ratio_ansatz = 206.766841 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Evaluates 2*sqrt(N_twist^2 + D_k)*(1 + A_geom + delta_interf); depends on N_twist=103 ansatz (6.97 ppm from CODATA).
+  [ANSATZ DIAGNOSTIC] proton_electron_mass_ratio_ansatz = 1836.14850665 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Braid combinatorics ansatz 18*Lambda_1^2*(1+alpha/2pi)/Phi_braid = 1836.1485 vs CODATA 1836.1527.
+  [ANSATZ DIAGNOSTIC] dark_matter_to_baryon_ratio_ansatz = 5.35547567163 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Ratio Lambda_1/(sqrt(3)*|Wr|) = 5.3555; comparison with Planck (~5.4) is a consistency check, not proof.
+  [ANSATZ DIAGNOSTIC] baryon_asymmetry_eta_ansatz = 1.05661335395e-09 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Phenomenological ansatz |Wr|/(N_twist * 10^7) pending first-principles derivation (DNK_Final_v7 Sec. 13.3/14.2).
+  [ANSATZ DIAGNOSTIC] GM_sun_over_GM_Jup_constant_menu = 1044.33315444 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Exploratory comparison of additive constants (+sqrt(10): 0.0067%, +(sqrt2+sqrt3): 0.0082%, +pi: 0.0087%) to match IAU GM_sun/GM_Jup.
+  [ANSATZ DIAGNOSTIC] uranus_obliquity_ablation = 98.052 deg (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Ablation test showing 98.052 deg without 1/(2*103) (Delta=0.282 deg) vs 97.774 deg with post-hoc 1/(2*103) term.
+  [ANSATZ DIAGNOSTIC] cabibbo_and_omega_lambda_ansatz = 0.69 (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. sin(theta_C)=0.2246 (0.61 sigma) and Omega_Lambda=0.6900 (0.73 sigma): compatibility checks, not proofs.
+  [VISUAL RHYME] laguerre_solar_rhyme (NON-PREDICTIVE)
+      ↳ VISUAL RHYME ONLY. Structural analogy between Laguerre L_2^(0) nodal profile (mapped with 5 display knobs to x1=0.98, x2=3.60) and IT3 floor density. Not evidence, not a scaling law.
+  [VISUAL RHYME] micro_macro_descent_rhyme (NON-PREDICTIVE)
+      ↳ VISUAL RHYME ONLY. Nuclear alpha-decay shift (Delta Z = -2) and celestial K-PHAM cascade (floor(x/sqrt3)) are non-isomorphic structural rhymes (Guard F.2).
+  [OPEN CONJECTURE] solar_atomic_shell_interpretation (NON-PREDICTIVE)
+      ↳ OPEN CONJECTURE. Interpretation of K-PHAM S_n floors as macroscopic atomic shells.
+  [OPEN CONJECTURE] z172_periodic_table_termination_conjecture = 172 (NON-PREDICTIVE)
+      ↳ OPEN CONJECTURE. While 172 = 4*43 is exact arithmetic, identifying Z_max=172 as the physical end of the periodic system via FCC vacuum closure is a theoretical conjecture.
+  [EMPIRICAL] stone_shield_astrometric_localization (NON-PREDICTIVE)
+      ↳ Empirical candidate anomaly localization near O_h E-nodes in NOIRLab/Gaia/AllWISE archives; not a confirmed solid topological body. Falsifiable by LSST DR1/DR2.
+  [NULL RESULT] macro_compton_periodicity = -0.83 sigma (NON-PREDICTIVE)
+      ↳ NULL RESULT. Macro-Compton periodicity at log(Lambda_1^2)=4.624 is not confirmed on current JFC-dominated cometary data (SNR < 0.1 sigma).
+  [ANSATZ DIAGNOSTIC] solar_core_and_gaia_vT_lambda1_ansatz = 24.545 days (NON-PREDICTIVE)
+      ↳ DIAGNOSTIC ONLY. Kinematic ratios T_J/(Lambda_1^2*sqrt3) ≈ 24.545 d and v_T = v_0*Lambda_1^2/2 ≈ 50.956 km/s (Planet_9_v44 Sec. 2.6 & Sec. 9).
+  [NULL RESULT] catwise2020_e5_brown_dwarf_scan = 0 sources (NON-PREDICTIVE)
+      ↳ NULL RESULT. CatWISE2020 thermal scan at E-5 (RA 61.24 deg, Dec -30.45 deg) detected 0 luminous Y/T brown dwarfs (W1-W2>=0.8, mu>=100 mas/yr, SNR>5), constraining baryonic point-mass models (Planet_9_v44 Sec. 10.2).
+  [EMPIRICAL] solar_system_sn_observed_distribution = 6335 objects in S_n=2 (NON-PREDICTIVE)
+      ↳ MPCORB objects populate S_n floors with 99.44% in S_n=0 and 6,335 in S_n=2.
+  [EMPIRICAL] sliding_log_window_control = 97.64 % of sliding max (NON-PREDICTIVE)
+      ↳ Sliding Delta ln R = ln 2 control: empirical argmax window is [40.0, 80.0] AU (6,441 obj) vs S_n=2 window [34.97, 69.94) AU (6,289 obj).
+  [EMPIRICAL] monte_carlo_1d_kuiper_peak_test = 0.02555 p-value (NON-PREDICTIVE)
+      ↳ 1D Monte Carlo test of R_2=46.77 AU against observed Kuiper peak 47.38 AU (error 1.291%).
+  [NULL RESULT] joint_neptune_mmr_test = 0.05185 p-value (NON-PREDICTIVE)
+      ↳ 1D SPHERICAL NULL CONTROL: Naive inscribed face-center sphere R_1=27 AU vs Neptune (30.07 AU) & 1:2 MMR (47.73 AU) yields 12.23% loss (p=0.05185), proving outer giants do not sit on 1D face centers.
+  [EMPIRICAL] joint_3d_bicone_vertex_neptune_kuiper_test = 0.005752 p_Bonf(M=6) zero-RNG (NON-PREDICTIVE)
+      ↳ 3D BICONE-CUBE VERTEX TEST (live, zero-RNG): 27*sqrt(5)/2=30.19 AU vs a_N=30.07 AU (err 0.3925%) + 27*sqrt(3)=46.77 AU vs 47.38 AU (loss 1.6831%, p_cond=0.000959, p_Bonf6=0.005752, p_MMR_Bonf6=0.011945; note 1:2 MMR cliff error is algebraically identical via 2^(2/3) cancellation).
+  [ANSATZ DIAGNOSTIC] terminal_spiral_2453AU_blind_hit_K25Me3C = 32.44 ppm error (singleton diagnostic) (NON-PREDICTIVE)
+      ↳ SINGLETON DIAGNOSTIC (not independent proof): K25Me3C R_eff=2453.1966 AU vs 243*Lambda_1=2453.12 AU (err=32.44 ppm, p_LE=0.002034); Sedna present=True (m=13 bicone eq err=0.1379%, p_LE=0.11691 -> non-significant).
+  [NULL RESULT] inclination_argmax_bootstrap_test = 29.75 deg (NON-PREDICTIVE)
+      ↳ Empirical inclination steepest-drop argmax is 29.75 deg (200-bootstrap 95% CI [28.75, 29.75] deg; 18 deg inside CI = False).
+  [EMPIRICAL] trojan_L4_L5_epoch_matched_ratio = 1.7175 (NON-PREDICTIVE)
+      ↳ Epoch-matched L4/L5 Trojan ratio using pure mean-longitude difference Delta lambda = lambda - lambda_J,mean(JD) (excluded 0 fallback epochs).
+  [EMPIRICAL] cometary_shared_edge_entropy_dichotomy = -0.4697 bits (NON-PREDICTIVE)
+      ↳ Shared-bin-edge radial Shannon entropy difference H_free - H_bound on 11 identical log10(R_eff) bins (LIVE_SHARED_11BINS (SHA:91a371eed7095a0b, identical log10(R_eff) edges + normalized efficiency)).
+  [EMPIRICAL] table1_key_outer_objects_verification = 7 of 7 objects (NON-PREDICTIVE)
+      ↳ Front [T1]: Empirical verification of S_n floors for Pluto(2), Makemake(2), Haumea(2), Eris(3), 2012VP113(4), Sedna(6), 2015TG387(8).
+  [NULL RESULT] centaur_sk2_vs_analytical_prior_test = 60.027 % S_k=2 (NON-PREDICTIVE)
+      ↳ Front [C]: Observed Centaur S_k=2 share is 60.027% vs exact analytical uniform-omega prior (5-sqrt2)/6 = 59.763% (excess +0.26%, p=0.47916).
+  [EMPIRICAL] asteroid_family_collisional_variance_test = 0.5729 AU (sigma_Reff) (NON-PREDICTIVE)
+      ↳ Front [D]: Main-belt cells (N>=5) have Var(S_n)=0.0 (all in S_n=0) and sigma(R_eff)=0.5729 AU, confirming collisional debris dispersion.
+  [EMPIRICAL] nea_pha_micro_shell_occupancy_test = 47.76 % in dominant cell (NON-PREDICTIVE)
+      ↳ Front [3]: NEA/PHA S_n=0 population (N=43,038) dominant cell [2, 1] has 47.76% vs uniform S_k=2 prior 59.76%.
+  [EXACT] it3_v23_algebraic_self_test = 1 boolean (NON-PREDICTIVE)
+      ↳ 23 algebraic/analytic invariants verified (incl. exact-CDF, Diophantine, 11x6 df=50/65, 2^(2/3) cliff tautology, S_n=7 inversion, S^2 O_h multipole Addition Theorem, ecliptic-free azimuthal m>=1 guard, and unified energy/T_J).
+  [EXACT] kpham_exact_degrees_of_freedom = 6 lattice nodes (NON-PREDICTIVE)
+      ↳ 2x3 domain (proven); df: 1+2+2=5.
+  [EXACT] kpham_diophantine_projection_operator = 3 scale sqrt(3), image Z (NON-PREDICTIVE)
+      ↳ D is the order-preserving retraction onto Z composed with scaling by 1/sqrt(3). Steps satisfy S <= floor(log_sqrt3 x)+1, with STRICT inequality possible (x=27: 6<7) due to floor losses. Z[sqrt(3)] is DENSE in R (|265-153*sqrt3|~0.0038), hence NOT a lattice in R; it is the ring of integers of Q(sqrt(3)) only, NOT of K (deg K = 8). Discreteness holds for Z, or for Z[sqrt(3)] under Minkowski embedding in R^2.
+  [EMPIRICAL] exact_kuiper_peak_zero_rng_test = 0.0250480683494 p (exact closed form, zero RNG) (NON-PREDICTIVE)
+      ↳ Exact null p=0.02505 (1.959sigma), delta=1.2972%. Replaces MC seed=103.
+  [EMPIRICAL] exact_bicone_vertex_zero_rng_test = 0.00579788457996 p_Bonf(M=6) (deterministic QUADPACK, zero RNG) (NON-PREDICTIVE)
+      ↳ 3D bicone-vertex joint null (zero RNG): conditional p_obs=0.000966 (3.10sigma), Bonferroni(M=6 ratios) p_obs=0.005798 (2.52sigma); apples-to-apples vs (a_N, MMR1:2): p_mmr=0.001991, Bonf(M=6) p_mmr=0.011945; 2D sphere control p=0.05112.
+  [EMPIRICAL] oh_multipole_sphere_spectrum_test = 2.985571 S_6^(m>0) (ecliptic-free azimuthal S^2 power) (NON-PREDICTIVE)
+      ↳ Ecliptic-free azimuthal (m>=1) S^2 multipoles on detached ETNO e_hat (N=216): S1_az=5.12(p=0.00591), S2_az=10.20(p=1.44e-06), S4_az=5.71(p=3.7e-06), S6_az=2.99(p=0.00116), S12_az=2.46(p=0.000366); delta_K4_az=0.008567 (z_az=0.795, vs raw K4=0.082656 inflated by ecliptic disk).
+  [EMPIRICAL] cometary_unified_specific_energy_audit = -1.8353 bits (unified asinh(eps/0.01) coordinate) (NON-PREDICTIVE)
+      ↳ Unified specific energy eps=(e-1)/(2q) (fixes aphelion-vs-perihelion mismatch): H_bound=2.3944b (N=855), H_free=0.5591b (N=119), Delta_H=-1.8353b; IQR_asinh bound=0.9606 vs free=0.0233.
+  [NULL RESULT] stratified_kuiper_inclination_argmax_test = 29.75 deg (Kuiper 30-60 AU only) (NON-PREDICTIVE)
+      ↳ Decoupled from Main Belt (argmax=29.75 deg): Kuiper Belt (30-60 AU, N=6938) steepest drop = 29.75 deg (ratio=1.557x); Scattered/ETNO (a>60 AU) = 29.25 deg.
+  [EMPIRICAL] retrograde_sh4_deep_enrichment_test = 876.92 x enrichment (S_n>=6 vs catalog) (NON-PREDICTIVE)
+      ↳ S_h=4 retrogrades (i>126 deg): 3/47 at S_n>=6 vs 115/1579912 catalog-wide (876.92x, exact hypergeometric p=6.077e-09); Damocloid (T_J<2) share among i>90 deg = 100.0%.
+  [OPEN CONJECTURE] micro_macro_structural_homology (NON-PREDICTIVE)
+      ↳ No isomorphism, no shared '3600=(61-1)^2' df (macro 11x6 table has df_total=65, df_indep=(11-1)*(6-1)=50, df_main=15; 2x3 lattice has df=5), no derivation of one system from the other. Per EPISTEMIC_POLICY rule 5 this is an analogy, not evidence.
 
   ── EPISTEMIC AUDIT METRICS ──────────────────────────────────────────
-  • Release Version:                       IT3-v22.6-strict
-  • Active Epistemic Mode:                 proven-only
+  • Release Version:                       IT3-v23.4-strict
+  • Active Epistemic Mode:                 full-diagnostic
   • External Benchmarks Are Predictions:   False
-  • Total Registered Claims in Ledger:     49 (9 Exact + 5 Derived + 16 Empirical/Null + 19 Exploratory)
-  • Exact Mathematical Theorems (Layer I): 9/49 (18.37%)
-  • Derived Predictive Claims:             5/49 (10.20%)
-  • Empirical & Null Catalog Tests:        16/49 (32.65%)
-  • Exploratory Diagnostic Claim Share:    0.387755 (19/49 claims are Ansatz/Rhyme/Conjecture)
+  • Total Registered Claims in Ledger:     59 (12 Exact + 5 Derived + 21 Empirical/Null + 21 Exploratory)
+  • Exact Mathematical Theorems (Layer I): 12/59 (20.34%)
+  • Derived Predictive Claims:             5/59 (8.47%)
+  • Empirical & Null Catalog Tests:        21/59 (35.59%)
+  • Exploratory Diagnostic Claim Share:    0.355932 (21/59 claims are Ansatz/Rhyme/Conjecture)
   • Unproven Predictive Flag Share:        0.000000 (Flag hygiene)
   OK: all predictive claims are proven or derived from explicit postulates.
 
-  🛡️  SYNCHRONIZED SCIENTIFIC SUMMARY (Release: IT3-v22.6-strict):
+  🛡️  SYNCHRONIZED SCIENTIFIC SUMMARY (Release: IT3-v23.4-strict):
   
   [1] EXACT ALGEBRA & O_h SPHERE LADDER (EXACT_MATH):
       • Δ_K = 2¹⁶3⁴5⁴ = 3,317,760,000; √|Δ_K| = 57,600 = 240²; det(E₈)=1; √13 ∉ K.
@@ -337,12 +431,12 @@ IT3 strict epistemic policy (Release IT3-v22.6-strict):
       • 2D Joint Neptune (30.07 AU) & 1:2 MMR (47.73 AU) test: loss=12.23%, p=0.0519 [NEGATIVE/NULL RESULT].
       • Sliding Δln R = ln 2 control: argmax [40.0, 80.0] AU (6,441 obj) vs S_n=2 (6,289 obj, 97.6% eff).
       • Ionized (>48 AU) 3-way partition: 35.96% (S_n≥3) + 61.88% (S_n=2 tail) + 2.17% (reset) = 100.00%.
-      • Shared-edge radial comet ΔH = -0.4669 bits | Pure Δλ Trojans L4/L5 = 1.7175 | Deep S_n≥6 objects = 47.
+      • Shared-edge radial comet ΔH = -0.4697 bits | Pure Δλ Trojans L4/L5 = 1.7175 | Deep S_n≥6 objects = 47.
 
 
   📁 REPOSITORY DIRECTORY STRUCTURE (./):
     • ./data/        → MPCORB.DAT, CometEls.txt, NEA.txt, PHA.txt, newnumids.dat, neocp.txt
-    • ./plots_html/  → 11 Interactive Plotly 3D/2D HTML models (plot_01 .. plot_11)
+    • ./plots_html/  → 16 Interactive Plotly 3D/2D HTML models (plot_01 .. plot_16, incl. 5 Discovery Probes)
     • ./figures/     → High-resolution 300 DPI dashboards (physically_grounded_model_v20.png)
     • ./reports/     → it3_fwhp_audit_certificate.json & it3_cpham_results_quantized.csv
     • ./logs/        → ./logs/it3_terminal_run_log.txt
