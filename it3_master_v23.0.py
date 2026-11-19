@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-IT³ K-PHAM (Release: IT3-v23.2-strict) — SCIENTIFIC PROOF-LEDGER & DIAGNOSTIC SUITE
+IT³ K-PHAM (Release: IT3-v23.4-strict) — SCIENTIFIC PROOF-LEDGER & DIAGNOSTIC SUITE
 ===================================================================================
 Principle: Code computes everything. Report asserts only proven/derived claims.
 All exploratory ansätze, visual rhymes, and null results are isolated as diagnostics.
 Authors: Victor Logvinovich & Jean-Claude Perez
 DOI:     https://doi.org/10.5281/zenodo.21792530 (https://zenodo.org/records/21792530)
+GitHub: https://github.com/Dr-Logvinovich/IT3-Solar-System-Quantum-Architecture
 """
 
 import argparse
@@ -35,12 +36,1370 @@ from typing import Optional, Dict, List, Set, Tuple, Any
 from tqdm import tqdm
 from scipy.interpolate import make_interp_spline
 from scipy import stats
-# === IT3 v23.2-strict ENHANCEMENTS (audited, zero-RNG, anti-numerology) ===
-import importlib.util as _ilu
-_spec = _ilu.spec_from_file_location("it3_enhancements_v23",
-    str(Path(__file__).resolve().parent / "it3_enhancements_v23.py"))
-_v23 = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_v23)
-# === END v23.2-strict IMPORT ===
+# ============================================================================
+# EMBEDDED IT³ v23.4-strict ZERO-RNG AUDIT ENGINE & DISCOVERY VISUALIZER
+# (100% Single-File Standalone — Zero External Local .py Dependencies)
+# ============================================================================
+from scipy.integrate import quad as _scipy_quad
+from scipy.special import ndtri as _scipy_ndtri, lpmv as _scipy_lpmv
+
+
+class _V23ZeroRNGEngine:
+    """
+    Embedded Zero-RNG Analytical & Anti-Numerology Engine (IT3-v23.4-strict, 23 invariants).
+    All p-values are exact closed-form CDFs, QUADPACK quadratures, exact hypergeometric
+    tails, or exact S^2 Spherical Harmonics Addition Theorem + latitude-preserving
+    azimuthal (non-zonal m>=1) Satterthwaite tests (immune to ecliptic flattening).
+    """
+    R0_RANGE = (12.0, 40.0)
+    LAM_RANGE = (1.30, 2.30)
+    OH_BICONE_RATIO_TRIALS = 6
+    A_JUPITER_AU = 5.20336301
+
+    @staticmethod
+    def product_uniform_cdf(t: float, a0: float, a1: float, b0: float, b1: float) -> float:
+        if t <= a0 * b0:
+            return 0.0
+        if t >= a1 * b1:
+            return 1.0
+        full = max(0.0, min(a1, t / b1) - a0) * (b1 - b0)
+        x1, x2 = max(a0, t / b1), min(a1, t / b0)
+        part = t * math.log(x2 / x1) - b0 * (x2 - x1) if x2 > x1 else 0.0
+        return (full + part) / ((a1 - a0) * (b1 - b0))
+
+    @staticmethod
+    def _sigma(p: float) -> float:
+        return float(-_scipy_ndtri(max(min(p, 1.0 - 1e-16), 1e-300)))
+
+    @classmethod
+    def exact_kuiper_peak_test(cls, observed_peak_au: float, theoretical_au: float,
+                               r0_range=None, lam_range=None) -> Dict:
+        r0_range = r0_range or cls.R0_RANGE
+        lam_range = lam_range or cls.LAM_RANGE
+        d = abs(observed_peak_au - theoretical_au) / observed_peak_au * 100.0
+        L = observed_peak_au * (1.0 - d / 100.0)
+        U = observed_peak_au * (1.0 + d / 100.0)
+        a0, a1 = r0_range
+        b0, b1 = lam_range
+        p = cls.product_uniform_cdf(U, a0, a1, b0, b1) - cls.product_uniform_cdf(L, a0, a1, b0, b1)
+        return {
+            "method": "EXACT_CLOSED_FORM_PRODUCT_UNIFORM_CDF (zero RNG)",
+            "delta_pct": round(d, 4),
+            "p_value": p,
+            "sigma": round(cls._sigma(p), 3),
+            "null": f"R0~U{r0_range}, lambda~U{lam_range} (identical to MC null)",
+        }
+
+    @classmethod
+    def _exact_joint_quad(cls, t1: float, t2: float, c: float, loss_pct: float,
+                          r0_range=None, lam_range=None) -> float:
+        r0_range = r0_range or cls.R0_RANGE
+        lam_range = lam_range or cls.LAM_RANGE
+        a0, a1 = r0_range
+        b0, b1 = lam_range
+
+        def inner(r: float) -> float:
+            w = loss_pct - abs(r * c - t1) / t1 * 100.0
+            if w <= 0.0:
+                return 0.0
+            h = w * t2 / 100.0
+            return max(0.0, min((t2 + h) / r, b1) - max((t2 - h) / r, b0))
+
+        rs = t1 / c
+        pts = [rs, (t1 * (1.0 - loss_pct / 100.0)) / c, (t1 * (1.0 + loss_pct / 100.0)) / c]
+        val, _ = _scipy_quad(inner, a0, a1, points=[p for p in pts if a0 < p < a1],
+                             limit=400, epsabs=1e-12)
+        return float(val / ((a1 - a0) * (b1 - b0)))
+
+    @classmethod
+    def exact_joint_2d_p(cls, config, r0_range=None, lam_range=None) -> float:
+        t1, t2 = config.A_NEPTUNE_AU, config.MMR_1_2_NEPTUNE_AU
+        loss = (abs(config.R_BASE - t1) / t1 * 100.0
+                + abs(config.R_VALENCE_EXACT - t2) / t2 * 100.0)
+        return cls._exact_joint_quad(t1, t2, 1.0, loss, r0_range, lam_range)
+
+    @classmethod
+    def exact_joint_3d_p(cls, config, observed_peak_au: float,
+                         r0_range=None, lam_range=None) -> float:
+        t1, c, obs = config.A_NEPTUNE_AU, config.BICONE_RCIRC_RATIO, observed_peak_au
+        loss = (abs(config.R_NEPTUNE_VERTEX_EXACT - t1) / t1 * 100.0
+                + abs(obs - config.R_VALENCE_EXACT) / obs * 100.0)
+        return cls._exact_joint_quad(t1, obs, c, loss, r0_range, lam_range)
+
+    @classmethod
+    def exact_joint_3d_audit(cls, config, observed_peak_au: float,
+                             r0_range=None, lam_range=None,
+                             n_ratio_trials: int = 6) -> Dict:
+        t1, t2_mmr = config.A_NEPTUNE_AU, config.MMR_1_2_NEPTUNE_AU
+        c = config.BICONE_RCIRC_RATIO
+        err_nep = abs(config.R_NEPTUNE_VERTEX_EXACT - t1) / t1 * 100.0
+        err_obs = abs(observed_peak_au - config.R_VALENCE_EXACT) / observed_peak_au * 100.0
+        err_mmr = abs(config.R_VALENCE_EXACT - t2_mmr) / t2_mmr * 100.0
+        loss_obs = err_nep + err_obs
+        loss_mmr = err_nep + err_mmr
+
+        p_obs_cond = cls._exact_joint_quad(t1, observed_peak_au, c, loss_obs, r0_range, lam_range)
+        p_obs_bonf = min(1.0, n_ratio_trials * p_obs_cond)
+        p_mmr_cond = cls._exact_joint_quad(t1, t2_mmr, c, loss_mmr, r0_range, lam_range)
+        p_mmr_bonf = min(1.0, n_ratio_trials * p_mmr_cond)
+
+        return {
+            "neptune_vertex_err_pct": round(err_nep, 4),
+            "kuiper_obs_err_pct": round(err_obs, 4),
+            "mmr_1_2_err_pct": round(err_mmr, 4),
+            "loss_obs_pct": round(loss_obs, 4),
+            "loss_mmr_pct": round(loss_mmr, 4),
+            "p_3d_obs_cond": p_obs_cond,
+            "sigma_3d_obs_cond": round(cls._sigma(p_obs_cond), 3),
+            "n_ratio_trials": n_ratio_trials,
+            "p_3d_obs_bonf": p_obs_bonf,
+            "sigma_3d_obs_bonf": round(cls._sigma(p_obs_bonf), 3),
+            "p_3d_mmr_cond": p_mmr_cond,
+            "sigma_3d_mmr_cond": round(cls._sigma(p_mmr_cond), 3),
+            "p_3d_mmr_bonf": p_mmr_bonf,
+            "sigma_3d_mmr_bonf": round(cls._sigma(p_mmr_bonf), 3),
+            "kuiper_cliff_tautology_note": (
+                "R_KUIPER_CLIFF_THEO / MMR_1_2_NEPTUNE_AU == R_NEPTUNE_VERTEX_EXACT / A_NEPTUNE_AU "
+                "(factor 2^(2/3) cancels identically -> NOT a second independent test)."
+            ),
+        }
+
+    @staticmethod
+    def _steps_n_exact(x: float, s3: float) -> int:
+        if x < 1.0:
+            return 0
+        s = 0
+        while True:
+            nx = math.floor(x / s3)
+            if nx < 1.0:
+                break
+            x, s = nx, s + 1
+        return s
+
+    @staticmethod
+    def _cascade_steps(x: float, s3: float) -> int:
+        s = 0
+        while x >= 1.0:
+            x = math.floor(x / s3)
+            s += 1
+        return s
+
+    @staticmethod
+    def exact_outer_sn_band_au(sn: int, config) -> Tuple[float, float]:
+        assert sn >= 1
+        s3 = config.SQRT3
+        lo, hi = 1, 1
+        for step in range(sn, 0, -1):
+            lo_f, hi_f = lo * s3, (hi + 1) * s3
+            if step > 1:
+                lo = math.ceil(lo_f)
+                hi = math.ceil(hi_f) - 1
+            else:
+                n_min, n_max = lo_f, hi_f
+        r_min = config.R_PHASE_TRANSITION + config.NORMALIZATION_FACTOR * n_min
+        r_max = config.R_PHASE_TRANSITION + config.NORMALIZATION_FACTOR * n_max
+        return float(r_min), float(r_max)
+
+    @classmethod
+    def exact_band_look_elsewhere(cls, obs_au: float, target_au: float, sn: int,
+                                  n_objects_in_band: int, config) -> Dict:
+        r_min, r_max = cls.exact_outer_sn_band_au(sn, config)
+        width = r_max - r_min
+        delta = abs(obs_au - target_au)
+        n_eff = max(int(n_objects_in_band), 1)
+        p_single_lin = min(1.0, (2.0 * delta) / width)
+        p_le_lin = 1.0 - (1.0 - p_single_lin) ** n_eff
+        lo_t = max(r_min, target_au - delta)
+        hi_t = min(r_max, target_au + delta)
+        p_single_log = min(1.0, max(0.0, math.log(hi_t / lo_t) / math.log(r_max / r_min))) if hi_t > lo_t else 0.0
+        p_le_log = 1.0 - (1.0 - p_single_log) ** n_eff
+        return {
+            "sn_band": sn,
+            "band_au": [round(r_min, 2), round(r_max, 2)],
+            "n_objects_in_band": n_eff,
+            "delta_au": round(delta, 4),
+            "p_single_linear": p_single_lin,
+            "p_look_elsewhere_linear": p_le_lin,
+            "p_look_elsewhere_log_uniform": p_le_log,
+        }
+
+    @staticmethod
+    def orbital_unit_vectors(i_deg: np.ndarray, omega_deg: np.ndarray,
+                             Omega_deg: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+        ir = np.radians(i_deg)
+        wr = np.radians(omega_deg)
+        Or = np.radians(Omega_deg)
+        ci, si = np.cos(ir), np.sin(ir)
+        cw, sw = np.cos(wr), np.sin(wr)
+        cO, sO = np.cos(Or), np.sin(Or)
+        e_hat = np.column_stack([
+            cO * cw - sO * sw * ci,
+            sO * cw + cO * sw * ci,
+            sw * si,
+        ])
+        h_hat = np.column_stack([sO * si, -cO * si, ci])
+        return e_hat, h_hat
+
+    @staticmethod
+    def spherical_power_spectrum(unit_vecs: np.ndarray, l_max: int = 12) -> Dict[int, Dict]:
+        """
+        Exact O(N * l_max^2) S^2 angular power spectrum via Addition Theorem, decomposed into:
+          - S_l    : full 3D isotropic power (sensitive to ecliptic flattening in m=0)
+          - S_l_az : exact latitude-preserving azimuthal power (m >= 1 only, E[S_l_az]=1.0
+                     for ANY flattened disk!) with exact finite-N Satterthwaite chi^2 p-value.
+        """
+        N = int(len(unit_vecs))
+        if N < 3:
+            return {}
+        x = unit_vecs[:, 0]
+        y = unit_vecs[:, 1]
+        z = np.clip(unit_vecs[:, 2], -1.0, 1.0)
+        phi = np.arctan2(y, x)
+        cos_m = np.empty((l_max + 1, N), dtype=float)
+        sin_m = np.empty((l_max + 1, N), dtype=float)
+        cos_m[0], sin_m[0] = 1.0, 0.0
+        c1, s1 = np.cos(phi), np.sin(phi)
+        for m in range(1, l_max + 1):
+            cos_m[m] = cos_m[m - 1] * c1 - sin_m[m - 1] * s1
+            sin_m[m] = sin_m[m - 1] * c1 + cos_m[m - 1] * s1
+
+        out = {}
+        for l in range(1, l_max + 1):
+            p0 = _scipy_lpmv(0, l, z)
+            m0_pow = float(np.sum(p0) ** 2)
+            az_obs = 0.0
+            az_exp = 0.0
+            az_var = 0.0
+            for m in range(1, l + 1):
+                pm = _scipy_lpmv(m, l, z)
+                re_s = float(np.dot(pm, cos_m[m]))
+                im_s = float(np.dot(pm, sin_m[m]))
+                w_m = 2.0 * math.factorial(l - m) / math.factorial(l + m)
+                az_obs += w_m * (re_s * re_s + im_s * im_s)
+                pm2 = pm * pm
+                cm = w_m * float(np.sum(pm2))
+                az_exp += cm
+                az_var += (cm * cm) - (w_m * w_m) * float(np.sum(pm2 * pm2))
+
+            S_l = (m0_pow + az_obs) / N
+            df = 2 * l + 1
+            chi2_stat = df * S_l
+            var_stat = 2.0 * df * (1.0 - 1.0 / max(N, 2))
+            z_ex = (chi2_stat - df) / math.sqrt(max(var_stat, 1e-12))
+            p_chi2 = float(stats.chi2.sf(max(chi2_stat, 0.0), df=df))
+
+            S_az = (az_obs / az_exp) if az_exp > 1e-15 else 0.0
+            if az_var > 1e-18:
+                z_az = (az_obs - az_exp) / math.sqrt(az_var)
+                df_eff = 2.0 * (az_exp * az_exp) / az_var
+                p_az = float(stats.chi2.sf(max(df_eff * S_az, 0.0), df=df_eff))
+            else:
+                z_az, df_eff, p_az = 0.0, 2.0 * l, 1.0
+
+            out[l] = {
+                "S_l": round(S_l, 6),
+                "chi2_stat": round(chi2_stat, 4),
+                "df": df,
+                "z_score": round(z_ex, 3),
+                "p_chi2": p_chi2,
+                "S_l_az": round(S_az, 6),
+                "df_eff_az": round(df_eff, 2),
+                "z_az": round(z_az, 3),
+                "p_az": p_az,
+            }
+        return out
+
+    @staticmethod
+    def cubic_k4_test(unit_vecs: np.ndarray) -> Dict:
+        N = int(len(unit_vecs))
+        if N < 3:
+            return {"N": N, "mean_K4": None, "z_score": None, "p_two_sided": None}
+        k4_vals = np.sum(unit_vecs ** 4, axis=1) - 0.6
+        mean_k4 = float(np.mean(k4_vals))
+        se_iso = math.sqrt((16.0 / 525.0) / N)
+        z = mean_k4 / se_iso
+        # Also compute exact ecliptic-latitude-corrected azimuthal expectation of K_4:
+        # For fixed latitude beta (z_i = sin beta_i, r_i^2 = 1 - z_i^2) and uniform longitude phi:
+        # E_az[x_i^4 + y_i^4] = (3/4) * (1 - z_i^2)^2 => E_az[K_4] = mean(z_i^4 + 0.75*(1-z_i^2)^2 - 0.6)
+        z2 = np.clip(unit_vecs[:, 2], -1.0, 1.0) ** 2
+        e_az_k4 = float(np.mean(z2 * z2 + 0.75 * ((1.0 - z2) ** 2) - 0.6))
+        # Exact azimuthal excess delta_K4 = (1/4) * (1-z^2)^2 * cos(4*phi), Var_az = (1/32)*(1-z^2)^4
+        var_az_k4 = float(np.sum(((1.0 - z2) ** 4) / 32.0)) / (N * N)
+        delta_k4_az = mean_k4 - e_az_k4
+        z_az = delta_k4_az / math.sqrt(max(var_az_k4, 1e-18))
+        return {
+            "N": N,
+            "mean_K4": round(mean_k4, 6),
+            "isotropic_se": round(se_iso, 6),
+            "z_score": round(z, 3),
+            "p_two_sided": float(2.0 * stats.norm.sf(abs(z))),
+            "ecliptic_expected_K4": round(e_az_k4, 6),
+            "delta_K4_azimuthal": round(delta_k4_az, 6),
+            "z_az": round(z_az, 3),
+            "p_az_two_sided": float(2.0 * stats.norm.sf(abs(z_az))),
+        }
+
+    @staticmethod
+    def specific_orbital_energy(q_au: np.ndarray, e: np.ndarray) -> np.ndarray:
+        return (e - 1.0) / (2.0 * np.maximum(q_au, 1e-9))
+
+    @classmethod
+    def tisserand_jupiter(cls, a_au: np.ndarray, e: np.ndarray, i_deg: np.ndarray) -> np.ndarray:
+        a_safe = np.maximum(a_au, 1e-6)
+        e_safe = np.clip(e, 0.0, 0.9999999)
+        return (cls.A_JUPITER_AU / a_safe) + 2.0 * np.sqrt((a_safe / cls.A_JUPITER_AU) * (1.0 - e_safe ** 2)) * np.cos(np.radians(i_deg))
+
+    @staticmethod
+    def specific_energy_cometary_audit(comet_file: str, eps0: float = 0.01) -> Dict:
+        if not comet_file or not os.path.exists(comet_file):
+            return {"available": False, "n_bound": 0, "n_free": 0}
+        b_eps, f_eps, b_q, f_q, b_i, f_i, names_f = [], [], [], [], [], [], []
+        with open(comet_file, "r", encoding="utf-8", errors="ignore") as f:
+            for ln in f:
+                if len(ln.strip()) < 65 or ln.startswith("#"):
+                    continue
+                try:
+                    q = float(ln[30:39])
+                    e = float(ln[41:49])
+                    inc = float(ln[51:59]) if len(ln) >= 59 else 0.0
+                    nm = ln[102:].strip() if len(ln) > 102 else ln[0:12].strip()
+                    if q <= 0:
+                        continue
+                    eps = (e - 1.0) / (2.0 * q)
+                    if e < 1.0:
+                        b_eps.append(eps); b_q.append(q); b_i.append(inc)
+                    else:
+                        f_eps.append(eps); f_q.append(q); f_i.append(inc); names_f.append(nm)
+                except Exception:
+                    continue
+        if len(b_eps) < 5 or len(f_eps) < 3:
+            return {"available": False, "n_bound": len(b_eps), "n_free": len(f_eps)}
+        b_arr = np.array(b_eps, dtype=float)
+        f_arr = np.array(f_eps, dtype=float)
+        ub = np.arcsinh(b_arr / eps0)
+        uf = np.arcsinh(f_arr / eps0)
+        u_lo = min(float(np.min(ub)), float(np.min(uf)))
+        u_hi = max(float(np.max(ub)), float(np.max(uf)))
+        edges_shared = np.linspace(u_lo, u_hi, 23)
+        hb, _ = np.histogram(ub, bins=edges_shared)
+        hf, _ = np.histogram(uf, bins=edges_shared)
+        pb = hb[hb > 0] / len(ub)
+        pf = hf[hf > 0] / len(uf)
+        H_b_eps = float(-np.sum(pb * np.log2(pb)))
+        H_f_eps = float(-np.sum(pf * np.log2(pf)))
+        return {
+            "available": True,
+            "eps0_au_inv": eps0,
+            "n_bound": len(b_eps),
+            "n_free": len(f_eps),
+            "median_eps_bound_au_inv": round(float(np.median(b_arr)), 6),
+            "median_eps_free_au_inv": round(float(np.median(f_arr)), 6),
+            "iqr_asinh_bound": round(float(np.percentile(ub, 75) - np.percentile(ub, 25)), 4),
+            "iqr_asinh_free": round(float(np.percentile(uf, 75) - np.percentile(uf, 25)), 4),
+            "H_bound_unified_eps_bits": round(H_b_eps, 4),
+            "H_free_unified_eps_bits": round(H_f_eps, 4),
+            "delta_H_unified_eps_bits": round(H_f_eps - H_b_eps, 4),
+            "bound_eps": b_arr, "free_eps": f_arr,
+            "bound_q": np.array(b_q), "free_q": np.array(f_q),
+            "bound_i": np.array(b_i), "free_i": np.array(f_i),
+            "free_names": names_f,
+        }
+
+    @staticmethod
+    def _inclination_drop_argmax(incs: np.ndarray, i_min: float = 2.0, i_max: float = 38.0) -> Dict:
+        valid = incs[(incs >= i_min) & (incs <= i_max)]
+        if len(valid) < 30:
+            return {"n": int(len(valid)), "argmax_deg": None, "drop_ratio": None,
+                    "median_i_deg": round(float(np.median(incs)), 2) if len(incs) else None}
+        bins = np.linspace(i_min, i_max, 73)
+        hist, edges = np.histogram(valid, bins=bins)
+        centers = 0.5 * (edges[:-1] + edges[1:])
+        best_a, best_r = None, 0.0
+        for idx in range(4, len(hist) - 4):
+            if not (8.0 <= centers[idx] <= 32.0):
+                continue
+            pre_m = float(np.mean(hist[idx - 4:idx]))
+            post_m = float(np.mean(hist[idx:idx + 4]))
+            if post_m >= 2.0 and pre_m / post_m > best_r:
+                best_r = pre_m / post_m
+                best_a = float(centers[idx])
+        return {
+            "n": int(len(incs)),
+            "median_i_deg": round(float(np.median(incs)), 2),
+            "share_below_18deg_pct": round(100.0 * float(np.mean(incs < 18.0)), 2),
+            "argmax_deg": round(best_a, 2) if best_a is not None else None,
+            "drop_ratio": round(best_r, 3) if best_a is not None else None,
+        }
+
+    @classmethod
+    def run_discovery_probes(cls, objects: Dict, results: Dict, config, comet_file: str) -> Dict:
+        codes = list(objects.keys())
+        a = np.fromiter((objects[c].a for c in codes), dtype=float, count=len(codes))
+        e = np.fromiter((objects[c].e for c in codes), dtype=float, count=len(codes))
+        inc = np.fromiter((objects[c].i for c in codes), dtype=float, count=len(codes))
+        om = np.fromiter((objects[c].omega for c in codes), dtype=float, count=len(codes))
+        Om = np.fromiter((objects[c].Omega for c in codes), dtype=float, count=len(codes))
+        sn = np.fromiter((results[c].S_n for c in codes), dtype=int, count=len(codes))
+        sh = np.fromiter((results[c].S_h for c in codes), dtype=int, count=len(codes))
+        q = a * (1.0 - e)
+
+        mask_detached = (q > 35.0) & (a > 100.0)
+        if int(np.sum(mask_detached)) < 10:
+            mask_detached = (sn >= 4)
+        mask_outer_sn3 = (sn >= 3)
+        e_det, h_det = cls.orbital_unit_vectors(inc[mask_detached], om[mask_detached], Om[mask_detached])
+        e_sn3, _ = cls.orbital_unit_vectors(inc[mask_outer_sn3], om[mask_outer_sn3], Om[mask_outer_sn3])
+
+        spec_det_e = cls.spherical_power_spectrum(e_det, 12)
+        spec_det_h = cls.spherical_power_spectrum(h_det, 12)
+        spec_sn3_e = cls.spherical_power_spectrum(e_sn3, 12)
+        k4_det_e = cls.cubic_k4_test(e_det)
+        k4_sn3_e = cls.cubic_k4_test(e_sn3)
+
+        comet_eps = cls.specific_energy_cometary_audit(comet_file)
+        comet_eps_summary = {k: v for k, v in comet_eps.items()
+                             if not isinstance(v, (np.ndarray, list))}
+
+        layers = {
+            "main_belt_a_lt_5": cls._inclination_drop_argmax(inc[a < 5.0]),
+            "centaurs_5_to_30": cls._inclination_drop_argmax(inc[(a >= 5.0) & (a < 30.0)]),
+            "kuiper_30_to_60": cls._inclination_drop_argmax(inc[(a >= 30.0) & (a <= 60.0)]),
+            "scattered_etno_a_gt_60": cls._inclination_drop_argmax(inc[a > 60.0]),
+        }
+
+        mask_retro = (inc > 90.0)
+        mask_sh4 = (sh >= 4)
+        mask_deep = (sn >= 6)
+        n_tot = len(codes)
+        n_deep = int(np.sum(mask_deep))
+        n_sh4_tot = int(np.sum(mask_sh4))
+        n_sh4_deep = int(np.sum(mask_sh4 & mask_deep))
+        n_retro_tot = int(np.sum(mask_retro))
+        n_retro_deep = int(np.sum(mask_retro & mask_deep))
+        if n_tot > 0 and n_deep > 0 and n_sh4_tot > 0:
+            p_sh4_enrich = float(stats.hypergeom.sf(n_sh4_deep - 1, n_tot, n_sh4_tot, n_deep))
+            enrich_factor = (n_sh4_deep / n_deep) / (n_sh4_tot / n_tot)
+        else:
+            p_sh4_enrich = 1.0
+            enrich_factor = 0.0
+        tj_all = cls.tisserand_jupiter(a, e, inc)
+        retro_damocloid_pct = round(100.0 * float(np.mean(tj_all[mask_retro] < 2.0)), 2) if n_retro_tot > 0 else None
+
+        return {
+            "oh_multipole_s2": {
+                "detached_etno_count": int(np.sum(mask_detached)),
+                "outer_sn3_count": int(np.sum(mask_outer_sn3)),
+                "detached_e_hat_spectrum": spec_det_e,
+                "detached_h_hat_spectrum": spec_det_h,
+                "outer_sn3_e_hat_spectrum": spec_sn3_e,
+                "detached_e_hat_K4": k4_det_e,
+                "outer_sn3_e_hat_K4": k4_sn3_e,
+            },
+            "cometary_unified_energy": comet_eps_summary,
+            "stratified_4layer_inclination": layers,
+            "retrograde_sh4_enrichment": {
+                "total_catalog": n_tot,
+                "deep_sn_ge_6_count": n_deep,
+                "sh4_total_count": n_sh4_tot,
+                "sh4_deep_count": n_sh4_deep,
+                "retrograde_i_gt_90_total": n_retro_tot,
+                "retrograde_i_gt_90_deep": n_retro_deep,
+                "sh4_deep_enrichment_factor": round(enrich_factor, 2),
+                "sh4_hypergeom_p_zero_rng": p_sh4_enrich,
+                "retrograde_damocloid_TJ_lt_2_pct": retro_damocloid_pct,
+            },
+        }
+
+    @classmethod
+    def self_test_it3_v23(cls, config) -> Dict:
+        ok = {}
+        s2, s3, s5 = config.SQRT2, config.SQRT3, config.SQRT5
+        assert abs(1.0 + s2**2 - s3**2) < 1e-15 and abs(s2**2 + s3**2 - s5**2) < 1e-15
+        ok["pythagorean_cascade"] = True
+        assert abs((s2 + s3 - s5) - config.INRADIUS_2R) < 1e-15
+        ok["inradius_2r"] = round(s2 + s3 - s5, 12)
+        dk = 2**16 * 3**4 * 5**4
+        assert dk == 3_317_760_000 and math.isqrt(dk) == 57600
+        ok["field_discriminant"] = dk
+        assert 30 % 13 != 0
+        ok["kummer_wall_sqrt13"] = True
+        for m, e in {6: 27.0, 7: 27.0 * s3, 10: 243.0, 11: 243.0 * s3}.items():
+            assert abs(s3**m - e) < 1e-12
+        ok["oh_sphere_ladder"] = True
+        lhs = 1.0 / s2**2 + 1.0 / s3**2
+        assert abs(lhs - 1.0 / config.BICONE_REQ_RATIO**2) < 1e-15 and abs(lhs - 5.0 / 6.0) < 1e-15
+        ok["bicone_vertex_identity"] = True
+        ang = math.degrees(math.acos(1.0 / s3)) + math.degrees(math.acos(math.sqrt(2.0 / 3.0)))
+        assert abs(ang - 90.0) < 1e-12
+        ok["magic_plus_torsion_deg"] = round(ang, 10)
+        assert abs((s5 - 1.0) / 4.0 - math.sin(math.radians(18.0))) < 1e-15
+        ok["galois_18deg_sin_in_K"] = True
+        p0 = (5.0 - s2) / 6.0
+        assert 0.0 < p0 < 1.0 and abs(p0 - 0.5976310729) < 1e-8
+        ok["kpham_uniform_prior"] = round(p0, 10)
+        assert abs(27.0 * s3 - config.R_VALENCE_EXACT) < 1e-10
+        ok["valence_shell_R2_AU"] = round(27.0 * s3, 6)
+        assert abs(243.0 * config.LAMBDA_1_EXACT - config.R_DEEP_SPIRAL_EXACT) < 1e-6
+        ok["terminal_spiral_243_L1"] = round(243.0 * config.LAMBDA_1_EXACT, 6)
+        cv = [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+        t1v = [v for v in cv if v[0] * v[1] * v[2] > 0]
+        assert len(t1v) == 4 and all(
+            abs(sum((t1v[i][k] - t1v[j][k])**2 for k in range(3)) - 8.0) < 1e-12
+            for i in range(4) for j in range(i + 1, 4))
+        ok["stella_octangula"] = True
+        en = ([(a, b, 0.0) for a in (-1, 1) for b in (-1, 1)] +
+              [(a, 0.0, b) for a in (-1, 1) for b in (-1, 1)] +
+              [(0.0, a, b) for a in (-1, 1) for b in (-1, 1)])
+        assert all(abs(sum(v[k] for v in en)) < 1e-15 for k in range(3))
+        ok["oh_multipole_l1_vanishes"] = True
+        assert abs(math.pi / math.sqrt(18.0) - 0.74048048969) < 1e-10
+        ok["kepler_packing_ratio"] = True
+        err = 0.0
+        for t in (20.0, 46.7654, 55.0, 80.0):
+            pq = _scipy_quad(lambda r: max(0.0, min(t / r, 2.3) - 1.3), 12.0, 40.0,
+                             points=[t / 2.3, t / 1.3], limit=400, epsabs=1e-13)[0] / 28.0
+            err = max(err, abs(pq - cls.product_uniform_cdf(t, 12.0, 40.0, 1.3, 2.3)))
+        assert err < 1e-12
+        ok["exact_cdf_vs_quadrature_max_err"] = err
+        assert cls._cascade_steps(27.0, s3) == 6 < math.floor(math.log(27.0, s3)) + 1
+        assert abs(265.0 - 153.0 * s3) < 0.01
+        ok["diophantine_guards"] = True
+        assert (11 * 6 - 1) == 65 and (11 - 1) * (6 - 1) == 50 and (11 - 1) + (6 - 1) == 15
+        assert (61 - 1) ** 2 == 3600 and (64 - 1) ** 2 == 3969
+        ok["macro_micro_df_guard"] = True
+        r_cliff = config.R_NEPTUNE_VERTEX_EXACT * (2.0 ** (2.0 / 3.0))
+        err_nep = abs(config.R_NEPTUNE_VERTEX_EXACT - config.A_NEPTUNE_AU) / config.A_NEPTUNE_AU
+        err_clf = abs(r_cliff - config.MMR_1_2_NEPTUNE_AU) / config.MMR_1_2_NEPTUNE_AU
+        assert abs(err_nep - err_clf) < 1e-15
+        ok["kuiper_cliff_tautology_guard"] = True
+        r7_lo, r7_hi = cls.exact_outer_sn_band_au(7, config)
+        n7_lo = (r7_lo - config.R_PHASE_TRANSITION) / config.NORMALIZATION_FACTOR
+        n7_hi = (r7_hi - config.R_PHASE_TRANSITION) / config.NORMALIZATION_FACTOR
+        assert cls._steps_n_exact(n7_lo - 1e-6, s3) == 6 and cls._steps_n_exact(n7_lo + 1e-6, s3) == 7
+        assert cls._steps_n_exact(n7_hi - 1e-6, s3) == 7 and cls._steps_n_exact(n7_hi + 1e-6, s3) == 8
+        ok["outer_sn7_band_exact_inversion"] = [round(r7_lo, 2), round(r7_hi, 2)]
+        e_u, h_u = cls.orbital_unit_vectors(np.array([17.16, 119.3, 54.7356]),
+                                            np.array([113.8, 311.3, 45.0]),
+                                            np.array([110.3, 144.4, 270.0]))
+        assert np.allclose(np.linalg.norm(e_u, axis=1), 1.0, atol=1e-15)
+        assert np.allclose(np.linalg.norm(h_u, axis=1), 1.0, atol=1e-15)
+        assert np.allclose(np.sum(e_u * h_u, axis=1), 0.0, atol=1e-15)
+        ok["orbital_unit_vectors_orthonormal"] = True
+        en_unit = np.array(en, dtype=float) / s2
+        sp_oh = cls.spherical_power_spectrum(en_unit, 12)
+        for l_zero in (1, 2, 3, 5, 7, 9, 11):
+            assert abs(sp_oh[l_zero]["S_l"]) < 1e-12
+            assert abs(sp_oh[l_zero]["S_l_az"]) < 1e-12
+        assert abs(sp_oh[4]["S_l"] - 0.4375) < 1e-6
+        assert abs(sp_oh[6]["S_l"] - 3.9609375) < 1e-5 and sp_oh[12]["S_l"] > 4.3
+        k4_oh = cls.cubic_k4_test(en_unit)
+        assert abs(k4_oh["mean_K4"] - (-0.1)) < 1e-12
+        ok["oh_s2_multipole_exact_signature"] = True
+        # [F17 guard] Exact azimuthal non-zonal immunity on flat equatorial regular 36-gon
+        th36 = np.linspace(0.0, 2.0 * np.pi, 36, endpoint=False)
+        u_ring = np.column_stack([np.cos(th36), np.sin(th36), np.zeros_like(th36)])
+        sp_ring = cls.spherical_power_spectrum(u_ring, 12)
+        assert sp_ring[2]["S_l"] > 8.0 and abs(sp_ring[2]["S_l_az"]) < 1e-12
+        assert abs(sp_ring[4]["S_l_az"]) < 1e-12 and abs(sp_ring[6]["S_l_az"]) < 1e-12
+        ok["ecliptic_flattening_az_immunity_guard"] = True
+        a_t, e_t = np.array([39.48, 506.8]), np.array([0.2488, 0.8496])
+        q_t = a_t * (1.0 - e_t)
+        assert np.allclose(cls.specific_orbital_energy(q_t, e_t), -1.0 / (2.0 * a_t), atol=1e-15)
+        assert abs(float(cls.tisserand_jupiter(np.array([cls.A_JUPITER_AU]), np.array([0.0]), np.array([0.0]))[0]) - 3.0) < 1e-15
+        ok["unified_energy_and_tisserand_exact"] = True
+        ok["all_it3_v23_invariants_passed"] = True
+        return ok
+
+    @staticmethod
+    def kpham_exact_degrees_of_freedom() -> Dict:
+        sk, sh = 2, 3
+        df = {
+            "sk_states": sk, "sh_states": sh, "total_lattice_nodes": sk * sh,
+            "df_sk": sk - 1, "df_sh": sh - 1, "df_interaction": (sk - 1) * (sh - 1),
+            "df_grand": sk * sh - 1,
+        }
+        assert df["df_grand"] == df["df_sk"] + df["df_sh"] + df["df_interaction"]
+        df["origin"] = "T_KPHAM_MEASURE domain theorem (master Layer I); df arithmetic exact"
+        df["note"] = "valency v_l*v_q=2*3 interpretation is a model postulate (P4_EXPONENT_ASSIGNMENT), not group theory"
+        return df
+
+    @classmethod
+    def diophantine_projection_properties(cls, config) -> Dict:
+        s3 = config.SQRT3
+        res = [
+            {"x0": round(x, 6), "steps": cls._cascade_steps(x, s3),
+             "log_bound": math.floor(math.log(x, s3)) + 1}
+            for x in (1.0, s3, 3.0, 27.0, 27.0 * s3, 243.0)
+        ]
+        return {
+            "operator": "D(x) = floor(x/sqrt(3)) : R+ -> Z  (integer-valued!)",
+            "cascade_termination": res,
+            "correct_statement": (
+                "D is the order-preserving retraction onto Z composed with scaling by "
+                "1/sqrt(3). Steps satisfy S <= floor(log_sqrt3 x)+1, with STRICT "
+                "inequality possible (x=27: 6<7) due to floor losses. Z[sqrt(3)] is "
+                "DENSE in R (|265-153*sqrt3|~0.0038), hence NOT a lattice in R; it is "
+                "the ring of integers of Q(sqrt(3)) only, NOT of K (deg K = 8). "
+                "Discreteness holds for Z, or for Z[sqrt(3)] under Minkowski embedding in R^2."
+            ),
+            "is_predictive": False,
+        }
+
+    @staticmethod
+    def micro_macro_structural_homology() -> Dict:
+        return {
+            "status": "OPEN_CONJECTURE (was falsely 'categorical isomorphism')",
+            "obstruction": "|T3_4|=64 (sense 61) != 66=11*6 macro states -> no bijection",
+            "shared_qualitative_features": [
+                "finite discrete state space",
+                "fixed-point-free involution (rho / antipode)",
+                "surjective coarse-graining (alpha / K-PHAM)",
+                "form-vs-program dichotomy",
+            ],
+            "non_claim": (
+                "No isomorphism, no shared '3600=(61-1)^2' df (macro 11x6 table has "
+                "df_total=65, df_indep=(11-1)*(6-1)=50, df_main=15; 2x3 lattice has df=5), "
+                "no derivation of one system from the other. Per EPISTEMIC_POLICY "
+                "rule 5 this is an analogy, not evidence."
+            ),
+        }
+
+    @classmethod
+    def build_enhanced_claims(cls, config, bench, audit_cert: Optional[Dict] = None,
+                              *, Claim, ClaimStatus) -> list:
+        claims = []
+        st = cls.self_test_it3_v23(config)
+        claims.append(Claim(
+            name="it3_v23_algebraic_self_test",
+            status=ClaimStatus.EXACT_MATH,
+            value=1.0 if st["all_it3_v23_invariants_passed"] else 0.0,
+            unit="boolean",
+            proof_id="SELF_TEST_V23_4",
+            is_predictive=False,
+            statement=(
+                "23 algebraic/analytic invariants verified (incl. exact-CDF, Diophantine, "
+                "11x6 df=50/65, 2^(2/3) cliff tautology, S_n=7 inversion, S^2 O_h multipole "
+                "Addition Theorem, ecliptic-free azimuthal m>=1 guard, and unified energy/T_J)."
+            ),
+        ))
+        dof = cls.kpham_exact_degrees_of_freedom()
+        claims.append(Claim(
+            name="kpham_exact_degrees_of_freedom",
+            status=ClaimStatus.EXACT_MATH,
+            value=dof["total_lattice_nodes"],
+            unit="lattice nodes",
+            proof_id="T_KPHAM_MEASURE",
+            is_predictive=False,
+            statement=f"2x3 domain (proven); df: {dof['df_sk']}+{dof['df_sh']}+{dof['df_interaction']}={dof['df_grand']}.",
+        ))
+        dpo = cls.diophantine_projection_properties(config)
+        claims.append(Claim(
+            name="kpham_diophantine_projection_operator",
+            status=ClaimStatus.EXACT_MATH,
+            value=3,
+            unit="scale sqrt(3), image Z",
+            proof_id="DPO_CORRECTED",
+            is_predictive=False,
+            statement=dpo["correct_statement"],
+        ))
+        if audit_cert and "layer_2_catalog_validation" in audit_cert:
+            l2 = audit_cert["layer_2_catalog_validation"]
+            obs = float(l2.get("kuiper_peak_observed_AU", 47.09))
+            kp = cls.exact_kuiper_peak_test(obs, config.R_VALENCE_EXACT)
+            claims.append(Claim(
+                name="exact_kuiper_peak_zero_rng_test",
+                status=ClaimStatus.EMPIRICAL_TEST,
+                value=kp["p_value"],
+                unit="p (exact closed form, zero RNG)",
+                proof_id="PRODUCT_UNIFORM_CDF",
+                is_predictive=False,
+                statement=f"Exact null p={kp['p_value']:.5f} ({kp['sigma']}sigma), delta={kp['delta_pct']}%. Replaces MC seed=103.",
+            ))
+            a3 = cls.exact_joint_3d_audit(config, obs)
+            p2 = cls.exact_joint_2d_p(config)
+            claims.append(Claim(
+                name="exact_bicone_vertex_zero_rng_test",
+                status=ClaimStatus.EMPIRICAL_TEST,
+                value=a3["p_3d_obs_bonf"],
+                unit="p_Bonf(M=6) (deterministic QUADPACK, zero RNG)",
+                proof_id="QUADPACK_JOINT_3D_BONF",
+                is_predictive=False,
+                statement=(
+                    f"3D bicone-vertex joint null (zero RNG): conditional p_obs={a3['p_3d_obs_cond']:.6f} "
+                    f"({a3['sigma_3d_obs_cond']:.2f}sigma), Bonferroni(M=6 ratios) p_obs={a3['p_3d_obs_bonf']:.6f} "
+                    f"({a3['sigma_3d_obs_bonf']:.2f}sigma); apples-to-apples vs (a_N, MMR1:2): "
+                    f"p_mmr={a3['p_3d_mmr_cond']:.6f}, Bonf(M=6) p_mmr={a3['p_3d_mmr_bonf']:.6f}; "
+                    f"2D sphere control p={p2:.5f}."
+                ),
+            ))
+            dp = l2.get("v23_3_discovery_probes")
+            if dp:
+                mp_s2 = dp.get("oh_multipole_s2", {})
+                sp_e = mp_s2.get("detached_e_hat_spectrum", {})
+                k4_e = mp_s2.get("detached_e_hat_K4", {})
+                if sp_e and 6 in sp_e and 4 in sp_e:
+                    p_oh_az_min = min(sp_e[4]["p_az"], sp_e[6]["p_az"], sp_e[12]["p_az"])
+                    oh_az_sig = (min(1.0, 3.0 * p_oh_az_min) < 0.05)
+                    claims.append(Claim(
+                        name="oh_multipole_sphere_spectrum_test",
+                        status=ClaimStatus.EMPIRICAL_TEST if oh_az_sig else ClaimStatus.NULL_RESULT,
+                        value=sp_e[6]["S_l_az"],
+                        unit="S_6^(m>0) (ecliptic-free azimuthal S^2 power)",
+                        proof_id="S2_AZIMUTHAL_NONZONAL_ZERO_RNG",
+                        is_predictive=False,
+                        statement=(
+                            f"Ecliptic-free azimuthal (m>=1) S^2 multipoles on detached ETNO e_hat (N={mp_s2.get('detached_etno_count')}): "
+                            f"S1_az={sp_e[1]['S_l_az']:.2f}(p={sp_e[1]['p_az']:.3g}), S2_az={sp_e[2]['S_l_az']:.2f}(p={sp_e[2]['p_az']:.3g}), "
+                            f"S4_az={sp_e[4]['S_l_az']:.2f}(p={sp_e[4]['p_az']:.3g}), S6_az={sp_e[6]['S_l_az']:.2f}(p={sp_e[6]['p_az']:.3g}), "
+                            f"S12_az={sp_e[12]['S_l_az']:.2f}(p={sp_e[12]['p_az']:.3g}); "
+                            f"delta_K4_az={k4_e.get('delta_K4_azimuthal')} (z_az={k4_e.get('z_az')}, vs raw K4={k4_e.get('mean_K4')} inflated by ecliptic disk)."
+                        ),
+                    ))
+                ce_u = dp.get("cometary_unified_energy", {})
+                if ce_u.get("available"):
+                    claims.append(Claim(
+                        name="cometary_unified_specific_energy_audit",
+                        status=ClaimStatus.EMPIRICAL_TEST,
+                        value=ce_u.get("delta_H_unified_eps_bits"),
+                        unit="bits (unified asinh(eps/0.01) coordinate)",
+                        proof_id="UNIFIED_EPS_ENERGY",
+                        is_predictive=False,
+                        statement=(
+                            f"Unified specific energy eps=(e-1)/(2q) (fixes aphelion-vs-perihelion mismatch): "
+                            f"H_bound={ce_u.get('H_bound_unified_eps_bits')}b (N={ce_u.get('n_bound')}), "
+                            f"H_free={ce_u.get('H_free_unified_eps_bits')}b (N={ce_u.get('n_free')}), "
+                            f"Delta_H={ce_u.get('delta_H_unified_eps_bits')}b; IQR_asinh bound={ce_u.get('iqr_asinh_bound')} vs free={ce_u.get('iqr_asinh_free')}."
+                        ),
+                    ))
+                st4 = dp.get("stratified_4layer_inclination", {})
+                kb_l = st4.get("kuiper_30_to_60", {})
+                if kb_l.get("argmax_deg") is not None:
+                    kb_arg = float(kb_l["argmax_deg"])
+                    claims.append(Claim(
+                        name="stratified_kuiper_inclination_argmax_test",
+                        status=ClaimStatus.EMPIRICAL_TEST if abs(kb_arg - 18.0) <= 3.0 else ClaimStatus.NULL_RESULT,
+                        value=kb_arg,
+                        unit="deg (Kuiper 30-60 AU only)",
+                        proof_id="STRATIFIED_INCLINATION_TOMOGRAPHY",
+                        is_predictive=False,
+                        statement=(
+                            f"Decoupled from Main Belt (argmax={st4.get('main_belt_a_lt_5',{}).get('argmax_deg')} deg): "
+                            f"Kuiper Belt (30-60 AU, N={kb_l.get('n')}) steepest drop = {kb_arg} deg (ratio={kb_l.get('drop_ratio')}x); "
+                            f"Scattered/ETNO (a>60 AU) = {st4.get('scattered_etno_a_gt_60',{}).get('argmax_deg')} deg."
+                        ),
+                    ))
+                rt = dp.get("retrograde_sh4_enrichment", {})
+                if rt.get("sh4_total_count", 0) > 0:
+                    claims.append(Claim(
+                        name="retrograde_sh4_deep_enrichment_test",
+                        status=ClaimStatus.EMPIRICAL_TEST if rt.get("sh4_hypergeom_p_zero_rng", 1.0) < 0.05 else ClaimStatus.NULL_RESULT,
+                        value=rt.get("sh4_deep_enrichment_factor"),
+                        unit="x enrichment (S_n>=6 vs catalog)",
+                        proof_id="HYPERGEOM_SH4_ZERO_RNG",
+                        is_predictive=False,
+                        statement=(
+                            f"S_h=4 retrogrades (i>126 deg): {rt.get('sh4_deep_count')}/{rt.get('deep_sn_ge_6_count')} at S_n>=6 vs "
+                            f"{rt.get('sh4_total_count')}/{rt.get('total_catalog')} catalog-wide "
+                            f"({rt.get('sh4_deep_enrichment_factor')}x, exact hypergeometric p={rt.get('sh4_hypergeom_p_zero_rng'):.3e}); "
+                            f"Damocloid (T_J<2) share among i>90 deg = {rt.get('retrograde_damocloid_TJ_lt_2_pct')}%."
+                        ),
+                    ))
+        claims.append(Claim(
+            name="micro_macro_structural_homology",
+            status=ClaimStatus.OPEN_CONJECTURE,
+            value=None,
+            unit="analogy",
+            proof_id="HOMOLOGY_CONJECTURE",
+            is_predictive=False,
+            statement=cls.micro_macro_structural_homology()["non_claim"],
+        ))
+        return claims
+
+
+class _V23DiscoveryVisualizer:
+    """
+    Embedded 5-Plot Discovery Visualizer (plot_12 .. plot_16) with publication-grade
+    zero-overlap layout geometry (horizontal top legends, dedicated colorbar gutters,
+    staggered inside-frame labels, and zero Plotly 'New text' artifacts).
+    """
+    BG = "#07070b"
+    GRID = "#2a2a35"
+    TXT = "#e0e0e0"
+
+    @staticmethod
+    def _galactic_plane_ecliptic_deg(n_pts: int = 360):
+        ra_ngp = math.radians(192.85948)
+        dec_ngp = math.radians(27.12825)
+        eps = math.radians(23.439291)
+        n_eq = np.array([math.cos(dec_ngp) * math.cos(ra_ngp),
+                         math.cos(dec_ngp) * math.sin(ra_ngp),
+                         math.sin(dec_ngp)])
+        n_ecl = np.array([n_eq[0],
+                          n_eq[1] * math.cos(eps) + n_eq[2] * math.sin(eps),
+                          -n_eq[1] * math.sin(eps) + n_eq[2] * math.cos(eps)])
+        n_ecl /= np.linalg.norm(n_ecl)
+        ref = np.array([0.0, 0.0, 1.0]) if abs(n_ecl[2]) < 0.9 else np.array([1.0, 0.0, 0.0])
+        u = np.cross(n_ecl, ref); u /= np.linalg.norm(u)
+        v = np.cross(n_ecl, u)
+        t = np.linspace(0.0, 2.0 * np.pi, n_pts, endpoint=False)
+        pts = np.outer(np.cos(t), u) + np.outer(np.sin(t), v)
+        lon = np.degrees(np.arctan2(pts[:, 1], pts[:, 0])) % 360.0
+        lat = np.degrees(np.arcsin(np.clip(pts[:, 2], -1.0, 1.0)))
+        order = np.argsort(lon)
+        return lon[order], lat[order]
+
+    @classmethod
+    def plot_12_oh_multipole_sphere(cls, objects: Dict, results: Dict, config, v23,
+                                    data_sha: str, output_path: str) -> None:
+        codes = list(objects.keys())
+        a = np.fromiter((objects[c].a for c in codes), dtype=float, count=len(codes))
+        e = np.fromiter((objects[c].e for c in codes), dtype=float, count=len(codes))
+        inc = np.fromiter((objects[c].i for c in codes), dtype=float, count=len(codes))
+        om = np.fromiter((objects[c].omega for c in codes), dtype=float, count=len(codes))
+        Om = np.fromiter((objects[c].Omega for c in codes), dtype=float, count=len(codes))
+        sn = np.fromiter((results[c].S_n for c in codes), dtype=int, count=len(codes))
+        q = a * (1.0 - e)
+
+        m_det = (q > 35.0) & (a > 100.0)
+        det_lbl = "Detached ETNOs (q>35, a>100)"
+        if int(np.sum(m_det)) < 10:
+            m_det = (sn >= 4)
+            det_lbl = "Deep Outer Objects (S_n>=4)"
+        m_sn3 = (sn >= 3)
+
+        e_det, h_det = v23.orbital_unit_vectors(inc[m_det], om[m_det], Om[m_det])
+        e_sn3, _ = v23.orbital_unit_vectors(inc[m_sn3], om[m_sn3], Om[m_sn3])
+        names_det = [objects[c].name for c, flag in zip(codes, m_det) if flag]
+
+        en = np.array(
+            [(x, y, 0.0) for x in (-1, 1) for y in (-1, 1)] +
+            [(x, 0.0, y) for x in (-1, 1) for y in (-1, 1)] +
+            [(0.0, x, y) for x in (-1, 1) for y in (-1, 1)], dtype=float
+        ) / math.sqrt(2.0)
+
+        sp_oh = v23.spherical_power_spectrum(en, 12)
+        sp_det = v23.spherical_power_spectrum(e_det, 12)
+        sp_sn3 = v23.spherical_power_spectrum(e_sn3, 12)
+        k4_det = v23.cubic_k4_test(e_det)
+        k4_sn3 = v23.cubic_k4_test(e_sn3)
+
+        fig = make_subplots(
+            rows=2, cols=2,
+            specs=[[{"colspan": 2}, None], [{}, {}]],
+            subplot_titles=(
+                f"1. Ecliptic Sky Map: 3D Perihelia e_hat ({det_lbl}, N={len(e_det)}) + Galactic Plane & 12 O_h E-Nodes",
+                "2. Azimuthal S² Spectrum S_l^(m>0) [Ecliptic-Free, Zero-RNG]",
+                "3. Ideal 12 O_h E-Nodes S_l^(m>0) vs Null (S_l=1)"
+            ),
+            vertical_spacing=0.19, horizontal_spacing=0.12,
+        )
+
+        lon_e = np.degrees(np.arctan2(e_det[:, 1], e_det[:, 0])) % 360.0 if len(e_det) else np.array([])
+        lat_e = np.degrees(np.arcsin(np.clip(e_det[:, 2], -1.0, 1.0))) if len(e_det) else np.array([])
+        lon_h = np.degrees(np.arctan2(h_det[:, 1], h_det[:, 0])) % 360.0 if len(h_det) else np.array([])
+        lat_h = np.degrees(np.arcsin(np.clip(h_det[:, 2], -1.0, 1.0))) if len(h_det) else np.array([])
+        g_lon, g_lat = cls._galactic_plane_ecliptic_deg()
+        en_lon = np.degrees(np.arctan2(en[:, 1], en[:, 0])) % 360.0
+        en_lat = np.degrees(np.arcsin(np.clip(en[:, 2], -1.0, 1.0)))
+
+        fig.add_trace(go.Scatter(x=g_lon, y=g_lat, mode="lines", line=dict(color="#8888AA", width=2, dash="dot"),
+                                 name="Galactic Plane (b=0)", hoverinfo="skip"), row=1, col=1)
+        fig.add_trace(go.Scatter(x=en_lon, y=en_lat, mode="markers",
+                                 marker=dict(size=11, color="#FFD700", symbol="diamond-open", line=dict(width=2, color="#FFD700")),
+                                 name="12 O_h E-Nodes"), row=1, col=1)
+        if len(lon_e):
+            fig.add_trace(go.Scatter(x=lon_e, y=lat_e, mode="markers",
+                                     marker=dict(size=7, color="#FF1493", opacity=0.85),
+                                     text=[f"<b>{nm}</b><br>e_hat lon={lo:.1f}°, lat={la:.1f}°"
+                                           for nm, lo, la in zip(names_det, lon_e, lat_e)],
+                                     hoverinfo="text", name=f"Perihelia e_hat (N={len(e_det)})"), row=1, col=1)
+        if len(lon_h):
+            fig.add_trace(go.Scatter(x=lon_h, y=lat_h, mode="markers",
+                                     marker=dict(size=5, color="#00FFFF", opacity=0.55, symbol="triangle-up"),
+                                     name="Orbital Poles h_hat"), row=1, col=1)
+
+        ls = list(range(1, 13))
+        max_y2 = 2.0
+        if sp_det:
+            y_det = [sp_det[l]["S_l_az"] for l in ls]
+            max_y2 = max(max_y2, max(y_det))
+            # Annotate only prominent peaks or key O_h/P9 degrees so labels never collide horizontally
+            txt_det = [f"{sp_det[l]['S_l_az']:.1f}" if (l in (1, 2, 4, 6, 12) or sp_det[l]["z_az"] >= 2.5) else "" for l in ls]
+            hov_det = [
+                f"<b>l={l} (Detached e_hat)</b><br>Azimuthal S_l^(m>0) = {sp_det[l]['S_l_az']:.3f}<br>"
+                f"z_az = {sp_det[l]['z_az']:+.2f}, p_az = {sp_det[l]['p_az']:.3e}<br>"
+                f"Raw 3D S_l (incl. ecliptic m=0) = {sp_det[l]['S_l']:.2f}"
+                for l in ls
+            ]
+            fig.add_trace(go.Bar(
+                x=ls, y=y_det,
+                marker_color=["#FF4444" if l == 1 else ("#FFA500" if l == 2 else ("#00FF66" if l in (4, 6, 12) else "#666699")) for l in ls],
+                name=f"Detached S_l^(m>0) (N={len(e_det)})",
+                text=txt_det, textposition="outside", textfont=dict(size=10, color="white"),
+                hovertext=hov_det, hoverinfo="text",
+            ), row=2, col=1)
+        if sp_sn3:
+            y_sn3 = [sp_sn3[l]["S_l_az"] for l in ls]
+            max_y2 = max(max_y2, max(y_sn3))
+            hov_sn3 = [
+                f"<b>l={l} (All S_n>=3)</b><br>Azimuthal S_l^(m>0) = {sp_sn3[l]['S_l_az']:.3f}<br>"
+                f"z_az = {sp_sn3[l]['z_az']:+.2f}, p_az = {sp_sn3[l]['p_az']:.3e}"
+                for l in ls
+            ]
+            fig.add_trace(go.Scatter(
+                x=ls, y=y_sn3, mode="lines+markers",
+                line=dict(color="#00FFFF", width=2.5), name=f"All S_n>=3 S_l^(m>0) (N={len(e_sn3)})",
+                hovertext=hov_sn3, hoverinfo="text",
+            ), row=2, col=1)
+        fig.add_hline(y=1.0, line_dash="dash", line_color="white", row=2, col=1)
+
+        y_oh = [sp_oh[l]["S_l_az"] for l in ls]
+        fig.add_trace(go.Bar(
+            x=ls, y=y_oh,
+            marker_color=["#00FF66" if l in (4, 6, 8, 12) else "#444455" for l in ls],
+            name="Ideal 12 O_h E-Nodes (m>0)",
+            text=[f"{v:.2f}" if v > 0.05 else "" for v in y_oh],
+            textposition="outside", textfont=dict(size=10, color="white"),
+        ), row=2, col=2)
+        fig.add_hline(y=1.0, line_dash="dash", line_color="white", row=2, col=2)
+
+        k4_note = (
+            f"Ecliptic-free azimuthal test (m≥1, E=1.0 for any disk) | "
+            f"ΔK₄_az(det)={k4_det.get('delta_K4_azimuthal')} (z={k4_det.get('z_az')}) | "
+            f"ΔK₄_az(S_n≥3)={k4_sn3.get('delta_K4_azimuthal')} (z={k4_sn3.get('z_az')}) | "
+            f"l=1: P9 dipole • l=2: survey/tide • l=4,6,12: O_h | SHA:{data_sha}"
+        )
+        fig.update_layout(
+            title=dict(text="IT³ Discovery Plot 12: S² Sky Map & Ecliptic-Free O_h Multipole Spectrum (Zero-RNG)",
+                       font=dict(size=18, color=cls.TXT), x=0.5, y=0.98),
+            template="plotly_dark", paper_bgcolor=cls.BG, plot_bgcolor=cls.BG,
+            height=960,
+            margin=dict(l=65, r=35, t=125, b=115),
+            legend=dict(orientation="h", yanchor="bottom", y=1.035, xanchor="center", x=0.5,
+                        font=dict(size=10.5), bgcolor="rgba(11,11,24,0.85)", bordercolor=cls.GRID, borderwidth=1),
+            annotations=list(fig.layout.annotations) + [
+                dict(x=0.5, y=-0.125, xref="paper", yref="paper", yanchor="top",
+                     text=k4_note, showarrow=False, font=dict(size=10.5, color="#CCCCCC"))
+            ],
+        )
+        fig.update_xaxes(title_text="Ecliptic Longitude λ (deg)", range=[0, 360], row=1, col=1)
+        fig.update_yaxes(title_text="Ecliptic Latitude β (deg)", range=[-90, 90], row=1, col=1)
+        fig.update_xaxes(title_text="Multipole degree l", dtick=1, row=2, col=1)
+        fig.update_yaxes(title_text="Azimuthal Power S_l^(m>0) (Null = 1.0)", range=[0, max_y2 * 1.22], row=2, col=1)
+        fig.update_xaxes(title_text="Multipole degree l", dtick=1, row=2, col=2)
+        fig.update_yaxes(title_text="Exact O_h E-Nodes S_l^(m>0)", range=[0, max(y_oh) * 1.22], row=2, col=2)
+        fig.write_html(output_path, auto_open=False)
+
+    @classmethod
+    def plot_13_unified_energy_phase_plane(cls, objects: Dict, results: Dict, config, v23,
+                                           comet_file: str, data_sha: str, output_path: str) -> None:
+        ce = v23.specific_energy_cometary_audit(comet_file)
+        eps0 = 0.01
+
+        codes = list(objects.keys())
+        sn_etno = [c for c in codes if results[c].S_n >= 3]
+        if len(sn_etno) > 4000:
+            sn_etno = sn_etno[:4000]
+        a_e = np.array([objects[c].a for c in sn_etno], dtype=float)
+        e_e = np.array([objects[c].e for c in sn_etno], dtype=float)
+        q_e = a_e * (1.0 - e_e)
+        i_e = np.array([objects[c].i for c in sn_etno], dtype=float)
+        eps_e = v23.specific_orbital_energy(q_e, e_e)
+        u_e = np.arcsinh(eps_e / eps0)
+
+        isos = [
+            ("1I/'Oumuamua", 0.255, 1.1993, 122.74),
+            ("2I/Borisov", 1.998, 3.3460, 44.05),
+            ("3I/ATLAS", 1.357, 6.1399, 175.1),
+        ]
+
+        fig = make_subplots(
+            rows=2, cols=1, row_heights=[0.60, 0.40], vertical_spacing=0.16,
+            subplot_titles=(
+                "1. Unified Specific Energy Plane: arsinh(ε / 0.01 AU⁻¹) vs Perihelion q [Bound < 0 | Free > 0]",
+                "2. Unified Energy Distribution & Shannon Entropy H(ε) on One Physical Axis"
+            ),
+        )
+
+        if len(u_e):
+            fig.add_trace(go.Scatter(
+                x=u_e, y=q_e, mode="markers",
+                marker=dict(size=4, color=i_e, colorscale="Viridis", cmin=0, cmax=180, opacity=0.65,
+                            colorbar=dict(title="i (deg)", x=1.015, y=0.73, len=0.48, thickness=15)),
+                text=[f"<b>{objects[c].name}</b><br>ε={ep:.5f} AU⁻¹<br>q={qv:.2f} AU<br>S_n={results[c].S_n}"
+                      for c, ep, qv in zip(sn_etno, eps_e, q_e)],
+                hoverinfo="text", name=f"Outer MPCORB (S_n≥3, N={len(u_e)})",
+            ), row=1, col=1)
+
+        if ce.get("available"):
+            ub = np.arcsinh(ce["bound_eps"] / eps0)
+            uf = np.arcsinh(ce["free_eps"] / eps0)
+            fig.add_trace(go.Scatter(x=ub, y=ce["bound_q"], mode="markers",
+                                     marker=dict(size=5, color="#00FF66", symbol="circle", opacity=0.72),
+                                     name=f"Bound Comets (e<1, N={ce['n_bound']})"), row=1, col=1)
+            fig.add_trace(go.Scatter(x=uf, y=ce["free_q"], mode="markers",
+                                     marker=dict(size=6, color="#FF9900", symbol="diamond", opacity=0.88),
+                                     text=[f"<b>{nm}</b><br>ε={ep:+.5f} AU⁻¹<br>q={qv:.3f} AU"
+                                           for nm, ep, qv in zip(ce["free_names"], ce["free_eps"], ce["free_q"])],
+                                     hoverinfo="text", name=f"Hyperbolic Comets (e≥1, N={ce['n_free']})"), row=1, col=1)
+            fig.add_trace(go.Histogram(x=ub, nbinsx=40, histnorm="probability density",
+                                       marker_color="#00FF66", opacity=0.6,
+                                       name=f"Bound H={ce['H_bound_unified_eps_bits']}b"), row=2, col=1)
+            fig.add_trace(go.Histogram(x=uf, nbinsx=25, histnorm="probability density",
+                                       marker_color="#FF9900", opacity=0.7,
+                                       name=f"Free H={ce['H_free_unified_eps_bits']}b"), row=2, col=1)
+        elif len(u_e):
+            fig.add_trace(go.Histogram(x=u_e, nbinsx=40, histnorm="probability density",
+                                       marker_color="#00FFFF", opacity=0.7, name="Outer MPCORB ε"), row=2, col=1)
+
+        iso_u = [math.asinh(((ee - 1.0) / (2.0 * qq)) / eps0) for _, qq, ee, _ in isos]
+        iso_q = [qq for _, qq, _, _ in isos]
+        iso_lbl = [nm for nm, _, _, _ in isos]
+        fig.add_trace(go.Scatter(
+            x=iso_u, y=iso_q, mode="markers+text", text=iso_lbl, textposition="top center",
+            textfont=dict(size=11, color="white"),
+            marker=dict(size=13, color="#FF3366", symbol="star", line=dict(color="white", width=1.2)),
+            name="Interstellar (1I, 2I, 3I)",
+        ), row=1, col=1)
+
+        u_val = math.asinh((-1.0 / (2.0 * config.R_VALENCE_EXACT)) / eps0)
+        for r_idx in (1, 2):
+            fig.add_vline(x=0.0, line_color="#FF3366", line_width=2.5, line_dash="solid", row=r_idx, col=1)
+            fig.add_vline(x=u_val, line_color="#00FF66", line_width=1.8, line_dash="dash", row=r_idx, col=1)
+
+        sub_note = (
+            f"Parabolic threshold ε=0 (red) | Valence shell R₂=27√3 AU: ε=-0.01069 AU⁻¹ (green) | "
+            f"Unified ΔH(ε)={ce.get('delta_H_unified_eps_bits', 'offline')} bits | SHA:{data_sha}"
+        )
+        fig.update_layout(
+            title=dict(text="IT³ Discovery Plot 13: Unified Specific Energy Phase Plane ε = (e − 1) / (2q)",
+                       font=dict(size=18, color=cls.TXT), x=0.5, y=0.98),
+            template="plotly_dark", paper_bgcolor=cls.BG, plot_bgcolor=cls.BG,
+            barmode="overlay", height=940,
+            margin=dict(l=70, r=95, t=130, b=115),
+            legend=dict(orientation="h", yanchor="bottom", y=1.035, xanchor="center", x=0.48,
+                        font=dict(size=10.5), bgcolor="rgba(11,11,24,0.85)", bordercolor=cls.GRID, borderwidth=1),
+            annotations=list(fig.layout.annotations) + [
+                dict(x=0.5, y=-0.125, xref="paper", yref="paper", yanchor="top",
+                     text=sub_note, showarrow=False, font=dict(size=10.5, color="#CCCCCC"))
+            ],
+        )
+        fig.update_yaxes(type="log", title_text="Perihelion Distance q (AU) [Log]", row=1, col=1)
+        fig.update_xaxes(title_text="Unified Energy Coordinate arsinh(ε / 0.01 AU⁻¹)  [Bound < 0 | Free > 0]", row=2, col=1)
+        fig.update_yaxes(title_text="Probability Density", row=2, col=1)
+        fig.write_html(output_path, auto_open=False)
+
+    @classmethod
+    def plot_14_stratified_phase_tomography(cls, objects: Dict, results: Dict, config,
+                                            data_sha: str, output_path: str) -> None:
+        codes = list(objects.keys())
+        a = np.fromiter((objects[c].a for c in codes), dtype=float, count=len(codes))
+        inc = np.fromiter((objects[c].i for c in codes), dtype=float, count=len(codes))
+        reff = np.fromiter((results[c].r_eff for c in codes), dtype=float, count=len(codes))
+
+        layers = [
+            ("Main Belt (a<5)", a < 5.0, "#00FFFF"),
+            ("Centaurs (5–30)", (a >= 5.0) & (a < 30.0), "#FFA500"),
+            ("Kuiper Belt (30–60)", (a >= 30.0) & (a <= 60.0), "#00FF66"),
+            ("Scattered/ETNO (a>60)", a > 60.0, "#FF1493"),
+        ]
+
+        fig = make_subplots(
+            rows=2, cols=2,
+            subplot_titles=(
+                "1. Inclination Density by Dynamic Layer",
+                "2. Per-Layer Steepest Drop Ratio (-d ln ρ / di) vs 18°",
+                "3. Outer R_eff Density [15–65 AU] + Bicone Spheres & MMRs",
+                "4. Detrended Radial Residuals log₁₀(ρ_obs / ρ_trend)"
+            ),
+            vertical_spacing=0.18, horizontal_spacing=0.11,
+        )
+
+        bins_i = np.linspace(0.0, 60.0, 61)
+        c_i = 0.5 * (bins_i[:-1] + bins_i[1:])
+        bins_scan = np.linspace(2.0, 38.0, 73)
+        c_scan = 0.5 * (bins_scan[:-1] + bins_scan[1:])
+
+        for lbl, msk, col in layers:
+            sub_i = inc[msk]
+            if len(sub_i) < 5:
+                continue
+            h, _ = np.histogram(sub_i, bins=bins_i, density=True)
+            fig.add_trace(go.Scatter(x=c_i, y=h, mode="lines", line=dict(color=col, width=2.2),
+                                     name=f"{lbl} (N={len(sub_i):,})"), row=1, col=1)
+            hs, _ = np.histogram(sub_i[(sub_i >= 2.0) & (sub_i <= 38.0)], bins=bins_scan)
+            xs_r, ys_r = [], []
+            for idx in range(4, len(hs) - 4):
+                pre_m = float(np.mean(hs[idx - 4:idx]))
+                post_m = float(np.mean(hs[idx:idx + 4]))
+                if post_m >= 1.0:
+                    xs_r.append(float(c_scan[idx])); ys_r.append(pre_m / post_m)
+            if xs_r:
+                fig.add_trace(go.Scatter(x=xs_r, y=ys_r, mode="lines", line=dict(color=col, width=2.0),
+                                         showlegend=False, name=lbl), row=1, col=2)
+
+        for col_idx in (1, 2):
+            fig.add_vline(x=18.0, line_color="#FF3333", line_dash="dash", line_width=2, row=1, col=col_idx)
+        fig.add_vline(x=config.MAGIC_ANGLE_OH, line_color="white", line_dash="dot", line_width=1.5, row=1, col=1)
+
+        r_sub = reff[(reff >= 15.0) & (reff <= 65.0)]
+        bins_r = np.linspace(15.0, 65.0, 101)
+        cr = 0.5 * (bins_r[:-1] + bins_r[1:])
+        hr, _ = np.histogram(r_sub, bins=bins_r)
+        fig.add_trace(go.Bar(x=cr, y=hr, marker_color="#4466AA", opacity=0.8,
+                             name=f"Raw Count [15–65 AU] (N={len(r_sub):,})"), row=2, col=1)
+
+        y_log = np.log10(hr + 1.0)
+        poly = np.poly1d(np.polyfit(cr, y_log, deg=3))
+        trend = poly(cr)
+        resid = y_log - trend
+        fig.add_trace(go.Scatter(x=cr, y=10 ** trend - 1.0, mode="lines",
+                                 line=dict(color="#CCCCCC", width=2, dash="dot"),
+                                 name="Deg-3 Log Trend"), row=2, col=1)
+        fig.add_trace(go.Bar(x=cr, y=resid,
+                             marker_color=["#00FF66" if v >= 0 else "#FF4466" for v in resid],
+                             name="Detrended Residual"), row=2, col=2)
+        fig.add_hline(y=0.0, line_color="white", line_width=1, row=2, col=2)
+
+        # Clean vertical lines (ZERO annotation_* kwargs on add_vline -> avoids Plotly 'New text' bug!)
+        # Place staggered compact labels INSIDE Panel 3 with left/right anchoring so zero collisions occur.
+        s2, s3, s5 = config.SQRT2, config.SQRT3, config.SQRT5
+        markers_r = [
+            (27.0 / s2, "27/√2<br>Uranus", "#00FFFF", "dot", 0.94, "left", 3),
+            (27.0, "R₁=27", "#8888FF", "dot", 0.78, "right", -3),
+            (27.0 * s5 / 2.0, "27√5/2<br>Neptune", "#FFD700", "dash", 0.94, "left", 3),
+            (27.0 * s3 * (3.0 * s2 / 5.0), "R₂·ρ₋=39.7<br>(2:3)", "#FFA500", "dashdot", 0.78, "right", -3),
+            (27.0 * s3, "R₂=27√3<br>(46.77)", "#00FF66", "solid", 0.94, "right", -4),
+            (config.MMR_1_2_NEPTUNE_AU, "1:2 MMR<br>(47.73)", "#FFFFFF", "dot", 0.76, "left", 4),
+        ]
+        staggered_ann = []
+        for rv, rlbl, rcol, rdash, y_dom, xanc, xsh in markers_r:
+            for c_idx in (1, 2):
+                fig.add_vline(x=rv, line_color=rcol, line_dash=rdash, line_width=1.6, row=2, col=c_idx)
+            staggered_ann.append(dict(
+                x=rv, y=y_dom, xref="x3", yref="y3 domain",
+                text=rlbl, showarrow=False, xanchor=xanc, xshift=xsh,
+                font=dict(size=9, color=rcol),
+                bgcolor="rgba(7,7,11,0.82)", bordercolor=rcol, borderwidth=0.6, borderpad=2,
+            ))
+
+        fig.update_layout(
+            title=dict(text=f"IT³ Discovery Plot 14: 4-Layer Stratified Tomography & Detrended Residuals [SHA:{data_sha}]",
+                       font=dict(size=18, color=cls.TXT), x=0.5, y=0.98),
+            template="plotly_dark", paper_bgcolor=cls.BG, plot_bgcolor=cls.BG, height=960,
+            margin=dict(l=65, r=35, t=135, b=70),
+            legend=dict(orientation="h", yanchor="bottom", y=1.035, xanchor="center", x=0.5,
+                        font=dict(size=10), bgcolor="rgba(11,11,24,0.85)", bordercolor=cls.GRID, borderwidth=1),
+            annotations=list(fig.layout.annotations) + staggered_ann,
+        )
+        fig.update_xaxes(title_text="Inclination i (deg)", row=1, col=1)
+        fig.update_xaxes(title_text="Inclination i (deg)", row=1, col=2)
+        fig.update_xaxes(title_text="Effective Radius R_eff (AU)", row=2, col=1)
+        fig.update_xaxes(title_text="Effective Radius R_eff (AU)", row=2, col=2)
+        fig.update_yaxes(title_text="Density", row=1, col=1)
+        fig.update_yaxes(title_text="Pre/Post Drop Ratio", row=1, col=2)
+        fig.update_yaxes(title_text="Object Count", row=2, col=1)
+        fig.update_yaxes(title_text="Residual (dex)", row=2, col=2)
+        fig.write_html(output_path, auto_open=False)
+
+    @classmethod
+    def plot_15_zero_rng_loss_landscape(cls, config, v23, observed_peak_au: float,
+                                        data_sha: str, output_path: str) -> None:
+        r0_grid = np.linspace(12.0, 40.0, 180)
+        lam_grid = np.linspace(1.30, 2.30, 180)
+        R0, LAM = np.meshgrid(r0_grid, lam_grid)
+
+        t1 = config.A_NEPTUNE_AU
+        c_rcirc = config.BICONE_RCIRC_RATIO
+        L_3d = (np.abs(R0 * c_rcirc - t1) / t1 * 100.0
+                + np.abs(R0 * LAM - observed_peak_au) / observed_peak_au * 100.0)
+        L_2d = (np.abs(R0 - t1) / t1 * 100.0
+                + np.abs(R0 * LAM - config.MMR_1_2_NEPTUNE_AU) / config.MMR_1_2_NEPTUNE_AU * 100.0)
+
+        a3 = v23.exact_joint_3d_audit(config, observed_peak_au)
+        p2 = v23.exact_joint_2d_p(config)
+
+        fig = make_subplots(
+            rows=1, cols=2,
+            subplot_titles=(
+                f"1. 3D Bicone Loss L(R₀,Λ) [p={a3['p_3d_obs_cond']:.5f}, Bonf6={a3['p_3d_obs_bonf']:.5f}]",
+                f"2. 2D Sphere Control L(R₀,Λ) [p={p2:.5f} — NULL]"
+            ),
+            horizontal_spacing=0.17,
+        )
+
+        fig.add_trace(go.Contour(
+            x=r0_grid, y=lam_grid, z=np.clip(L_3d, 0, 60), colorscale="Viridis_r",
+            contours=dict(start=0, end=40, size=2.5), name="3D Loss (%)",
+            colorbar=dict(title="Loss (%)", x=0.435, len=0.86, thickness=14),
+        ), row=1, col=1)
+        fig.add_trace(go.Contour(
+            x=r0_grid, y=lam_grid, z=np.clip(L_2d, 0, 60), colorscale="Viridis_r",
+            contours=dict(start=0, end=40, size=2.5), name="2D Loss (%)",
+            colorbar=dict(title="Loss (%)", x=1.015, len=0.86, thickness=14),
+        ), row=1, col=2)
+
+        r_hyp = r0_grid[(observed_peak_au / r0_grid >= 1.30) & (observed_peak_au / r0_grid <= 2.30)]
+        fig.add_trace(go.Scatter(x=r_hyp, y=observed_peak_au / r_hyp, mode="lines",
+                                 line=dict(color="#00FF66", width=2.5),
+                                 name=f"R₀·Λ = {observed_peak_au:.2f} AU (Kuiper Peak)"), row=1, col=1)
+
+        s2, s3, s5 = config.SQRT2, config.SQRT3, config.SQRT5
+        # Staggered inside-plot annotations so ZERO ratio labels touch the title or each other!
+        six_ratios = [
+            (s3, "c=√3", 2.24, "left", 3),
+            (s2, "c=√2", 2.15, "left", 3),
+            (s5 / 2.0, "c=√5/2", 2.24, "right", -4),
+            (math.sqrt(30.0) / 5.0, "c=√30/5", 2.12, "left", 4),
+            (1.0, "c=1", 2.24, "left", 3),
+            (1.0 / s2, "c=1/√2", 2.24, "left", 3),
+        ]
+        ratio_anns = []
+        for cv, clbl, y_pos, xanc, xsh in six_ratios:
+            r_star = t1 / cv
+            if 12.0 <= r_star <= 40.0:
+                is_main = (clbl == "c=√5/2")
+                col_l = "#FFD700" if is_main else "#AAAACC"
+                fig.add_vline(x=r_star, line_color=col_l,
+                              line_dash="solid" if is_main else "dot",
+                              line_width=2.0 if is_main else 1.2, row=1, col=1)
+                ratio_anns.append(dict(
+                    x=r_star, y=y_pos, xref="x1", yref="y1",
+                    text=clbl, showarrow=False, xanchor=xanc, xshift=xsh,
+                    font=dict(size=9.5, color=col_l),
+                    bgcolor="rgba(7,7,11,0.82)", bordercolor=col_l, borderwidth=0.6, borderpad=2,
+                ))
+
+        for c_idx in (1, 2):
+            fig.add_trace(go.Scatter(
+                x=[27.0], y=[s3], mode="markers+text", text=["IT³ (27, √3)"],
+                textposition="bottom right", textfont=dict(size=10.5, color="white"),
+                marker=dict(size=14, color="#FF1493", symbol="star", line=dict(color="white", width=1.5)),
+                name="IT³ Point (27, √3)" if c_idx == 1 else "IT³ Point", showlegend=(c_idx == 1),
+            ), row=1, col=c_idx)
+
+        fig.update_layout(
+            title=dict(text=f"IT³ Discovery Plot 15: Zero-RNG Loss Landscape & Bonferroni M=6 Audit [SHA:{data_sha}]",
+                       font=dict(size=18, color=cls.TXT), x=0.5, y=0.97),
+            template="plotly_dark", paper_bgcolor=cls.BG, plot_bgcolor=cls.BG, height=690,
+            margin=dict(l=65, r=85, t=135, b=70),
+            legend=dict(orientation="h", yanchor="bottom", y=1.06, xanchor="center", x=0.5,
+                        font=dict(size=10.5), bgcolor="rgba(11,11,24,0.85)", bordercolor=cls.GRID, borderwidth=1),
+            annotations=list(fig.layout.annotations) + ratio_anns,
+        )
+        fig.update_xaxes(title_text="Base Scale R₀ (AU)", row=1, col=1)
+        fig.update_xaxes(title_text="Base Scale R₀ (AU)", row=1, col=2)
+        fig.update_yaxes(title_text="Scaling Ratio Λ", row=1, col=1)
+        fig.update_yaxes(title_text="Scaling Ratio Λ", row=1, col=2)
+        fig.write_html(output_path, auto_open=False)
+
+    @classmethod
+    def plot_16_retrograde_kozai_tunnel(cls, objects: Dict, results: Dict, config, v23,
+                                        data_sha: str, output_path: str) -> None:
+        codes = list(objects.keys())
+        a = np.fromiter((objects[c].a for c in codes), dtype=float, count=len(codes))
+        e = np.fromiter((objects[c].e for c in codes), dtype=float, count=len(codes))
+        inc = np.fromiter((objects[c].i for c in codes), dtype=float, count=len(codes))
+        om = np.fromiter((objects[c].omega for c in codes), dtype=float, count=len(codes))
+        reff = np.fromiter((results[c].r_eff for c in codes), dtype=float, count=len(codes))
+        sn = np.fromiter((results[c].S_n for c in codes), dtype=int, count=len(codes))
+        sh = np.fromiter((results[c].S_h for c in codes), dtype=int, count=len(codes))
+        tj = v23.tisserand_jupiter(a, e, inc)
+
+        m_high = inc >= config.MAGIC_ANGLE_OH
+        idx_h = np.where(m_high)[0]
+        m_ret = inc[idx_h] > 90.0
+        m_pro = ~m_ret
+
+        fig = make_subplots(
+            rows=1, cols=2,
+            subplot_titles=(
+                f"1. High-i & Retrograde Portrait (i≥54.74°, N={len(idx_h)}) vs ω=90°,270°",
+                "2. Tisserand T_J vs R_eff (Damocloid Boundary T_J=2)"
+            ),
+            horizontal_spacing=0.12,
+        )
+
+        for sub_m, lbl, col, sym in [
+            (m_pro, f"High-i Prograde (54.74°–90°, N={int(np.sum(m_pro))})", "#00FFFF", "circle"),
+            (m_ret, f"Retrograde (i > 90°, N={int(np.sum(m_ret))})", "#FF3366", "diamond"),
+        ]:
+            sel = idx_h[sub_m]
+            if len(sel) == 0:
+                continue
+            texts = [f"<b>{objects[codes[k]].name}</b><br>i={inc[k]:.2f}°, ω={om[k]:.1f}°<br>"
+                     f"R_eff={reff[k]:.2f} AU, T_J={tj[k]:.2f}<br>S_n={sn[k]}, S_h={sh[k]}"
+                     for k in sel]
+            fig.add_trace(go.Scatter(x=om[sel] % 360.0, y=inc[sel], mode="markers",
+                                     marker=dict(size=6 if col == "#FF3366" else 4, color=col, symbol=sym, opacity=0.8),
+                                     text=texts, hoverinfo="text", name=lbl), row=1, col=1)
+            fig.add_trace(go.Scatter(x=reff[sel], y=tj[sel], mode="markers",
+                                     marker=dict(size=6 if col == "#FF3366" else 4, color=col, symbol=sym, opacity=0.8),
+                                     text=texts, hoverinfo="text", showlegend=False, name=lbl), row=1, col=2)
+
+        for w_kl in (90.0, 270.0):
+            fig.add_vline(x=w_kl, line_color="#FFD700", line_dash="dash", line_width=1.8, row=1, col=1)
+        fig.add_hline(y=90.0, line_color="white", line_dash="solid", line_width=1.8, row=1, col=1)
+        fig.add_hline(y=126.0, line_color="#FF3366", line_dash="dot", line_width=1.8, row=1, col=1)
+        fig.add_hline(y=2.0, line_color="#FFD700", line_dash="dash", line_width=2.0, row=1, col=2)
+        fig.add_hline(y=3.0, line_color="#00FF66", line_dash="dot", line_width=1.5, row=1, col=2)
+        fig.add_vline(x=config.R_VALENCE, line_color="#00FF66", line_dash="dash", line_width=1.5, row=1, col=2)
+
+        clean_anns = [
+            dict(x=355, y=92, xref="x1", yref="y1", text="Polar Barrier (i=90°)", xanchor="right", yanchor="bottom",
+                 showarrow=False, font=dict(size=10, color="white"), bgcolor="rgba(7,7,11,0.82)", borderpad=2),
+            dict(x=355, y=128, xref="x1", yref="y1", text="S_h=4 Threshold (i=126°)", xanchor="right", yanchor="bottom",
+                 showarrow=False, font=dict(size=10, color="#FF6688"), bgcolor="rgba(7,7,11,0.82)", borderpad=2),
+            dict(x=0.98, y=3.15, xref="x2 domain", yref="y2", text="Asteroidal (T_J=3)", xanchor="right", yanchor="bottom",
+                 showarrow=False, font=dict(size=10, color="#00FF66"), bgcolor="rgba(7,7,11,0.82)", borderpad=2),
+            dict(x=0.98, y=1.82, xref="x2 domain", yref="y2", text="Damocloid / Halley (T_J=2)", xanchor="right", yanchor="top",
+                 showarrow=False, font=dict(size=10, color="#FFD700"), bgcolor="rgba(7,7,11,0.82)", borderpad=2),
+        ]
+
+        fig.update_layout(
+            title=dict(text=f"IT³ Discovery Plot 16: Retrograde S_h=4 Tunnel & Kozai–Lidov / T_J Portrait [SHA:{data_sha}]",
+                       font=dict(size=18, color=cls.TXT), x=0.5, y=0.97),
+            template="plotly_dark", paper_bgcolor=cls.BG, plot_bgcolor=cls.BG, height=680,
+            margin=dict(l=65, r=35, t=130, b=70),
+            legend=dict(orientation="h", yanchor="bottom", y=1.06, xanchor="center", x=0.5,
+                        font=dict(size=10.5), bgcolor="rgba(11,11,24,0.85)", bordercolor=cls.GRID, borderwidth=1),
+            annotations=list(fig.layout.annotations) + clean_anns,
+        )
+        fig.update_xaxes(title_text="Argument of Perihelion ω (deg)", range=[0, 360], row=1, col=1)
+        fig.update_yaxes(title_text="Inclination i (deg)", range=[50, 180], row=1, col=1)
+        fig.update_xaxes(type="log", title_text="Effective Radius R_eff (AU) [Log]", row=1, col=2)
+        fig.update_yaxes(title_text="Tisserand Parameter T_J", row=1, col=2)
+        fig.write_html(output_path, auto_open=False)
+
+    @classmethod
+    def generate_all_discovery_plots(cls, objects: Dict, results: Dict, config, v23,
+                                     audit_cert: Dict, comet_file: str,
+                                     data_sha: str, html_dir: Path) -> list:
+        obs_kb = float(audit_cert.get("layer_2_catalog_validation", {}).get("kuiper_peak_observed_AU", 47.09))
+        outputs = [
+            ("plot_12_oh_multipole_sphere_interactive.html",
+             lambda p: cls.plot_12_oh_multipole_sphere(objects, results, config, v23, data_sha, p)),
+            ("plot_13_unified_energy_phase_plane_interactive.html",
+             lambda p: cls.plot_13_unified_energy_phase_plane(objects, results, config, v23, comet_file, data_sha, p)),
+            ("plot_14_stratified_phase_tomography_interactive.html",
+             lambda p: cls.plot_14_stratified_phase_tomography(objects, results, config, data_sha, p)),
+            ("plot_15_zero_rng_loss_landscape_interactive.html",
+             lambda p: cls.plot_15_zero_rng_loss_landscape(config, v23, obs_kb, data_sha, p)),
+            ("plot_16_retrograde_kozai_tunnel_interactive.html",
+             lambda p: cls.plot_16_retrograde_kozai_tunnel(objects, results, config, v23, data_sha, p)),
+        ]
+        made = []
+        for fn, builder in outputs:
+            out_p = str(Path(html_dir) / fn)
+            print(f"  {Term.DARK_BLUE}🎨 Generating:{Term.RESET} {Term.BLACK}Discovery Model ({fn})...{Term.RESET}")
+            builder(out_p)
+            made.append(out_p)
+        return made
+
+
+_v23 = _V23ZeroRNGEngine
+_v23_viz = _V23DiscoveryVisualizer
+# === END EMBEDDED IT³ v23.4-strict ENGINE & DISCOVERY VISUALIZER ===
 import re
 import warnings
 
@@ -106,7 +1465,7 @@ class Term:
     CYAN = '\033[36m'
 
 EPISTEMIC_POLICY = """
-IT3 strict epistemic policy (Release IT3-v23.2-strict):
+IT3 strict epistemic policy (Release IT3-v23.4-strict):
 1. Exact mathematical identities are marked EXACT_MATH.
 2. Physical predictions are allowed only if marked EXACT_MATH or
    DERIVED_FROM_POSTULATES.
@@ -164,7 +1523,7 @@ class Claim:
 
 @dataclass
 class ProofLedger:
-    version: str = "IT3-v23.2-strict"
+    version: str = "IT3-v23.4-strict"
     epistemic_mode: str = "proven-only"
     claims: Dict[str, Claim] = field(default_factory=dict)
     postulates: Dict[str, str] = field(default_factory=dict)
@@ -302,7 +1661,7 @@ def animate_text(text: str, delay: float = 0.0006):
 def print_banner(mode: EpistemicMode = EpistemicMode.PROVEN_ONLY):
     banner = f"""
 {Term.DARK_BLUE}{Term.BOLD}╔═══════════════════════════════════════════════════════════════════════════════════════╗{Term.RESET}
-{Term.DARK_BLUE}{Term.BOLD}║{Term.BLACK}   IT³ K-PHAM (Release: IT3-v23.2-strict) — PROOF LEDGER & DIAGNOSTIC SUITE          {Term.DARK_BLUE}║{Term.RESET}
+{Term.DARK_BLUE}{Term.BOLD}║{Term.BLACK}   IT³ K-PHAM (Release: IT3-v23.4-strict) — PROOF LEDGER & DIAGNOSTIC SUITE          {Term.DARK_BLUE}║{Term.RESET}
 {Term.DARK_BLUE}{Term.BOLD}║{Term.BLACK}   Epistemic Mode: {mode.value:<18} | Numerology Exposure: Computed Dynamically     {Term.DARK_BLUE}║{Term.RESET}
 {Term.DARK_BLUE}{Term.BOLD}║{Term.BLACK}   Authors: Victor Logvinovich & Jean-Claude Perez | DOI: 10.5281/zenodo.21792530     {Term.DARK_BLUE}║{Term.RESET}
 {Term.DARK_BLUE}{Term.BOLD}╚═══════════════════════════════════════════════════════════════════════════════════════╝{Term.RESET}"""
@@ -873,7 +2232,7 @@ class EpistemicAuditEngine:
         audit_cert: Optional[Dict] = None,
         mode: EpistemicMode = EpistemicMode.PROVEN_ONLY,
     ) -> ProofLedger:
-        ledger = ProofLedger(version="IT3-v23.2-strict", epistemic_mode=mode.value)
+        ledger = ProofLedger(version="IT3-v23.4-strict", epistemic_mode=mode.value)
 
         # Explicit Postulates (Counted in the epistemic ledger)
         ledger.add_postulate(
@@ -1492,7 +2851,7 @@ class DataDownloader:
     GZ_FILENAME = str(DATA_DIR / "MPCORB.DAT.gz")
     DAT_FILENAME = str(DATA_DIR / "MPCORB.DAT")
     COMET_FILENAME = str(DATA_DIR / "CometEls.txt")
-    USER_AGENT = "IT3-Framework/22.6-strict (https://zenodo.org/records/21792530)"
+    USER_AGENT = "IT3-Framework/23.4-strict (https://zenodo.org/records/21792530)"
 
     @classmethod
     def _fetch_url_to_path(cls, url: str, dest: Path, timeout: int = 45) -> bool:
@@ -2336,9 +3695,15 @@ class HostileAuditSuite:
         n_x1, n_x2 = QuantumStarkWavefunction.mapped_node_positions()
         print(f"  {Term.DARK_MAGENTA}[VISUAL RHYME]{Term.RESET}              5 display params (scale=1.45, pow=1.35, α=0.85, β=0.58, σ=0.65) map L₂⁽⁰⁾ nodes to x₁={n_x1}, x₂={n_x2}")
         mp_11_fronts = cls.run_mp_11_fronts(objects, results, config, operator, comet_audit)
+        discovery_probes = _v23.run_discovery_probes(objects, results, config, DataDownloader.COMET_FILENAME)
+        _oh_s2 = discovery_probes['oh_multipole_s2'].get('detached_e_hat_spectrum', {})
+        _rt_sh4 = discovery_probes['retrograde_sh4_enrichment']
+        if _oh_s2 and 6 in _oh_s2:
+            print(f"  {Term.CYAN}[DISCOVERY: S² Azimuthal O_h]{Term.RESET} Detached e_hat (N={discovery_probes['oh_multipole_s2']['detached_etno_count']}, ecliptic-free m≥1): S₁_az={_oh_s2[1]['S_l_az']:.2f}(p={_oh_s2[1]['p_az']:.2g}), S₂_az={_oh_s2[2]['S_l_az']:.2f}(p={_oh_s2[2]['p_az']:.2g}), S₄_az={_oh_s2[4]['S_l_az']:.2f}(p={_oh_s2[4]['p_az']:.2g}), S₆_az={_oh_s2[6]['S_l_az']:.2f}(p={_oh_s2[6]['p_az']:.2g}), S₁₂_az={_oh_s2[12]['S_l_az']:.2f}(p={_oh_s2[12]['p_az']:.2g})")
+        print(f"  {Term.CYAN}[DISCOVERY: Retrograde S_h=4]{Term.RESET}  Deep S_n≥6: {_rt_sh4['sh4_deep_count']}/{_rt_sh4['deep_sn_ge_6_count']} vs total {_rt_sh4['sh4_total_count']}/{_rt_sh4['total_catalog']} ({_rt_sh4['sh4_deep_enrichment_factor']}×, p_hypergeom={_rt_sh4['sh4_hypergeom_p_zero_rng']:.2e})")
 
         certificate = {
-            'framework': 'IT3-v23.2-strict',
+            'framework': 'IT3-v23.4-strict',
             'zenodo_doi': '10.5281/zenodo.21792530',
             'zenodo_url': 'https://zenodo.org/records/21792530',
             'authors': ['Victor Logvinovich', 'Jean-Claude Perez'],
@@ -2395,14 +3760,15 @@ class HostileAuditSuite:
                 'multi_angle_inclination_scan': inc_scan,
                 'true_trojan_L4_L5_audit': trojan_audit,
                 'cometary_dichotomy': comet_audit,
-                'mp_11_fronts_suite': mp_11_fronts
+                'mp_11_fronts_suite': mp_11_fronts,
+                'v23_3_discovery_probes': discovery_probes,
             }
         }
         return certificate
 
 
 # ============================================================================
-# PHYSICAL VALIDATOR (6-PANEL MATPLOTLIB IT3-v23.2-strict DASHBOARD)
+# PHYSICAL VALIDATOR (6-PANEL MATPLOTLIB IT3-v23.4-strict DASHBOARD)
 # ============================================================================
 class PhysicalValidator:
     def __init__(self, config: IT3Config):
@@ -2419,7 +3785,7 @@ class PhysicalValidator:
         plt.style.use('dark_background')
         fig, axes = plt.subplots(2, 3, figsize=(22, 13))
         fig.suptitle(
-            f'IT³ PROOF-LEDGER SUITE (IT3-v23.2-strict): Crystal Math, Sliding Controls & Diagnostic Separation\n'
+            f'IT³ PROOF-LEDGER SUITE (IT3-v23.4-strict): Crystal Math, Sliding Controls & Diagnostic Separation\n'
             f'[LIVE MPCORB N={len(results):,} | SHA-256: {DATA_SHA} | Numerology Exposure = {audit_cert.get("numerology_exposure", 0.0):.6f}]',
             fontsize=14.5, fontweight='bold', color='white', y=0.98
         )
@@ -2541,7 +3907,7 @@ class PhysicalValidator:
         ax5.legend(fontsize=7.3, loc='upper right')
         ax5.grid(True, alpha=0.2)
 
-        # PANEL (1,2): IT3-v23.2-strict EPISTEMIC LEDGER (SYNCHRONIZED WITH BUILD_LEDGER)
+        # PANEL (1,2): IT3-v23.4-strict EPISTEMIC LEDGER (SYNCHRONIZED WITH BUILD_LEDGER)
         ax6 = axes[1, 2]
         ax6.axis('off')
         l2 = audit_cert['layer_2_catalog_validation']
@@ -2556,7 +3922,7 @@ class PhysicalValidator:
         _p3_bf = l2.get("exact_joint_3d_bonf6_p_zero_rng", 1.0)
         _k25_s = f"δ={l2['terminal_spiral_K25Me3C_error_ppm']} ppm (p_LE={l2['terminal_spiral_K25Me3C_p_look_elsewhere']})" if l2.get("k25me3c_in_catalog") else "not in catalog"
         summary_text = (
-            f"IT3-v23.2-strict — EPISTEMIC PROOF LEDGER (ZERO-RNG)\n"
+            f"IT3-v23.4-strict — EPISTEMIC PROOF LEDGER (ZERO-RNG)\n"
             f"═══════════════════════════════════════════════\n"
             f"[EXACT_MATH] & [DERIVED_FROM_POSTULATES (P1-P4)]:\n"
             f" • Δ_K = 2¹⁶3⁴5⁴ = 3,317,760,000 | det(E₈)=1 | √13 ∉ K\n"
@@ -3172,7 +4538,7 @@ class IT3InteractiveVisualizer:
 
         fig.update_layout(
             title=dict(
-                text=f"IT3-v23.2-strict Proof-Ledger & Diagnostic Suite [MPCORB SHA: {DATA_SHA}]",
+                text=f"IT3-v23.4-strict Proof-Ledger & Diagnostic Suite [MPCORB SHA: {DATA_SHA}]",
                 font=dict(size=19, color='white'), x=0.5
             ),
             template='plotly_dark', paper_bgcolor=self.config.BG_COLOR, plot_bgcolor=self.config.BG_COLOR,
@@ -3274,7 +4640,7 @@ class IT3AnalysisPipeline:
                                   (r_effs <= self.config.R_DIM_COLLAPSE_UPPER) & (sn_arr == 2)))
         n_low_reset = int(np.sum((r_effs > self.config.R_IONIZATION_LIMIT) & (sn_arr <= 1)))
 
-        print_section(f"PHASE 8: DUAL-LAYER TELEMETRY & EPISTEMIC LEDGER REPORT (IT3-v23.2-strict | Mode: {self.epistemic_mode.value})")
+        print_section(f"PHASE 8: DUAL-LAYER TELEMETRY & EPISTEMIC LEDGER REPORT (IT3-v23.4-strict | Mode: {self.epistemic_mode.value})")
 
         # PART 1: S_n FLOORS BAR CHART
         print(f"  {Term.DARK_BLUE}{Term.BOLD}📊 HIDDEN TOPOLOGY: K-PHAM v2.2 Sₙ FLOORS (POTENTIAL WELLS){Term.RESET}")
@@ -3385,7 +4751,7 @@ class IT3AnalysisPipeline:
         ce = l2['cometary_dichotomy']
         tr = l2['true_trojan_L4_L5_audit']
         print(f"\n  {Term.BOLD}── EPISTEMIC AUDIT METRICS ──────────────────────────────────────────{Term.RESET}")
-        print(f"  • Release Version:                       IT3-v23.2-strict")
+        print(f"  • Release Version:                       IT3-v23.4-strict")
         print(f"  • Active Epistemic Mode:                 {self.epistemic_mode.value}")
         print(f"  • External Benchmarks Are Predictions:   False")
         n_tot_c = len(ledger.claims)
@@ -3405,7 +4771,7 @@ class IT3AnalysisPipeline:
             print(f"  {Term.DARK_GREEN}OK: all predictive claims are proven or derived from explicit postulates.{Term.RESET}")
 
         summary = f"""
-  {Term.BOLD}{Term.BLACK}🛡️  SYNCHRONIZED SCIENTIFIC SUMMARY (Release: IT3-v23.2-strict):{Term.RESET}
+  {Term.BOLD}{Term.BLACK}🛡️  SYNCHRONIZED SCIENTIFIC SUMMARY (Release: IT3-v23.4-strict):{Term.RESET}
   
   [1] EXACT ALGEBRA & O_h SPHERE LADDER (EXACT_MATH):
       • Δ_K = 2¹⁶3⁴5⁴ = 3,317,760,000; √|Δ_K| = 57,600 = 240²; det(E₈)=1; √13 ∉ K.
@@ -3473,7 +4839,7 @@ class IT3AnalysisPipeline:
         )
         ledger.validate_no_ansatz_in_predictions()
         ledger_cert = ledger.certificate()
-        audit_cert["version"] = "IT3-v23.2-strict"
+        audit_cert["version"] = "IT3-v23.4-strict"
         audit_cert["epistemic_mode"] = self.epistemic_mode.value
         audit_cert["external_benchmarks_are_not_predictions"] = True
         audit_cert["numerology_exposure"] = ledger.numerology_exposure()
@@ -3514,6 +4880,7 @@ class IT3AnalysisPipeline:
         self.visualizer.plot_eccentricity_topology_3d(objects, results, vis_codes, key_codes, str(html_dir / 'plot_09_eccentricity_3d_interactive.html'))
         self.visualizer.plot_perez_hourglass_crystal_3d(str(html_dir / 'plot_10_perez_hourglass_3d_crystal.html'))
         self.visualizer.plot_ab_initio_proofs_interactive(results, audit_cert, str(html_dir / 'plot_11_ab_initio_proofs_interactive.html'))
+        _v23_viz.generate_all_discovery_plots(objects, results, self.config, _v23, audit_cert, DataDownloader.COMET_FILENAME, DATA_SHA, html_dir)
 
         self.physical_validator.generate_dashboard(objects, results, audit_cert, str(fig_dir / 'physically_grounded_model_v20.png'))
         shutil.copyfile(str(fig_dir / 'physically_grounded_model_v20.png'),
@@ -3526,7 +4893,7 @@ class IT3AnalysisPipeline:
 
 def main():
     global DATA_SHA, SCRIPT_SHA
-    parser = argparse.ArgumentParser(description="IT3 K-PHAM Scientific Proof-Ledger & Diagnostic Suite (IT3-v23.2-strict)")
+    parser = argparse.ArgumentParser(description="IT3 K-PHAM Scientific Proof-Ledger & Diagnostic Suite (IT3-v23.4-strict)")
     parser.add_argument(
         "--epistemic-mode",
         choices=["proven-only", "full-diagnostic"],
@@ -3557,9 +4924,9 @@ def main():
         # === v23.2-strict 19-invariant algebraic & anti-numerology self-test ===
         try:
             _v23.self_test_it3_v23(IT3Config())
-            print(f"  {Term.DARK_GREEN}[PASS]{Term.RESET} v23.2-strict: 19 invariants & anti-numerology guards verified")
+            print(f"  {Term.DARK_GREEN}[PASS]{Term.RESET} v23.4-strict (single-file): 23 invariants, ecliptic-free S² O_h & anti-numerology verified")
         except AssertionError as _e:
-            print(f"  {Term.DARK_RED}[FAIL]{Term.RESET} v23.2-strict self-test: {_e}"); sys.exit(1)
+            print(f"  {Term.DARK_RED}[FAIL]{Term.RESET} v23.4-strict self-test: {_e}"); sys.exit(1)
         if args.run_tests:
             print_banner(mode)
             EpistemicAuditEngine.run_unit_tests(IT3Config(), ExternalBenchmarks())
@@ -3592,7 +4959,7 @@ def main():
 
         print(f"\n  {Term.DARK_BLUE}{Term.BOLD}📁 REPOSITORY DIRECTORY STRUCTURE (./):{Term.RESET}")
         print(f"    • {Term.BOLD}./data/{Term.RESET}        → MPCORB.DAT, CometEls.txt, NEA.txt, PHA.txt, newnumids.dat, neocp.txt")
-        print(f"    • {Term.BOLD}./plots_html/{Term.RESET}  → 11 Interactive Plotly 3D/2D HTML models (plot_01 .. plot_11)")
+        print(f"    • {Term.BOLD}./plots_html/{Term.RESET}  → 16 Interactive Plotly 3D/2D HTML models (plot_01 .. plot_16, incl. 5 Discovery Probes)")
         print(f"    • {Term.BOLD}./figures/{Term.RESET}     → High-resolution 300 DPI dashboards (physically_grounded_model_v20.png)")
         print(f"    • {Term.BOLD}./reports/{Term.RESET}     → it3_fwhp_audit_certificate.json & it3_cpham_results_quantized.csv")
         print(f"    • {Term.BOLD}./logs/{Term.RESET}        → ./logs/{log_path.name}")
